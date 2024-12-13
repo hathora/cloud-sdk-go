@@ -7,29 +7,33 @@ sources:
         tags:
             - latest
             - 0.0.1
+    my-source:
+        sourceNamespace: my-source
+        sourceRevisionDigest: sha256:ff117b4b1aafccc0a20a5d5730169ad15b444b7765d5aeadbc8419ff564238e2
+        sourceBlobDigest: sha256:359ccd96250eaafa4b8dcf29095e596e43f7f5b7081b723eabaecedf060a6616
+        tags:
+            - latest
 targets:
     hathora-cloud:
-        source: HathoraCloud-OAS
+        source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:5e4e0aa0cd2a5fefcb1823ebeb9b71c71054b416b4e8f41ff37fba09b7b87bd6
-        sourceBlobDigest: sha256:ea3a8b68869fbc1c7cb02fe3a71eeb6b4247f09e4ba2e86b1d187cd3b21b1ed0
+        sourceRevisionDigest: sha256:ff117b4b1aafccc0a20a5d5730169ad15b444b7765d5aeadbc8419ff564238e2
+        sourceBlobDigest: sha256:359ccd96250eaafa4b8dcf29095e596e43f7f5b7081b723eabaecedf060a6616
         codeSamplesNamespace: my-source-go-code-samples
-        codeSamplesRevisionDigest: sha256:11d0c0939a70f49a2ce91454d591858f402ab48e1522520326aeef9f26852b6e
+        codeSamplesRevisionDigest: sha256:354ee0cc5530115b27c9b7e4b9cc6316ab62d1c47a5325839257ee9b63b332f6
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        HathoraCloud-OAS:
+        my-source:
             inputs:
                 - location: registry.speakeasyapi.dev/hathora/hathora/my-source:main
-            overlays:
-                - location: .speakeasy/speakeasy-modifications-overlay.yaml
             registry:
                 location: registry.speakeasyapi.dev/hathora/hathora/my-source
     targets:
         hathora-cloud:
             target: go
-            source: HathoraCloud-OAS
+            source: my-source
             codeSamples:
                 registry:
                     location: registry.speakeasyapi.dev/hathora/hathora/my-source-go-code-samples

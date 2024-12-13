@@ -27,9 +27,9 @@ func newDiscoveryV2(sdkConfig sdkConfiguration) *DiscoveryV2 {
 	}
 }
 
-// GetPingEndpoints - GetPingServiceEndpoints
+// GetPingServiceEndpoints
 // Returns an array of all regions with a host and port that a client can directly ping. Open a websocket connection to `wss://<host>:<port>/ws` and send a packet. To calculate ping, measure the time it takes to get an echo packet back.
-func (s *DiscoveryV2) GetPingEndpoints(ctx context.Context, opts ...operations.Option) ([]components.PingEndpoints, error) {
+func (s *DiscoveryV2) GetPingServiceEndpoints(ctx context.Context, opts ...operations.Option) ([]components.PingEndpoints, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "GetPingServiceEndpoints",

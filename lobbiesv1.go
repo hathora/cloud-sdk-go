@@ -25,10 +25,10 @@ func newLobbiesV1(sdkConfig sdkConfiguration) *LobbiesV1 {
 	}
 }
 
-// CreatePrivateDeprecated - CreatePrivateLobbyDeprecated
+// CreatePrivateLobbyDeprecated
 //
 // Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
-func (s *LobbiesV1) CreatePrivateDeprecated(ctx context.Context, security operations.CreatePrivateLobbyDeprecatedSecurity, appID *string, region *components.Region, local *bool, opts ...operations.Option) (*string, error) {
+func (s *LobbiesV1) CreatePrivateLobbyDeprecated(ctx context.Context, security operations.CreatePrivateLobbyDeprecatedSecurity, appID *string, region *components.Region, local *bool, opts ...operations.Option) (*string, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "CreatePrivateLobbyDeprecated",
@@ -257,10 +257,10 @@ func (s *LobbiesV1) CreatePrivateDeprecated(ctx context.Context, security operat
 
 }
 
-// CreatePublic - CreatePublicLobbyDeprecated
+// CreatePublicLobbyDeprecated
 //
 // Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
-func (s *LobbiesV1) CreatePublic(ctx context.Context, security operations.CreatePublicLobbyDeprecatedSecurity, appID *string, region *components.Region, local *bool, opts ...operations.Option) (*string, error) {
+func (s *LobbiesV1) CreatePublicLobbyDeprecated(ctx context.Context, security operations.CreatePublicLobbyDeprecatedSecurity, appID *string, region *components.Region, local *bool, opts ...operations.Option) (*string, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "CreatePublicLobbyDeprecated",
@@ -489,10 +489,10 @@ func (s *LobbiesV1) CreatePublic(ctx context.Context, security operations.Create
 
 }
 
-// ListActive - ListActivePublicLobbiesDeprecatedV1
+// ListActivePublicLobbiesDeprecatedV1
 //
 // Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
-func (s *LobbiesV1) ListActive(ctx context.Context, appID *string, local *bool, region *components.Region, opts ...operations.Option) ([]components.Lobby, error) {
+func (s *LobbiesV1) ListActivePublicLobbiesDeprecatedV1(ctx context.Context, appID *string, local *bool, region *components.Region, opts ...operations.Option) ([]components.Lobby, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "ListActivePublicLobbiesDeprecatedV1",

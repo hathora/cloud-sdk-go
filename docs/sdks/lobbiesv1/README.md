@@ -5,11 +5,11 @@
 
 ### Available Operations
 
-* [~~CreatePrivateDeprecated~~](#createprivatedeprecated) - CreatePrivateLobbyDeprecated :warning: **Deprecated**
-* [~~CreatePublic~~](#createpublic) - CreatePublicLobbyDeprecated :warning: **Deprecated**
-* [~~ListActive~~](#listactive) - ListActivePublicLobbiesDeprecatedV1 :warning: **Deprecated**
+* [~~CreatePrivateLobbyDeprecated~~](#createprivatelobbydeprecated) - CreatePrivateLobbyDeprecated :warning: **Deprecated**
+* [~~CreatePublicLobbyDeprecated~~](#createpubliclobbydeprecated) - CreatePublicLobbyDeprecated :warning: **Deprecated**
+* [~~ListActivePublicLobbiesDeprecatedV1~~](#listactivepubliclobbiesdeprecatedv1) - ListActivePublicLobbiesDeprecatedV1 :warning: **Deprecated**
 
-## ~~CreatePrivateDeprecated~~
+## ~~CreatePrivateLobbyDeprecated~~
 
 CreatePrivateLobbyDeprecated
 
@@ -36,7 +36,7 @@ func main() {
         cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV1.CreatePrivateDeprecated(ctx, operations.CreatePrivateLobbyDeprecatedSecurity{
+    res, err := s.LobbiesV1.CreatePrivateLobbyDeprecated(ctx, operations.CreatePrivateLobbyDeprecatedSecurity{
         PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
     }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
@@ -70,7 +70,7 @@ func main() {
 | errors.APIError                   | 400, 401, 402, 404, 422, 429, 500 | application/json                  |
 | errors.SDKError                   | 4XX, 5XX                          | \*/\*                             |
 
-## ~~CreatePublic~~
+## ~~CreatePublicLobbyDeprecated~~
 
 CreatePublicLobbyDeprecated
 
@@ -97,7 +97,7 @@ func main() {
         cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV1.CreatePublic(ctx, operations.CreatePublicLobbyDeprecatedSecurity{
+    res, err := s.LobbiesV1.CreatePublicLobbyDeprecated(ctx, operations.CreatePublicLobbyDeprecatedSecurity{
         PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
     }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
@@ -131,7 +131,7 @@ func main() {
 | errors.APIError                   | 400, 401, 402, 404, 422, 429, 500 | application/json                  |
 | errors.SDKError                   | 4XX, 5XX                          | \*/\*                             |
 
-## ~~ListActive~~
+## ~~ListActivePublicLobbiesDeprecatedV1~~
 
 ListActivePublicLobbiesDeprecatedV1
 
@@ -156,7 +156,7 @@ func main() {
         cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV1.ListActive(ctx, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
+    res, err := s.LobbiesV1.ListActivePublicLobbiesDeprecatedV1(ctx, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
         log.Fatal(err)
     }

@@ -72,44 +72,44 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 
 // HathoraCloud - Hathora Cloud API: Welcome to the Hathora Cloud API documentation! Learn how to use the Hathora Cloud APIs to build and scale your game servers globally.
 type HathoraCloud struct {
-	Tokens    *Tokens
-	Rooms     *Rooms
-	RoomsV1   *RoomsV1
-	RoomsV2   *RoomsV2
-	Processes *Processes
+	//
+	TokensV1 *TokensV1
+	RoomsV1  *RoomsV1
+	RoomsV2  *RoomsV2
 	// Deprecated. Use [ProcessesV3](https://hathora.dev/api#tag/ProcessesV3).
 	ProcessesV1 *ProcessesV1
 	// Deprecated. Use [ProcessesV3](https://hathora.dev/api#tag/ProcessesV3).
 	ProcessesV2 *ProcessesV2
 	// Operations to get data on active and stopped [processes](https://hathora.dev/docs/concepts/hathora-entities#process).
 	ProcessesV3     *ProcessesV3
-	Organizations   *Organizations
 	OrganizationsV1 *OrganizationsV1
-	Orgs            *Orgs
-	Metrics         *Metrics
-	Management      *Management
-	Logs            *Logs
-	LobbiesV1       *LobbiesV1
-	Lobbies         *Lobbies
-	LobbiesV2       *LobbiesV2
-	Fleets          *Fleets
-	Discovery       *Discovery
+	// Operations to get metrics by [process](https://hathora.dev/docs/concepts/hathora-entities#process). We store 72 hours of metrics data.
+	MetricsV1 *MetricsV1
+	//
+	ManagementV1 *ManagementV1
+	LogsV1       *LogsV1
+	LobbiesV1    *LobbiesV1
+	LobbiesV2    *LobbiesV2
+	LobbiesV3    *LobbiesV3
+	// Operations to manage and view a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
+	FleetsV1 *FleetsV1
+	// Deprecated. Does not include latest Regions (missing Dallas region). Use [DiscoveryV2](https://hathora.dev/api#tag/DiscoveryV2).
+	DiscoveryV1 *DiscoveryV1
 	// Service that allows clients to directly ping all Hathora regions to get latency information
 	DiscoveryV2   *DiscoveryV2
-	Deployments   *Deployments
 	DeploymentsV1 *DeploymentsV1
 	DeploymentsV2 *DeploymentsV2
 	// Operations that allow you configure and manage an application's [build](https://hathora.dev/docs/concepts/hathora-entities#build) at runtime.
 	DeploymentsV3 *DeploymentsV3
-	Builds        *Builds
 	BuildsV1      *BuildsV1
 	BuildsV2      *BuildsV2
 	// Operations that allow you create and manage your [builds](https://hathora.dev/docs/concepts/hathora-entities#build).
 	BuildsV3 *BuildsV3
-	Billing  *Billing
-	Auth     *Auth
-	Apps     *Apps
-	AppsV1   *AppsV1
+	//
+	BillingV1 *BillingV1
+	// Operations that allow you to generate a Hathora-signed [JSON web token (JWT)](https://jwt.io/) for [player authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service).
+	AuthV1 *AuthV1
+	AppsV1 *AppsV1
 	// Operations that allow you manage your [applications](https://hathora.dev/docs/concepts/hathora-entities#application).
 	AppsV2 *AppsV2
 
@@ -222,9 +222,9 @@ func New(opts ...SDKOption) *HathoraCloud {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "0.1.5",
+			SDKVersion:        "0.2.0",
 			GenVersion:        "2.479.3",
-			UserAgent:         "speakeasy-sdk/go 0.1.5 2.479.3 0.0.1 github.com/hathora/cloud-sdk-go",
+			UserAgent:         "speakeasy-sdk/go 0.2.0 2.479.3 0.0.1 github.com/hathora/cloud-sdk-go",
 			Globals:           globals.Globals{},
 			Hooks:             hooks.New(),
 		},
@@ -254,15 +254,11 @@ func New(opts ...SDKOption) *HathoraCloud {
 		sdk.sdkConfiguration.ServerURL = serverURL
 	}
 
-	sdk.Tokens = newTokens(sdk.sdkConfiguration)
-
-	sdk.Rooms = newRooms(sdk.sdkConfiguration)
+	sdk.TokensV1 = newTokensV1(sdk.sdkConfiguration)
 
 	sdk.RoomsV1 = newRoomsV1(sdk.sdkConfiguration)
 
 	sdk.RoomsV2 = newRoomsV2(sdk.sdkConfiguration)
-
-	sdk.Processes = newProcesses(sdk.sdkConfiguration)
 
 	sdk.ProcessesV1 = newProcessesV1(sdk.sdkConfiguration)
 
@@ -270,31 +266,25 @@ func New(opts ...SDKOption) *HathoraCloud {
 
 	sdk.ProcessesV3 = newProcessesV3(sdk.sdkConfiguration)
 
-	sdk.Organizations = newOrganizations(sdk.sdkConfiguration)
-
 	sdk.OrganizationsV1 = newOrganizationsV1(sdk.sdkConfiguration)
 
-	sdk.Orgs = newOrgs(sdk.sdkConfiguration)
+	sdk.MetricsV1 = newMetricsV1(sdk.sdkConfiguration)
 
-	sdk.Metrics = newMetrics(sdk.sdkConfiguration)
+	sdk.ManagementV1 = newManagementV1(sdk.sdkConfiguration)
 
-	sdk.Management = newManagement(sdk.sdkConfiguration)
-
-	sdk.Logs = newLogs(sdk.sdkConfiguration)
+	sdk.LogsV1 = newLogsV1(sdk.sdkConfiguration)
 
 	sdk.LobbiesV1 = newLobbiesV1(sdk.sdkConfiguration)
 
-	sdk.Lobbies = newLobbies(sdk.sdkConfiguration)
-
 	sdk.LobbiesV2 = newLobbiesV2(sdk.sdkConfiguration)
 
-	sdk.Fleets = newFleets(sdk.sdkConfiguration)
+	sdk.LobbiesV3 = newLobbiesV3(sdk.sdkConfiguration)
 
-	sdk.Discovery = newDiscovery(sdk.sdkConfiguration)
+	sdk.FleetsV1 = newFleetsV1(sdk.sdkConfiguration)
+
+	sdk.DiscoveryV1 = newDiscoveryV1(sdk.sdkConfiguration)
 
 	sdk.DiscoveryV2 = newDiscoveryV2(sdk.sdkConfiguration)
-
-	sdk.Deployments = newDeployments(sdk.sdkConfiguration)
 
 	sdk.DeploymentsV1 = newDeploymentsV1(sdk.sdkConfiguration)
 
@@ -302,19 +292,15 @@ func New(opts ...SDKOption) *HathoraCloud {
 
 	sdk.DeploymentsV3 = newDeploymentsV3(sdk.sdkConfiguration)
 
-	sdk.Builds = newBuilds(sdk.sdkConfiguration)
-
 	sdk.BuildsV1 = newBuildsV1(sdk.sdkConfiguration)
 
 	sdk.BuildsV2 = newBuildsV2(sdk.sdkConfiguration)
 
 	sdk.BuildsV3 = newBuildsV3(sdk.sdkConfiguration)
 
-	sdk.Billing = newBilling(sdk.sdkConfiguration)
+	sdk.BillingV1 = newBillingV1(sdk.sdkConfiguration)
 
-	sdk.Auth = newAuth(sdk.sdkConfiguration)
-
-	sdk.Apps = newApps(sdk.sdkConfiguration)
+	sdk.AuthV1 = newAuthV1(sdk.sdkConfiguration)
 
 	sdk.AppsV1 = newAppsV1(sdk.sdkConfiguration)
 

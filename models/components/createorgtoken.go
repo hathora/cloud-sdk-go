@@ -8,27 +8,27 @@ import (
 	"github.com/hathora/cloud-sdk-go/internal/utils"
 )
 
-type Scopes2 string
+type CreateOrgToken2 string
 
 const (
-	Scopes2Admin Scopes2 = "admin"
+	CreateOrgToken2Admin CreateOrgToken2 = "admin"
 )
 
-func (e Scopes2) ToPointer() *Scopes2 {
+func (e CreateOrgToken2) ToPointer() *CreateOrgToken2 {
 	return &e
 }
 
 type CreateOrgTokenScopesType string
 
 const (
-	CreateOrgTokenScopesTypeArrayOfScope CreateOrgTokenScopesType = "arrayOfScope"
-	CreateOrgTokenScopesTypeScopes2      CreateOrgTokenScopesType = "scopes_2"
+	CreateOrgTokenScopesTypeArrayOfScope    CreateOrgTokenScopesType = "arrayOfScope"
+	CreateOrgTokenScopesTypeCreateOrgToken2 CreateOrgTokenScopesType = "CreateOrgToken_2"
 )
 
 // CreateOrgTokenScopes - If not defined, the token has Admin access.
 type CreateOrgTokenScopes struct {
-	ArrayOfScope []Scope  `queryParam:"inline"`
-	Scopes2      *Scopes2 `queryParam:"inline"`
+	ArrayOfScope    []Scope          `queryParam:"inline"`
+	CreateOrgToken2 *CreateOrgToken2 `queryParam:"inline"`
 
 	Type CreateOrgTokenScopesType
 }
@@ -42,12 +42,12 @@ func CreateCreateOrgTokenScopesArrayOfScope(arrayOfScope []Scope) CreateOrgToken
 	}
 }
 
-func CreateCreateOrgTokenScopesScopes2(scopes2 Scopes2) CreateOrgTokenScopes {
-	typ := CreateOrgTokenScopesTypeScopes2
+func CreateCreateOrgTokenScopesCreateOrgToken2(createOrgToken2 CreateOrgToken2) CreateOrgTokenScopes {
+	typ := CreateOrgTokenScopesTypeCreateOrgToken2
 
 	return CreateOrgTokenScopes{
-		Scopes2: &scopes2,
-		Type:    typ,
+		CreateOrgToken2: &createOrgToken2,
+		Type:            typ,
 	}
 }
 
@@ -60,10 +60,10 @@ func (u *CreateOrgTokenScopes) UnmarshalJSON(data []byte) error {
 		return nil
 	}
 
-	var scopes2 Scopes2 = Scopes2("")
-	if err := utils.UnmarshalJSON(data, &scopes2, "", true, true); err == nil {
-		u.Scopes2 = &scopes2
-		u.Type = CreateOrgTokenScopesTypeScopes2
+	var createOrgToken2 CreateOrgToken2 = CreateOrgToken2("")
+	if err := utils.UnmarshalJSON(data, &createOrgToken2, "", true, true); err == nil {
+		u.CreateOrgToken2 = &createOrgToken2
+		u.Type = CreateOrgTokenScopesTypeCreateOrgToken2
 		return nil
 	}
 
@@ -75,8 +75,8 @@ func (u CreateOrgTokenScopes) MarshalJSON() ([]byte, error) {
 		return utils.MarshalJSON(u.ArrayOfScope, "", true)
 	}
 
-	if u.Scopes2 != nil {
-		return utils.MarshalJSON(u.Scopes2, "", true)
+	if u.CreateOrgToken2 != nil {
+		return utils.MarshalJSON(u.CreateOrgToken2, "", true)
 	}
 
 	return nil, errors.New("could not marshal union type CreateOrgTokenScopes: all fields are null")

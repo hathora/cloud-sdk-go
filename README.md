@@ -72,7 +72,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Tokens.GetOrg(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -115,7 +115,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Tokens.GetOrg(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -149,7 +149,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Lobbies.Create(ctx, operations.CreateLobbySecurity{
+	res, err := s.LobbiesV3.CreateLobby(ctx, operations.CreateLobbySecurity{
 		PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
 	}, components.CreateLobbyV3Params{
 		Visibility: components.LobbyVisibilityPrivate,
@@ -173,234 +173,198 @@ func main() {
 <details open>
 <summary>Available methods</summary>
 
-### [Apps](docs/sdks/apps/README.md)
-
-* [~~List~~](docs/sdks/apps/README.md#list) - GetAppsV1Deprecated :warning: **Deprecated**
-* [~~CreateDeprecated~~](docs/sdks/apps/README.md#createdeprecated) - CreateAppV1Deprecated :warning: **Deprecated**
-* [~~Update~~](docs/sdks/apps/README.md#update) - UpdateAppV1Deprecated :warning: **Deprecated**
-* [~~GetInfo~~](docs/sdks/apps/README.md#getinfo) - GetAppInfoV1Deprecated :warning: **Deprecated**
-* [GetAll](docs/sdks/apps/README.md#getall) - GetApps
-* [Create](docs/sdks/apps/README.md#create) - CreateApp
-* [Delete](docs/sdks/apps/README.md#delete) - DeleteApp
-
 ### [~~AppsV1~~](docs/sdks/appsv1/README.md)
 
-* [~~Remove~~](docs/sdks/appsv1/README.md#remove) - DeleteAppV1Deprecated :warning: **Deprecated**
+* [~~GetAppsV1Deprecated~~](docs/sdks/appsv1/README.md#getappsv1deprecated) - GetAppsV1Deprecated :warning: **Deprecated**
+* [~~CreateAppV1Deprecated~~](docs/sdks/appsv1/README.md#createappv1deprecated) - CreateAppV1Deprecated :warning: **Deprecated**
+* [~~UpdateAppV1Deprecated~~](docs/sdks/appsv1/README.md#updateappv1deprecated) - UpdateAppV1Deprecated :warning: **Deprecated**
+* [~~GetAppInfoV1Deprecated~~](docs/sdks/appsv1/README.md#getappinfov1deprecated) - GetAppInfoV1Deprecated :warning: **Deprecated**
+* [~~DeleteAppV1Deprecated~~](docs/sdks/appsv1/README.md#deleteappv1deprecated) - DeleteAppV1Deprecated :warning: **Deprecated**
 
 ### [AppsV2](docs/sdks/appsv2/README.md)
 
-* [Update](docs/sdks/appsv2/README.md#update) - UpdateApp
-* [Get](docs/sdks/appsv2/README.md#get) - GetApp
+* [GetApps](docs/sdks/appsv2/README.md#getapps) - GetApps
+* [CreateApp](docs/sdks/appsv2/README.md#createapp) - CreateApp
+* [GetApp](docs/sdks/appsv2/README.md#getapp) - GetApp
+* [UpdateApp](docs/sdks/appsv2/README.md#updateapp) - UpdateApp
+* [DeleteApp](docs/sdks/appsv2/README.md#deleteapp) - DeleteApp
 
-### [Auth](docs/sdks/auth/README.md)
+### [AuthV1](docs/sdks/authv1/README.md)
 
-* [LoginAnonymous](docs/sdks/auth/README.md#loginanonymous) - LoginAnonymous
-* [LoginWithNickname](docs/sdks/auth/README.md#loginwithnickname) - LoginNickname
-* [LoginGoogle](docs/sdks/auth/README.md#logingoogle) - LoginGoogle
+* [LoginAnonymous](docs/sdks/authv1/README.md#loginanonymous) - LoginAnonymous
+* [LoginNickname](docs/sdks/authv1/README.md#loginnickname) - LoginNickname
+* [LoginGoogle](docs/sdks/authv1/README.md#logingoogle) - LoginGoogle
 
-### [Billing](docs/sdks/billing/README.md)
+### [BillingV1](docs/sdks/billingv1/README.md)
 
-* [Get](docs/sdks/billing/README.md#get) - GetBalance
-* [GetUpcomingItems](docs/sdks/billing/README.md#getupcomingitems) - GetUpcomingInvoiceItems
-* [GetUpcomingTotal](docs/sdks/billing/README.md#getupcomingtotal) - GetUpcomingInvoiceTotal
-* [GetPaymentMethod](docs/sdks/billing/README.md#getpaymentmethod) - GetPaymentMethod
-* [InitStripeCustomerPortalURL](docs/sdks/billing/README.md#initstripecustomerportalurl) - InitStripeCustomerPortalUrl
-* [GetInvoices](docs/sdks/billing/README.md#getinvoices) - GetInvoices
-
-### [Builds](docs/sdks/builds/README.md)
-
-* [~~ListDeprecated~~](docs/sdks/builds/README.md#listdeprecated) - GetBuildsDeprecated :warning: **Deprecated**
-* [~~GetInfo~~](docs/sdks/builds/README.md#getinfo) - GetBuildInfoDeprecated :warning: **Deprecated**
-* [~~DeleteDeprecated~~](docs/sdks/builds/README.md#deletedeprecated) - DeleteBuildDeprecated :warning: **Deprecated**
-* [~~List~~](docs/sdks/builds/README.md#list) - GetBuildsV2Deprecated :warning: **Deprecated**
-* [~~CreateMultipart~~](docs/sdks/builds/README.md#createmultipart) - CreateWithMultipartUploadsV2Deprecated :warning: **Deprecated**
-* [~~Delete~~](docs/sdks/builds/README.md#delete) - DeleteBuildV2Deprecated :warning: **Deprecated**
-* [Get](docs/sdks/builds/README.md#get) - GetBuild
-* [~~Run~~](docs/sdks/builds/README.md#run) - RunBuildDeprecated :warning: **Deprecated**
-
-#### [~~Builds.V2~~](docs/sdks/v2/README.md)
-
-* [~~CreateDeprecated~~](docs/sdks/v2/README.md#createdeprecated) - CreateBuildV2Deprecated :warning: **Deprecated**
-* [~~CreateWithUploadURLDeprecated~~](docs/sdks/v2/README.md#createwithuploadurldeprecated) - CreateBuildWithUploadUrlV2Deprecated :warning: **Deprecated**
-
-#### [Builds.V3](docs/sdks/v3/README.md)
-
-* [Run](docs/sdks/v3/README.md#run) - RunBuild
+* [GetBalance](docs/sdks/billingv1/README.md#getbalance) - GetBalance
+* [GetUpcomingInvoiceItems](docs/sdks/billingv1/README.md#getupcominginvoiceitems) - GetUpcomingInvoiceItems
+* [GetUpcomingInvoiceTotal](docs/sdks/billingv1/README.md#getupcominginvoicetotal) - GetUpcomingInvoiceTotal
+* [GetPaymentMethod](docs/sdks/billingv1/README.md#getpaymentmethod) - GetPaymentMethod
+* [InitStripeCustomerPortalURL](docs/sdks/billingv1/README.md#initstripecustomerportalurl) - InitStripeCustomerPortalUrl
+* [GetInvoices](docs/sdks/billingv1/README.md#getinvoices) - GetInvoices
 
 ### [~~BuildsV1~~](docs/sdks/buildsv1/README.md)
 
-* [~~CreateDeprecated~~](docs/sdks/buildsv1/README.md#createdeprecated) - CreateBuildDeprecated :warning: **Deprecated**
+* [~~GetBuildsDeprecated~~](docs/sdks/buildsv1/README.md#getbuildsdeprecated) - GetBuildsDeprecated :warning: **Deprecated**
+* [~~GetBuildInfoDeprecated~~](docs/sdks/buildsv1/README.md#getbuildinfodeprecated) - GetBuildInfoDeprecated :warning: **Deprecated**
+* [~~CreateBuildDeprecated~~](docs/sdks/buildsv1/README.md#createbuilddeprecated) - CreateBuildDeprecated :warning: **Deprecated**
+* [~~DeleteBuildDeprecated~~](docs/sdks/buildsv1/README.md#deletebuilddeprecated) - DeleteBuildDeprecated :warning: **Deprecated**
+* [~~RunBuildDeprecated~~](docs/sdks/buildsv1/README.md#runbuilddeprecated) - RunBuildDeprecated :warning: **Deprecated**
 
 ### [~~BuildsV2~~](docs/sdks/buildsv2/README.md)
 
-* [~~GetInfo~~](docs/sdks/buildsv2/README.md#getinfo) - GetBuildInfoV2Deprecated :warning: **Deprecated**
-* [~~RunDeprecated~~](docs/sdks/buildsv2/README.md#rundeprecated) - RunBuildV2Deprecated :warning: **Deprecated**
+* [~~GetBuildsV2Deprecated~~](docs/sdks/buildsv2/README.md#getbuildsv2deprecated) - GetBuildsV2Deprecated :warning: **Deprecated**
+* [~~GetBuildInfoV2Deprecated~~](docs/sdks/buildsv2/README.md#getbuildinfov2deprecated) - GetBuildInfoV2Deprecated :warning: **Deprecated**
+* [~~CreateBuildV2Deprecated~~](docs/sdks/buildsv2/README.md#createbuildv2deprecated) - CreateBuildV2Deprecated :warning: **Deprecated**
+* [~~CreateBuildWithUploadURLV2Deprecated~~](docs/sdks/buildsv2/README.md#createbuildwithuploadurlv2deprecated) - CreateBuildWithUploadUrlV2Deprecated :warning: **Deprecated**
+* [~~CreateWithMultipartUploadsV2Deprecated~~](docs/sdks/buildsv2/README.md#createwithmultipartuploadsv2deprecated) - CreateWithMultipartUploadsV2Deprecated :warning: **Deprecated**
+* [~~DeleteBuildV2Deprecated~~](docs/sdks/buildsv2/README.md#deletebuildv2deprecated) - DeleteBuildV2Deprecated :warning: **Deprecated**
+* [~~RunBuildV2Deprecated~~](docs/sdks/buildsv2/README.md#runbuildv2deprecated) - RunBuildV2Deprecated :warning: **Deprecated**
 
 ### [BuildsV3](docs/sdks/buildsv3/README.md)
 
-* [List](docs/sdks/buildsv3/README.md#list) - GetBuilds
-* [Create](docs/sdks/buildsv3/README.md#create) - CreateBuild
-* [Remove](docs/sdks/buildsv3/README.md#remove) - DeleteBuild
-
-### [Deployments](docs/sdks/deployments/README.md)
-
-* [~~GetAll~~](docs/sdks/deployments/README.md#getall) - GetDeploymentsV1Deprecated :warning: **Deprecated**
-* [~~Create~~](docs/sdks/deployments/README.md#create) - CreateDeploymentV1Deprecated :warning: **Deprecated**
-* [~~GetInfo~~](docs/sdks/deployments/README.md#getinfo) - GetDeploymentInfoV2Deprecated :warning: **Deprecated**
-* [~~CreateDeprecated~~](docs/sdks/deployments/README.md#createdeprecated) - CreateDeploymentV2Deprecated :warning: **Deprecated**
-* [List](docs/sdks/deployments/README.md#list) - GetDeployments
-* [GetLatest](docs/sdks/deployments/README.md#getlatest) - GetLatestDeployment
-* [Get](docs/sdks/deployments/README.md#get) - GetDeployment
+* [GetBuilds](docs/sdks/buildsv3/README.md#getbuilds) - GetBuilds
+* [CreateBuild](docs/sdks/buildsv3/README.md#createbuild) - CreateBuild
+* [GetBuild](docs/sdks/buildsv3/README.md#getbuild) - GetBuild
+* [DeleteBuild](docs/sdks/buildsv3/README.md#deletebuild) - DeleteBuild
+* [RunBuild](docs/sdks/buildsv3/README.md#runbuild) - RunBuild
 
 ### [~~DeploymentsV1~~](docs/sdks/deploymentsv1/README.md)
 
-* [~~GetLatestDeprecated~~](docs/sdks/deploymentsv1/README.md#getlatestdeprecated) - GetLatestDeploymentV1Deprecated :warning: **Deprecated**
-* [~~GetInfo~~](docs/sdks/deploymentsv1/README.md#getinfo) - GetDeploymentInfoV1Deprecated :warning: **Deprecated**
+* [~~GetDeploymentsV1Deprecated~~](docs/sdks/deploymentsv1/README.md#getdeploymentsv1deprecated) - GetDeploymentsV1Deprecated :warning: **Deprecated**
+* [~~GetLatestDeploymentV1Deprecated~~](docs/sdks/deploymentsv1/README.md#getlatestdeploymentv1deprecated) - GetLatestDeploymentV1Deprecated :warning: **Deprecated**
+* [~~GetDeploymentInfoV1Deprecated~~](docs/sdks/deploymentsv1/README.md#getdeploymentinfov1deprecated) - GetDeploymentInfoV1Deprecated :warning: **Deprecated**
+* [~~CreateDeploymentV1Deprecated~~](docs/sdks/deploymentsv1/README.md#createdeploymentv1deprecated) - CreateDeploymentV1Deprecated :warning: **Deprecated**
 
 ### [~~DeploymentsV2~~](docs/sdks/deploymentsv2/README.md)
 
-* [~~ListDeprecated~~](docs/sdks/deploymentsv2/README.md#listdeprecated) - GetDeploymentsV2Deprecated :warning: **Deprecated**
-* [~~GetLatestDeprecated~~](docs/sdks/deploymentsv2/README.md#getlatestdeprecated) - GetLatestDeploymentV2Deprecated :warning: **Deprecated**
+* [~~GetDeploymentsV2Deprecated~~](docs/sdks/deploymentsv2/README.md#getdeploymentsv2deprecated) - GetDeploymentsV2Deprecated :warning: **Deprecated**
+* [~~GetLatestDeploymentV2Deprecated~~](docs/sdks/deploymentsv2/README.md#getlatestdeploymentv2deprecated) - GetLatestDeploymentV2Deprecated :warning: **Deprecated**
+* [~~GetDeploymentInfoV2Deprecated~~](docs/sdks/deploymentsv2/README.md#getdeploymentinfov2deprecated) - GetDeploymentInfoV2Deprecated :warning: **Deprecated**
+* [~~CreateDeploymentV2Deprecated~~](docs/sdks/deploymentsv2/README.md#createdeploymentv2deprecated) - CreateDeploymentV2Deprecated :warning: **Deprecated**
 
 ### [DeploymentsV3](docs/sdks/deploymentsv3/README.md)
 
-* [Create](docs/sdks/deploymentsv3/README.md#create) - CreateDeployment
+* [GetDeployments](docs/sdks/deploymentsv3/README.md#getdeployments) - GetDeployments
+* [CreateDeployment](docs/sdks/deploymentsv3/README.md#createdeployment) - CreateDeployment
+* [GetLatestDeployment](docs/sdks/deploymentsv3/README.md#getlatestdeployment) - GetLatestDeployment
+* [GetDeployment](docs/sdks/deploymentsv3/README.md#getdeployment) - GetDeployment
 
-### [~~Discovery~~](docs/sdks/discovery/README.md)
+### [~~DiscoveryV1~~](docs/sdks/discoveryv1/README.md)
 
-* [~~GetPingEndpoints~~](docs/sdks/discovery/README.md#getpingendpoints) - GetPingServiceEndpointsDeprecated :warning: **Deprecated**
+* [~~GetPingServiceEndpointsDeprecated~~](docs/sdks/discoveryv1/README.md#getpingserviceendpointsdeprecated) - GetPingServiceEndpointsDeprecated :warning: **Deprecated**
 
 ### [DiscoveryV2](docs/sdks/discoveryv2/README.md)
 
-* [GetPingEndpoints](docs/sdks/discoveryv2/README.md#getpingendpoints) - GetPingServiceEndpoints
+* [GetPingServiceEndpoints](docs/sdks/discoveryv2/README.md#getpingserviceendpoints) - GetPingServiceEndpoints
 
-### [Fleets](docs/sdks/fleets/README.md)
+### [FleetsV1](docs/sdks/fleetsv1/README.md)
 
-* [GetAll](docs/sdks/fleets/README.md#getall) - GetFleets
-* [GetRegion](docs/sdks/fleets/README.md#getregion) - GetFleetRegion
-* [UpdateRegion](docs/sdks/fleets/README.md#updateregion) - UpdateFleetRegion
-* [GetMetrics](docs/sdks/fleets/README.md#getmetrics) - GetFleetMetrics
+* [GetFleets](docs/sdks/fleetsv1/README.md#getfleets) - GetFleets
+* [GetFleetRegion](docs/sdks/fleetsv1/README.md#getfleetregion) - GetFleetRegion
+* [UpdateFleetRegion](docs/sdks/fleetsv1/README.md#updatefleetregion) - UpdateFleetRegion
+* [GetFleetMetrics](docs/sdks/fleetsv1/README.md#getfleetmetrics) - GetFleetMetrics
 
-
-### [Lobbies](docs/sdks/lobbies/README.md)
-
-* [~~CreatePrivate~~](docs/sdks/lobbies/README.md#createprivate) - CreatePrivateLobby :warning: **Deprecated**
-* [~~CreatePublic~~](docs/sdks/lobbies/README.md#createpublic) - CreatePublicLobby :warning: **Deprecated**
-* [~~CreateLocal~~](docs/sdks/lobbies/README.md#createlocal) - CreateLocalLobby :warning: **Deprecated**
-* [~~ListActivePublic~~](docs/sdks/lobbies/README.md#listactivepublic) - ListActivePublicLobbiesDeprecatedV2 :warning: **Deprecated**
-* [~~SetState~~](docs/sdks/lobbies/README.md#setstate) - SetLobbyState :warning: **Deprecated**
-* [Create](docs/sdks/lobbies/README.md#create) - CreateLobby
-* [ListPublic](docs/sdks/lobbies/README.md#listpublic) - ListActivePublicLobbies
-* [GetInfoByRoomID](docs/sdks/lobbies/README.md#getinfobyroomid) - GetLobbyInfoByRoomId
-* [GetByShortCode](docs/sdks/lobbies/README.md#getbyshortcode) - GetLobbyInfoByShortCode
 
 ### [~~LobbiesV1~~](docs/sdks/lobbiesv1/README.md)
 
-* [~~CreatePrivateDeprecated~~](docs/sdks/lobbiesv1/README.md#createprivatedeprecated) - CreatePrivateLobbyDeprecated :warning: **Deprecated**
-* [~~CreatePublic~~](docs/sdks/lobbiesv1/README.md#createpublic) - CreatePublicLobbyDeprecated :warning: **Deprecated**
-* [~~ListActive~~](docs/sdks/lobbiesv1/README.md#listactive) - ListActivePublicLobbiesDeprecatedV1 :warning: **Deprecated**
+* [~~CreatePrivateLobbyDeprecated~~](docs/sdks/lobbiesv1/README.md#createprivatelobbydeprecated) - CreatePrivateLobbyDeprecated :warning: **Deprecated**
+* [~~CreatePublicLobbyDeprecated~~](docs/sdks/lobbiesv1/README.md#createpubliclobbydeprecated) - CreatePublicLobbyDeprecated :warning: **Deprecated**
+* [~~ListActivePublicLobbiesDeprecatedV1~~](docs/sdks/lobbiesv1/README.md#listactivepubliclobbiesdeprecatedv1) - ListActivePublicLobbiesDeprecatedV1 :warning: **Deprecated**
 
 ### [~~LobbiesV2~~](docs/sdks/lobbiesv2/README.md)
 
-* [~~Create~~](docs/sdks/lobbiesv2/README.md#create) - CreateLobbyDeprecated :warning: **Deprecated**
-* [~~GetInfo~~](docs/sdks/lobbiesv2/README.md#getinfo) - GetLobbyInfo :warning: **Deprecated**
+* [~~CreatePrivateLobby~~](docs/sdks/lobbiesv2/README.md#createprivatelobby) - CreatePrivateLobby :warning: **Deprecated**
+* [~~CreatePublicLobby~~](docs/sdks/lobbiesv2/README.md#createpubliclobby) - CreatePublicLobby :warning: **Deprecated**
+* [~~CreateLocalLobby~~](docs/sdks/lobbiesv2/README.md#createlocallobby) - CreateLocalLobby :warning: **Deprecated**
+* [~~CreateLobbyDeprecated~~](docs/sdks/lobbiesv2/README.md#createlobbydeprecated) - CreateLobbyDeprecated :warning: **Deprecated**
+* [~~ListActivePublicLobbiesDeprecatedV2~~](docs/sdks/lobbiesv2/README.md#listactivepubliclobbiesdeprecatedv2) - ListActivePublicLobbiesDeprecatedV2 :warning: **Deprecated**
+* [~~GetLobbyInfo~~](docs/sdks/lobbiesv2/README.md#getlobbyinfo) - GetLobbyInfo :warning: **Deprecated**
+* [~~SetLobbyState~~](docs/sdks/lobbiesv2/README.md#setlobbystate) - SetLobbyState :warning: **Deprecated**
 
-### [Logs](docs/sdks/logs/README.md)
+### [LobbiesV3](docs/sdks/lobbiesv3/README.md)
 
-* [GetForProcess](docs/sdks/logs/README.md#getforprocess) - GetLogsForProcess
-* [Download](docs/sdks/logs/README.md#download) - DownloadLogForProcess
+* [CreateLobby](docs/sdks/lobbiesv3/README.md#createlobby) - CreateLobby
+* [ListActivePublicLobbies](docs/sdks/lobbiesv3/README.md#listactivepubliclobbies) - ListActivePublicLobbies
+* [GetLobbyInfoByRoomID](docs/sdks/lobbiesv3/README.md#getlobbyinfobyroomid) - GetLobbyInfoByRoomId
+* [GetLobbyInfoByShortCode](docs/sdks/lobbiesv3/README.md#getlobbyinfobyshortcode) - GetLobbyInfoByShortCode
 
-### [Management](docs/sdks/management/README.md)
+### [LogsV1](docs/sdks/logsv1/README.md)
 
-* [SendVerificationEmail](docs/sdks/management/README.md#sendverificationemail) - SendVerificationEmail
+* [GetLogsForProcess](docs/sdks/logsv1/README.md#getlogsforprocess) - GetLogsForProcess
+* [DownloadLogForProcess](docs/sdks/logsv1/README.md#downloadlogforprocess) - DownloadLogForProcess
 
-### [~~Metrics~~](docs/sdks/metrics/README.md)
+### [ManagementV1](docs/sdks/managementv1/README.md)
 
-* [~~GetProcessMetrics~~](docs/sdks/metrics/README.md#getprocessmetrics) - GetMetricsDeprecated :warning: **Deprecated**
+* [SendVerificationEmail](docs/sdks/managementv1/README.md#sendverificationemail) - SendVerificationEmail
 
-### [Organizations](docs/sdks/organizations/README.md)
+### [~~MetricsV1~~](docs/sdks/metricsv1/README.md)
 
-* [Get](docs/sdks/organizations/README.md#get) - GetOrgs
-* [GetUserPendingInvites](docs/sdks/organizations/README.md#getuserpendinginvites) - GetUserPendingInvites
-* [GetMembers](docs/sdks/organizations/README.md#getmembers) - GetOrgMembers
-* [InviteUser](docs/sdks/organizations/README.md#inviteuser) - InviteUser
-* [RescindInvite](docs/sdks/organizations/README.md#rescindinvite) - RescindInvite
-* [GetUsageLimits](docs/sdks/organizations/README.md#getusagelimits) - GetUsageLimits
-
-#### [Organizations.Invites](docs/sdks/invites/README.md)
-
-* [Update](docs/sdks/invites/README.md#update) - UpdateUserInvite
-* [Reject](docs/sdks/invites/README.md#reject) - RejectInvite
+* [~~GetMetricsDeprecated~~](docs/sdks/metricsv1/README.md#getmetricsdeprecated) - GetMetricsDeprecated :warning: **Deprecated**
 
 ### [OrganizationsV1](docs/sdks/organizationsv1/README.md)
 
-* [GetPendingInvites](docs/sdks/organizationsv1/README.md#getpendinginvites) - GetOrgPendingInvites
-
-### [Orgs](docs/sdks/orgs/README.md)
-
-* [AcceptInvite](docs/sdks/orgs/README.md#acceptinvite) - AcceptInvite
-
-### [Processes](docs/sdks/processes/README.md)
-
-* [~~ListRunning~~](docs/sdks/processes/README.md#listrunning) - GetRunningProcesses :warning: **Deprecated**
-* [~~GetStopped~~](docs/sdks/processes/README.md#getstopped) - GetStoppedProcesses :warning: **Deprecated**
-* [~~GetInfo~~](docs/sdks/processes/README.md#getinfo) - GetProcessInfoV2Deprecated :warning: **Deprecated**
-* [~~ListLatest~~](docs/sdks/processes/README.md#listlatest) - GetLatestProcessesV2Deprecated :warning: **Deprecated**
-* [~~Stop~~](docs/sdks/processes/README.md#stop) - StopProcessV2Deprecated :warning: **Deprecated**
-* [GetLatest](docs/sdks/processes/README.md#getlatest) - GetLatestProcesses
-* [Count](docs/sdks/processes/README.md#count) - GetProcessesCountExperimental
-* [Create](docs/sdks/processes/README.md#create) - CreateProcess
-* [Get](docs/sdks/processes/README.md#get) - GetProcess
-
-#### [Processes.Metrics](docs/sdks/hathoracloudmetrics/README.md)
-
-* [Get](docs/sdks/hathoracloudmetrics/README.md#get) - GetProcessMetrics
+* [GetOrgs](docs/sdks/organizationsv1/README.md#getorgs) - GetOrgs
+* [GetUserPendingInvites](docs/sdks/organizationsv1/README.md#getuserpendinginvites) - GetUserPendingInvites
+* [GetOrgMembers](docs/sdks/organizationsv1/README.md#getorgmembers) - GetOrgMembers
+* [InviteUser](docs/sdks/organizationsv1/README.md#inviteuser) - InviteUser
+* [UpdateUserInvite](docs/sdks/organizationsv1/README.md#updateuserinvite) - UpdateUserInvite
+* [RescindInvite](docs/sdks/organizationsv1/README.md#rescindinvite) - RescindInvite
+* [GetOrgPendingInvites](docs/sdks/organizationsv1/README.md#getorgpendinginvites) - GetOrgPendingInvites
+* [AcceptInvite](docs/sdks/organizationsv1/README.md#acceptinvite) - AcceptInvite
+* [RejectInvite](docs/sdks/organizationsv1/README.md#rejectinvite) - RejectInvite
+* [GetUsageLimits](docs/sdks/organizationsv1/README.md#getusagelimits) - GetUsageLimits
 
 ### [~~ProcessesV1~~](docs/sdks/processesv1/README.md)
 
-* [~~GetInfo~~](docs/sdks/processesv1/README.md#getinfo) - GetProcessInfoDeprecated :warning: **Deprecated**
+* [~~GetRunningProcesses~~](docs/sdks/processesv1/README.md#getrunningprocesses) - GetRunningProcesses :warning: **Deprecated**
+* [~~GetStoppedProcesses~~](docs/sdks/processesv1/README.md#getstoppedprocesses) - GetStoppedProcesses :warning: **Deprecated**
+* [~~GetProcessInfoDeprecated~~](docs/sdks/processesv1/README.md#getprocessinfodeprecated) - GetProcessInfoDeprecated :warning: **Deprecated**
 
 ### [~~ProcessesV2~~](docs/sdks/processesv2/README.md)
 
-* [~~CountProcesses~~](docs/sdks/processesv2/README.md#countprocesses) - GetProcessesCountExperimentalV2Deprecated :warning: **Deprecated**
-* [~~CreateProcess~~](docs/sdks/processesv2/README.md#createprocess) - CreateProcessV2Deprecated :warning: **Deprecated**
+* [~~GetProcessInfoV2Deprecated~~](docs/sdks/processesv2/README.md#getprocessinfov2deprecated) - GetProcessInfoV2Deprecated :warning: **Deprecated**
+* [~~GetLatestProcessesV2Deprecated~~](docs/sdks/processesv2/README.md#getlatestprocessesv2deprecated) - GetLatestProcessesV2Deprecated :warning: **Deprecated**
+* [~~GetProcessesCountExperimentalV2Deprecated~~](docs/sdks/processesv2/README.md#getprocessescountexperimentalv2deprecated) - GetProcessesCountExperimentalV2Deprecated :warning: **Deprecated**
+* [~~StopProcessV2Deprecated~~](docs/sdks/processesv2/README.md#stopprocessv2deprecated) - StopProcessV2Deprecated :warning: **Deprecated**
+* [~~CreateProcessV2Deprecated~~](docs/sdks/processesv2/README.md#createprocessv2deprecated) - CreateProcessV2Deprecated :warning: **Deprecated**
 
 ### [ProcessesV3](docs/sdks/processesv3/README.md)
 
-* [Stop](docs/sdks/processesv3/README.md#stop) - StopProcess
-
-### [Rooms](docs/sdks/rooms/README.md)
-
-* [~~CreateDeprecated~~](docs/sdks/rooms/README.md#createdeprecated) - CreateRoomDeprecated :warning: **Deprecated**
-* [~~GetInfo~~](docs/sdks/rooms/README.md#getinfo) - GetRoomInfoDeprecated :warning: **Deprecated**
-* [~~ListInactiveForProcess~~](docs/sdks/rooms/README.md#listinactiveforprocess) - GetInactiveRoomsForProcessDeprecated :warning: **Deprecated**
-* [~~Suspend~~](docs/sdks/rooms/README.md#suspend) - SuspendRoomDeprecated :warning: **Deprecated**
-* [~~GetConnectionInfoDeprecated~~](docs/sdks/rooms/README.md#getconnectioninfodeprecated) - GetConnectionInfoDeprecated :warning: **Deprecated**
-* [Create](docs/sdks/rooms/README.md#create) - CreateRoom
-* [GetActiveForProcess](docs/sdks/rooms/README.md#getactiveforprocess) - GetActiveRoomsForProcess
-* [Destroy](docs/sdks/rooms/README.md#destroy) - DestroyRoom
-* [GetConnectionInfo](docs/sdks/rooms/README.md#getconnectioninfo) - GetConnectionInfo
-* [UpdateConfig](docs/sdks/rooms/README.md#updateconfig) - UpdateRoomConfig
-
-#### [Rooms.Inactive](docs/sdks/inactive/README.md)
-
-* [ListForProcess](docs/sdks/inactive/README.md#listforprocess) - GetInactiveRoomsForProcess
+* [GetLatestProcesses](docs/sdks/processesv3/README.md#getlatestprocesses) - GetLatestProcesses
+* [GetProcessesCountExperimental](docs/sdks/processesv3/README.md#getprocessescountexperimental) - GetProcessesCountExperimental
+* [CreateProcess](docs/sdks/processesv3/README.md#createprocess) - CreateProcess
+* [GetProcess](docs/sdks/processesv3/README.md#getprocess) - GetProcess
+* [StopProcess](docs/sdks/processesv3/README.md#stopprocess) - StopProcess
+* [GetProcessMetrics](docs/sdks/processesv3/README.md#getprocessmetrics) - GetProcessMetrics
 
 ### [~~RoomsV1~~](docs/sdks/roomsv1/README.md)
 
-* [~~GetActiveForProcessDeprecated~~](docs/sdks/roomsv1/README.md#getactiveforprocessdeprecated) - GetActiveRoomsForProcessDeprecated :warning: **Deprecated**
-* [~~DestroyDeprecated~~](docs/sdks/roomsv1/README.md#destroydeprecated) - DestroyRoomDeprecated :warning: **Deprecated**
+* [~~CreateRoomDeprecated~~](docs/sdks/roomsv1/README.md#createroomdeprecated) - CreateRoomDeprecated :warning: **Deprecated**
+* [~~GetRoomInfoDeprecated~~](docs/sdks/roomsv1/README.md#getroominfodeprecated) - GetRoomInfoDeprecated :warning: **Deprecated**
+* [~~GetActiveRoomsForProcessDeprecated~~](docs/sdks/roomsv1/README.md#getactiveroomsforprocessdeprecated) - GetActiveRoomsForProcessDeprecated :warning: **Deprecated**
+* [~~GetInactiveRoomsForProcessDeprecated~~](docs/sdks/roomsv1/README.md#getinactiveroomsforprocessdeprecated) - GetInactiveRoomsForProcessDeprecated :warning: **Deprecated**
+* [~~DestroyRoomDeprecated~~](docs/sdks/roomsv1/README.md#destroyroomdeprecated) - DestroyRoomDeprecated :warning: **Deprecated**
+* [~~SuspendRoomDeprecated~~](docs/sdks/roomsv1/README.md#suspendroomdeprecated) - SuspendRoomDeprecated :warning: **Deprecated**
+* [~~GetConnectionInfoDeprecated~~](docs/sdks/roomsv1/README.md#getconnectioninfodeprecated) - GetConnectionInfoDeprecated :warning: **Deprecated**
 
 ### [RoomsV2](docs/sdks/roomsv2/README.md)
 
-* [GetInfo](docs/sdks/roomsv2/README.md#getinfo) - GetRoomInfo
-* [~~Suspend~~](docs/sdks/roomsv2/README.md#suspend) - SuspendRoomV2Deprecated :warning: **Deprecated**
+* [CreateRoom](docs/sdks/roomsv2/README.md#createroom) - CreateRoom
+* [GetRoomInfo](docs/sdks/roomsv2/README.md#getroominfo) - GetRoomInfo
+* [GetActiveRoomsForProcess](docs/sdks/roomsv2/README.md#getactiveroomsforprocess) - GetActiveRoomsForProcess
+* [GetInactiveRoomsForProcess](docs/sdks/roomsv2/README.md#getinactiveroomsforprocess) - GetInactiveRoomsForProcess
+* [DestroyRoom](docs/sdks/roomsv2/README.md#destroyroom) - DestroyRoom
+* [~~SuspendRoomV2Deprecated~~](docs/sdks/roomsv2/README.md#suspendroomv2deprecated) - SuspendRoomV2Deprecated :warning: **Deprecated**
+* [GetConnectionInfo](docs/sdks/roomsv2/README.md#getconnectioninfo) - GetConnectionInfo
+* [UpdateRoomConfig](docs/sdks/roomsv2/README.md#updateroomconfig) - UpdateRoomConfig
 
-### [Tokens](docs/sdks/tokens/README.md)
+### [TokensV1](docs/sdks/tokensv1/README.md)
 
-* [GetOrg](docs/sdks/tokens/README.md#getorg) - GetOrgTokens
-* [Create](docs/sdks/tokens/README.md#create) - CreateOrgToken
-* [RevokeOrg](docs/sdks/tokens/README.md#revokeorg) - RevokeOrgToken
+* [GetOrgTokens](docs/sdks/tokensv1/README.md#getorgtokens) - GetOrgTokens
+* [CreateOrgToken](docs/sdks/tokensv1/README.md#createorgtoken) - CreateOrgToken
+* [RevokeOrgToken](docs/sdks/tokensv1/README.md#revokeorgtoken) - RevokeOrgToken
 
 </details>
 <!-- End Available Resources and Operations [operations] -->
@@ -410,7 +374,7 @@ func main() {
 
 Certain parameters are configured globally. These parameters may be set on the SDK client instance itself during initialization. When configured as an option during SDK initialization, These global values will be used as defaults on the operations that use them. When such operations are called, there is a place in each to override the global value, if needed.
 
-For example, you can set `orgId` to `"org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"` at SDK initialization and then you do not have to pass the same value on calls to operations like `GetOrg`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
+For example, you can set `orgId` to `"org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"` at SDK initialization and then you do not have to pass the same value on calls to operations like `GetOrgTokens`. But if you want to do so you may, which will locally override the global setting. See the example code below for a demonstration.
 
 
 ### Available Globals
@@ -444,7 +408,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Tokens.GetOrg(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -483,7 +447,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Tokens.GetOrg(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", operations.WithRetries(
+	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", operations.WithRetries(
 		retry.Config{
 			Strategy: "backoff",
 			Backoff: &retry.BackoffStrategy{
@@ -536,7 +500,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Tokens.GetOrg(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -555,7 +519,7 @@ Handling errors in this SDK should largely match your expectations. All operatio
 
 By Default, an API error will return `errors.SDKError`. When custom error responses are specified for an operation, the SDK may also return their associated error. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation.
 
-For example, the `GetOrg` function may return the following errors:
+For example, the `GetOrgTokens` function may return the following errors:
 
 | Error Type      | Status Code   | Content Type     |
 | --------------- | ------------- | ---------------- |
@@ -585,7 +549,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Tokens.GetOrg(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
 	if err != nil {
 
 		var e *errors.APIError
@@ -639,7 +603,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Tokens.GetOrg(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -673,7 +637,7 @@ func main() {
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
-	res, err := s.Tokens.GetOrg(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
+	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
 	if err != nil {
 		log.Fatal(err)
 	}

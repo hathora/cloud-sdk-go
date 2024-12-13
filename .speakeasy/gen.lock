@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 5af7bf685c60fc82cd97eb1cd382b888
+  docChecksum: b005fbf8a7cb5e6e0dc05d62b2fa2e3b
   docVersion: 0.0.1
   speakeasyVersion: 1.455.3
   generationVersion: 2.479.3
-  releaseVersion: 0.1.5
-  configChecksum: 0fcd14ded250007039af26dd8ce122f8
+  releaseVersion: 0.2.0
+  configChecksum: 2c272eab9d3eb0a1fa30006a08bfb69e
 features:
   go:
     additionalDependencies: 0.1.0
@@ -26,7 +26,6 @@ features:
     groups: 2.81.2
     intellisenseMarkdownSupport: 0.1.0
     methodSecurity: 2.82.2
-    nameOverrides: 2.81.2
     nullables: 0.1.0
     openEnums: 0.1.0
     responseFormat: 0.1.2
@@ -247,20 +246,17 @@ generatedFiles:
   - /models/operations/updateuserinvite.go
   - CONTRIBUTING.md
   - USAGE.md
-  - apps.go
   - appsv1.go
   - appsv2.go
-  - auth.go
-  - billing.go
-  - builds.go
+  - authv1.go
+  - billingv1.go
   - buildsv1.go
   - buildsv2.go
   - buildsv3.go
-  - deployments.go
   - deploymentsv1.go
   - deploymentsv2.go
   - deploymentsv3.go
-  - discovery.go
+  - discoveryv1.go
   - discoveryv2.go
   - docs/models/components/achpaymentmethod.md
   - docs/models/components/activeconnectioninfo.md
@@ -296,6 +292,7 @@ generatedFiles:
   - docs/models/components/createlobbyv3params.md
   - docs/models/components/createmultipartbuildparams.md
   - docs/models/components/createorgtoken.md
+  - docs/models/components/createorgtoken2.md
   - docs/models/components/createorgtokenscopes.md
   - docs/models/components/createroomparams.md
   - docs/models/components/createuserinvite.md
@@ -379,7 +376,6 @@ generatedFiles:
   - docs/models/components/roomwithoutallocationscurrentallocation.md
   - docs/models/components/scope.md
   - docs/models/components/scopes.md
-  - docs/models/components/scopes2.md
   - docs/models/components/security.md
   - docs/models/components/setlobbystateparams.md
   - docs/models/components/startingconnectioninfo.md
@@ -617,50 +613,36 @@ generatedFiles:
   - docs/models/operations/updateroomconfigglobals.md
   - docs/models/operations/updateroomconfigrequest.md
   - docs/models/operations/updateuserinviterequest.md
-  - docs/sdks/apps/README.md
   - docs/sdks/appsv1/README.md
   - docs/sdks/appsv2/README.md
-  - docs/sdks/auth/README.md
-  - docs/sdks/billing/README.md
-  - docs/sdks/builds/README.md
+  - docs/sdks/authv1/README.md
+  - docs/sdks/billingv1/README.md
   - docs/sdks/buildsv1/README.md
   - docs/sdks/buildsv2/README.md
   - docs/sdks/buildsv3/README.md
-  - docs/sdks/deployments/README.md
   - docs/sdks/deploymentsv1/README.md
   - docs/sdks/deploymentsv2/README.md
   - docs/sdks/deploymentsv3/README.md
-  - docs/sdks/discovery/README.md
+  - docs/sdks/discoveryv1/README.md
   - docs/sdks/discoveryv2/README.md
-  - docs/sdks/fleets/README.md
+  - docs/sdks/fleetsv1/README.md
   - docs/sdks/hathoracloud/README.md
-  - docs/sdks/hathoracloudmetrics/README.md
-  - docs/sdks/inactive/README.md
-  - docs/sdks/invites/README.md
-  - docs/sdks/lobbies/README.md
   - docs/sdks/lobbiesv1/README.md
   - docs/sdks/lobbiesv2/README.md
-  - docs/sdks/logs/README.md
-  - docs/sdks/management/README.md
-  - docs/sdks/metrics/README.md
-  - docs/sdks/organizations/README.md
+  - docs/sdks/lobbiesv3/README.md
+  - docs/sdks/logsv1/README.md
+  - docs/sdks/managementv1/README.md
+  - docs/sdks/metricsv1/README.md
   - docs/sdks/organizationsv1/README.md
-  - docs/sdks/orgs/README.md
-  - docs/sdks/processes/README.md
   - docs/sdks/processesv1/README.md
   - docs/sdks/processesv2/README.md
   - docs/sdks/processesv3/README.md
-  - docs/sdks/rooms/README.md
   - docs/sdks/roomsv1/README.md
   - docs/sdks/roomsv2/README.md
-  - docs/sdks/tokens/README.md
-  - docs/sdks/v2/README.md
-  - docs/sdks/v3/README.md
-  - fleets.go
+  - docs/sdks/tokensv1/README.md
+  - fleetsv1.go
   - go.mod
   - hathoracloud.go
-  - hathoracloudmetrics.go
-  - inactive.go
   - internal/globals/globals.go
   - internal/hooks/hooks.go
   - internal/utils/contenttype.go
@@ -674,34 +656,27 @@ generatedFiles:
   - internal/utils/retries.go
   - internal/utils/security.go
   - internal/utils/utils.go
-  - invites.go
-  - lobbies.go
   - lobbiesv1.go
   - lobbiesv2.go
-  - logs.go
-  - management.go
-  - metrics.go
+  - lobbiesv3.go
+  - logsv1.go
+  - managementv1.go
+  - metricsv1.go
   - models/errors/sdkerror.go
   - models/operations/options.go
-  - organizations.go
   - organizationsv1.go
-  - orgs.go
-  - processes.go
   - processesv1.go
   - processesv2.go
   - processesv3.go
   - retry/config.go
-  - rooms.go
   - roomsv1.go
   - roomsv2.go
-  - tokens.go
+  - tokensv1.go
   - types/bigint.go
   - types/date.go
   - types/datetime.go
   - types/decimal.go
   - types/pointers.go
-  - v2.go
-  - v3.go
 examples:
   GetOrgTokens:
     speakeasy-default-get-org-tokens:

@@ -11,9 +11,9 @@ If not defined, the token has Admin access.
 createOrgTokenScopes := components.CreateCreateOrgTokenScopesArrayOfScope([]components.Scope{/* values here */})
 ```
 
-### Scopes2
+### CreateOrgToken2
 
 ```go
-createOrgTokenScopes := components.CreateCreateOrgTokenScopesScopes2(components.Scopes2{/* values here */})
+createOrgTokenScopes := components.CreateCreateOrgTokenScopesCreateOrgToken2(components.CreateOrgToken2{/* values here */})
 ```
 
