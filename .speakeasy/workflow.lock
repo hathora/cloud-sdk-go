@@ -2,7 +2,7 @@ speakeasyVersion: 1.455.3
 sources:
     HathoraCloud-OAS:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:6e9c7f03f192048156cf612a6de3616c96e0bbb46c1d34c14253e7a4eb7d08bc
+        sourceRevisionDigest: sha256:6fb6d7b0c25b069029cb4b4f5b8179fba1ec3ddf3d2665fbc37770ef821d7c3f
         sourceBlobDigest: sha256:ea3a8b68869fbc1c7cb02fe3a71eeb6b4247f09e4ba2e86b1d187cd3b21b1ed0
         tags:
             - latest
@@ -11,10 +11,10 @@ targets:
     hathora-cloud:
         source: HathoraCloud-OAS
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:6e9c7f03f192048156cf612a6de3616c96e0bbb46c1d34c14253e7a4eb7d08bc
+        sourceRevisionDigest: sha256:6fb6d7b0c25b069029cb4b4f5b8179fba1ec3ddf3d2665fbc37770ef821d7c3f
         sourceBlobDigest: sha256:ea3a8b68869fbc1c7cb02fe3a71eeb6b4247f09e4ba2e86b1d187cd3b21b1ed0
         codeSamplesNamespace: my-source-go-code-samples
-        codeSamplesRevisionDigest: sha256:88b13a5e16d195b5fe25ce1328e95432b66eb9279791c34bccf795947ca01de0
+        codeSamplesRevisionDigest: sha256:0b9305aab2107264f099acbdb44b0c863bcb8e267490d4bae702e5dcc8029a2a
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
