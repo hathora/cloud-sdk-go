@@ -1,18 +1,16 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    HathoraCloud-OAS:
-        inputs:
-            - location: registry.speakeasyapi.dev/hathora/hathora/my-source:main
-        overlays:
-            - location: .speakeasy/speakeasy-modifications-overlay.yaml
-        registry:
-            location: registry.speakeasyapi.dev/hathora/hathora/my-source
+  my-source:
+    inputs:
+      - location: registry.speakeasyapi.dev/hathora/hathora/my-source:main
+    registry:
+      location: registry.speakeasyapi.dev/hathora/hathora/my-source
 targets:
-    hathora-cloud:
-        target: go
-        source: HathoraCloud-OAS
-        codeSamples:
-            registry:
-                location: registry.speakeasyapi.dev/hathora/hathora/my-source-go-code-samples
-            blocking: false
+  hathora-cloud:
+    target: go
+    source: my-source
+    codeSamples:
+      registry:
+        location: registry.speakeasyapi.dev/hathora/hathora/my-source-go-code-samples
+      blocking: false
