@@ -27,17 +27,17 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.OrganizationsV1.GetOrgs(ctx)
@@ -79,17 +79,17 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.OrganizationsV1.GetUserPendingInvites(ctx)
@@ -131,17 +131,17 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.OrganizationsV1.GetOrgMembers(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -184,18 +184,18 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.OrganizationsV1.InviteUser(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", components.CreateUserInvite{
@@ -241,18 +241,18 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.OrganizationsV1.UpdateUserInvite(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", components.UpdateUserInvite{
@@ -301,18 +301,18 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     err := s.OrganizationsV1.RescindInvite(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", components.RescindUserInvite{
@@ -355,17 +355,17 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.OrganizationsV1.GetOrgPendingInvites(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -408,17 +408,17 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     err := s.OrganizationsV1.AcceptInvite(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -458,17 +458,17 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     err := s.OrganizationsV1.RejectInvite(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -508,20 +508,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.OrganizationsV1.GetUsageLimits(ctx, cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    res, err := s.OrganizationsV1.GetUsageLimits(ctx, hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }

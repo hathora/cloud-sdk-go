@@ -44,7 +44,7 @@ Hathora Cloud API: Welcome to the Hathora Cloud API documentation! Learn how to 
 
 To add the SDK as a dependency to your project:
 ```bash
-go get github.com/hathora/cloud-sdk-go
+go get HathoraCloud
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -57,18 +57,18 @@ go get github.com/hathora/cloud-sdk-go
 package main
 
 import (
+	hathoracloud "HathoraCloud"
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+	s := hathoracloud.New(
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -99,18 +99,18 @@ You can configure it using the `WithSecurity` option when initializing the SDK c
 package main
 
 import (
+	hathoracloud "HathoraCloud"
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+	s := hathoracloud.New(
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -131,28 +131,28 @@ Some operations in this SDK require the security scheme to be specified at the r
 package main
 
 import (
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
+	"HathoraCloud/models/operations"
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
-	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+	s := hathoracloud.New(
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.LobbiesV3.CreateLobby(ctx, operations.CreateLobbySecurity{
 		PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
 	}, components.CreateLobbyV3Params{
 		Visibility: components.LobbyVisibilityPrivate,
-		RoomConfig: cloudsdkgo.String("{\"name\":\"my-room\"}"),
+		RoomConfig: hathoracloud.String("{\"name\":\"my-room\"}"),
 		Region:     components.RegionSeattle,
-	}, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), cloudsdkgo.String("LFG4"), cloudsdkgo.String("2swovpy1fnunu"))
+	}, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("LFG4"), hathoracloud.String("2swovpy1fnunu"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -389,18 +389,18 @@ The following global parameters are available.
 package main
 
 import (
+	hathoracloud "HathoraCloud"
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+	s := hathoracloud.New(
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -425,9 +425,9 @@ To change the default retry strategy for a single API call, simply provide a `re
 package main
 
 import (
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/retry"
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/retry"
 	"log"
 	"models/operations"
 )
@@ -435,10 +435,10 @@ import (
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+	s := hathoracloud.New(
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", operations.WithRetries(
@@ -467,17 +467,17 @@ If you'd like to override the default retry strategy for all operations that sup
 package main
 
 import (
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/retry"
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/retry"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithRetryConfig(
+	s := hathoracloud.New(
+		hathoracloud.WithRetryConfig(
 			retry.Config{
 				Strategy: "backoff",
 				Backoff: &retry.BackoffStrategy{
@@ -488,9 +488,9 @@ func main() {
 				},
 				RetryConnectionErrors: false,
 			}),
-		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -525,20 +525,20 @@ For example, the `GetOrgTokens` function may return the following errors:
 package main
 
 import (
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/errors"
 	"context"
 	"errors"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/errors"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+	s := hathoracloud.New(
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -579,19 +579,19 @@ You can override the default server globally using the `WithServerIndex(serverIn
 package main
 
 import (
+	hathoracloud "HathoraCloud"
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithServerIndex(1),
-		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+	s := hathoracloud.New(
+		hathoracloud.WithServerIndex(1),
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -612,19 +612,19 @@ The default server can also be overridden globally using the `WithServerURL(serv
 package main
 
 import (
+	hathoracloud "HathoraCloud"
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
 func main() {
 	ctx := context.Background()
 
-	s := cloudsdkgo.New(
-		cloudsdkgo.WithServerURL("https://api.hathora.dev"),
-		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+	s := hathoracloud.New(
+		hathoracloud.WithServerURL("https://api.hathora.dev"),
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")

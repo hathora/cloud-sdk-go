@@ -3,9 +3,9 @@
 package operations
 
 import (
+	"HathoraCloud/internal/utils"
+	"HathoraCloud/retry"
 	"errors"
-	"github.com/hathora/cloud-sdk-go/internal/utils"
-	"github.com/hathora/cloud-sdk-go/retry"
 	"time"
 )
 

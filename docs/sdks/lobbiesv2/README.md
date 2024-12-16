@@ -26,18 +26,18 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
-	"github.com/hathora/cloud-sdk-go/models/operations"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
+	"HathoraCloud/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.LobbiesV2.CreatePrivateLobby(ctx, operations.CreatePrivateLobbySecurity{
@@ -45,7 +45,7 @@ func main() {
     }, operations.CreatePrivateLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionLondon,
-    }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), cloudsdkgo.String("2swovpy1fnunu"))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -90,18 +90,18 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
-	"github.com/hathora/cloud-sdk-go/models/operations"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
+	"HathoraCloud/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.LobbiesV2.CreatePublicLobby(ctx, operations.CreatePublicLobbySecurity{
@@ -109,7 +109,7 @@ func main() {
     }, operations.CreatePublicLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionJohannesburg,
-    }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), cloudsdkgo.String("2swovpy1fnunu"))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -154,18 +154,18 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
-	"github.com/hathora/cloud-sdk-go/models/operations"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
+	"HathoraCloud/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.LobbiesV2.CreateLocalLobby(ctx, operations.CreateLocalLobbySecurity{
@@ -173,7 +173,7 @@ func main() {
     }, operations.CreateLocalLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionJohannesburg,
-    }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), cloudsdkgo.String("2swovpy1fnunu"))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -218,18 +218,18 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
-	"github.com/hathora/cloud-sdk-go/models/operations"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
+	"HathoraCloud/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.LobbiesV2.CreateLobbyDeprecated(ctx, operations.CreateLobbyDeprecatedSecurity{
@@ -238,7 +238,7 @@ func main() {
         Visibility: components.LobbyVisibilityPrivate,
         InitialConfig: "<value>",
         Region: components.RegionSaoPaulo,
-    }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), cloudsdkgo.String("2swovpy1fnunu"))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -283,19 +283,19 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV2.ListActivePublicLobbiesDeprecatedV2(ctx, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil)
+    res, err := s.LobbiesV2.ListActivePublicLobbiesDeprecatedV2(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -338,19 +338,19 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV2.GetLobbyInfo(ctx, "2swovpy1fnunu", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.LobbiesV2.GetLobbyInfo(ctx, "2swovpy1fnunu", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }
@@ -393,23 +393,23 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.LobbiesV2.SetLobbyState(ctx, "2swovpy1fnunu", components.SetLobbyStateParams{
         State: "South Dakota",
-    }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }

@@ -3,15 +3,15 @@ id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
   docChecksum: b005fbf8a7cb5e6e0dc05d62b2fa2e3b
   docVersion: 0.0.1
-  speakeasyVersion: 1.455.3
-  generationVersion: 2.479.3
-  releaseVersion: 0.2.1
-  configChecksum: 3ec4b350428aa8cef90add4691e37dff
+  speakeasyVersion: 1.455.6
+  generationVersion: 2.479.7
+  releaseVersion: 0.2.0
+  configChecksum: 108f1156c1869d2e4f9f36ba5b966af7
 features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.6
-    core: 3.6.0
+    core: 3.6.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.1
     devContainers: 2.90.0

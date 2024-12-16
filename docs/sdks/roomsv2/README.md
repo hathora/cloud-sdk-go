@@ -25,28 +25,28 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.RoomsV2.CreateRoom(ctx, components.CreateRoomParams{
-        DeploymentID: cloudsdkgo.String("dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
+        DeploymentID: hathoracloud.String("dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
         ClientIPs: []string{
             "123.123.123.123",
         },
-        RoomConfig: cloudsdkgo.String("{\"name\":\"my-room\"}"),
+        RoomConfig: hathoracloud.String("{\"name\":\"my-room\"}"),
         Region: components.RegionDallas,
-    }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), cloudsdkgo.String("2swovpy1fnunu"))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -88,20 +88,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.RoomsV2.GetRoomInfo(ctx, "2swovpy1fnunu", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.RoomsV2.GetRoomInfo(ctx, "2swovpy1fnunu", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }
@@ -142,20 +142,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.RoomsV2.GetActiveRoomsForProcess(ctx, "cbfcddd2-0006-43ae-996c-995fff7bed2e", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.RoomsV2.GetActiveRoomsForProcess(ctx, "cbfcddd2-0006-43ae-996c-995fff7bed2e", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }
@@ -196,20 +196,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.RoomsV2.GetInactiveRoomsForProcess(ctx, "cbfcddd2-0006-43ae-996c-995fff7bed2e", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.RoomsV2.GetInactiveRoomsForProcess(ctx, "cbfcddd2-0006-43ae-996c-995fff7bed2e", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }
@@ -250,20 +250,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    err := s.RoomsV2.DestroyRoom(ctx, "2swovpy1fnunu", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    err := s.RoomsV2.DestroyRoom(ctx, "2swovpy1fnunu", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }
@@ -303,20 +303,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    err := s.RoomsV2.SuspendRoomV2Deprecated(ctx, "2swovpy1fnunu", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    err := s.RoomsV2.SuspendRoomV2Deprecated(ctx, "2swovpy1fnunu", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }
@@ -354,19 +354,19 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.RoomsV2.GetConnectionInfo(ctx, "2swovpy1fnunu", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.RoomsV2.GetConnectionInfo(ctx, "2swovpy1fnunu", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }
@@ -407,23 +407,23 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     err := s.RoomsV2.UpdateRoomConfig(ctx, "2swovpy1fnunu", components.UpdateRoomConfigParams{
         RoomConfig: "{\"name\":\"my-room\"}",
-    }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }

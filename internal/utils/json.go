@@ -13,7 +13,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/hathora/cloud-sdk-go/types"
+	"HathoraCloud/types"
 
 	"github.com/ericlagergren/decimal"
 )

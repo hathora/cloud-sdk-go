@@ -21,27 +21,27 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
-	"github.com/hathora/cloud-sdk-go/models/operations"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
+	"HathoraCloud/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.LobbiesV3.CreateLobby(ctx, operations.CreateLobbySecurity{
         PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, components.CreateLobbyV3Params{
         Visibility: components.LobbyVisibilityPrivate,
-        RoomConfig: cloudsdkgo.String("{\"name\":\"my-room\"}"),
+        RoomConfig: hathoracloud.String("{\"name\":\"my-room\"}"),
         Region: components.RegionSeattle,
-    }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), cloudsdkgo.String("LFG4"), cloudsdkgo.String("2swovpy1fnunu"))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("LFG4"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -85,19 +85,19 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV3.ListActivePublicLobbies(ctx, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil)
+    res, err := s.LobbiesV3.ListActivePublicLobbies(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -138,19 +138,19 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV3.GetLobbyInfoByRoomID(ctx, "2swovpy1fnunu", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.LobbiesV3.GetLobbyInfoByRoomID(ctx, "2swovpy1fnunu", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }
@@ -191,19 +191,19 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV3.GetLobbyInfoByShortCode(ctx, "LFG4", cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.LobbiesV3.GetLobbyInfoByShortCode(ctx, "LFG4", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }

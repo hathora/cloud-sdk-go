@@ -3,8 +3,8 @@
 package operations
 
 import (
-	"github.com/hathora/cloud-sdk-go/internal/utils"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	"HathoraCloud/internal/utils"
+	"HathoraCloud/models/components"
 )
 
 type CreatePublicLobbyDeprecatedGlobals struct {

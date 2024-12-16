@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"github.com/hathora/cloud-sdk-go/models/components"
+	"HathoraCloud/models/components"
 )
 
 type CreateDeploymentV1DeprecatedGlobals struct {

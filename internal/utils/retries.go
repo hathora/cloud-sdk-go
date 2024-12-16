@@ -3,10 +3,10 @@
 package utils
 
 import (
+	"HathoraCloud/retry"
 	"context"
 	"errors"
 	"fmt"
-	"github.com/hathora/cloud-sdk-go/retry"
 	"math"
 	"math/rand"
 	"net/http"

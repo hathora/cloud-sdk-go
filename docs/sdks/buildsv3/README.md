@@ -24,20 +24,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.BuildsV3.GetBuilds(ctx, cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    res, err := s.BuildsV3.GetBuilds(ctx, hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }
@@ -77,25 +77,25 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.BuildsV3.CreateBuild(ctx, components.CreateMultipartBuildParams{
-        BuildID: cloudsdkgo.String("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
-        BuildTag: cloudsdkgo.String("0.1.14-14c793"),
+        BuildID: hathoracloud.String("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
+        BuildTag: hathoracloud.String("0.1.14-14c793"),
         BuildSizeInBytes: 5387.84,
-    }, cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    }, hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }
@@ -136,20 +136,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.BuildsV3.GetBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    res, err := s.BuildsV3.GetBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }
@@ -192,20 +192,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.BuildsV3.DeleteBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    res, err := s.BuildsV3.DeleteBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }
@@ -246,20 +246,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.BuildsV3.RunBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    res, err := s.BuildsV3.RunBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }

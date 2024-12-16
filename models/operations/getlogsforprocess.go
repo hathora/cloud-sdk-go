@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"github.com/hathora/cloud-sdk-go/internal/utils"
+	"HathoraCloud/internal/utils"
 )
 
 type GetLogsForProcessGlobals struct {

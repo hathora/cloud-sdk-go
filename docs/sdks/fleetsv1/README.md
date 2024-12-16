@@ -23,20 +23,20 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
+	hathoracloud "HathoraCloud"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.FleetsV1.GetFleets(ctx, cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    res, err := s.FleetsV1.GetFleets(ctx, hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }
@@ -76,21 +76,21 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.FleetsV1.GetFleetRegion(ctx, "<id>", components.RegionSaoPaulo, cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    res, err := s.FleetsV1.GetFleetRegion(ctx, "<id>", components.RegionSaoPaulo, hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }
@@ -132,23 +132,23 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     err := s.FleetsV1.UpdateFleetRegion(ctx, "<id>", components.RegionSingapore, components.FleetRegionConfig{
         CloudMinVcpus: 511402,
-    }, cloudsdkgo.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
+    }, hathoracloud.String("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"))
     if err != nil {
         log.Fatal(err)
     }
@@ -188,19 +188,19 @@ package main
 
 import(
 	"context"
-	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"github.com/hathora/cloud-sdk-go/models/components"
-	"github.com/hathora/cloud-sdk-go/models/operations"
+	hathoracloud "HathoraCloud"
+	"HathoraCloud/models/components"
+	"HathoraCloud/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
     res, err := s.FleetsV1.GetFleetMetrics(ctx, operations.GetFleetMetricsRequest{

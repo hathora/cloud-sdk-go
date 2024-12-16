@@ -3,9 +3,9 @@
 package components
 
 import (
+	"HathoraCloud/internal/utils"
 	"errors"
 	"fmt"
-	"github.com/hathora/cloud-sdk-go/internal/utils"
 )
 
 type CreateUserInviteScopesType string

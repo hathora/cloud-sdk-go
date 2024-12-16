@@ -14,7 +14,7 @@ func (o *RunBuildV2DeprecatedGlobals) GetAppID() *string {
 }
 
 type RunBuildV2DeprecatedFile struct {
-	FileName string `multipartForm:"name=file"`
+	FileName string `multipartForm:"name=fileName"`
 	// This field accepts []byte data or io.Reader implementations, such as *os.File.
 	Content any `multipartForm:"content"`
 }
@@ -34,7 +34,7 @@ func (o *RunBuildV2DeprecatedFile) GetContent() any {
 }
 
 type RunBuildV2DeprecatedRequestBody struct {
-	File *RunBuildV2DeprecatedFile `multipartForm:"file"`
+	File *RunBuildV2DeprecatedFile `multipartForm:"file,name=file"`
 }
 
 func (o *RunBuildV2DeprecatedRequestBody) GetFile() *RunBuildV2DeprecatedFile {
