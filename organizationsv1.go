@@ -3,15 +3,15 @@
 package hathoracloud
 
 import (
-	"HathoraCloud/internal/hooks"
-	"HathoraCloud/internal/utils"
-	"HathoraCloud/models/components"
-	"HathoraCloud/models/errors"
-	"HathoraCloud/models/operations"
-	"HathoraCloud/retry"
 	"bytes"
 	"context"
 	"fmt"
+	"hathoracloud/internal/hooks"
+	"hathoracloud/internal/utils"
+	"hathoracloud/models/components"
+	"hathoracloud/models/errors"
+	"hathoracloud/models/operations"
+	"hathoracloud/retry"
 	"net/http"
 	"net/url"
 )
@@ -47,7 +47,12 @@ func (s *OrganizationsV1) GetOrgs(ctx context.Context, opts ...operations.Option
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/orgs/v1")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -255,7 +260,12 @@ func (s *OrganizationsV1) GetUserPendingInvites(ctx context.Context, opts ...ope
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/orgs/v1/user/invites/pending")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -465,7 +475,12 @@ func (s *OrganizationsV1) GetOrgMembers(ctx context.Context, orgID string, opts 
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/members", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -676,7 +691,12 @@ func (s *OrganizationsV1) InviteUser(ctx context.Context, orgID string, createUs
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -895,7 +915,12 @@ func (s *OrganizationsV1) UpdateUserInvite(ctx context.Context, orgID string, up
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1114,7 +1139,12 @@ func (s *OrganizationsV1) RescindInvite(ctx context.Context, orgID string, resci
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites/rescind", request, nil)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
@@ -1315,7 +1345,12 @@ func (s *OrganizationsV1) GetOrgPendingInvites(ctx context.Context, orgID string
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites/pending", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -1525,7 +1560,12 @@ func (s *OrganizationsV1) AcceptInvite(ctx context.Context, orgID string, opts .
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites/accept", request, nil)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
@@ -1716,7 +1756,12 @@ func (s *OrganizationsV1) RejectInvite(ctx context.Context, orgID string, opts .
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites/reject", request, nil)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
@@ -1911,7 +1956,12 @@ func (s *OrganizationsV1) GetUsageLimits(ctx context.Context, orgID *string, opt
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := url.JoinPath(baseURL, "/orgs/v1/metadata/usageLimits")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)

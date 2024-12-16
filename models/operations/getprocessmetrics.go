@@ -3,8 +3,8 @@
 package operations
 
 import (
-	"HathoraCloud/internal/utils"
-	"HathoraCloud/models/components"
+	"hathoracloud/internal/utils"
+	"hathoracloud/models/components"
 )
 
 type GetProcessMetricsGlobals struct {

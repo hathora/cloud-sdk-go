@@ -3,15 +3,15 @@
 package hathoracloud
 
 import (
-	"HathoraCloud/internal/hooks"
-	"HathoraCloud/internal/utils"
-	"HathoraCloud/models/components"
-	"HathoraCloud/models/errors"
-	"HathoraCloud/models/operations"
-	"HathoraCloud/retry"
 	"bytes"
 	"context"
 	"fmt"
+	"hathoracloud/internal/hooks"
+	"hathoracloud/internal/utils"
+	"hathoracloud/models/components"
+	"hathoracloud/models/errors"
+	"hathoracloud/models/operations"
+	"hathoracloud/retry"
 	"net/http"
 )
 
@@ -56,7 +56,12 @@ func (s *DeploymentsV1) GetDeploymentsV1Deprecated(ctx context.Context, appID *s
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v1/{appId}/list", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -275,7 +280,12 @@ func (s *DeploymentsV1) GetLatestDeploymentV1Deprecated(ctx context.Context, app
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v1/{appId}/latest", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -497,7 +507,12 @@ func (s *DeploymentsV1) GetDeploymentInfoV1Deprecated(ctx context.Context, deplo
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v1/{appId}/info/{deploymentId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -718,7 +733,12 @@ func (s *DeploymentsV1) CreateDeploymentV1Deprecated(ctx context.Context, buildI
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v1/{appId}/create/{buildId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)

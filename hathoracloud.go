@@ -3,13 +3,13 @@
 package hathoracloud
 
 import (
-	"HathoraCloud/internal/globals"
-	"HathoraCloud/internal/hooks"
-	"HathoraCloud/internal/utils"
-	"HathoraCloud/models/components"
-	"HathoraCloud/retry"
 	"context"
 	"fmt"
+	"hathoracloud/internal/globals"
+	"hathoracloud/internal/hooks"
+	"hathoracloud/internal/utils"
+	"hathoracloud/models/components"
+	"hathoracloud/retry"
 	"net/http"
 	"time"
 )
@@ -204,9 +204,9 @@ func New(opts ...SDKOption) *HathoraCloud {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "0.2.0",
-			GenVersion:        "2.479.7",
-			UserAgent:         "speakeasy-sdk/go 0.2.0 2.479.7 0.0.1 HathoraCloud",
+			SDKVersion:        "0.2.1",
+			GenVersion:        "2.480.1",
+			UserAgent:         "speakeasy-sdk/go 0.2.1 2.480.1 0.0.1 hathoracloud",
 			Globals:           globals.Globals{},
 			Hooks:             hooks.New(),
 		},

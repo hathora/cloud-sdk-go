@@ -3,15 +3,15 @@
 package hathoracloud
 
 import (
-	"HathoraCloud/internal/hooks"
-	"HathoraCloud/internal/utils"
-	"HathoraCloud/models/components"
-	"HathoraCloud/models/errors"
-	"HathoraCloud/models/operations"
-	"HathoraCloud/retry"
 	"bytes"
 	"context"
 	"fmt"
+	"hathoracloud/internal/hooks"
+	"hathoracloud/internal/utils"
+	"hathoracloud/models/components"
+	"hathoracloud/models/errors"
+	"hathoracloud/models/operations"
+	"hathoracloud/retry"
 	"net/http"
 )
 
@@ -57,7 +57,12 @@ func (s *RoomsV1) CreateRoomDeprecated(ctx context.Context, createRoomParams com
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/create", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -294,7 +299,12 @@ func (s *RoomsV1) GetRoomInfoDeprecated(ctx context.Context, roomID string, appI
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/info/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -515,7 +525,12 @@ func (s *RoomsV1) GetActiveRoomsForProcessDeprecated(ctx context.Context, proces
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/list/{processId}/active", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -734,7 +749,12 @@ func (s *RoomsV1) GetInactiveRoomsForProcessDeprecated(ctx context.Context, proc
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/list/{processId}/inactive", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -953,7 +973,12 @@ func (s *RoomsV1) DestroyRoomDeprecated(ctx context.Context, roomID string, appI
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/destroy/{roomId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
@@ -1153,7 +1178,12 @@ func (s *RoomsV1) SuspendRoomDeprecated(ctx context.Context, roomID string, appI
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/suspend/{roomId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
@@ -1353,7 +1383,12 @@ func (s *RoomsV1) GetConnectionInfoDeprecated(ctx context.Context, roomID string
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/connectioninfo/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)

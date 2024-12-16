@@ -3,15 +3,15 @@
 package hathoracloud
 
 import (
-	"HathoraCloud/internal/hooks"
-	"HathoraCloud/internal/utils"
-	"HathoraCloud/models/components"
-	"HathoraCloud/models/errors"
-	"HathoraCloud/models/operations"
-	"HathoraCloud/retry"
 	"bytes"
 	"context"
 	"fmt"
+	"hathoracloud/internal/hooks"
+	"hathoracloud/internal/utils"
+	"hathoracloud/models/components"
+	"hathoracloud/models/errors"
+	"hathoracloud/models/operations"
+	"hathoracloud/retry"
 	"net/http"
 )
 
@@ -57,7 +57,12 @@ func (s *ProcessesV3) GetLatestProcesses(ctx context.Context, appID *string, sta
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/latest", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -282,7 +287,12 @@ func (s *ProcessesV3) GetProcessesCountExperimental(ctx context.Context, appID *
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/count", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -506,7 +516,12 @@ func (s *ProcessesV3) CreateProcess(ctx context.Context, region components.Regio
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/regions/{region}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -730,7 +745,12 @@ func (s *ProcessesV3) GetProcess(ctx context.Context, processID string, appID *s
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/{processId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
@@ -948,7 +968,12 @@ func (s *ProcessesV3) StopProcess(ctx context.Context, processID string, appID *
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/{processId}/stop", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
@@ -1141,7 +1166,12 @@ func (s *ProcessesV3) GetProcessMetrics(ctx context.Context, request operations.
 		}
 	}
 
-	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	var baseURL string
+	if o.ServerURL == nil {
+		baseURL = utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
+	} else {
+		baseURL = *o.ServerURL
+	}
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/process/{processId}/metrics", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)

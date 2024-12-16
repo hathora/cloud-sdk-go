@@ -1,4 +1,4 @@
-module HathoraCloud
+module hathoracloud
 
 go 1.20
 

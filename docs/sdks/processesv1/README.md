@@ -24,7 +24,7 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
+	"hathoracloud"
 	"log"
 )
 
@@ -80,7 +80,7 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
+	"hathoracloud"
 	"log"
 )
 
@@ -136,7 +136,7 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
+	"hathoracloud"
 	"log"
 )
 

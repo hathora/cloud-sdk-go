@@ -3,7 +3,7 @@
 package components
 
 import (
-	"HathoraCloud/internal/utils"
+	"hathoracloud/internal/utils"
 	"time"
 )
 

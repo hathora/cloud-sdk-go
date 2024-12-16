@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
-	"HathoraCloud/models/operations"
+	"hathoracloud"
+	"hathoracloud/models/operations"
 	"log"
 )
 

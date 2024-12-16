@@ -3,8 +3,8 @@
 package main
 
 import (
-	hathoracloud "HathoraCloud"
 	"context"
+	"hathoracloud"
 	"log"
 )
 

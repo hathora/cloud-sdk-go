@@ -13,7 +13,7 @@ import (
 	"time"
 	"unsafe"
 
-	"HathoraCloud/types"
+	"hathoracloud/types"
 
 	"github.com/ericlagergren/decimal"
 )

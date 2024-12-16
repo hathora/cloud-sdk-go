@@ -3,9 +3,9 @@
 package components
 
 import (
-	"HathoraCloud/internal/utils"
 	"errors"
 	"fmt"
+	"hathoracloud/internal/utils"
 )
 
 type ConnectionInfoType string

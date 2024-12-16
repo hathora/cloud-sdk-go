@@ -22,7 +22,7 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
+	"hathoracloud"
 	"log"
 )
 

@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"HathoraCloud/models/components"
+	"hathoracloud/models/components"
 )
 
 type CreateProcessV2DeprecatedGlobals struct {

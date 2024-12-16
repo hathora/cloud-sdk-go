@@ -24,7 +24,7 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
+	"hathoracloud"
 	"log"
 )
 
@@ -77,8 +77,8 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
-	"HathoraCloud/models/components"
+	"hathoracloud"
+	"hathoracloud/models/components"
 	"log"
 )
 
@@ -135,7 +135,7 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
+	"hathoracloud"
 	"log"
 )
 
@@ -188,8 +188,8 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
-	"HathoraCloud/models/components"
+	"hathoracloud"
+	"hathoracloud/models/components"
 	"log"
 )
 
@@ -246,7 +246,7 @@ package main
 
 import(
 	"context"
-	hathoracloud "HathoraCloud"
+	"hathoracloud"
 	"log"
 )
 

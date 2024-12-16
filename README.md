@@ -44,7 +44,7 @@ Hathora Cloud API: Welcome to the Hathora Cloud API documentation! Learn how to 
 
 To add the SDK as a dependency to your project:
 ```bash
-go get HathoraCloud
+go get hathoracloud
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -57,8 +57,8 @@ go get HathoraCloud
 package main
 
 import (
-	hathoracloud "HathoraCloud"
 	"context"
+	"hathoracloud"
 	"log"
 )
 
@@ -99,8 +99,8 @@ You can configure it using the `WithSecurity` option when initializing the SDK c
 package main
 
 import (
-	hathoracloud "HathoraCloud"
 	"context"
+	"hathoracloud"
 	"log"
 )
 
@@ -131,10 +131,10 @@ Some operations in this SDK require the security scheme to be specified at the r
 package main
 
 import (
-	hathoracloud "HathoraCloud"
-	"HathoraCloud/models/components"
-	"HathoraCloud/models/operations"
 	"context"
+	"hathoracloud"
+	"hathoracloud/models/components"
+	"hathoracloud/models/operations"
 	"log"
 )
 
@@ -389,8 +389,8 @@ The following global parameters are available.
 package main
 
 import (
-	hathoracloud "HathoraCloud"
 	"context"
+	"hathoracloud"
 	"log"
 )
 
@@ -425,9 +425,9 @@ To change the default retry strategy for a single API call, simply provide a `re
 package main
 
 import (
-	hathoracloud "HathoraCloud"
-	"HathoraCloud/retry"
 	"context"
+	"hathoracloud"
+	"hathoracloud/retry"
 	"log"
 	"models/operations"
 )
@@ -467,9 +467,9 @@ If you'd like to override the default retry strategy for all operations that sup
 package main
 
 import (
-	hathoracloud "HathoraCloud"
-	"HathoraCloud/retry"
 	"context"
+	"hathoracloud"
+	"hathoracloud/retry"
 	"log"
 )
 
@@ -525,10 +525,10 @@ For example, the `GetOrgTokens` function may return the following errors:
 package main
 
 import (
-	hathoracloud "HathoraCloud"
-	"HathoraCloud/models/errors"
 	"context"
 	"errors"
+	"hathoracloud"
+	"hathoracloud/models/errors"
 	"log"
 )
 
@@ -579,8 +579,8 @@ You can override the default server globally using the `WithServerIndex(serverIn
 package main
 
 import (
-	hathoracloud "HathoraCloud"
 	"context"
+	"hathoracloud"
 	"log"
 )
 
@@ -612,8 +612,8 @@ The default server can also be overridden globally using the `WithServerURL(serv
 package main
 
 import (
-	hathoracloud "HathoraCloud"
 	"context"
+	"hathoracloud"
 	"log"
 )
 
