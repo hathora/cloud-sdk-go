@@ -60,14 +60,13 @@ import (
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
-	"os"
 )
 
 func main() {
 	ctx := context.Background()
 
 	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
@@ -91,9 +90,9 @@ func main() {
 
 This SDK supports the following security scheme globally:
 
-| Name              | Type | Scheme      | Environment Variable        |
-| ----------------- | ---- | ----------- | --------------------------- |
-| `HathoraDevToken` | http | HTTP Bearer | `HATHORA_HATHORA_DEV_TOKEN` |
+| Name              | Type | Scheme      |
+| ----------------- | ---- | ----------- |
+| `HathoraDevToken` | http | HTTP Bearer |
 
 You can configure it using the `WithSecurity` option when initializing the SDK client instance. For example:
 ```go
@@ -103,14 +102,13 @@ import (
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
-	"os"
 )
 
 func main() {
 	ctx := context.Background()
 
 	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
@@ -138,7 +136,6 @@ import (
 	"github.com/hathora/cloud-sdk-go/models/components"
 	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
-	"os"
 )
 
 func main() {
@@ -150,7 +147,7 @@ func main() {
 	)
 
 	res, err := s.LobbiesV3.CreateLobby(ctx, operations.CreateLobbySecurity{
-		PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
+		PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
 	}, components.CreateLobbyV3Params{
 		Visibility: components.LobbyVisibilityPrivate,
 		RoomConfig: cloudsdkgo.String("{\"name\":\"my-room\"}"),
@@ -380,12 +377,11 @@ For example, you can set `orgId` to `"org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"`
 ### Available Globals
 
 The following global parameters are available.
-Global parameters can also be set via environment variable.
 
-| Name  | Type   | Description          | Environment    |
-| ----- | ------ | -------------------- | -------------- |
-| OrgID | string | The OrgID parameter. | HATHORA_ORG_ID |
-| AppID | string | The AppID parameter. | HATHORA_APP_ID |
+| Name  | Type   | Description          |
+| ----- | ------ | -------------------- |
+| OrgID | string | The OrgID parameter. |
+| AppID | string | The AppID parameter. |
 
 ### Example
 
@@ -396,14 +392,13 @@ import (
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
-	"os"
 )
 
 func main() {
 	ctx := context.Background()
 
 	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
@@ -435,14 +430,13 @@ import (
 	"github.com/hathora/cloud-sdk-go/retry"
 	"log"
 	"models/operations"
-	"os"
 )
 
 func main() {
 	ctx := context.Background()
 
 	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
@@ -477,7 +471,6 @@ import (
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"github.com/hathora/cloud-sdk-go/retry"
 	"log"
-	"os"
 )
 
 func main() {
@@ -495,7 +488,7 @@ func main() {
 				},
 				RetryConnectionErrors: false,
 			}),
-		cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
@@ -537,14 +530,13 @@ import (
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"github.com/hathora/cloud-sdk-go/models/errors"
 	"log"
-	"os"
 )
 
 func main() {
 	ctx := context.Background()
 
 	s := cloudsdkgo.New(
-		cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
@@ -590,7 +582,6 @@ import (
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
-	"os"
 )
 
 func main() {
@@ -598,7 +589,7 @@ func main() {
 
 	s := cloudsdkgo.New(
 		cloudsdkgo.WithServerIndex(1),
-		cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
@@ -624,7 +615,6 @@ import (
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"log"
-	"os"
 )
 
 func main() {
@@ -632,7 +622,7 @@ func main() {
 
 	s := cloudsdkgo.New(
 		cloudsdkgo.WithServerURL("https://api.hathora.dev"),
-		cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+		cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)

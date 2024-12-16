@@ -18,7 +18,7 @@ func (o *CreatePublicLobbyGlobals) GetAppID() *string {
 }
 
 type CreatePublicLobbySecurity struct {
-	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization,env=hathora_player_auth"`
+	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
 func (o *CreatePublicLobbySecurity) GetPlayerAuth() string {

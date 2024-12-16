@@ -3,7 +3,7 @@
 package components
 
 type Security struct {
-	HathoraDevToken *string `security:"scheme,type=http,subtype=bearer,name=Authorization,env=hathora_hathora_dev_token"`
+	HathoraDevToken *string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
 func (o *Security) GetHathoraDevToken() *string {

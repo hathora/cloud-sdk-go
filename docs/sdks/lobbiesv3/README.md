@@ -23,7 +23,6 @@ import(
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"github.com/hathora/cloud-sdk-go/models/components"
-	"os"
 	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
 )
@@ -37,7 +36,7 @@ func main() {
     )
 
     res, err := s.LobbiesV3.CreateLobby(ctx, operations.CreateLobbySecurity{
-        PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
+        PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, components.CreateLobbyV3Params{
         Visibility: components.LobbyVisibilityPrivate,
         RoomConfig: cloudsdkgo.String("{\"name\":\"my-room\"}"),

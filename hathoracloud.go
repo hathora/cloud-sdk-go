@@ -197,24 +197,6 @@ func WithTimeout(timeout time.Duration) SDKOption {
 		sdk.sdkConfiguration.Timeout = &timeout
 	}
 }
-func (sdk *HathoraCloud) fillGlobalsFromEnv() {
-	if sdk.sdkConfiguration.Globals.OrgID == nil {
-		if val := utils.ValueFromEnvVar("HATHORA_ORG_ID", sdk.sdkConfiguration.Globals.OrgID); val != nil {
-			if typedVal, ok := val.(string); ok {
-				sdk.sdkConfiguration.Globals.OrgID = &typedVal
-			}
-		}
-	}
-
-	if sdk.sdkConfiguration.Globals.AppID == nil {
-		if val := utils.ValueFromEnvVar("HATHORA_APP_ID", sdk.sdkConfiguration.Globals.AppID); val != nil {
-			if typedVal, ok := val.(string); ok {
-				sdk.sdkConfiguration.Globals.AppID = &typedVal
-			}
-		}
-	}
-
-}
 
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *HathoraCloud {
@@ -222,24 +204,15 @@ func New(opts ...SDKOption) *HathoraCloud {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "0.2.0",
+			SDKVersion:        "0.2.1",
 			GenVersion:        "2.479.3",
-			UserAgent:         "speakeasy-sdk/go 0.2.0 2.479.3 0.0.1 github.com/hathora/cloud-sdk-go",
+			UserAgent:         "speakeasy-sdk/go 0.2.1 2.479.3 0.0.1 github.com/hathora/cloud-sdk-go",
 			Globals:           globals.Globals{},
 			Hooks:             hooks.New(),
 		},
 	}
 	for _, opt := range opts {
 		opt(sdk)
-	}
-
-	sdk.fillGlobalsFromEnv()
-
-	if sdk.sdkConfiguration.Security == nil {
-		var envVarSecurity components.Security
-		if utils.PopulateSecurityFromEnv(&envVarSecurity) {
-			sdk.sdkConfiguration.Security = utils.AsSecuritySource(envVarSecurity)
-		}
 	}
 
 	// Use WithClient to override the default client if you would like to customize the timeout

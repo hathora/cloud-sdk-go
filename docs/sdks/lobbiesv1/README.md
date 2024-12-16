@@ -23,7 +23,6 @@ package main
 import(
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"os"
 	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
 )
@@ -37,7 +36,7 @@ func main() {
     )
 
     res, err := s.LobbiesV1.CreatePrivateLobbyDeprecated(ctx, operations.CreatePrivateLobbyDeprecatedSecurity{
-        PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
+        PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
         log.Fatal(err)
@@ -84,7 +83,6 @@ package main
 import(
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
-	"os"
 	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
 )
@@ -98,7 +96,7 @@ func main() {
     )
 
     res, err := s.LobbiesV1.CreatePublicLobbyDeprecated(ctx, operations.CreatePublicLobbyDeprecatedSecurity{
-        PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
+        PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, cloudsdkgo.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
         log.Fatal(err)

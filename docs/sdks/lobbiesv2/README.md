@@ -29,7 +29,6 @@ import(
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"github.com/hathora/cloud-sdk-go/models/components"
 	"github.com/hathora/cloud-sdk-go/models/operations"
-	"os"
 	"log"
 )
 
@@ -42,7 +41,7 @@ func main() {
     )
 
     res, err := s.LobbiesV2.CreatePrivateLobby(ctx, operations.CreatePrivateLobbySecurity{
-        PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
+        PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, operations.CreatePrivateLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionLondon,
@@ -94,7 +93,6 @@ import(
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"github.com/hathora/cloud-sdk-go/models/components"
 	"github.com/hathora/cloud-sdk-go/models/operations"
-	"os"
 	"log"
 )
 
@@ -107,7 +105,7 @@ func main() {
     )
 
     res, err := s.LobbiesV2.CreatePublicLobby(ctx, operations.CreatePublicLobbySecurity{
-        PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
+        PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, operations.CreatePublicLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionJohannesburg,
@@ -159,7 +157,6 @@ import(
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"github.com/hathora/cloud-sdk-go/models/components"
 	"github.com/hathora/cloud-sdk-go/models/operations"
-	"os"
 	"log"
 )
 
@@ -172,7 +169,7 @@ func main() {
     )
 
     res, err := s.LobbiesV2.CreateLocalLobby(ctx, operations.CreateLocalLobbySecurity{
-        PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
+        PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, operations.CreateLocalLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionJohannesburg,
@@ -223,7 +220,6 @@ import(
 	"context"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"github.com/hathora/cloud-sdk-go/models/components"
-	"os"
 	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
 )
@@ -237,7 +233,7 @@ func main() {
     )
 
     res, err := s.LobbiesV2.CreateLobbyDeprecated(ctx, operations.CreateLobbyDeprecatedSecurity{
-        PlayerAuth: os.Getenv("HATHORA_PLAYER_AUTH"),
+        PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, components.CreateLobbyParams{
         Visibility: components.LobbyVisibilityPrivate,
         InitialConfig: "<value>",
@@ -397,7 +393,6 @@ package main
 
 import(
 	"context"
-	"os"
 	cloudsdkgo "github.com/hathora/cloud-sdk-go"
 	"github.com/hathora/cloud-sdk-go/models/components"
 	"log"
@@ -407,7 +402,7 @@ func main() {
     ctx := context.Background()
     
     s := cloudsdkgo.New(
-        cloudsdkgo.WithSecurity(os.Getenv("HATHORA_HATHORA_DEV_TOKEN")),
+        cloudsdkgo.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         cloudsdkgo.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         cloudsdkgo.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
