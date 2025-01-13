@@ -23,7 +23,7 @@ package main
 
 import(
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
@@ -76,8 +76,8 @@ package main
 
 import(
 	"context"
-	"hathoracloud"
-	"hathoracloud/models/components"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
+	"github.com/hathora/cloud-sdk-go/models/components"
 	"log"
 )
 
@@ -132,8 +132,8 @@ package main
 
 import(
 	"context"
-	"hathoracloud"
-	"hathoracloud/models/components"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
+	"github.com/hathora/cloud-sdk-go/models/components"
 	"log"
 )
 
@@ -188,9 +188,9 @@ package main
 
 import(
 	"context"
-	"hathoracloud"
-	"hathoracloud/models/components"
-	"hathoracloud/models/operations"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
+	"github.com/hathora/cloud-sdk-go/models/components"
+	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
 )
 

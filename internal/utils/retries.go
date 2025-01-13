@@ -6,7 +6,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"hathoracloud/retry"
+	"github.com/hathora/cloud-sdk-go/retry"
 	"math"
 	"math/rand"
 	"net/http"

@@ -58,7 +58,7 @@ package main
 
 import (
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
@@ -100,7 +100,7 @@ package main
 
 import (
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
@@ -132,9 +132,9 @@ package main
 
 import (
 	"context"
-	"hathoracloud"
-	"hathoracloud/models/components"
-	"hathoracloud/models/operations"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
+	"github.com/hathora/cloud-sdk-go/models/components"
+	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
 )
 
@@ -390,7 +390,7 @@ package main
 
 import (
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
@@ -426,8 +426,8 @@ package main
 
 import (
 	"context"
-	"hathoracloud"
-	"hathoracloud/retry"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
+	"github.com/hathora/cloud-sdk-go/retry"
 	"log"
 	"models/operations"
 )
@@ -468,8 +468,8 @@ package main
 
 import (
 	"context"
-	"hathoracloud"
-	"hathoracloud/retry"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
+	"github.com/hathora/cloud-sdk-go/retry"
 	"log"
 )
 
@@ -527,8 +527,8 @@ package main
 import (
 	"context"
 	"errors"
-	"hathoracloud"
-	"hathoracloud/models/errors"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
+	"github.com/hathora/cloud-sdk-go/models/errors"
 	"log"
 )
 
@@ -580,7 +580,7 @@ package main
 
 import (
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
@@ -613,7 +613,7 @@ package main
 
 import (
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 

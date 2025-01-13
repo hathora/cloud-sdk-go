@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"hathoracloud/models/components"
+	"github.com/hathora/cloud-sdk-go/models/components"
 )
 
 type ListActivePublicLobbiesGlobals struct {
