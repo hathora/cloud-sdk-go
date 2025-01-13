@@ -5,11 +5,11 @@ package hathoracloud
 import (
 	"context"
 	"fmt"
-	"hathoracloud/internal/globals"
-	"hathoracloud/internal/hooks"
-	"hathoracloud/internal/utils"
-	"hathoracloud/models/components"
-	"hathoracloud/retry"
+	"github.com/hathora/cloud-sdk-go/internal/globals"
+	"github.com/hathora/cloud-sdk-go/internal/hooks"
+	"github.com/hathora/cloud-sdk-go/internal/utils"
+	"github.com/hathora/cloud-sdk-go/models/components"
+	"github.com/hathora/cloud-sdk-go/retry"
 	"net/http"
 	"time"
 )

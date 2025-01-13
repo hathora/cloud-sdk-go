@@ -1,4 +1,4 @@
-module hathoracloud
+module github.com/hathora/cloud-sdk-go
 
 go 1.20
 

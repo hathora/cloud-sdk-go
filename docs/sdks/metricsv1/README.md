@@ -22,8 +22,8 @@ package main
 
 import(
 	"context"
-	"hathoracloud"
-	"hathoracloud/models/operations"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
+	"github.com/hathora/cloud-sdk-go/models/operations"
 	"log"
 )
 

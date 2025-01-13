@@ -5,7 +5,7 @@ package components
 import (
 	"errors"
 	"fmt"
-	"hathoracloud/internal/utils"
+	"github.com/hathora/cloud-sdk-go/internal/utils"
 )
 
 type ConnectionInfoType string

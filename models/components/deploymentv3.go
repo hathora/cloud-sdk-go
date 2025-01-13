@@ -3,7 +3,7 @@
 package components
 
 import (
-	"hathoracloud/internal/utils"
+	"github.com/hathora/cloud-sdk-go/internal/utils"
 	"time"
 )
 

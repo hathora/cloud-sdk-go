@@ -24,7 +24,7 @@ package main
 
 import(
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
@@ -80,7 +80,7 @@ package main
 
 import(
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
@@ -136,7 +136,7 @@ package main
 
 import(
 	"context"
-	"hathoracloud"
+	hathoracloud "github.com/hathora/cloud-sdk-go"
 	"log"
 )
 
