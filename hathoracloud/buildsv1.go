@@ -30,12 +30,6 @@ func newBuildsV1(sdkConfig sdkConfiguration) *BuildsV1 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *BuildsV1) GetBuildsDeprecated(ctx context.Context, appID *string, opts ...operations.Option) ([]components.Build, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetBuildsDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetBuildsDeprecatedRequest{
 		AppID: appID,
 	}
@@ -65,6 +59,13 @@ func (s *BuildsV1) GetBuildsDeprecated(ctx context.Context, appID *string, opts 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/builds/v1/{appId}/list", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetBuildsDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -258,12 +259,6 @@ func (s *BuildsV1) GetBuildsDeprecated(ctx context.Context, appID *string, opts 
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *BuildsV1) GetBuildInfoDeprecated(ctx context.Context, buildID int, appID *string, opts ...operations.Option) (*components.Build, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetBuildInfoDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetBuildInfoDeprecatedRequest{
 		AppID:   appID,
 		BuildID: buildID,
@@ -294,6 +289,13 @@ func (s *BuildsV1) GetBuildInfoDeprecated(ctx context.Context, buildID int, appI
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/builds/v1/{appId}/info/{buildId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetBuildInfoDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -487,12 +489,6 @@ func (s *BuildsV1) GetBuildInfoDeprecated(ctx context.Context, buildID int, appI
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *BuildsV1) CreateBuildDeprecated(ctx context.Context, createBuildParams components.CreateBuildParams, appID *string, opts ...operations.Option) (*components.Build, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateBuildDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateBuildDeprecatedRequest{
 		AppID:             appID,
 		CreateBuildParams: createBuildParams,
@@ -525,6 +521,12 @@ func (s *BuildsV1) CreateBuildDeprecated(ctx context.Context, createBuildParams 
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateBuildDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateBuildParams", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -747,12 +749,6 @@ func (s *BuildsV1) CreateBuildDeprecated(ctx context.Context, createBuildParams 
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *BuildsV1) DeleteBuildDeprecated(ctx context.Context, buildID int, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "DeleteBuildDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.DeleteBuildDeprecatedRequest{
 		AppID:   appID,
 		BuildID: buildID,
@@ -783,6 +779,13 @@ func (s *BuildsV1) DeleteBuildDeprecated(ctx context.Context, buildID int, appID
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/builds/v1/{appId}/delete/{buildId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "DeleteBuildDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -978,12 +981,6 @@ func (s *BuildsV1) DeleteBuildDeprecated(ctx context.Context, buildID int, appID
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *BuildsV1) RunBuildDeprecated(ctx context.Context, buildID int, requestBody operations.RunBuildDeprecatedRequestBody, appID *string, opts ...operations.Option) (*string, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "RunBuildDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.RunBuildDeprecatedRequest{
 		AppID:       appID,
 		BuildID:     buildID,
@@ -1017,6 +1014,12 @@ func (s *BuildsV1) RunBuildDeprecated(ctx context.Context, buildID int, requestB
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "RunBuildDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "multipart", `request:"mediaType=multipart/form-data"`)
 	if err != nil {
 		return nil, err

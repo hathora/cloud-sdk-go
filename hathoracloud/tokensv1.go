@@ -29,12 +29,6 @@ func newTokensV1(sdkConfig sdkConfiguration) *TokensV1 {
 // GetOrgTokens
 // List all organization tokens for a given org.
 func (s *TokensV1) GetOrgTokens(ctx context.Context, orgID string, opts ...operations.Option) (*components.ListOrgTokens, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetOrgTokens",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetOrgTokensRequest{
 		OrgID: orgID,
 	}
@@ -60,6 +54,13 @@ func (s *TokensV1) GetOrgTokens(ctx context.Context, orgID string, opts ...opera
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/tokens/v1/orgs/{orgId}", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetOrgTokens",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -251,12 +252,6 @@ func (s *TokensV1) GetOrgTokens(ctx context.Context, orgID string, opts ...opera
 // CreateOrgToken
 // Create a new organization token.
 func (s *TokensV1) CreateOrgToken(ctx context.Context, orgID string, createOrgToken components.CreateOrgToken, opts ...operations.Option) (*components.CreatedOrgToken, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateOrgToken",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateOrgTokenRequest{
 		OrgID:          orgID,
 		CreateOrgToken: createOrgToken,
@@ -285,6 +280,12 @@ func (s *TokensV1) CreateOrgToken(ctx context.Context, orgID string, createOrgTo
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateOrgToken",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateOrgToken", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -484,12 +485,6 @@ func (s *TokensV1) CreateOrgToken(ctx context.Context, orgID string, createOrgTo
 // RevokeOrgToken
 // Revoke an organization token.
 func (s *TokensV1) RevokeOrgToken(ctx context.Context, orgID string, orgTokenID string, opts ...operations.Option) (*bool, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "RevokeOrgToken",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.RevokeOrgTokenRequest{
 		OrgID:      orgID,
 		OrgTokenID: orgTokenID,
@@ -516,6 +511,13 @@ func (s *TokensV1) RevokeOrgToken(ctx context.Context, orgID string, orgTokenID 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/tokens/v1/orgs/{orgId}/tokens/{orgTokenId}/revoke", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "RevokeOrgToken",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

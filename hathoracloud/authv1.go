@@ -29,12 +29,6 @@ func newAuthV1(sdkConfig sdkConfiguration) *AuthV1 {
 // LoginAnonymous
 // Returns a unique player token for an anonymous user.
 func (s *AuthV1) LoginAnonymous(ctx context.Context, appID *string, opts ...operations.Option) (*components.PlayerTokenObject, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "LoginAnonymous",
-		SecuritySource: nil,
-	}
-
 	request := operations.LoginAnonymousRequest{
 		AppID: appID,
 	}
@@ -64,6 +58,13 @@ func (s *AuthV1) LoginAnonymous(ctx context.Context, appID *string, opts ...oper
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/auth/v1/{appId}/login/anonymous", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "LoginAnonymous",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout
@@ -249,12 +250,6 @@ func (s *AuthV1) LoginAnonymous(ctx context.Context, appID *string, opts ...oper
 // LoginNickname
 // Returns a unique player token with a specified nickname for a user.
 func (s *AuthV1) LoginNickname(ctx context.Context, nicknameObject components.NicknameObject, appID *string, opts ...operations.Option) (*components.PlayerTokenObject, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "LoginNickname",
-		SecuritySource: nil,
-	}
-
 	request := operations.LoginNicknameRequest{
 		AppID:          appID,
 		NicknameObject: nicknameObject,
@@ -287,6 +282,12 @@ func (s *AuthV1) LoginNickname(ctx context.Context, nicknameObject components.Ni
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "LoginNickname",
+		SecuritySource: nil,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "NicknameObject", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -480,12 +481,6 @@ func (s *AuthV1) LoginNickname(ctx context.Context, nicknameObject components.Ni
 // LoginGoogle
 // Returns a unique player token using a Google-signed OIDC `idToken`.
 func (s *AuthV1) LoginGoogle(ctx context.Context, googleIDTokenObject components.GoogleIDTokenObject, appID *string, opts ...operations.Option) (*components.PlayerTokenObject, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "LoginGoogle",
-		SecuritySource: nil,
-	}
-
 	request := operations.LoginGoogleRequest{
 		AppID:               appID,
 		GoogleIDTokenObject: googleIDTokenObject,
@@ -518,6 +513,12 @@ func (s *AuthV1) LoginGoogle(ctx context.Context, googleIDTokenObject components
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "LoginGoogle",
+		SecuritySource: nil,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "GoogleIDTokenObject", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

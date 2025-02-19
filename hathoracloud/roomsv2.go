@@ -28,12 +28,6 @@ func newRoomsV2(sdkConfig sdkConfiguration) *RoomsV2 {
 // CreateRoom
 // Create a new [room](https://hathora.dev/docs/concepts/hathora-entities#room) for an existing [application](https://hathora.dev/docs/concepts/hathora-entities#application). Poll the [`GetConnectionInfo()`](https://hathora.dev/api#tag/RoomV2/operation/GetConnectionInfo) endpoint to get connection details for an active room.
 func (s *RoomsV2) CreateRoom(ctx context.Context, createRoomParams components.CreateRoomParams, appID *string, roomID *string, opts ...operations.Option) (*components.RoomConnectionData, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateRoom",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateRoomRequest{
 		AppID:            appID,
 		RoomID:           roomID,
@@ -67,6 +61,12 @@ func (s *RoomsV2) CreateRoom(ctx context.Context, createRoomParams components.Cr
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateRoom",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateRoomParams", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -295,12 +295,6 @@ func (s *RoomsV2) CreateRoom(ctx context.Context, createRoomParams components.Cr
 // GetRoomInfo
 // Retreive current and historical allocation data for a [room](https://hathora.dev/docs/concepts/hathora-entities#room).
 func (s *RoomsV2) GetRoomInfo(ctx context.Context, roomID string, appID *string, opts ...operations.Option) (*components.Room, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetRoomInfo",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetRoomInfoRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -331,6 +325,13 @@ func (s *RoomsV2) GetRoomInfo(ctx context.Context, roomID string, appID *string,
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v2/{appId}/info/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetRoomInfo",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -524,12 +525,6 @@ func (s *RoomsV2) GetRoomInfo(ctx context.Context, roomID string, appID *string,
 // GetActiveRoomsForProcess
 // Get all active [rooms](https://hathora.dev/docs/concepts/hathora-entities#room) for a given [process](https://hathora.dev/docs/concepts/hathora-entities#process).
 func (s *RoomsV2) GetActiveRoomsForProcess(ctx context.Context, processID string, appID *string, opts ...operations.Option) ([]components.RoomWithoutAllocations, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetActiveRoomsForProcess",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetActiveRoomsForProcessRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -560,6 +555,13 @@ func (s *RoomsV2) GetActiveRoomsForProcess(ctx context.Context, processID string
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v2/{appId}/list/{processId}/active", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetActiveRoomsForProcess",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -751,12 +753,6 @@ func (s *RoomsV2) GetActiveRoomsForProcess(ctx context.Context, processID string
 // GetInactiveRoomsForProcess
 // Get all inactive [rooms](https://hathora.dev/docs/concepts/hathora-entities#room) for a given [process](https://hathora.dev/docs/concepts/hathora-entities#process).
 func (s *RoomsV2) GetInactiveRoomsForProcess(ctx context.Context, processID string, appID *string, opts ...operations.Option) ([]components.RoomWithoutAllocations, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetInactiveRoomsForProcess",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetInactiveRoomsForProcessRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -787,6 +783,13 @@ func (s *RoomsV2) GetInactiveRoomsForProcess(ctx context.Context, processID stri
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v2/{appId}/list/{processId}/inactive", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetInactiveRoomsForProcess",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -978,12 +981,6 @@ func (s *RoomsV2) GetInactiveRoomsForProcess(ctx context.Context, processID stri
 // DestroyRoom
 // Destroy a [room](https://hathora.dev/docs/concepts/hathora-entities#room). All associated metadata is deleted.
 func (s *RoomsV2) DestroyRoom(ctx context.Context, roomID string, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "DestroyRoom",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.DestroyRoomRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -1014,6 +1011,13 @@ func (s *RoomsV2) DestroyRoom(ctx context.Context, roomID string, appID *string,
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v2/{appId}/destroy/{roomId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "DestroyRoom",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1207,12 +1211,6 @@ func (s *RoomsV2) DestroyRoom(ctx context.Context, roomID string, appID *string,
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *RoomsV2) SuspendRoomV2Deprecated(ctx context.Context, roomID string, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "SuspendRoomV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.SuspendRoomV2DeprecatedRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -1243,6 +1241,13 @@ func (s *RoomsV2) SuspendRoomV2Deprecated(ctx context.Context, roomID string, ap
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v2/{appId}/suspend/{roomId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "SuspendRoomV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1434,12 +1439,6 @@ func (s *RoomsV2) SuspendRoomV2Deprecated(ctx context.Context, roomID string, ap
 // GetConnectionInfo
 // Poll this endpoint to get connection details to a [room](https://hathora.dev/docs/concepts/hathora-entities#room). Clients can call this endpoint without authentication.
 func (s *RoomsV2) GetConnectionInfo(ctx context.Context, roomID string, appID *string, opts ...operations.Option) (*components.ConnectionInfoV2, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetConnectionInfo",
-		SecuritySource: nil,
-	}
-
 	request := operations.GetConnectionInfoRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -1470,6 +1469,13 @@ func (s *RoomsV2) GetConnectionInfo(ctx context.Context, roomID string, appID *s
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v2/{appId}/connectioninfo/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetConnectionInfo",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout
@@ -1681,12 +1687,6 @@ func (s *RoomsV2) GetConnectionInfo(ctx context.Context, roomID string, appID *s
 
 // UpdateRoomConfig
 func (s *RoomsV2) UpdateRoomConfig(ctx context.Context, roomID string, updateRoomConfigParams components.UpdateRoomConfigParams, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "UpdateRoomConfig",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.UpdateRoomConfigRequest{
 		AppID:                  appID,
 		RoomID:                 roomID,
@@ -1720,6 +1720,12 @@ func (s *RoomsV2) UpdateRoomConfig(ctx context.Context, roomID string, updateRoo
 		return fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "UpdateRoomConfig",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateRoomConfigParams", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return err
@@ -1918,12 +1924,6 @@ func (s *RoomsV2) UpdateRoomConfig(ctx context.Context, roomID string, updateRoo
 
 // ResumeRoom
 func (s *RoomsV2) ResumeRoom(ctx context.Context, roomID string, appID *string, opts ...operations.Option) (*components.RoomAllocationData, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ResumeRoom",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.ResumeRoomRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -1954,6 +1954,13 @@ func (s *RoomsV2) ResumeRoom(ctx context.Context, roomID string, appID *string, 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v2/{appId}/resume/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ResumeRoom",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

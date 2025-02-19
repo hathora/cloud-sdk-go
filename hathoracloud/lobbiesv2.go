@@ -29,12 +29,6 @@ func newLobbiesV2(sdkConfig sdkConfiguration) *LobbiesV2 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV2) CreatePrivateLobby(ctx context.Context, security operations.CreatePrivateLobbySecurity, requestBody operations.CreatePrivateLobbyRequestBody, appID *string, roomID *string, opts ...operations.Option) (*components.Lobby, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreatePrivateLobby",
-		SecuritySource: utils.AsSecuritySource(security),
-	}
-
 	request := operations.CreatePrivateLobbyRequest{
 		AppID:       appID,
 		RoomID:      roomID,
@@ -68,6 +62,12 @@ func (s *LobbiesV2) CreatePrivateLobby(ctx context.Context, security operations.
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreatePrivateLobby",
+		SecuritySource: utils.AsSecuritySource(security),
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -297,12 +297,6 @@ func (s *LobbiesV2) CreatePrivateLobby(ctx context.Context, security operations.
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV2) CreatePublicLobby(ctx context.Context, security operations.CreatePublicLobbySecurity, requestBody operations.CreatePublicLobbyRequestBody, appID *string, roomID *string, opts ...operations.Option) (*components.Lobby, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreatePublicLobby",
-		SecuritySource: utils.AsSecuritySource(security),
-	}
-
 	request := operations.CreatePublicLobbyRequest{
 		AppID:       appID,
 		RoomID:      roomID,
@@ -336,6 +330,12 @@ func (s *LobbiesV2) CreatePublicLobby(ctx context.Context, security operations.C
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreatePublicLobby",
+		SecuritySource: utils.AsSecuritySource(security),
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -565,12 +565,6 @@ func (s *LobbiesV2) CreatePublicLobby(ctx context.Context, security operations.C
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV2) CreateLocalLobby(ctx context.Context, security operations.CreateLocalLobbySecurity, requestBody operations.CreateLocalLobbyRequestBody, appID *string, roomID *string, opts ...operations.Option) (*components.Lobby, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateLocalLobby",
-		SecuritySource: utils.AsSecuritySource(security),
-	}
-
 	request := operations.CreateLocalLobbyRequest{
 		AppID:       appID,
 		RoomID:      roomID,
@@ -604,6 +598,12 @@ func (s *LobbiesV2) CreateLocalLobby(ctx context.Context, security operations.Cr
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateLocalLobby",
+		SecuritySource: utils.AsSecuritySource(security),
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -834,12 +834,6 @@ func (s *LobbiesV2) CreateLocalLobby(ctx context.Context, security operations.Cr
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV2) CreateLobbyDeprecated(ctx context.Context, security operations.CreateLobbyDeprecatedSecurity, createLobbyParams components.CreateLobbyParams, appID *string, roomID *string, opts ...operations.Option) (*components.Lobby, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateLobbyDeprecated",
-		SecuritySource: utils.AsSecuritySource(security),
-	}
-
 	request := operations.CreateLobbyDeprecatedRequest{
 		AppID:             appID,
 		RoomID:            roomID,
@@ -873,6 +867,12 @@ func (s *LobbiesV2) CreateLobbyDeprecated(ctx context.Context, security operatio
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateLobbyDeprecated",
+		SecuritySource: utils.AsSecuritySource(security),
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateLobbyParams", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1103,12 +1103,6 @@ func (s *LobbiesV2) CreateLobbyDeprecated(ctx context.Context, security operatio
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV2) ListActivePublicLobbiesDeprecatedV2(ctx context.Context, appID *string, region *components.Region, opts ...operations.Option) ([]components.Lobby, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ListActivePublicLobbiesDeprecatedV2",
-		SecuritySource: nil,
-	}
-
 	request := operations.ListActivePublicLobbiesDeprecatedV2Request{
 		AppID:  appID,
 		Region: region,
@@ -1139,6 +1133,13 @@ func (s *LobbiesV2) ListActivePublicLobbiesDeprecatedV2(ctx context.Context, app
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/lobby/v2/{appId}/list/public", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ListActivePublicLobbiesDeprecatedV2",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout
@@ -1330,12 +1331,6 @@ func (s *LobbiesV2) ListActivePublicLobbiesDeprecatedV2(ctx context.Context, app
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV2) GetLobbyInfo(ctx context.Context, roomID string, appID *string, opts ...operations.Option) (*components.Lobby, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetLobbyInfo",
-		SecuritySource: nil,
-	}
-
 	request := operations.GetLobbyInfoRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -1366,6 +1361,13 @@ func (s *LobbiesV2) GetLobbyInfo(ctx context.Context, roomID string, appID *stri
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/lobby/v2/{appId}/info/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetLobbyInfo",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout
@@ -1553,12 +1555,6 @@ func (s *LobbiesV2) GetLobbyInfo(ctx context.Context, roomID string, appID *stri
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV2) SetLobbyState(ctx context.Context, roomID string, setLobbyStateParams components.SetLobbyStateParams, appID *string, opts ...operations.Option) (*components.Lobby, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "SetLobbyState",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.SetLobbyStateRequest{
 		AppID:               appID,
 		RoomID:              roomID,
@@ -1592,6 +1588,12 @@ func (s *LobbiesV2) SetLobbyState(ctx context.Context, roomID string, setLobbySt
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "SetLobbyState",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "SetLobbyStateParams", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

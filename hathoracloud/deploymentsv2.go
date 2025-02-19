@@ -30,12 +30,6 @@ func newDeploymentsV2(sdkConfig sdkConfiguration) *DeploymentsV2 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *DeploymentsV2) GetDeploymentsV2Deprecated(ctx context.Context, appID *string, opts ...operations.Option) ([]components.DeploymentV2, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetDeploymentsV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetDeploymentsV2DeprecatedRequest{
 		AppID: appID,
 	}
@@ -65,6 +59,13 @@ func (s *DeploymentsV2) GetDeploymentsV2Deprecated(ctx context.Context, appID *s
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v2/{appId}/list", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetDeploymentsV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -258,12 +259,6 @@ func (s *DeploymentsV2) GetDeploymentsV2Deprecated(ctx context.Context, appID *s
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *DeploymentsV2) GetLatestDeploymentV2Deprecated(ctx context.Context, appID *string, opts ...operations.Option) (*components.DeploymentV2, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetLatestDeploymentV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetLatestDeploymentV2DeprecatedRequest{
 		AppID: appID,
 	}
@@ -293,6 +288,13 @@ func (s *DeploymentsV2) GetLatestDeploymentV2Deprecated(ctx context.Context, app
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v2/{appId}/latest", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetLatestDeploymentV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -488,12 +490,6 @@ func (s *DeploymentsV2) GetLatestDeploymentV2Deprecated(ctx context.Context, app
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *DeploymentsV2) GetDeploymentInfoV2Deprecated(ctx context.Context, deploymentID int, appID *string, opts ...operations.Option) (*components.DeploymentV2, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetDeploymentInfoV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetDeploymentInfoV2DeprecatedRequest{
 		AppID:        appID,
 		DeploymentID: deploymentID,
@@ -524,6 +520,13 @@ func (s *DeploymentsV2) GetDeploymentInfoV2Deprecated(ctx context.Context, deplo
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v2/{appId}/info/{deploymentId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetDeploymentInfoV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -717,12 +720,6 @@ func (s *DeploymentsV2) GetDeploymentInfoV2Deprecated(ctx context.Context, deplo
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *DeploymentsV2) CreateDeploymentV2Deprecated(ctx context.Context, buildID int, deploymentConfigV2 components.DeploymentConfigV2, appID *string, opts ...operations.Option) (*components.DeploymentV2, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateDeploymentV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateDeploymentV2DeprecatedRequest{
 		AppID:              appID,
 		BuildID:            buildID,
@@ -756,6 +753,12 @@ func (s *DeploymentsV2) CreateDeploymentV2Deprecated(ctx context.Context, buildI
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateDeploymentV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeploymentConfigV2", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

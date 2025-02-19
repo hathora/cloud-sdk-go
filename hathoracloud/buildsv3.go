@@ -31,12 +31,6 @@ func newBuildsV3(sdkConfig sdkConfiguration) *BuildsV3 {
 // GetBuilds
 // Returns an array of [builds](https://hathora.dev/docs/concepts/hathora-entities#build) for an [application](https://hathora.dev/docs/concepts/hathora-entities#application).
 func (s *BuildsV3) GetBuilds(ctx context.Context, orgID *string, opts ...operations.Option) (*components.BuildsV3Page, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetBuilds",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetBuildsRequest{
 		OrgID: orgID,
 	}
@@ -66,6 +60,13 @@ func (s *BuildsV3) GetBuilds(ctx context.Context, orgID *string, opts ...operati
 	opURL, err := url.JoinPath(baseURL, "/builds/v3/builds")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetBuilds",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -263,12 +264,6 @@ func (s *BuildsV3) GetBuilds(ctx context.Context, orgID *string, opts ...operati
 // CreateBuild
 // Creates a new [build](https://hathora.dev/docs/concepts/hathora-entities#build) with optional `multipartUploadUrls` that can be used to upload larger builds in parts before calling `runBuild`. Responds with a `buildId` that you must pass to [`RunBuild()`](https://hathora.dev/api#tag/BuildV1/operation/RunBuild) to build the game server artifact. You can optionally pass in a `buildTag` to associate an external version with a build.
 func (s *BuildsV3) CreateBuild(ctx context.Context, createMultipartBuildParams components.CreateMultipartBuildParams, orgID *string, opts ...operations.Option) (*components.CreatedBuildV3WithMultipartUrls, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateBuild",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateBuildRequest{
 		OrgID:                      orgID,
 		CreateMultipartBuildParams: createMultipartBuildParams,
@@ -301,6 +296,12 @@ func (s *BuildsV3) CreateBuild(ctx context.Context, createMultipartBuildParams c
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateBuild",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateMultipartBuildParams", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -527,12 +528,6 @@ func (s *BuildsV3) CreateBuild(ctx context.Context, createMultipartBuildParams c
 // GetBuild
 // Get details for a [build](https://hathora.dev/docs/concepts/hathora-entities#build).
 func (s *BuildsV3) GetBuild(ctx context.Context, buildID string, orgID *string, opts ...operations.Option) (*components.BuildV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetBuild",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetBuildRequest{
 		BuildID: buildID,
 		OrgID:   orgID,
@@ -563,6 +558,13 @@ func (s *BuildsV3) GetBuild(ctx context.Context, buildID string, orgID *string, 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/builds/v3/builds/{buildId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetBuild",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -760,12 +762,6 @@ func (s *BuildsV3) GetBuild(ctx context.Context, buildID string, orgID *string, 
 // Be careful which builds you delete. This endpoint does not prevent you from deleting actively used builds.
 // Deleting a build that is actively build used by an app's deployment will cause failures when creating rooms.
 func (s *BuildsV3) DeleteBuild(ctx context.Context, buildID string, orgID *string, opts ...operations.Option) (*components.DeletedBuild, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "DeleteBuild",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.DeleteBuildRequest{
 		BuildID: buildID,
 		OrgID:   orgID,
@@ -796,6 +792,13 @@ func (s *BuildsV3) DeleteBuild(ctx context.Context, buildID string, orgID *strin
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/builds/v3/builds/{buildId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "DeleteBuild",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1014,12 +1017,6 @@ func (s *BuildsV3) DeleteBuild(ctx context.Context, buildID string, orgID *strin
 // RunBuild
 // Builds a game server artifact from a tarball you provide. Pass in the `buildId` generated from [`CreateBuild()`](https://hathora.dev/api#tag/BuildV1/operation/CreateBuild).
 func (s *BuildsV3) RunBuild(ctx context.Context, buildID string, orgID *string, opts ...operations.Option) (io.ReadCloser, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "RunBuild",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.RunBuildRequest{
 		BuildID: buildID,
 		OrgID:   orgID,
@@ -1050,6 +1047,13 @@ func (s *BuildsV3) RunBuild(ctx context.Context, buildID string, orgID *string, 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/builds/v3/builds/{buildId}/run", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "RunBuild",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

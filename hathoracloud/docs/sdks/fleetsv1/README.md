@@ -207,7 +207,6 @@ func main() {
     res, err := s.FleetsV1.GetFleetMetrics(ctx, operations.GetFleetMetricsRequest{
         FleetID: "<id>",
         Region: components.RegionLondon,
-        Step: hathoracloud.Int(60),
     })
     if err != nil {
         log.Fatal(err)

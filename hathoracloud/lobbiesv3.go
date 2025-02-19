@@ -28,12 +28,6 @@ func newLobbiesV3(sdkConfig sdkConfiguration) *LobbiesV3 {
 // CreateLobby
 // Create a new lobby for an [application](https://hathora.dev/docs/concepts/hathora-entities#application). A lobby object is a wrapper around a [room](https://hathora.dev/docs/concepts/hathora-entities#room) object. With a lobby, you get additional functionality like configuring the visibility of the room, managing the state of a match, and retrieving a list of public lobbies to display to players.
 func (s *LobbiesV3) CreateLobby(ctx context.Context, security operations.CreateLobbySecurity, createLobbyV3Params components.CreateLobbyV3Params, appID *string, shortCode *string, roomID *string, opts ...operations.Option) (*components.LobbyV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateLobby",
-		SecuritySource: utils.AsSecuritySource(security),
-	}
-
 	request := operations.CreateLobbyRequest{
 		AppID:               appID,
 		ShortCode:           shortCode,
@@ -68,6 +62,12 @@ func (s *LobbiesV3) CreateLobby(ctx context.Context, security operations.CreateL
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateLobby",
+		SecuritySource: utils.AsSecuritySource(security),
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateLobbyV3Params", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -296,12 +296,6 @@ func (s *LobbiesV3) CreateLobby(ctx context.Context, security operations.CreateL
 // ListActivePublicLobbies
 // Get all active lobbies for a given [application](https://hathora.dev/docs/concepts/hathora-entities#application). Filter the array by optionally passing in a `region`. Use this endpoint to display all public lobbies that a player can join in the game client.
 func (s *LobbiesV3) ListActivePublicLobbies(ctx context.Context, appID *string, region *components.Region, opts ...operations.Option) ([]components.LobbyV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ListActivePublicLobbies",
-		SecuritySource: nil,
-	}
-
 	request := operations.ListActivePublicLobbiesRequest{
 		AppID:  appID,
 		Region: region,
@@ -332,6 +326,13 @@ func (s *LobbiesV3) ListActivePublicLobbies(ctx context.Context, appID *string, 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/lobby/v3/{appId}/list/public", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ListActivePublicLobbies",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout
@@ -521,12 +522,6 @@ func (s *LobbiesV3) ListActivePublicLobbies(ctx context.Context, appID *string, 
 // GetLobbyInfoByRoomID - GetLobbyInfoByRoomId
 // Get details for a lobby.
 func (s *LobbiesV3) GetLobbyInfoByRoomID(ctx context.Context, roomID string, appID *string, opts ...operations.Option) (*components.LobbyV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetLobbyInfoByRoomId",
-		SecuritySource: nil,
-	}
-
 	request := operations.GetLobbyInfoByRoomIDRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -557,6 +552,13 @@ func (s *LobbiesV3) GetLobbyInfoByRoomID(ctx context.Context, roomID string, app
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/lobby/v3/{appId}/info/roomid/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetLobbyInfoByRoomId",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout
@@ -744,12 +746,6 @@ func (s *LobbiesV3) GetLobbyInfoByRoomID(ctx context.Context, roomID string, app
 // GetLobbyInfoByShortCode
 // Get details for a lobby. If 2 or more lobbies have the same `shortCode`, then the most recently created lobby will be returned.
 func (s *LobbiesV3) GetLobbyInfoByShortCode(ctx context.Context, shortCode string, appID *string, opts ...operations.Option) (*components.LobbyV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetLobbyInfoByShortCode",
-		SecuritySource: nil,
-	}
-
 	request := operations.GetLobbyInfoByShortCodeRequest{
 		AppID:     appID,
 		ShortCode: shortCode,
@@ -780,6 +776,13 @@ func (s *LobbiesV3) GetLobbyInfoByShortCode(ctx context.Context, shortCode strin
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/lobby/v3/{appId}/info/shortcode/{shortCode}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetLobbyInfoByShortCode",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout

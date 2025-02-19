@@ -31,12 +31,6 @@ func newProcessesV2(sdkConfig sdkConfiguration) *ProcessesV2 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *ProcessesV2) GetProcessInfoV2Deprecated(ctx context.Context, processID string, appID *string, opts ...operations.Option) (*components.ProcessV2, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetProcessInfoV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetProcessInfoV2DeprecatedRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -67,6 +61,13 @@ func (s *ProcessesV2) GetProcessInfoV2Deprecated(ctx context.Context, processID 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v2/{appId}/info/{processId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetProcessInfoV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -260,12 +261,6 @@ func (s *ProcessesV2) GetProcessInfoV2Deprecated(ctx context.Context, processID 
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *ProcessesV2) GetLatestProcessesV2Deprecated(ctx context.Context, appID *string, status []components.ProcessStatus, region []components.Region, opts ...operations.Option) ([]components.ProcessV2, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetLatestProcessesV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetLatestProcessesV2DeprecatedRequest{
 		AppID:  appID,
 		Status: status,
@@ -297,6 +292,13 @@ func (s *ProcessesV2) GetLatestProcessesV2Deprecated(ctx context.Context, appID 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v2/{appId}/list/latest", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetLatestProcessesV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -496,12 +498,6 @@ func (s *ProcessesV2) GetLatestProcessesV2Deprecated(ctx context.Context, appID 
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *ProcessesV2) GetProcessesCountExperimentalV2Deprecated(ctx context.Context, appID *string, status []components.ProcessStatus, region []components.Region, opts ...operations.Option) (*operations.GetProcessesCountExperimentalV2DeprecatedResponseBody, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetProcessesCountExperimentalV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetProcessesCountExperimentalV2DeprecatedRequest{
 		AppID:  appID,
 		Status: status,
@@ -533,6 +529,13 @@ func (s *ProcessesV2) GetProcessesCountExperimentalV2Deprecated(ctx context.Cont
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v2/{appId}/count", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetProcessesCountExperimentalV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -732,12 +735,6 @@ func (s *ProcessesV2) GetProcessesCountExperimentalV2Deprecated(ctx context.Cont
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *ProcessesV2) StopProcessV2Deprecated(ctx context.Context, processID string, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "StopProcessV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.StopProcessV2DeprecatedRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -768,6 +765,13 @@ func (s *ProcessesV2) StopProcessV2Deprecated(ctx context.Context, processID str
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v2/{appId}/stop/{processId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "StopProcessV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -961,12 +965,6 @@ func (s *ProcessesV2) StopProcessV2Deprecated(ctx context.Context, processID str
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *ProcessesV2) CreateProcessV2Deprecated(ctx context.Context, region components.Region, appID *string, opts ...operations.Option) (*components.ProcessV2, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateProcessV2Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateProcessV2DeprecatedRequest{
 		AppID:  appID,
 		Region: region,
@@ -997,6 +995,13 @@ func (s *ProcessesV2) CreateProcessV2Deprecated(ctx context.Context, region comp
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v2/{appId}/create/{region}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateProcessV2Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

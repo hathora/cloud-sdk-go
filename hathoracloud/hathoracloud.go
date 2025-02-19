@@ -17,7 +17,7 @@ import (
 // ServerList contains the list of servers available to the SDK
 var ServerList = []string{
 	"https://api.hathora.dev",
-	"https:///",
+	"/",
 }
 
 // HTTPClient provides an interface for suplying the SDK with a custom HTTP client
@@ -204,9 +204,9 @@ func New(opts ...SDKOption) *HathoraCloud {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "0.2.3",
-			GenVersion:        "2.493.34",
-			UserAgent:         "speakeasy-sdk/go 0.2.3 2.493.34 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
+			SDKVersion:        "0.3.0",
+			GenVersion:        "2.515.4",
+			UserAgent:         "speakeasy-sdk/go 0.3.0 2.515.4 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
 			Globals:           globals.Globals{},
 			Hooks:             hooks.New(),
 		},

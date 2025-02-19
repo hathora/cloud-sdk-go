@@ -1,32 +1,35 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: c03ee0de85c6be81e7641e6be6a0e586
+  docChecksum: 12aac996da03c63a579889b58afb9797
   docVersion: 0.0.1
-  speakeasyVersion: 1.469.12
-  generationVersion: 2.493.34
-  releaseVersion: 0.2.3
-  configChecksum: 9bb96cab6ad6c5f66dcca3bd171b7365
+  speakeasyVersion: 1.495.1
+  generationVersion: 2.515.4
+  releaseVersion: 0.3.0
+  configChecksum: d1113492a53fc19d012a3b16d62fbb5f
+  repoURL: https://github.com/hathora/cloud-sdk-go.git
+  repoSubDirectory: hathoracloud
+  installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
 features:
   go:
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.6
-    core: 3.6.9
+    constsAndDefaults: 0.1.9
+    core: 3.7.1
     defaultEnabledRetries: 0.2.0
-    deprecations: 2.81.2
+    deprecations: 2.81.3
     devContainers: 2.90.0
     downloadStreams: 0.1.2
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
-    globalSecurity: 2.82.10
+    globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.2
     globals: 2.82.2
     groups: 2.81.2
     intellisenseMarkdownSupport: 0.1.0
-    methodSecurity: 2.82.2
-    nullables: 0.1.0
+    methodSecurity: 2.82.3
+    nullables: 0.1.1
     openEnums: 0.1.0
     responseFormat: 0.1.2
     retries: 2.83.2
@@ -1839,6 +1842,7 @@ examples:
           application/json: 68.43
         "401":
           application/json: {"message": "<value>"}
+        "500": {}
   GetUpcomingInvoiceItems:
     speakeasy-default-get-upcoming-invoice-items:
       parameters:
@@ -1849,6 +1853,7 @@ examples:
           application/json: {"invoiceItems": [{"amount": 3848.12, "unitPrice": 479.96, "quantity": 2049.63, "unit": "meter", "productName": "<value>"}, {"amount": 6502.55, "unitPrice": 9111.09, "quantity": 3849.63, "unit": "hertz", "productName": "<value>"}, {"amount": 4556.8, "unitPrice": 773.01, "quantity": 7075.91, "unit": "henry", "productName": "<value>"}]}
         "401":
           application/json: {"message": "<value>"}
+        "500": {}
   GetUpcomingInvoiceTotal:
     speakeasy-default-get-upcoming-invoice-total:
       parameters:
@@ -1859,6 +1864,7 @@ examples:
           application/json: {"value": 2752.14}
         "401":
           application/json: {"message": "<value>"}
+        "500": {}
   GetPaymentMethod:
     speakeasy-default-get-payment-method:
       parameters:
@@ -1883,6 +1889,7 @@ examples:
           application/json: "<value>"
         "401":
           application/json: {"message": "<value>"}
+        "500": {}
   GetInvoices:
     speakeasy-default-get-invoices:
       parameters:

@@ -7,16 +7,18 @@
 
 ### Available Operations
 
-* [GetBalance](#getbalance) - GetBalance
+* [~~GetBalance~~](#getbalance) - GetBalance :warning: **Deprecated**
 * [GetUpcomingInvoiceItems](#getupcominginvoiceitems) - GetUpcomingInvoiceItems
 * [GetUpcomingInvoiceTotal](#getupcominginvoicetotal) - GetUpcomingInvoiceTotal
 * [GetPaymentMethod](#getpaymentmethod) - GetPaymentMethod
 * [InitStripeCustomerPortalURL](#initstripecustomerportalurl) - InitStripeCustomerPortalUrl
 * [GetInvoices](#getinvoices) - GetInvoices
 
-## GetBalance
+## ~~GetBalance~~
 
 GetBalance
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -65,6 +67,7 @@ func main() {
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.APIError  | 401, 404, 429    | application/json |
+| errors.APIError  | 500              | application/json |
 | errors.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## GetUpcomingInvoiceItems
@@ -118,6 +121,7 @@ func main() {
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.APIError  | 401, 404, 429    | application/json |
+| errors.APIError  | 500              | application/json |
 | errors.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## GetUpcomingInvoiceTotal
@@ -171,6 +175,7 @@ func main() {
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.APIError  | 401, 404, 429    | application/json |
+| errors.APIError  | 500              | application/json |
 | errors.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## GetPaymentMethod
@@ -282,6 +287,7 @@ func main() {
 | Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | errors.APIError    | 401, 404, 422, 429 | application/json   |
+| errors.APIError    | 500                | application/json   |
 | errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## GetInvoices

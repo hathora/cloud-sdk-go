@@ -29,12 +29,6 @@ func newProcessesV3(sdkConfig sdkConfiguration) *ProcessesV3 {
 // GetLatestProcesses
 // Retrieve the 10 most recent [processes](https://hathora.dev/docs/concepts/hathora-entities#process) objects for an [application](https://hathora.dev/docs/concepts/hathora-entities#application). Filter the array by optionally passing in a `status` or `region`.
 func (s *ProcessesV3) GetLatestProcesses(ctx context.Context, appID *string, status []components.ProcessStatus, region []components.Region, opts ...operations.Option) ([]components.ProcessV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetLatestProcesses",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetLatestProcessesRequest{
 		AppID:  appID,
 		Status: status,
@@ -66,6 +60,13 @@ func (s *ProcessesV3) GetLatestProcesses(ctx context.Context, appID *string, sta
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/latest", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetLatestProcesses",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -263,12 +264,6 @@ func (s *ProcessesV3) GetLatestProcesses(ctx context.Context, appID *string, sta
 // GetProcessesCountExperimental
 // Count the number of [processes](https://hathora.dev/docs/concepts/hathora-entities#process) objects for an [application](https://hathora.dev/docs/concepts/hathora-entities#application). Filter by optionally passing in a `status` or `region`.
 func (s *ProcessesV3) GetProcessesCountExperimental(ctx context.Context, appID *string, status []components.ProcessStatus, region []components.Region, opts ...operations.Option) (*operations.GetProcessesCountExperimentalResponseBody, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetProcessesCountExperimental",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetProcessesCountExperimentalRequest{
 		AppID:  appID,
 		Status: status,
@@ -300,6 +295,13 @@ func (s *ProcessesV3) GetProcessesCountExperimental(ctx context.Context, appID *
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/count", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetProcessesCountExperimental",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -497,12 +499,6 @@ func (s *ProcessesV3) GetProcessesCountExperimental(ctx context.Context, appID *
 // CreateProcess
 // Creates a [process](https://hathora.dev/docs/concepts/hathora-entities#process) without a room. Use this to pre-allocate processes ahead of time so that subsequent room assignment via [CreateRoom()](https://hathora.dev/api#tag/RoomV2/operation/CreateRoom) can be instant.
 func (s *ProcessesV3) CreateProcess(ctx context.Context, region components.Region, appID *string, opts ...operations.Option) (*components.ProcessV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateProcess",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateProcessRequest{
 		AppID:  appID,
 		Region: region,
@@ -533,6 +529,13 @@ func (s *ProcessesV3) CreateProcess(ctx context.Context, region components.Regio
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/regions/{region}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateProcess",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -749,12 +752,6 @@ func (s *ProcessesV3) CreateProcess(ctx context.Context, region components.Regio
 // GetProcess
 // Get details for a [process](https://hathora.dev/docs/concepts/hathora-entities#process).
 func (s *ProcessesV3) GetProcess(ctx context.Context, processID string, appID *string, opts ...operations.Option) (*components.ProcessV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetProcess",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetProcessRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -785,6 +782,13 @@ func (s *ProcessesV3) GetProcess(ctx context.Context, processID string, appID *s
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/{processId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetProcess",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -976,12 +980,6 @@ func (s *ProcessesV3) GetProcess(ctx context.Context, processID string, appID *s
 // StopProcess
 // Stops a [process](https://hathora.dev/docs/concepts/hathora-entities#process) immediately.
 func (s *ProcessesV3) StopProcess(ctx context.Context, processID string, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "StopProcess",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.StopProcessRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -1012,6 +1010,13 @@ func (s *ProcessesV3) StopProcess(ctx context.Context, processID string, appID *
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/{processId}/stop", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "StopProcess",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1202,12 +1207,6 @@ func (s *ProcessesV3) StopProcess(ctx context.Context, processID string, appID *
 
 // GetProcessMetrics
 func (s *ProcessesV3) GetProcessMetrics(ctx context.Context, request operations.GetProcessMetricsRequest, opts ...operations.Option) (*components.ProcessMetricsData, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetProcessMetrics",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.GetProcessMetricsGlobals{
 		AppID: s.sdkConfiguration.Globals.AppID,
 	}
@@ -1233,6 +1232,13 @@ func (s *ProcessesV3) GetProcessMetrics(ctx context.Context, request operations.
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v3/apps/{appId}/processes/process/{processId}/metrics", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetProcessMetrics",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

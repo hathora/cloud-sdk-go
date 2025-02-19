@@ -30,12 +30,6 @@ func newAppsV2(sdkConfig sdkConfiguration) *AppsV2 {
 // GetApps
 // Returns an unsorted list of your organization’s [applications](https://hathora.dev/docs/concepts/hathora-entities#application). An application is uniquely identified by an `appId`.
 func (s *AppsV2) GetApps(ctx context.Context, orgID *string, opts ...operations.Option) (*components.ApplicationsPage, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetApps",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetAppsRequest{
 		OrgID: orgID,
 	}
@@ -65,6 +59,13 @@ func (s *AppsV2) GetApps(ctx context.Context, orgID *string, opts ...operations.
 	opURL, err := url.JoinPath(baseURL, "/apps/v2/apps")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetApps",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -260,12 +261,6 @@ func (s *AppsV2) GetApps(ctx context.Context, orgID *string, opts ...operations.
 // CreateApp
 // Create a new [application](https://hathora.dev/docs/concepts/hathora-entities#application).
 func (s *AppsV2) CreateApp(ctx context.Context, appConfig components.AppConfig, orgID *string, opts ...operations.Option) (*components.Application, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateApp",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateAppRequest{
 		OrgID:     orgID,
 		AppConfig: appConfig,
@@ -298,6 +293,12 @@ func (s *AppsV2) CreateApp(ctx context.Context, appConfig components.AppConfig, 
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateApp",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AppConfig", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -522,12 +523,6 @@ func (s *AppsV2) CreateApp(ctx context.Context, appConfig components.AppConfig, 
 // GetApp
 // Get details for an [application](https://hathora.dev/docs/concepts/hathora-entities#application) using `appId`.
 func (s *AppsV2) GetApp(ctx context.Context, appID *string, opts ...operations.Option) (*components.Application, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetApp",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetAppRequest{
 		AppID: appID,
 	}
@@ -557,6 +552,13 @@ func (s *AppsV2) GetApp(ctx context.Context, appID *string, opts ...operations.O
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apps/v2/apps/{appId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetApp",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -748,12 +750,6 @@ func (s *AppsV2) GetApp(ctx context.Context, appID *string, opts ...operations.O
 // UpdateApp
 // Update data for an existing [application](https://hathora.dev/docs/concepts/hathora-entities#application) using `appId`.
 func (s *AppsV2) UpdateApp(ctx context.Context, appConfig components.AppConfig, appID *string, opts ...operations.Option) (*components.Application, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "UpdateApp",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.UpdateAppRequest{
 		AppID:     appID,
 		AppConfig: appConfig,
@@ -786,6 +782,12 @@ func (s *AppsV2) UpdateApp(ctx context.Context, appConfig components.AppConfig, 
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "UpdateApp",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AppConfig", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1006,12 +1008,6 @@ func (s *AppsV2) UpdateApp(ctx context.Context, appConfig components.AppConfig, 
 // DeleteApp
 // Delete an [application](https://hathora.dev/docs/concepts/hathora-entities#application) using `appId`. Your organization will lose access to this application.
 func (s *AppsV2) DeleteApp(ctx context.Context, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "DeleteApp",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.DeleteAppRequest{
 		AppID: appID,
 	}
@@ -1041,6 +1037,13 @@ func (s *AppsV2) DeleteApp(ctx context.Context, appID *string, opts ...operation
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apps/v2/apps/{appId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "DeleteApp",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

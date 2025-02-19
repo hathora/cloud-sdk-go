@@ -28,12 +28,6 @@ func newLogsV1(sdkConfig sdkConfiguration) *LogsV1 {
 // GetLogsForProcess
 // Returns a stream of logs for a [process](https://hathora.dev/docs/concepts/hathora-entities#process) using `appId` and `processId`.
 func (s *LogsV1) GetLogsForProcess(ctx context.Context, processID string, appID *string, follow *bool, tailLines *int, opts ...operations.Option) (io.ReadCloser, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetLogsForProcess",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetLogsForProcessRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -66,6 +60,13 @@ func (s *LogsV1) GetLogsForProcess(ctx context.Context, processID string, appID 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/logs/v1/{appId}/process/{processId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetLogsForProcess",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -276,12 +277,6 @@ func (s *LogsV1) GetLogsForProcess(ctx context.Context, processID string, appID 
 // DownloadLogForProcess
 // Download entire log file for a stopped process.
 func (s *LogsV1) DownloadLogForProcess(ctx context.Context, processID string, appID *string, opts ...operations.Option) (io.ReadCloser, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "DownloadLogForProcess",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.DownloadLogForProcessRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -312,6 +307,13 @@ func (s *LogsV1) DownloadLogForProcess(ctx context.Context, processID string, ap
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/logs/v1/{appId}/process/{processId}/download", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "DownloadLogForProcess",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

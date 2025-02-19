@@ -31,12 +31,6 @@ func newProcessesV1(sdkConfig sdkConfiguration) *ProcessesV1 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *ProcessesV1) GetRunningProcesses(ctx context.Context, appID *string, region *components.Region, opts ...operations.Option) ([]components.ProcessWithRooms, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetRunningProcesses",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetRunningProcessesRequest{
 		AppID:  appID,
 		Region: region,
@@ -67,6 +61,13 @@ func (s *ProcessesV1) GetRunningProcesses(ctx context.Context, appID *string, re
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v1/{appId}/list/running", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetRunningProcesses",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -266,12 +267,6 @@ func (s *ProcessesV1) GetRunningProcesses(ctx context.Context, appID *string, re
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *ProcessesV1) GetStoppedProcesses(ctx context.Context, appID *string, region *components.Region, opts ...operations.Option) ([]components.Process, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetStoppedProcesses",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetStoppedProcessesRequest{
 		AppID:  appID,
 		Region: region,
@@ -302,6 +297,13 @@ func (s *ProcessesV1) GetStoppedProcesses(ctx context.Context, appID *string, re
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v1/{appId}/list/stopped", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetStoppedProcesses",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -501,12 +503,6 @@ func (s *ProcessesV1) GetStoppedProcesses(ctx context.Context, appID *string, re
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *ProcessesV1) GetProcessInfoDeprecated(ctx context.Context, processID string, appID *string, opts ...operations.Option) (*components.Process, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetProcessInfoDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetProcessInfoDeprecatedRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -537,6 +533,13 @@ func (s *ProcessesV1) GetProcessInfoDeprecated(ctx context.Context, processID st
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/processes/v1/{appId}/info/{processId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetProcessInfoDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
