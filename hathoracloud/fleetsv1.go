@@ -30,12 +30,6 @@ func newFleetsV1(sdkConfig sdkConfiguration) *FleetsV1 {
 // GetFleets
 // Returns an array of [fleets](https://hathora.dev/docs/concepts/hathora-entities#fleet).
 func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operations.Option) (*components.FleetsPage, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetFleets",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetFleetsRequest{
 		OrgID: orgID,
 	}
@@ -65,6 +59,13 @@ func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operati
 	opURL, err := url.JoinPath(baseURL, "/fleets/v1/fleets")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetFleets",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -260,12 +261,6 @@ func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operati
 // GetFleetRegion
 // Gets the configuration for a given [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
 func (s *FleetsV1) GetFleetRegion(ctx context.Context, fleetID string, region components.Region, orgID *string, opts ...operations.Option) (*components.FleetRegion, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetFleetRegion",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetFleetRegionRequest{
 		FleetID: fleetID,
 		Region:  region,
@@ -297,6 +292,13 @@ func (s *FleetsV1) GetFleetRegion(ctx context.Context, fleetID string, region co
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/fleets/v1/fleets/{fleetId}/regions/{region}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetFleetRegion",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -494,12 +496,6 @@ func (s *FleetsV1) GetFleetRegion(ctx context.Context, fleetID string, region co
 // UpdateFleetRegion
 // Updates the configuration for a given [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
 func (s *FleetsV1) UpdateFleetRegion(ctx context.Context, fleetID string, region components.Region, fleetRegionConfig components.FleetRegionConfig, orgID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "UpdateFleetRegion",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.UpdateFleetRegionRequest{
 		FleetID:           fleetID,
 		Region:            region,
@@ -534,6 +530,12 @@ func (s *FleetsV1) UpdateFleetRegion(ctx context.Context, fleetID string, region
 		return fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "UpdateFleetRegion",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "FleetRegionConfig", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return err
@@ -737,12 +739,6 @@ func (s *FleetsV1) UpdateFleetRegion(ctx context.Context, fleetID string, region
 // GetFleetMetrics
 // Gets metrics for a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
 func (s *FleetsV1) GetFleetMetrics(ctx context.Context, request operations.GetFleetMetricsRequest, opts ...operations.Option) (*components.FleetMetricsData, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetFleetMetrics",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.GetFleetMetricsGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
@@ -768,6 +764,13 @@ func (s *FleetsV1) GetFleetMetrics(ctx context.Context, request operations.GetFl
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/fleets/v1/fleets/{fleetId}/regions/{region}/metrics", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetFleetMetrics",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

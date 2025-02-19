@@ -29,12 +29,6 @@ func newManagementV1(sdkConfig sdkConfiguration) *ManagementV1 {
 
 // SendVerificationEmail
 func (s *ManagementV1) SendVerificationEmail(ctx context.Context, request components.VerificationEmailRequest, opts ...operations.Option) (*components.VerificationEmailSuccess, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "SendVerificationEmail",
-		SecuritySource: nil,
-	}
-
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -58,6 +52,12 @@ func (s *ManagementV1) SendVerificationEmail(ctx context.Context, request compon
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "SendVerificationEmail",
+		SecuritySource: nil,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err

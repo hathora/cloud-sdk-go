@@ -32,7 +32,7 @@ func main() {
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LogsV1.GetLogsForProcess(ctx, "cbfcddd2-0006-43ae-996c-995fff7bed2e", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, hathoracloud.Int(100))
+    res, err := s.LogsV1.GetLogsForProcess(ctx, "cbfcddd2-0006-43ae-996c-995fff7bed2e", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
         log.Fatal(err)
     }

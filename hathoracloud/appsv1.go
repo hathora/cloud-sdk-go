@@ -31,12 +31,6 @@ func newAppsV1(sdkConfig sdkConfiguration) *AppsV1 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *AppsV1) GetAppsV1Deprecated(ctx context.Context, opts ...operations.Option) ([]components.ApplicationWithLatestDeploymentAndBuildDeprecated, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetAppsV1Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -58,6 +52,13 @@ func (s *AppsV1) GetAppsV1Deprecated(ctx context.Context, opts ...operations.Opt
 	opURL, err := url.JoinPath(baseURL, "/apps/v1/list")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetAppsV1Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -249,12 +250,6 @@ func (s *AppsV1) GetAppsV1Deprecated(ctx context.Context, opts ...operations.Opt
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *AppsV1) CreateAppV1Deprecated(ctx context.Context, request components.AppConfig, opts ...operations.Option) (*components.Application, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateAppV1Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -278,6 +273,12 @@ func (s *AppsV1) CreateAppV1Deprecated(ctx context.Context, request components.A
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateAppV1Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "Request", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -498,12 +499,6 @@ func (s *AppsV1) CreateAppV1Deprecated(ctx context.Context, request components.A
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *AppsV1) UpdateAppV1Deprecated(ctx context.Context, appConfig components.AppConfig, appID *string, opts ...operations.Option) (*components.Application, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "UpdateAppV1Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.UpdateAppV1DeprecatedRequest{
 		AppID:     appID,
 		AppConfig: appConfig,
@@ -536,6 +531,12 @@ func (s *AppsV1) UpdateAppV1Deprecated(ctx context.Context, appConfig components
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "UpdateAppV1Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AppConfig", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -758,12 +759,6 @@ func (s *AppsV1) UpdateAppV1Deprecated(ctx context.Context, appConfig components
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *AppsV1) GetAppInfoV1Deprecated(ctx context.Context, appID *string, opts ...operations.Option) (*components.Application, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetAppInfoV1Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetAppInfoV1DeprecatedRequest{
 		AppID: appID,
 	}
@@ -793,6 +788,13 @@ func (s *AppsV1) GetAppInfoV1Deprecated(ctx context.Context, appID *string, opts
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apps/v1/info/{appId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetAppInfoV1Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -986,12 +988,6 @@ func (s *AppsV1) GetAppInfoV1Deprecated(ctx context.Context, appID *string, opts
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *AppsV1) DeleteAppV1Deprecated(ctx context.Context, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "DeleteAppV1Deprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.DeleteAppV1DeprecatedRequest{
 		AppID: appID,
 	}
@@ -1021,6 +1017,13 @@ func (s *AppsV1) DeleteAppV1Deprecated(ctx context.Context, appID *string, opts 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/apps/v1/delete/{appId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "DeleteAppV1Deprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

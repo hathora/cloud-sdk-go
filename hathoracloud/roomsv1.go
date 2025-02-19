@@ -29,12 +29,6 @@ func newRoomsV1(sdkConfig sdkConfiguration) *RoomsV1 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *RoomsV1) CreateRoomDeprecated(ctx context.Context, createRoomParams components.CreateRoomParams, appID *string, roomID *string, opts ...operations.Option) (*string, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateRoomDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateRoomDeprecatedRequest{
 		AppID:            appID,
 		RoomID:           roomID,
@@ -68,6 +62,12 @@ func (s *RoomsV1) CreateRoomDeprecated(ctx context.Context, createRoomParams com
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateRoomDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateRoomParams", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -297,12 +297,6 @@ func (s *RoomsV1) CreateRoomDeprecated(ctx context.Context, createRoomParams com
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *RoomsV1) GetRoomInfoDeprecated(ctx context.Context, roomID string, appID *string, opts ...operations.Option) (*components.Room, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetRoomInfoDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetRoomInfoDeprecatedRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -333,6 +327,13 @@ func (s *RoomsV1) GetRoomInfoDeprecated(ctx context.Context, roomID string, appI
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/info/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetRoomInfoDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -527,12 +528,6 @@ func (s *RoomsV1) GetRoomInfoDeprecated(ctx context.Context, roomID string, appI
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *RoomsV1) GetActiveRoomsForProcessDeprecated(ctx context.Context, processID string, appID *string, opts ...operations.Option) ([]components.RoomWithoutAllocations, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetActiveRoomsForProcessDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetActiveRoomsForProcessDeprecatedRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -563,6 +558,13 @@ func (s *RoomsV1) GetActiveRoomsForProcessDeprecated(ctx context.Context, proces
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/list/{processId}/active", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetActiveRoomsForProcessDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -755,12 +757,6 @@ func (s *RoomsV1) GetActiveRoomsForProcessDeprecated(ctx context.Context, proces
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *RoomsV1) GetInactiveRoomsForProcessDeprecated(ctx context.Context, processID string, appID *string, opts ...operations.Option) ([]components.RoomWithoutAllocations, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetInactiveRoomsForProcessDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetInactiveRoomsForProcessDeprecatedRequest{
 		AppID:     appID,
 		ProcessID: processID,
@@ -791,6 +787,13 @@ func (s *RoomsV1) GetInactiveRoomsForProcessDeprecated(ctx context.Context, proc
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/list/{processId}/inactive", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetInactiveRoomsForProcessDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -983,12 +986,6 @@ func (s *RoomsV1) GetInactiveRoomsForProcessDeprecated(ctx context.Context, proc
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *RoomsV1) DestroyRoomDeprecated(ctx context.Context, roomID string, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "DestroyRoomDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.DestroyRoomDeprecatedRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -1019,6 +1016,13 @@ func (s *RoomsV1) DestroyRoomDeprecated(ctx context.Context, roomID string, appI
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/destroy/{roomId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "DestroyRoomDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1211,12 +1215,6 @@ func (s *RoomsV1) DestroyRoomDeprecated(ctx context.Context, roomID string, appI
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *RoomsV1) SuspendRoomDeprecated(ctx context.Context, roomID string, appID *string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "SuspendRoomDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.SuspendRoomDeprecatedRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -1247,6 +1245,13 @@ func (s *RoomsV1) SuspendRoomDeprecated(ctx context.Context, roomID string, appI
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/suspend/{roomId}", request, globals)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "SuspendRoomDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1439,12 +1444,6 @@ func (s *RoomsV1) SuspendRoomDeprecated(ctx context.Context, roomID string, appI
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *RoomsV1) GetConnectionInfoDeprecated(ctx context.Context, roomID string, appID *string, opts ...operations.Option) (*components.ConnectionInfo, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetConnectionInfoDeprecated",
-		SecuritySource: nil,
-	}
-
 	request := operations.GetConnectionInfoDeprecatedRequest{
 		AppID:  appID,
 		RoomID: roomID,
@@ -1475,6 +1474,13 @@ func (s *RoomsV1) GetConnectionInfoDeprecated(ctx context.Context, roomID string
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/rooms/v1/{appId}/connectioninfo/{roomId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetConnectionInfoDeprecated",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout

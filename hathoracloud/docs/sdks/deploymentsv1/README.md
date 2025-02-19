@@ -204,7 +204,6 @@ func main() {
     )
 
     res, err := s.DeploymentsV1.CreateDeploymentV1Deprecated(ctx, 1, components.DeploymentConfig{
-        IdleTimeoutEnabled: hathoracloud.Bool(true),
         Env: []components.DeploymentConfigEnv{
             components.DeploymentConfigEnv{
                 Value: "TRUE",

@@ -29,12 +29,6 @@ func newLobbiesV1(sdkConfig sdkConfiguration) *LobbiesV1 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV1) CreatePrivateLobbyDeprecated(ctx context.Context, security operations.CreatePrivateLobbyDeprecatedSecurity, appID *string, region *components.Region, local *bool, opts ...operations.Option) (*string, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreatePrivateLobbyDeprecated",
-		SecuritySource: utils.AsSecuritySource(security),
-	}
-
 	request := operations.CreatePrivateLobbyDeprecatedRequest{
 		AppID:  appID,
 		Region: region,
@@ -66,6 +60,13 @@ func (s *LobbiesV1) CreatePrivateLobbyDeprecated(ctx context.Context, security o
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/lobby/v1/{appId}/create/private", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreatePrivateLobbyDeprecated",
+		SecuritySource: utils.AsSecuritySource(security),
 	}
 
 	timeout := o.Timeout
@@ -289,12 +290,6 @@ func (s *LobbiesV1) CreatePrivateLobbyDeprecated(ctx context.Context, security o
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV1) CreatePublicLobbyDeprecated(ctx context.Context, security operations.CreatePublicLobbyDeprecatedSecurity, appID *string, region *components.Region, local *bool, opts ...operations.Option) (*string, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreatePublicLobbyDeprecated",
-		SecuritySource: utils.AsSecuritySource(security),
-	}
-
 	request := operations.CreatePublicLobbyDeprecatedRequest{
 		AppID:  appID,
 		Region: region,
@@ -326,6 +321,13 @@ func (s *LobbiesV1) CreatePublicLobbyDeprecated(ctx context.Context, security op
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/lobby/v1/{appId}/create/public", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreatePublicLobbyDeprecated",
+		SecuritySource: utils.AsSecuritySource(security),
 	}
 
 	timeout := o.Timeout
@@ -549,12 +551,6 @@ func (s *LobbiesV1) CreatePublicLobbyDeprecated(ctx context.Context, security op
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *LobbiesV1) ListActivePublicLobbiesDeprecatedV1(ctx context.Context, appID *string, local *bool, region *components.Region, opts ...operations.Option) ([]components.Lobby, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "ListActivePublicLobbiesDeprecatedV1",
-		SecuritySource: nil,
-	}
-
 	request := operations.ListActivePublicLobbiesDeprecatedV1Request{
 		AppID:  appID,
 		Local:  local,
@@ -586,6 +582,13 @@ func (s *LobbiesV1) ListActivePublicLobbiesDeprecatedV1(ctx context.Context, app
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/lobby/v1/{appId}/list", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "ListActivePublicLobbiesDeprecatedV1",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout

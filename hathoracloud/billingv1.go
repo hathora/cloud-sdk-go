@@ -28,13 +28,9 @@ func newBillingV1(sdkConfig sdkConfiguration) *BillingV1 {
 }
 
 // GetBalance
+//
+// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *BillingV1) GetBalance(ctx context.Context, orgID *string, opts ...operations.Option) (*float64, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetBalance",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetBalanceRequest{
 		OrgID: orgID,
 	}
@@ -64,6 +60,13 @@ func (s *BillingV1) GetBalance(ctx context.Context, orgID *string, opts ...opera
 	opURL, err := url.JoinPath(baseURL, "/billing/v1/balance")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetBalance",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -170,7 +173,7 @@ func (s *BillingV1) GetBalance(ctx context.Context, orgID *string, opts ...opera
 
 			_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -232,6 +235,27 @@ func (s *BillingV1) GetBalance(ctx context.Context, orgID *string, opts ...opera
 			}
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode == 500:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out errors.APIError
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -258,12 +282,6 @@ func (s *BillingV1) GetBalance(ctx context.Context, orgID *string, opts ...opera
 
 // GetUpcomingInvoiceItems
 func (s *BillingV1) GetUpcomingInvoiceItems(ctx context.Context, orgID *string, opts ...operations.Option) (*components.InvoiceItemPage, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetUpcomingInvoiceItems",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetUpcomingInvoiceItemsRequest{
 		OrgID: orgID,
 	}
@@ -293,6 +311,13 @@ func (s *BillingV1) GetUpcomingInvoiceItems(ctx context.Context, orgID *string, 
 	opURL, err := url.JoinPath(baseURL, "/billing/v1/upcoming/items")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetUpcomingInvoiceItems",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -399,7 +424,7 @@ func (s *BillingV1) GetUpcomingInvoiceItems(ctx context.Context, orgID *string, 
 
 			_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -461,6 +486,27 @@ func (s *BillingV1) GetUpcomingInvoiceItems(ctx context.Context, orgID *string, 
 			}
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode == 500:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out errors.APIError
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -487,12 +533,6 @@ func (s *BillingV1) GetUpcomingInvoiceItems(ctx context.Context, orgID *string, 
 
 // GetUpcomingInvoiceTotal
 func (s *BillingV1) GetUpcomingInvoiceTotal(ctx context.Context, orgID *string, opts ...operations.Option) (*operations.GetUpcomingInvoiceTotalResponseBody, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetUpcomingInvoiceTotal",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetUpcomingInvoiceTotalRequest{
 		OrgID: orgID,
 	}
@@ -522,6 +562,13 @@ func (s *BillingV1) GetUpcomingInvoiceTotal(ctx context.Context, orgID *string, 
 	opURL, err := url.JoinPath(baseURL, "/billing/v1/upcoming/total")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetUpcomingInvoiceTotal",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -628,7 +675,7 @@ func (s *BillingV1) GetUpcomingInvoiceTotal(ctx context.Context, orgID *string, 
 
 			_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -690,6 +737,27 @@ func (s *BillingV1) GetUpcomingInvoiceTotal(ctx context.Context, orgID *string, 
 			}
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode == 500:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out errors.APIError
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -716,12 +784,6 @@ func (s *BillingV1) GetUpcomingInvoiceTotal(ctx context.Context, orgID *string, 
 
 // GetPaymentMethod
 func (s *BillingV1) GetPaymentMethod(ctx context.Context, orgID *string, opts ...operations.Option) (*components.PaymentMethod, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetPaymentMethod",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetPaymentMethodRequest{
 		OrgID: orgID,
 	}
@@ -751,6 +813,13 @@ func (s *BillingV1) GetPaymentMethod(ctx context.Context, orgID *string, opts ..
 	opURL, err := url.JoinPath(baseURL, "/billing/v1/paymentmethod")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetPaymentMethod",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -966,12 +1035,6 @@ func (s *BillingV1) GetPaymentMethod(ctx context.Context, orgID *string, opts ..
 
 // InitStripeCustomerPortalURL - InitStripeCustomerPortalUrl
 func (s *BillingV1) InitStripeCustomerPortalURL(ctx context.Context, customerPortalURL components.CustomerPortalURL, orgID *string, opts ...operations.Option) (*string, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "InitStripeCustomerPortalUrl",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.InitStripeCustomerPortalURLRequest{
 		OrgID:             orgID,
 		CustomerPortalURL: customerPortalURL,
@@ -1004,6 +1067,12 @@ func (s *BillingV1) InitStripeCustomerPortalURL(ctx context.Context, customerPor
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "InitStripeCustomerPortalUrl",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CustomerPortalURL", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1116,7 +1185,7 @@ func (s *BillingV1) InitStripeCustomerPortalURL(ctx context.Context, customerPor
 
 			_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -1180,6 +1249,27 @@ func (s *BillingV1) InitStripeCustomerPortalURL(ctx context.Context, customerPor
 			}
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode == 500:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out errors.APIError
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -1206,12 +1296,6 @@ func (s *BillingV1) InitStripeCustomerPortalURL(ctx context.Context, customerPor
 
 // GetInvoices
 func (s *BillingV1) GetInvoices(ctx context.Context, orgID *string, opts ...operations.Option) ([]components.Invoice, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetInvoices",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetInvoicesRequest{
 		OrgID: orgID,
 	}
@@ -1241,6 +1325,13 @@ func (s *BillingV1) GetInvoices(ctx context.Context, orgID *string, opts ...oper
 	opURL, err := url.JoinPath(baseURL, "/billing/v1/invoices")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetInvoices",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

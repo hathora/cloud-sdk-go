@@ -30,12 +30,6 @@ func newDiscoveryV2(sdkConfig sdkConfiguration) *DiscoveryV2 {
 // GetPingServiceEndpoints
 // Returns an array of all regions with a host and port that a client can directly ping. Open a websocket connection to `wss://<host>:<port>/ws` and send a packet. To calculate ping, measure the time it takes to get an echo packet back.
 func (s *DiscoveryV2) GetPingServiceEndpoints(ctx context.Context, opts ...operations.Option) ([]components.PingEndpoints, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetPingServiceEndpoints",
-		SecuritySource: nil,
-	}
-
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -57,6 +51,13 @@ func (s *DiscoveryV2) GetPingServiceEndpoints(ctx context.Context, opts ...opera
 	opURL, err := url.JoinPath(baseURL, "/discovery/v2/ping")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetPingServiceEndpoints",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout

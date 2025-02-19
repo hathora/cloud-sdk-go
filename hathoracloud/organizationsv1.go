@@ -29,12 +29,6 @@ func newOrganizationsV1(sdkConfig sdkConfiguration) *OrganizationsV1 {
 // GetOrgs
 // Returns an unsorted list of all organizations that you are a member of (an accepted membership invite). An organization is uniquely identified by an `orgId`.
 func (s *OrganizationsV1) GetOrgs(ctx context.Context, opts ...operations.Option) (*components.OrgsPage, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetOrgs",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -56,6 +50,13 @@ func (s *OrganizationsV1) GetOrgs(ctx context.Context, opts ...operations.Option
 	opURL, err := url.JoinPath(baseURL, "/orgs/v1")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetOrgs",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -246,12 +247,6 @@ func (s *OrganizationsV1) GetOrgs(ctx context.Context, opts ...operations.Option
 
 // GetUserPendingInvites
 func (s *OrganizationsV1) GetUserPendingInvites(ctx context.Context, opts ...operations.Option) (*components.PendingOrgInvitesPage, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetUserPendingInvites",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -273,6 +268,13 @@ func (s *OrganizationsV1) GetUserPendingInvites(ctx context.Context, opts ...ope
 	opURL, err := url.JoinPath(baseURL, "/orgs/v1/user/invites/pending")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetUserPendingInvites",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -461,12 +463,6 @@ func (s *OrganizationsV1) GetUserPendingInvites(ctx context.Context, opts ...ope
 
 // GetOrgMembers
 func (s *OrganizationsV1) GetOrgMembers(ctx context.Context, orgID string, opts ...operations.Option) (*components.OrgMembersPage, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetOrgMembers",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetOrgMembersRequest{
 		OrgID: orgID,
 	}
@@ -492,6 +488,13 @@ func (s *OrganizationsV1) GetOrgMembers(ctx context.Context, orgID string, opts 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/members", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetOrgMembers",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -680,12 +683,6 @@ func (s *OrganizationsV1) GetOrgMembers(ctx context.Context, orgID string, opts 
 
 // InviteUser
 func (s *OrganizationsV1) InviteUser(ctx context.Context, orgID string, createUserInvite components.CreateUserInvite, opts ...operations.Option) (*components.PendingOrgInvite, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "InviteUser",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.InviteUserRequest{
 		OrgID:            orgID,
 		CreateUserInvite: createUserInvite,
@@ -714,6 +711,12 @@ func (s *OrganizationsV1) InviteUser(ctx context.Context, orgID string, createUs
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "InviteUser",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateUserInvite", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -910,12 +913,6 @@ func (s *OrganizationsV1) InviteUser(ctx context.Context, orgID string, createUs
 
 // UpdateUserInvite
 func (s *OrganizationsV1) UpdateUserInvite(ctx context.Context, orgID string, updateUserInvite components.UpdateUserInvite, opts ...operations.Option) (*bool, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "UpdateUserInvite",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.UpdateUserInviteRequest{
 		OrgID:            orgID,
 		UpdateUserInvite: updateUserInvite,
@@ -944,6 +941,12 @@ func (s *OrganizationsV1) UpdateUserInvite(ctx context.Context, orgID string, up
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "UpdateUserInvite",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateUserInvite", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -1140,12 +1143,6 @@ func (s *OrganizationsV1) UpdateUserInvite(ctx context.Context, orgID string, up
 
 // RescindInvite
 func (s *OrganizationsV1) RescindInvite(ctx context.Context, orgID string, rescindUserInvite components.RescindUserInvite, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "RescindInvite",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.RescindInviteRequest{
 		OrgID:             orgID,
 		RescindUserInvite: rescindUserInvite,
@@ -1174,6 +1171,12 @@ func (s *OrganizationsV1) RescindInvite(ctx context.Context, orgID string, resci
 		return fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "RescindInvite",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "RescindUserInvite", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return err
@@ -1372,12 +1375,6 @@ func (s *OrganizationsV1) RescindInvite(ctx context.Context, orgID string, resci
 
 // GetOrgPendingInvites
 func (s *OrganizationsV1) GetOrgPendingInvites(ctx context.Context, orgID string, opts ...operations.Option) (*components.PendingOrgInvitesPage, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetOrgPendingInvites",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetOrgPendingInvitesRequest{
 		OrgID: orgID,
 	}
@@ -1403,6 +1400,13 @@ func (s *OrganizationsV1) GetOrgPendingInvites(ctx context.Context, orgID string
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites/pending", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetOrgPendingInvites",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1591,12 +1595,6 @@ func (s *OrganizationsV1) GetOrgPendingInvites(ctx context.Context, orgID string
 
 // AcceptInvite
 func (s *OrganizationsV1) AcceptInvite(ctx context.Context, orgID string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "AcceptInvite",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.AcceptInviteRequest{
 		OrgID: orgID,
 	}
@@ -1622,6 +1620,13 @@ func (s *OrganizationsV1) AcceptInvite(ctx context.Context, orgID string, opts .
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites/accept", request, nil)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "AcceptInvite",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1791,12 +1796,6 @@ func (s *OrganizationsV1) AcceptInvite(ctx context.Context, orgID string, opts .
 
 // RejectInvite
 func (s *OrganizationsV1) RejectInvite(ctx context.Context, orgID string, opts ...operations.Option) error {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "RejectInvite",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.RejectInviteRequest{
 		OrgID: orgID,
 	}
@@ -1822,6 +1821,13 @@ func (s *OrganizationsV1) RejectInvite(ctx context.Context, orgID string, opts .
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/orgs/v1/{orgId}/invites/reject", request, nil)
 	if err != nil {
 		return fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "RejectInvite",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -1991,12 +1997,6 @@ func (s *OrganizationsV1) RejectInvite(ctx context.Context, orgID string, opts .
 
 // GetUsageLimits
 func (s *OrganizationsV1) GetUsageLimits(ctx context.Context, orgID *string, opts ...operations.Option) (*components.UsageLimits, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetUsageLimits",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetUsageLimitsRequest{
 		OrgID: orgID,
 	}
@@ -2026,6 +2026,13 @@ func (s *OrganizationsV1) GetUsageLimits(ctx context.Context, orgID *string, opt
 	opURL, err := url.JoinPath(baseURL, "/orgs/v1/metadata/usageLimits")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetUsageLimits",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

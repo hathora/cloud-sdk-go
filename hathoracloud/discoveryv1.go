@@ -32,12 +32,6 @@ func newDiscoveryV1(sdkConfig sdkConfiguration) *DiscoveryV1 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *DiscoveryV1) GetPingServiceEndpointsDeprecated(ctx context.Context, opts ...operations.Option) ([]components.PingEndpoints, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetPingServiceEndpointsDeprecated",
-		SecuritySource: nil,
-	}
-
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -59,6 +53,13 @@ func (s *DiscoveryV1) GetPingServiceEndpointsDeprecated(ctx context.Context, opt
 	opURL, err := url.JoinPath(baseURL, "/discovery/v1/ping")
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetPingServiceEndpointsDeprecated",
+		SecuritySource: nil,
 	}
 
 	timeout := o.Timeout

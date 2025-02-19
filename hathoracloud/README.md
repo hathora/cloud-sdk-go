@@ -194,7 +194,7 @@ func main() {
 
 ### [BillingV1](docs/sdks/billingv1/README.md)
 
-* [GetBalance](docs/sdks/billingv1/README.md#getbalance) - GetBalance
+* [~~GetBalance~~](docs/sdks/billingv1/README.md#getbalance) - GetBalance :warning: **Deprecated**
 * [GetUpcomingInvoiceItems](docs/sdks/billingv1/README.md#getupcominginvoiceitems) - GetUpcomingInvoiceItems
 * [GetUpcomingInvoiceTotal](docs/sdks/billingv1/README.md#getupcominginvoicetotal) - GetUpcomingInvoiceTotal
 * [GetPaymentMethod](docs/sdks/billingv1/README.md#getpaymentmethod) - GetPaymentMethod
@@ -569,10 +569,10 @@ func main() {
 
 You can override the default server globally using the `WithServerIndex(serverIndex int)` option when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| #   | Server                    |
-| --- | ------------------------- |
-| 0   | `https://api.hathora.dev` |
-| 1   | `https:///`               |
+| #   | Server                    | Description |
+| --- | ------------------------- | ----------- |
+| 0   | `https://api.hathora.dev` |             |
+| 1   | `/`                       |             |
 
 #### Example
 

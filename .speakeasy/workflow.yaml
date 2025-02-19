@@ -12,6 +12,5 @@ targets:
         source: my-source
         output: hathoracloud
         codeSamples:
-            output: ""
             registry:
                 location: registry.speakeasyapi.dev/hathora/hathora/my-source-go-code-samples

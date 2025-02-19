@@ -37,7 +37,7 @@ func main() {
 
     res, err := s.LobbiesV1.CreatePrivateLobbyDeprecated(ctx, operations.CreatePrivateLobbyDeprecatedSecurity{
         PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, hathoracloud.Bool(false))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -98,7 +98,7 @@ func main() {
 
     res, err := s.LobbiesV1.CreatePublicLobbyDeprecated(ctx, operations.CreatePublicLobbyDeprecatedSecurity{
         PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, hathoracloud.Bool(false))
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -156,7 +156,7 @@ func main() {
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV1.ListActivePublicLobbiesDeprecatedV1(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.Bool(false), nil)
+    res, err := s.LobbiesV1.ListActivePublicLobbiesDeprecatedV1(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
     if err != nil {
         log.Fatal(err)
     }

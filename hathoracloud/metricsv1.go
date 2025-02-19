@@ -31,12 +31,6 @@ func newMetricsV1(sdkConfig sdkConfiguration) *MetricsV1 {
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 func (s *MetricsV1) GetMetricsDeprecated(ctx context.Context, request operations.GetMetricsDeprecatedRequest, opts ...operations.Option) (*components.DeprecatedProcessMetricsData, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetMetricsDeprecated",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	globals := operations.GetMetricsDeprecatedGlobals{
 		AppID: s.sdkConfiguration.Globals.AppID,
 	}
@@ -62,6 +56,13 @@ func (s *MetricsV1) GetMetricsDeprecated(ctx context.Context, request operations
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/metrics/v1/{appId}/process/{processId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetMetricsDeprecated",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

@@ -29,12 +29,6 @@ func newDeploymentsV3(sdkConfig sdkConfiguration) *DeploymentsV3 {
 // GetDeployments
 // Returns an array of [deployments](https://hathora.dev/docs/concepts/hathora-entities#deployment) for an [application](https://hathora.dev/docs/concepts/hathora-entities#application), optionally filtered by deploymentTag.
 func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deploymentTag *string, opts ...operations.Option) (*components.DeploymentsV3Page, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetDeployments",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetDeploymentsRequest{
 		AppID:         appID,
 		DeploymentTag: deploymentTag,
@@ -65,6 +59,13 @@ func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deplo
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v3/apps/{appId}/deployments", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetDeployments",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -260,12 +261,6 @@ func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deplo
 // CreateDeployment
 // Create a new [deployment](https://hathora.dev/docs/concepts/hathora-entities#deployment). Creating a new deployment means all new rooms created will use the latest deployment configuration, but existing games in progress will not be affected.
 func (s *DeploymentsV3) CreateDeployment(ctx context.Context, deploymentConfigV3 components.DeploymentConfigV3, appID *string, opts ...operations.Option) (*components.DeploymentV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "CreateDeployment",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.CreateDeploymentRequest{
 		AppID:              appID,
 		DeploymentConfigV3: deploymentConfigV3,
@@ -298,6 +293,12 @@ func (s *DeploymentsV3) CreateDeployment(ctx context.Context, deploymentConfigV3
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "CreateDeployment",
+		SecuritySource: s.sdkConfiguration.Security,
+	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "DeploymentConfigV3", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
@@ -520,12 +521,6 @@ func (s *DeploymentsV3) CreateDeployment(ctx context.Context, deploymentConfigV3
 // GetLatestDeployment
 // Get the latest [deployment](https://hathora.dev/docs/concepts/hathora-entities#deployment) for an [application](https://hathora.dev/docs/concepts/hathora-entities#application).
 func (s *DeploymentsV3) GetLatestDeployment(ctx context.Context, appID *string, opts ...operations.Option) (*components.DeploymentV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetLatestDeployment",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetLatestDeploymentRequest{
 		AppID: appID,
 	}
@@ -555,6 +550,13 @@ func (s *DeploymentsV3) GetLatestDeployment(ctx context.Context, appID *string, 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v3/apps/{appId}/deployments/latest", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetLatestDeployment",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout
@@ -748,12 +750,6 @@ func (s *DeploymentsV3) GetLatestDeployment(ctx context.Context, appID *string, 
 // GetDeployment
 // Get details for a [deployment](https://hathora.dev/docs/concepts/hathora-entities#deployment).
 func (s *DeploymentsV3) GetDeployment(ctx context.Context, deploymentID string, appID *string, opts ...operations.Option) (*components.DeploymentV3, error) {
-	hookCtx := hooks.HookContext{
-		Context:        ctx,
-		OperationID:    "GetDeployment",
-		SecuritySource: s.sdkConfiguration.Security,
-	}
-
 	request := operations.GetDeploymentRequest{
 		AppID:        appID,
 		DeploymentID: deploymentID,
@@ -784,6 +780,13 @@ func (s *DeploymentsV3) GetDeployment(ctx context.Context, deploymentID string, 
 	opURL, err := utils.GenerateURL(ctx, baseURL, "/deployments/v3/apps/{appId}/deployments/{deploymentId}", request, globals)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
+	}
+
+	hookCtx := hooks.HookContext{
+		BaseURL:        baseURL,
+		Context:        ctx,
+		OperationID:    "GetDeployment",
+		SecuritySource: s.sdkConfiguration.Security,
 	}
 
 	timeout := o.Timeout

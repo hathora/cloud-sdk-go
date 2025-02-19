@@ -314,7 +314,6 @@ func main() {
     res, err := s.ProcessesV3.GetProcessMetrics(ctx, operations.GetProcessMetricsRequest{
         AppID: hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
         ProcessID: "cbfcddd2-0006-43ae-996c-995fff7bed2e",
-        Step: hathoracloud.Int(60),
     })
     if err != nil {
         log.Fatal(err)
