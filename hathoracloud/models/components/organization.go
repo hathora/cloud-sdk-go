@@ -3,18 +3,27 @@
 package components
 
 type Organization struct {
+	// The maximum lifespan in hours of a pod.
+	PodMaxLifespanHrs *float64 `json:"podMaxLifespanHrs,omitempty"`
 	// The features enabled for this org and user.
 	EnabledFeatureFlags []string `json:"enabledFeatureFlags,omitempty"`
 	// The maximum memory in MB that can be used by any process in this org.
-	MaxRequestedMemoryMB *float64 `json:"maxRequestedMemoryMB,omitempty"`
+	MaxRequestedMemoryMB float64 `json:"maxRequestedMemoryMB"`
 	// The scopes the user who loaded this has on this org.
-	Scopes           []Scope `json:"scopes,omitempty"`
+	Scopes           []Scope `json:"scopes"`
 	IsSingleTenant   bool    `json:"isSingleTenant"`
 	StripeCustomerID string  `json:"stripeCustomerId"`
 	// The name of an organization.
 	Name *string `json:"name,omitempty"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID string `json:"orgId"`
+}
+
+func (o *Organization) GetPodMaxLifespanHrs() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.PodMaxLifespanHrs
 }
 
 func (o *Organization) GetEnabledFeatureFlags() []string {
@@ -24,16 +33,16 @@ func (o *Organization) GetEnabledFeatureFlags() []string {
 	return o.EnabledFeatureFlags
 }
 
-func (o *Organization) GetMaxRequestedMemoryMB() *float64 {
+func (o *Organization) GetMaxRequestedMemoryMB() float64 {
 	if o == nil {
-		return nil
+		return 0.0
 	}
 	return o.MaxRequestedMemoryMB
 }
 
 func (o *Organization) GetScopes() []Scope {
 	if o == nil {
-		return nil
+		return []Scope{}
 	}
 	return o.Scopes
 }
