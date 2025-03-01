@@ -31,14 +31,14 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.ProcessesV3.GetLatestProcesses(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
+    res, err := s.ProcessesV3.GetLatestProcesses(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -56,6 +56,7 @@ func main() {
 | `appID`                                                                | **string*                                                              | :heavy_minus_sign:                                                     | N/A                                                                    | app-af469a92-5b45-4565-b3c4-b79878de67d2                               |
 | `status`                                                               | [][components.ProcessStatus](../../models/components/processstatus.md) | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
 | `region`                                                               | [][components.Region](../../models/components/region.md)               | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
+| `before`                                                               | **float64*                                                             | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
 | `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |                                                                        |
 
 ### Response
@@ -86,14 +87,14 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.ProcessesV3.GetProcessesCountExperimental(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil)
+    res, err := s.ProcessesV3.GetProcessesCountExperimental(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil, nil, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -111,6 +112,7 @@ func main() {
 | `appID`                                                                | **string*                                                              | :heavy_minus_sign:                                                     | N/A                                                                    | app-af469a92-5b45-4565-b3c4-b79878de67d2                               |
 | `status`                                                               | [][components.ProcessStatus](../../models/components/processstatus.md) | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
 | `region`                                                               | [][components.Region](../../models/components/region.md)               | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
+| `before`                                                               | **float64*                                                             | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
 | `opts`                                                                 | [][operations.Option](../../models/operations/option.md)               | :heavy_minus_sign:                                                     | The options for this request.                                          |                                                                        |
 
 ### Response
@@ -142,7 +144,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
@@ -197,7 +199,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
@@ -251,7 +253,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
@@ -304,7 +306,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),

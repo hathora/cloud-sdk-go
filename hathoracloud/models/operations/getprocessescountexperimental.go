@@ -21,6 +21,7 @@ type GetProcessesCountExperimentalRequest struct {
 	AppID  *string                    `pathParam:"style=simple,explode=false,name=appId"`
 	Status []components.ProcessStatus `queryParam:"style=form,explode=true,name=status"`
 	Region []components.Region        `queryParam:"style=form,explode=true,name=region"`
+	Before *float64                   `queryParam:"style=form,explode=true,name=before"`
 }
 
 func (o *GetProcessesCountExperimentalRequest) GetAppID() *string {
@@ -42,6 +43,13 @@ func (o *GetProcessesCountExperimentalRequest) GetRegion() []components.Region {
 		return nil
 	}
 	return o.Region
+}
+
+func (o *GetProcessesCountExperimentalRequest) GetBefore() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Before
 }
 
 // GetProcessesCountExperimentalResponseBody - Ok

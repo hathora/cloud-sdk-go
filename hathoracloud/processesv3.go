@@ -28,11 +28,12 @@ func newProcessesV3(sdkConfig sdkConfiguration) *ProcessesV3 {
 
 // GetLatestProcesses
 // Retrieve the 10 most recent [processes](https://hathora.dev/docs/concepts/hathora-entities#process) objects for an [application](https://hathora.dev/docs/concepts/hathora-entities#application). Filter the array by optionally passing in a `status` or `region`.
-func (s *ProcessesV3) GetLatestProcesses(ctx context.Context, appID *string, status []components.ProcessStatus, region []components.Region, opts ...operations.Option) ([]components.ProcessV3, error) {
+func (s *ProcessesV3) GetLatestProcesses(ctx context.Context, appID *string, status []components.ProcessStatus, region []components.Region, before *float64, opts ...operations.Option) ([]components.ProcessV3, error) {
 	request := operations.GetLatestProcessesRequest{
 		AppID:  appID,
 		Status: status,
 		Region: region,
+		Before: before,
 	}
 
 	globals := operations.GetLatestProcessesGlobals{
@@ -263,11 +264,12 @@ func (s *ProcessesV3) GetLatestProcesses(ctx context.Context, appID *string, sta
 
 // GetProcessesCountExperimental
 // Count the number of [processes](https://hathora.dev/docs/concepts/hathora-entities#process) objects for an [application](https://hathora.dev/docs/concepts/hathora-entities#application). Filter by optionally passing in a `status` or `region`.
-func (s *ProcessesV3) GetProcessesCountExperimental(ctx context.Context, appID *string, status []components.ProcessStatus, region []components.Region, opts ...operations.Option) (*operations.GetProcessesCountExperimentalResponseBody, error) {
+func (s *ProcessesV3) GetProcessesCountExperimental(ctx context.Context, appID *string, status []components.ProcessStatus, region []components.Region, before *float64, opts ...operations.Option) (*operations.GetProcessesCountExperimentalResponseBody, error) {
 	request := operations.GetProcessesCountExperimentalRequest{
 		AppID:  appID,
 		Status: status,
 		Region: region,
+		Before: before,
 	}
 
 	globals := operations.GetProcessesCountExperimentalGlobals{

@@ -21,6 +21,7 @@ type GetLatestProcessesRequest struct {
 	AppID  *string                    `pathParam:"style=simple,explode=false,name=appId"`
 	Status []components.ProcessStatus `queryParam:"style=form,explode=true,name=status"`
 	Region []components.Region        `queryParam:"style=form,explode=true,name=region"`
+	Before *float64                   `queryParam:"style=form,explode=true,name=before"`
 }
 
 func (o *GetLatestProcessesRequest) GetAppID() *string {
@@ -42,4 +43,11 @@ func (o *GetLatestProcessesRequest) GetRegion() []components.Region {
 		return nil
 	}
 	return o.Region
+}
+
+func (o *GetLatestProcessesRequest) GetBefore() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.Before
 }

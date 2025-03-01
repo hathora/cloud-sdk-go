@@ -30,7 +30,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
@@ -84,7 +84,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
@@ -143,7 +143,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
@@ -199,7 +199,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
@@ -254,7 +254,7 @@ import(
 
 func main() {
     ctx := context.Background()
-    
+
     s := hathoracloud.New(
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),

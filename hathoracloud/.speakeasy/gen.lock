@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 8324a467e9565eb2fd6ac7347a7e7cd6
+  docChecksum: e40c6e77b8db28e4e83061b6469726cc
   docVersion: 0.0.1
-  speakeasyVersion: 1.504.1
-  generationVersion: 2.529.2
-  releaseVersion: 0.3.2
-  configChecksum: f24bfd83b6b36ab22c21480fbe8245b8
+  speakeasyVersion: 1.508.0
+  generationVersion: 2.536.0
+  releaseVersion: 0.3.3
+  configChecksum: 17c0f2f62e0eeef0f277a0b0e3cad9a7
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -1842,7 +1842,8 @@ examples:
           application/json: 68.43
         "401":
           application/json: {"message": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"message": "<value>"}
   GetUpcomingInvoiceItems:
     speakeasy-default-get-upcoming-invoice-items:
       parameters:
@@ -1853,7 +1854,8 @@ examples:
           application/json: {"invoiceItems": [{"amount": 3848.12, "unitPrice": 479.96, "quantity": 2049.63, "unit": "meter", "productName": "<value>"}, {"amount": 6502.55, "unitPrice": 9111.09, "quantity": 3849.63, "unit": "hertz", "productName": "<value>"}, {"amount": 4556.8, "unitPrice": 773.01, "quantity": 7075.91, "unit": "henry", "productName": "<value>"}]}
         "401":
           application/json: {"message": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"message": "<value>"}
   GetUpcomingInvoiceTotal:
     speakeasy-default-get-upcoming-invoice-total:
       parameters:
@@ -1864,7 +1866,8 @@ examples:
           application/json: {"value": 2752.14}
         "401":
           application/json: {"message": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"message": "<value>"}
   GetPaymentMethod:
     speakeasy-default-get-payment-method:
       parameters:
@@ -1889,7 +1892,8 @@ examples:
           application/json: "<value>"
         "401":
           application/json: {"message": "<value>"}
-        "500": {}
+        "500":
+          application/json: {"message": "<value>"}
   GetInvoices:
     speakeasy-default-get-invoices:
       parameters:
