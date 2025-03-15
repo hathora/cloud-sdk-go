@@ -3,10 +3,16 @@
 package components
 
 type UsageLimits struct {
-	MonthlyProcessVcpuHoursConsumed float64  `json:"monthlyProcessVcpuHoursConsumed"`
-	MonthlyProcessVcpuHoursLimit    *float64 `json:"monthlyProcessVcpuHoursLimit,omitempty"`
-	ConcurrentProcessVcpus7DayMax   float64  `json:"concurrentProcessVcpus7DayMax"`
-	ConcurrentProcessVcpusLimit     *float64 `json:"concurrentProcessVcpusLimit,omitempty"`
+	// The number of vCPU hours used up by the organization in the current month.
+	MonthlyProcessVcpuHoursConsumed float64 `json:"monthlyProcessVcpuHoursConsumed"`
+	// The maximum number of monthly process vcpu hours that can be run by the organization
+	// If undefined, the organization has no limit.
+	MonthlyProcessVcpuHoursLimit *float64 `json:"monthlyProcessVcpuHoursLimit,omitempty"`
+	// The maximum number of concurrent processes that have been run by the organization in the last 7 days.
+	ConcurrentProcessVcpus7DayMax float64 `json:"concurrentProcessVcpus7DayMax"`
+	// The maximum number of concurrent processes that can be run by the organization
+	// If undefined, the organization has no limit.
+	ConcurrentProcessVcpusLimit *float64 `json:"concurrentProcessVcpusLimit,omitempty"`
 }
 
 func (o *UsageLimits) GetMonthlyProcessVcpuHoursConsumed() float64 {

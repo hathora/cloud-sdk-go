@@ -5,6 +5,12 @@ package components
 type Organization struct {
 	// The maximum lifespan in hours of a pod.
 	PodMaxLifespanHrs *float64 `json:"podMaxLifespanHrs,omitempty"`
+	// The maximum number of monthly process vcpu hours that can be run by the organization
+	// If undefined, the organization has no limit.
+	MonthlyProcessVcpuHoursLimit *float64 `json:"monthlyProcessVcpuHoursLimit,omitempty"`
+	// The maximum number of concurrent processes that can be run by the organization
+	// If undefined, the organization has no limit.
+	ConcurrentProcessVcpusLimit *float64 `json:"concurrentProcessVcpusLimit,omitempty"`
 	// The features enabled for this org and user.
 	EnabledFeatureFlags []string `json:"enabledFeatureFlags,omitempty"`
 	// The maximum memory in MB that can be used by any process in this org.
@@ -24,6 +30,20 @@ func (o *Organization) GetPodMaxLifespanHrs() *float64 {
 		return nil
 	}
 	return o.PodMaxLifespanHrs
+}
+
+func (o *Organization) GetMonthlyProcessVcpuHoursLimit() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.MonthlyProcessVcpuHoursLimit
+}
+
+func (o *Organization) GetConcurrentProcessVcpusLimit() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.ConcurrentProcessVcpusLimit
 }
 
 func (o *Organization) GetEnabledFeatureFlags() []string {
