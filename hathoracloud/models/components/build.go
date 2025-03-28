@@ -28,7 +28,9 @@ func (o *RegionalContainerTags) GetRegion() Region {
 
 // Build - A build represents a game server artifact and its associated metadata.
 type Build struct {
-	BuildTag *string `json:"buildTag,omitempty"`
+	// When the build expired
+	ExpiredAt *time.Time `json:"expiredAt,omitempty"`
+	BuildTag  *string    `json:"buildTag,omitempty"`
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	RegionalContainerTags []RegionalContainerTags `json:"regionalContainerTags"`
 	// The size (in bytes) of the Docker image built by Hathora.
@@ -58,6 +60,13 @@ func (b *Build) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (o *Build) GetExpiredAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ExpiredAt
 }
 
 func (o *Build) GetBuildTag() *string {

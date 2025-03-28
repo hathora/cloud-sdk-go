@@ -47,7 +47,9 @@ func (o *UploadBodyParams) GetKey() string {
 
 // BuildWithUploadURL - A build represents a game server artifact and its associated metadata.
 type BuildWithUploadURL struct {
-	BuildTag *string `json:"buildTag,omitempty"`
+	// When the build expired
+	ExpiredAt *time.Time `json:"expiredAt,omitempty"`
+	BuildTag  *string    `json:"buildTag,omitempty"`
 	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
 	RegionalContainerTags []BuildWithUploadURLRegionalContainerTags `json:"regionalContainerTags"`
 	// The size (in bytes) of the Docker image built by Hathora.
@@ -79,6 +81,13 @@ func (b *BuildWithUploadURL) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (o *BuildWithUploadURL) GetExpiredAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ExpiredAt
 }
 
 func (o *BuildWithUploadURL) GetBuildTag() *string {

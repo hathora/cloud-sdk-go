@@ -9,6 +9,8 @@ import (
 
 // BuildV3 - A build represents a game server artifact and its associated metadata.
 type BuildV3 struct {
+	// When the build expired
+	ExpiredAt *time.Time `json:"expiredAt,omitempty"`
 	// Url to view details, like build logs, of the build.
 	ShareURL    *string `json:"shareUrl,omitempty"`
 	ContentHash *string `json:"contentHash,omitempty"`
@@ -41,6 +43,13 @@ func (b *BuildV3) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (o *BuildV3) GetExpiredAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ExpiredAt
 }
 
 func (o *BuildV3) GetShareURL() *string {

@@ -9,6 +9,8 @@ import (
 
 // CreatedBuildV3WithMultipartUrls - A build represents a game server artifact and its associated metadata.
 type CreatedBuildV3WithMultipartUrls struct {
+	// When the build expired
+	ExpiredAt *time.Time `json:"expiredAt,omitempty"`
 	// Url to view details, like build logs, of the build.
 	ShareURL    *string `json:"shareUrl,omitempty"`
 	ContentHash *string `json:"contentHash,omitempty"`
@@ -44,6 +46,13 @@ func (c *CreatedBuildV3WithMultipartUrls) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (o *CreatedBuildV3WithMultipartUrls) GetExpiredAt() *time.Time {
+	if o == nil {
+		return nil
+	}
+	return o.ExpiredAt
 }
 
 func (o *CreatedBuildV3WithMultipartUrls) GetShareURL() *string {
