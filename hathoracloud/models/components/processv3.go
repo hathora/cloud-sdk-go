@@ -45,7 +45,8 @@ func (o *ProcessV3ExposedPort) GetName() string {
 }
 
 type ProcessV3 struct {
-	Status ProcessStatus `json:"status"`
+	Hosting *Hosting      `json:"hosting,omitempty"`
+	Status  ProcessStatus `json:"status"`
 	// Tracks the number of rooms that have been allocated to the process.
 	RoomsAllocated int `json:"roomsAllocated"`
 	// When the process has been terminated.
@@ -78,6 +79,13 @@ func (p *ProcessV3) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (o *ProcessV3) GetHosting() *Hosting {
+	if o == nil {
+		return nil
+	}
+	return o.Hosting
 }
 
 func (o *ProcessV3) GetStatus() ProcessStatus {

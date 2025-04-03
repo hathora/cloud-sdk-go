@@ -20,9 +20,9 @@ type AuthConfiguration struct {
 	// Enable google auth for your application.
 	Google *Google `json:"google,omitempty"`
 	// Construct a type with a set of properties K of type T
-	Nickname *RecordStringNever `json:"nickname,omitempty"`
+	Nickname *DeletedBuild `json:"nickname,omitempty"`
 	// Construct a type with a set of properties K of type T
-	Anonymous *RecordStringNever `json:"anonymous,omitempty"`
+	Anonymous *DeletedBuild `json:"anonymous,omitempty"`
 }
 
 func (o *AuthConfiguration) GetGoogle() *Google {
@@ -32,14 +32,14 @@ func (o *AuthConfiguration) GetGoogle() *Google {
 	return o.Google
 }
 
-func (o *AuthConfiguration) GetNickname() *RecordStringNever {
+func (o *AuthConfiguration) GetNickname() *DeletedBuild {
 	if o == nil {
 		return nil
 	}
 	return o.Nickname
 }
 
-func (o *AuthConfiguration) GetAnonymous() *RecordStringNever {
+func (o *AuthConfiguration) GetAnonymous() *DeletedBuild {
 	if o == nil {
 		return nil
 	}
