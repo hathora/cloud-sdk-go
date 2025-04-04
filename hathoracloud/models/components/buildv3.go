@@ -14,7 +14,7 @@ type BuildV3 struct {
 	// Url to view details, like build logs, of the build.
 	ShareURL    *string `json:"shareUrl,omitempty"`
 	ContentHash *string `json:"contentHash,omitempty"`
-	// Tag to associate an external version with a build. It is accessible via [`GetBuildInfo()`](https://hathora.dev/api#tag/BuildV2/operation/GetBuildInfo).
+	// Tag to associate an external version with a build. It is accessible via [`GetBuild()`](https://hathora.dev/api#tag/BuildsV3/operation/GetBuild).
 	BuildTag *string `json:"buildTag,omitempty"`
 	// The size (in bytes) of the Docker image built by Hathora.
 	ImageSize int64       `json:"imageSize"`

@@ -54,7 +54,7 @@ type DeploymentV3 struct {
 	RequestedCPU float64 `json:"requestedCPU"`
 	// System generated id for a deployment.
 	DeploymentID string `json:"deploymentId"`
-	// Tag to associate an external version with a build. It is accessible via [`GetBuildInfo()`](https://hathora.dev/api#tag/BuildV2/operation/GetBuildInfo).
+	// Tag to associate an external version with a build. It is accessible via [`GetBuild()`](https://hathora.dev/api#tag/BuildsV3/operation/GetBuild).
 	BuildTag *string `json:"buildTag,omitempty"`
 	// System generated id for a build. Can also be user defined when creating a build.
 	BuildID string `json:"buildId"`
