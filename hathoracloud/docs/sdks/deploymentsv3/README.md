@@ -94,9 +94,7 @@ func main() {
     res, err := s.DeploymentsV3.CreateDeployment(ctx, components.DeploymentConfigV3{
         DeploymentTag: hathoracloud.String("alpha"),
         IdleTimeoutEnabled: false,
-        Env: []components.DeploymentConfigV3Env{
-
-        },
+        Env: []components.DeploymentConfigV3Env{},
         RoomsPerProcess: 3,
         AdditionalContainerPorts: []components.ContainerPort{
             components.ContainerPort{

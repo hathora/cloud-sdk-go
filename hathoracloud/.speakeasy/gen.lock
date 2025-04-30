@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 559591f1b4b1d1602594014d373e1706
+  docChecksum: 5276f2ff33ed6ae8aec326dbfeeb3cf2
   docVersion: 0.0.1
-  speakeasyVersion: 1.531.1
-  generationVersion: 2.568.5
-  releaseVersion: 0.3.11
-  configChecksum: 9fbba5df0be37eca1dbd6ce960998567
+  speakeasyVersion: 1.540.1
+  generationVersion: 2.593.4
+  releaseVersion: 0.3.12
+  configChecksum: 03c6139a6dd5a4ba6fffe3b7402af492
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.7.3
+    core: 3.7.4
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -1903,6 +1903,8 @@ examples:
         "200":
           application/json: [{"status": "paid", "amountDue": 9402.67, "pdfUrl": "https://happy-go-lucky-bakeware.biz", "dueDate": "2024-05-16T21:30:38.840Z", "year": 9590.25, "month": 8858.56, "id": "<id>"}, {"status": "overdue", "amountDue": 1743.65, "pdfUrl": "https://somber-bowling.org", "dueDate": "2025-08-05T20:02:10.376Z", "year": 614.14, "month": 4221.79, "id": "<id>"}, {"status": "pending", "amountDue": 8173.15, "pdfUrl": "https://crushing-suspension.org/", "dueDate": "2024-04-30T02:38:56.141Z", "year": 9770.57, "month": 67.53, "id": "<id>"}]
         "401":
+          application/json: {"message": "<value>"}
+        "500":
           application/json: {"message": "<value>"}
   LoginAnonymous:
     speakeasy-default-login-anonymous:
