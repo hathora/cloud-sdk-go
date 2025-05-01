@@ -20,3 +20,5 @@
 | `ScopeOrgsReadWrite`         | orgs:read-write              |
 | `ScopeTokensRead`            | tokens:read                  |
 | `ScopeTokensReadWrite`       | tokens:read-write            |
+| `ScopeTicketsRead`           | tickets:read                 |
+| `ScopeTicketsReadWrite`      | tickets:read-write           |

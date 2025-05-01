@@ -20,6 +20,8 @@ const (
 	ScopeOrgsReadWrite         Scope = "orgs:read-write"
 	ScopeTokensRead            Scope = "tokens:read"
 	ScopeTokensReadWrite       Scope = "tokens:read-write"
+	ScopeTicketsRead           Scope = "tickets:read"
+	ScopeTicketsReadWrite      Scope = "tickets:read-write"
 )
 
 func (e Scope) ToPointer() *Scope {
