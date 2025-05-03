@@ -12,6 +12,7 @@ Operations that allow you manage your [applications](https://hathora.dev/docs/co
 * [GetApp](#getapp) - GetApp
 * [UpdateApp](#updateapp) - UpdateApp
 * [DeleteApp](#deleteapp) - DeleteApp
+* [PatchApp](#patchapp) - PatchApp
 
 ## GetApps
 
@@ -180,7 +181,7 @@ func main() {
 
 ## UpdateApp
 
-Update data for an existing [application](https://hathora.dev/docs/concepts/hathora-entities#application) using `appId`.
+Set application config (will override all fields) for an existing [application](https://hathora.dev/docs/concepts/hathora-entities#application) using `appId`.
 
 ### Example Usage
 
@@ -203,7 +204,10 @@ func main() {
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.AppsV2.UpdateApp(ctx, components.AppConfig{
+    res, err := s.AppsV2.UpdateApp(ctx, components.AppConfigWithServiceConfig{
+        ServiceConfig: &components.ServiceConfig{
+            StaticProcessAllocation: []components.StaticProcessAllocationConfig{},
+        },
         AuthConfiguration: components.AuthConfiguration{},
         AppName: "minecraft",
     }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
@@ -218,12 +222,12 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |                                                              |
-| `appConfig`                                                  | [components.AppConfig](../../models/components/appconfig.md) | :heavy_check_mark:                                           | N/A                                                          |                                                              |
-| `appID`                                                      | **string*                                                    | :heavy_minus_sign:                                           | N/A                                                          | app-af469a92-5b45-4565-b3c4-b79878de67d2                     |
-| `opts`                                                       | [][operations.Option](../../models/operations/option.md)     | :heavy_minus_sign:                                           | The options for this request.                                |                                                              |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    | Example                                                                                        |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                          | :heavy_check_mark:                                                                             | The context to use for the request.                                                            |                                                                                                |
+| `appConfigWithServiceConfig`                                                                   | [components.AppConfigWithServiceConfig](../../models/components/appconfigwithserviceconfig.md) | :heavy_check_mark:                                                                             | N/A                                                                                            |                                                                                                |
+| `appID`                                                                                        | **string*                                                                                      | :heavy_minus_sign:                                                                             | N/A                                                                                            | app-af469a92-5b45-4565-b3c4-b79878de67d2                                                       |
+| `opts`                                                                                         | [][operations.Option](../../models/operations/option.md)                                       | :heavy_minus_sign:                                                                             | The options for this request.                                                                  |                                                                                                |
 
 ### Response
 
@@ -287,3 +291,63 @@ func main() {
 | errors.APIError  | 401, 404, 429    | application/json |
 | errors.APIError  | 500              | application/json |
 | errors.SDKError  | 4XX, 5XX         | \*/\*            |
+
+## PatchApp
+
+Patch data for an existing [application](https://hathora.dev/docs/concepts/hathora-entities#application) using `appId`.
+
+### Example Usage
+
+```go
+package main
+
+import(
+	"context"
+	"github.com/hathora/cloud-sdk-go/hathoracloud"
+	"github.com/hathora/cloud-sdk-go/hathoracloud/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := hathoracloud.New(
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+    )
+
+    res, err := s.AppsV2.PatchApp(ctx, components.PartialAppConfigWithServiceConfig{
+        ServiceConfig: &components.ServiceConfig{
+            StaticProcessAllocation: []components.StaticProcessAllocationConfig{},
+        },
+    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  | Example                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                        | [context.Context](https://pkg.go.dev/context#Context)                                                        | :heavy_check_mark:                                                                                           | The context to use for the request.                                                                          |                                                                                                              |
+| `partialAppConfigWithServiceConfig`                                                                          | [components.PartialAppConfigWithServiceConfig](../../models/components/partialappconfigwithserviceconfig.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |                                                                                                              |
+| `appID`                                                                                                      | **string*                                                                                                    | :heavy_minus_sign:                                                                                           | N/A                                                                                                          | app-af469a92-5b45-4565-b3c4-b79878de67d2                                                                     |
+| `opts`                                                                                                       | [][operations.Option](../../models/operations/option.md)                                                     | :heavy_minus_sign:                                                                                           | The options for this request.                                                                                |                                                                                                              |
+
+### Response
+
+**[*components.Application](../../models/components/application.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 422, 429 | application/json   |
+| errors.APIError    | 500                | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |

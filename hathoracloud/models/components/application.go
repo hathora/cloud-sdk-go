@@ -7,6 +7,19 @@ import (
 	"time"
 )
 
+type ApplicationServiceConfig struct {
+	// The headroom configuration for each region.
+	// EXPERIMENTAL - this feature is in closed beta.
+	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
+}
+
+func (o *ApplicationServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {
+	if o == nil {
+		return []StaticProcessAllocationConfig{}
+	}
+	return o.StaticProcessAllocation
+}
+
 // Application - An application object is the top level namespace for the game server.
 type Application struct {
 	// The email address or token id for the user that deleted the application.
@@ -17,7 +30,8 @@ type Application struct {
 	CreatedAt time.Time `json:"createdAt"`
 	CreatedBy string    `json:"createdBy"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
-	OrgID string `json:"orgId"`
+	OrgID         string                    `json:"orgId"`
+	ServiceConfig *ApplicationServiceConfig `json:"serviceConfig"`
 	// Configure [player authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service) for your application. Use Hathora's built-in auth providers or use your own [custom authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service#custom-auth-provider).
 	AuthConfiguration AuthConfiguration `json:"authConfiguration"`
 	// Secret that is used for identity and access management.
@@ -72,6 +86,13 @@ func (o *Application) GetOrgID() string {
 		return ""
 	}
 	return o.OrgID
+}
+
+func (o *Application) GetServiceConfig() *ApplicationServiceConfig {
+	if o == nil {
+		return nil
+	}
+	return o.ServiceConfig
 }
 
 func (o *Application) GetAuthConfiguration() AuthConfiguration {

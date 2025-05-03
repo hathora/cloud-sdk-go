@@ -7,6 +7,19 @@ import (
 	"time"
 )
 
+type ApplicationWithLatestDeploymentAndBuildServiceConfig struct {
+	// The headroom configuration for each region.
+	// EXPERIMENTAL - this feature is in closed beta.
+	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
+}
+
+func (o *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {
+	if o == nil {
+		return []StaticProcessAllocationConfig{}
+	}
+	return o.StaticProcessAllocation
+}
+
 type ApplicationWithLatestDeploymentAndBuildEnv struct {
 	Value string `json:"value"`
 	Name  string `json:"name"`
@@ -197,7 +210,8 @@ type ApplicationWithLatestDeploymentAndBuild struct {
 	CreatedAt time.Time `json:"createdAt"`
 	CreatedBy string    `json:"createdBy"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
-	OrgID string `json:"orgId"`
+	OrgID         string                                                `json:"orgId"`
+	ServiceConfig *ApplicationWithLatestDeploymentAndBuildServiceConfig `json:"serviceConfig"`
 	// Configure [player authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service) for your application. Use Hathora's built-in auth providers or use your own [custom authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service#custom-auth-provider).
 	AuthConfiguration AuthConfiguration `json:"authConfiguration"`
 	// Secret that is used for identity and access management.
@@ -253,6 +267,13 @@ func (o *ApplicationWithLatestDeploymentAndBuild) GetOrgID() string {
 		return ""
 	}
 	return o.OrgID
+}
+
+func (o *ApplicationWithLatestDeploymentAndBuild) GetServiceConfig() *ApplicationWithLatestDeploymentAndBuildServiceConfig {
+	if o == nil {
+		return nil
+	}
+	return o.ServiceConfig
 }
 
 func (o *ApplicationWithLatestDeploymentAndBuild) GetAuthConfiguration() AuthConfiguration {

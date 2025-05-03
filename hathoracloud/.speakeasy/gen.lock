@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 47987bdc56b0a4f0b6aed08d21246052
+  docChecksum: bebc1931c677b1a08f0cf53d3defe325
   docVersion: 0.0.1
-  speakeasyVersion: 1.541.2
-  generationVersion: 2.595.4
-  releaseVersion: 0.3.13
-  configChecksum: 2ef9cef25d4430eaf4daeec6534a7c0c
+  speakeasyVersion: 1.542.0
+  generationVersion: 2.596.2
+  releaseVersion: 0.3.14
+  configChecksum: ad72e83fba8f72730fc5ef5ddd31e018
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -44,6 +44,7 @@ generatedFiles:
   - /models/components/achpaymentmethod.go
   - /models/components/activeconnectioninfo.go
   - /models/components/appconfig.go
+  - /models/components/appconfigwithserviceconfig.go
   - /models/components/application.go
   - /models/components/applicationspage.go
   - /models/components/applicationwithlatestdeploymentandbuild.go
@@ -62,6 +63,7 @@ generatedFiles:
   - /models/components/connectioninfov2.go
   - /models/components/containerport.go
   - /models/components/createbuildparams.go
+  - /models/components/createbuildv3params.go
   - /models/components/createdbuildv3withmultiparturls.go
   - /models/components/createdorgtoken.go
   - /models/components/createlobbyparams.go
@@ -107,6 +109,7 @@ generatedFiles:
   - /models/components/orgspage.go
   - /models/components/orgtoken.go
   - /models/components/orgtokenstatus.go
+  - /models/components/partialappconfigwithserviceconfig.go
   - /models/components/paymentmethod.go
   - /models/components/pendingorginvite.go
   - /models/components/pendingorginvitespage.go
@@ -121,6 +124,7 @@ generatedFiles:
   - /models/components/processv3.go
   - /models/components/processwithrooms.go
   - /models/components/region.go
+  - /models/components/registryconfig.go
   - /models/components/rescinduserinvite.go
   - /models/components/room.go
   - /models/components/roomallocation.go
@@ -131,8 +135,10 @@ generatedFiles:
   - /models/components/roomwithoutallocations.go
   - /models/components/scope.go
   - /models/components/security.go
+  - /models/components/serviceconfig.go
   - /models/components/setlobbystateparams.go
   - /models/components/startingconnectioninfo.go
+  - /models/components/staticprocessallocationconfig.go
   - /models/components/transporttype.go
   - /models/components/updateroomconfigparams.go
   - /models/components/updateuserinvite.go
@@ -145,6 +151,7 @@ generatedFiles:
   - /models/operations/createapp.go
   - /models/operations/createbuild.go
   - /models/operations/createbuilddeprecated.go
+  - /models/operations/createbuildregistry.go
   - /models/operations/createbuildv2deprecated.go
   - /models/operations/createbuildwithuploadurlv2deprecated.go
   - /models/operations/createdeployment.go
@@ -232,12 +239,14 @@ generatedFiles:
   - /models/operations/loginanonymous.go
   - /models/operations/logingoogle.go
   - /models/operations/loginnickname.go
+  - /models/operations/patchapp.go
   - /models/operations/rejectinvite.go
   - /models/operations/rescindinvite.go
   - /models/operations/resumeroom.go
   - /models/operations/revokeorgtoken.go
   - /models/operations/runbuild.go
   - /models/operations/runbuilddeprecated.go
+  - /models/operations/runbuildregistry.go
   - /models/operations/runbuildv2deprecated.go
   - /models/operations/setlobbystate.go
   - /models/operations/stopprocess.go
@@ -266,13 +275,17 @@ generatedFiles:
   - docs/models/components/activeconnectioninfo.md
   - docs/models/components/activeconnectioninfostatus.md
   - docs/models/components/appconfig.md
+  - docs/models/components/appconfigwithserviceconfig.md
   - docs/models/components/application.md
+  - docs/models/components/applicationserviceconfig.md
   - docs/models/components/applicationspage.md
   - docs/models/components/applicationwithlatestdeploymentandbuild.md
   - docs/models/components/applicationwithlatestdeploymentandbuilddeployment.md
   - docs/models/components/applicationwithlatestdeploymentandbuilddeprecated.md
   - docs/models/components/applicationwithlatestdeploymentandbuilddeprecatedenv.md
+  - docs/models/components/applicationwithlatestdeploymentandbuilddeprecatedserviceconfig.md
   - docs/models/components/applicationwithlatestdeploymentandbuildenv.md
+  - docs/models/components/applicationwithlatestdeploymentandbuildserviceconfig.md
   - docs/models/components/authconfiguration.md
   - docs/models/components/build.md
   - docs/models/components/buildpart.md
@@ -289,6 +302,7 @@ generatedFiles:
   - docs/models/components/connectioninfov2.md
   - docs/models/components/containerport.md
   - docs/models/components/createbuildparams.md
+  - docs/models/components/createbuildv3params.md
   - docs/models/components/createdbuildv3withmultiparturls.md
   - docs/models/components/createdby.md
   - docs/models/components/createdorgtoken.md
@@ -350,6 +364,7 @@ generatedFiles:
   - docs/models/components/orgspage.md
   - docs/models/components/orgtoken.md
   - docs/models/components/orgtokenstatus.md
+  - docs/models/components/partialappconfigwithserviceconfig.md
   - docs/models/components/paymentmethod.md
   - docs/models/components/pendingorginvite.md
   - docs/models/components/pendingorginvitescopes.md
@@ -370,6 +385,7 @@ generatedFiles:
   - docs/models/components/processwithroomsexposedport.md
   - docs/models/components/region.md
   - docs/models/components/regionalcontainertags.md
+  - docs/models/components/registryconfig.md
   - docs/models/components/rescinduserinvite.md
   - docs/models/components/room.md
   - docs/models/components/roomallocation.md
@@ -382,8 +398,10 @@ generatedFiles:
   - docs/models/components/scope.md
   - docs/models/components/scopes.md
   - docs/models/components/security.md
+  - docs/models/components/serviceconfig.md
   - docs/models/components/setlobbystateparams.md
   - docs/models/components/startingconnectioninfo.md
+  - docs/models/components/staticprocessallocationconfig.md
   - docs/models/components/status.md
   - docs/models/components/transporttype.md
   - docs/models/components/two.md
@@ -402,6 +420,8 @@ generatedFiles:
   - docs/models/operations/createbuilddeprecatedglobals.md
   - docs/models/operations/createbuilddeprecatedrequest.md
   - docs/models/operations/createbuildglobals.md
+  - docs/models/operations/createbuildregistryglobals.md
+  - docs/models/operations/createbuildregistryrequest.md
   - docs/models/operations/createbuildrequest.md
   - docs/models/operations/createbuildv2deprecatedglobals.md
   - docs/models/operations/createbuildv2deprecatedrequest.md
@@ -587,6 +607,8 @@ generatedFiles:
   - docs/models/operations/loginnicknameglobals.md
   - docs/models/operations/loginnicknamerequest.md
   - docs/models/operations/option.md
+  - docs/models/operations/patchappglobals.md
+  - docs/models/operations/patchapprequest.md
   - docs/models/operations/rejectinviterequest.md
   - docs/models/operations/rescindinviterequest.md
   - docs/models/operations/resumeroomglobals.md
@@ -596,6 +618,8 @@ generatedFiles:
   - docs/models/operations/runbuilddeprecatedrequest.md
   - docs/models/operations/runbuilddeprecatedrequestbody.md
   - docs/models/operations/runbuildglobals.md
+  - docs/models/operations/runbuildregistryglobals.md
+  - docs/models/operations/runbuildregistryrequest.md
   - docs/models/operations/runbuildrequest.md
   - docs/models/operations/runbuildv2deprecatedfile.md
   - docs/models/operations/runbuildv2deprecatedglobals.md
@@ -1944,7 +1968,7 @@ examples:
     speakeasy-default-get-apps-v1-deprecated:
       responses:
         "200":
-          application/json: [{"deletedBy": "noreply@hathora.dev", "deletedAt": "2025-11-13T21:57:17.003Z", "createdAt": "2023-04-09T16:45:12.979Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft", "deployment": {"idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 8000, "name": "default"}], "defaultContainerPort": {"transportType": "tcp", "port": 8000, "name": "default"}, "createdAt": "2023-07-29T01:17:01.057Z", "createdBy": "noreply@hathora.dev", "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": 1, "buildId": 1, "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "build": {"buildTag": "0.1.14-14c793", "regionalContainerTags": [], "imageSize": 524256, "status": "running", "deletedAt": "2023-10-12T07:52:16.528Z", "finishedAt": "2023-04-05T15:58:00.264Z", "startedAt": "2025-07-13T06:56:15.649Z", "createdAt": "2025-03-16T19:24:59.404Z", "createdBy": "noreply@hathora.dev", "buildId": 1, "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2"}}}]
+          application/json: [{"deletedBy": "noreply@hathora.dev", "deletedAt": "2025-11-13T21:57:17.003Z", "createdAt": "2023-04-09T16:45:12.979Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": []}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft", "deployment": {"idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 8000, "name": "default"}], "defaultContainerPort": {"transportType": "tcp", "port": 8000, "name": "default"}, "createdAt": "2023-07-29T01:17:01.057Z", "createdBy": "noreply@hathora.dev", "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": 1, "buildId": 1, "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "build": {"buildTag": "0.1.14-14c793", "regionalContainerTags": [], "imageSize": 524256, "status": "running", "deletedAt": "2023-10-12T07:52:16.528Z", "finishedAt": "2023-04-05T15:58:00.264Z", "startedAt": "2025-07-13T06:56:15.649Z", "createdAt": "2025-03-16T19:24:59.404Z", "createdBy": "noreply@hathora.dev", "buildId": 1, "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2"}}}]
         "401":
           application/json: {"message": "<value>"}
   CreateAppV1Deprecated:
@@ -1953,7 +1977,7 @@ examples:
         application/json: {"authConfiguration": {}, "appName": "minecraft"}
       responses:
         "201":
-          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2024-02-17T14:23:22.462Z", "createdAt": "2024-05-22T05:17:10.920Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
+          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2024-02-17T14:23:22.462Z", "createdAt": "2024-05-22T05:17:10.920Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": [{"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Mumbai"}]}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
         "401":
           application/json: {"message": "<value>"}
         "500":
@@ -1967,7 +1991,7 @@ examples:
         application/json: {"authConfiguration": {}, "appName": "minecraft"}
       responses:
         "200":
-          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2023-12-19T03:26:23.362Z", "createdAt": "2025-05-07T03:58:14.207Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
+          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2023-12-19T03:26:23.362Z", "createdAt": "2025-05-07T03:58:14.207Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": [{"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Sao_Paulo"}]}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
         "401":
           application/json: {"message": "<value>"}
         "500":
@@ -1979,7 +2003,7 @@ examples:
           appId: "app-af469a92-5b45-4565-b3c4-b79878de67d2"
       responses:
         "200":
-          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2023-07-24T20:16:35.295Z", "createdAt": "2024-12-02T19:30:46.663Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
+          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2023-07-24T20:16:35.295Z", "createdAt": "2024-12-02T19:30:46.663Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": []}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
         "401":
           application/json: {"message": "<value>"}
   DeleteAppV1Deprecated:
@@ -1999,7 +2023,7 @@ examples:
           orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
       responses:
         "200":
-          application/json: {"applications": [{"deletedBy": "noreply@hathora.dev", "deletedAt": "2025-05-19T07:37:51.466Z", "createdAt": "2024-10-29T17:07:20.503Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft", "deployment": {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 8000, "name": "default"}], "defaultContainerPort": {"transportType": "tls", "port": 8000, "name": "default"}, "createdAt": "2024-04-04T06:31:00.807Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "build": {"buildTag": "0.1.14-14c793", "imageSize": 175044, "status": "succeeded", "deletedAt": "2023-11-08T18:09:33.664Z", "finishedAt": "2024-01-24T03:27:30.683Z", "startedAt": "2024-11-27T01:38:00.201Z", "createdAt": "2023-12-27T15:51:37.628Z", "createdBy": "noreply@hathora.dev", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"}}}, {"deletedBy": "noreply@hathora.dev", "deletedAt": "2025-08-25T15:30:39.795Z", "createdAt": "2024-01-21T03:51:37.018Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft", "deployment": {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 8000, "name": "default"}], "defaultContainerPort": {"transportType": "tls", "port": 8000, "name": "default"}, "createdAt": "2023-07-03T23:32:47.598Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "build": {"buildTag": "0.1.14-14c793", "imageSize": 723247, "status": "running", "deletedAt": "2023-03-10T11:31:49.059Z", "finishedAt": "2023-11-04T06:54:41.130Z", "startedAt": "2025-05-05T16:07:49.630Z", "createdAt": "2025-11-15T05:31:19.501Z", "createdBy": "noreply@hathora.dev", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"}}}, {"deletedBy": "noreply@hathora.dev", "deletedAt": "2024-06-22T14:09:23.898Z", "createdAt": "2025-10-07T00:55:28.149Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft", "deployment": {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 8000, "name": "default"}], "defaultContainerPort": {"transportType": "udp", "port": 8000, "name": "default"}, "createdAt": "2023-09-11T06:14:22.463Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "build": {"buildTag": "0.1.14-14c793", "imageSize": 225006, "status": "succeeded", "deletedAt": "2023-04-19T03:28:19.505Z", "finishedAt": "2024-09-01T09:28:59.548Z", "startedAt": "2025-03-30T21:49:04.028Z", "createdAt": "2025-05-29T19:39:23.330Z", "createdBy": "noreply@hathora.dev", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"}}}]}
+          application/json: {"applications": [{"deletedBy": "noreply@hathora.dev", "deletedAt": "2025-05-19T07:37:51.466Z", "createdAt": "2024-10-29T17:07:20.503Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": [{"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Dallas"}, {"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Tokyo"}, {"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Singapore"}]}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft", "deployment": {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 8000, "name": "default"}], "defaultContainerPort": {"transportType": "tls", "port": 8000, "name": "default"}, "createdAt": "2024-04-04T06:31:00.807Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "build": {"buildTag": "0.1.14-14c793", "imageSize": 175044, "status": "succeeded", "deletedAt": "2023-11-08T18:09:33.664Z", "finishedAt": "2024-01-24T03:27:30.683Z", "startedAt": "2024-11-27T01:38:00.201Z", "createdAt": "2023-12-27T15:51:37.628Z", "createdBy": "noreply@hathora.dev", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"}}}, {"deletedBy": "noreply@hathora.dev", "deletedAt": "2025-08-25T15:30:39.795Z", "createdAt": "2024-01-21T03:51:37.018Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": [{"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Dubai"}, {"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Frankfurt"}, {"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Washington_DC"}]}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft", "deployment": {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 8000, "name": "default"}], "defaultContainerPort": {"transportType": "tls", "port": 8000, "name": "default"}, "createdAt": "2023-07-03T23:32:47.598Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "build": {"buildTag": "0.1.14-14c793", "imageSize": 723247, "status": "running", "deletedAt": "2023-03-10T11:31:49.059Z", "finishedAt": "2023-11-04T06:54:41.130Z", "startedAt": "2025-05-05T16:07:49.630Z", "createdAt": "2025-11-15T05:31:19.501Z", "createdBy": "noreply@hathora.dev", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"}}}, {"deletedBy": "noreply@hathora.dev", "deletedAt": "2024-06-22T14:09:23.898Z", "createdAt": "2025-10-07T00:55:28.149Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": [{"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Chicago"}, {"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "London"}]}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft", "deployment": {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 8000, "name": "default"}], "defaultContainerPort": {"transportType": "udp", "port": 8000, "name": "default"}, "createdAt": "2023-09-11T06:14:22.463Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "build": {"buildTag": "0.1.14-14c793", "imageSize": 225006, "status": "succeeded", "deletedAt": "2023-04-19T03:28:19.505Z", "finishedAt": "2024-09-01T09:28:59.548Z", "startedAt": "2025-03-30T21:49:04.028Z", "createdAt": "2025-05-29T19:39:23.330Z", "createdBy": "noreply@hathora.dev", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"}}}]}
         "401":
           application/json: {"message": "<value>"}
   CreateApp:
@@ -2011,7 +2035,7 @@ examples:
         application/json: {"authConfiguration": {}, "appName": "minecraft"}
       responses:
         "201":
-          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2025-03-25T14:27:16.779Z", "createdAt": "2025-02-02T20:05:29.586Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
+          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2025-03-25T14:27:16.779Z", "createdAt": "2025-02-02T20:05:29.586Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": [{"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Sydney"}, {"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "London"}]}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
         "401":
           application/json: {"message": "<value>"}
         "500":
@@ -2023,7 +2047,7 @@ examples:
           appId: "app-af469a92-5b45-4565-b3c4-b79878de67d2"
       responses:
         "200":
-          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2024-02-18T07:51:03.251Z", "createdAt": "2025-07-06T02:39:27.766Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
+          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2024-02-18T07:51:03.251Z", "createdAt": "2025-07-06T02:39:27.766Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": [{"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Dallas"}]}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
         "401":
           application/json: {"message": "<value>"}
   UpdateApp:
@@ -2032,10 +2056,10 @@ examples:
         path:
           appId: "app-af469a92-5b45-4565-b3c4-b79878de67d2"
       requestBody:
-        application/json: {"authConfiguration": {}, "appName": "minecraft"}
+        application/json: {"serviceConfig": {"staticProcessAllocation": []}, "authConfiguration": {}, "appName": "minecraft"}
       responses:
         "200":
-          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2023-08-09T16:09:30.379Z", "createdAt": "2024-09-14T06:34:02.715Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
+          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2023-08-09T16:09:30.379Z", "createdAt": "2024-09-14T06:34:02.715Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": [{"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Mumbai"}, {"maxProcesses": 3, "targetProcesses": 2, "minProcesses": 1, "region": "Seattle"}]}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
         "401":
           application/json: {"message": "<value>"}
         "500":
@@ -2046,6 +2070,50 @@ examples:
         path:
           appId: "app-af469a92-5b45-4565-b3c4-b79878de67d2"
       responses:
+        "401":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
+  CreateBuildRegistry:
+    speakeasy-default-create-build-registry:
+      parameters:
+        query:
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      requestBody:
+        application/json: {"buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793"}
+      responses:
+        "201":
+          application/json: {"buildTag": "0.1.14-14c793", "imageSize": 138324, "status": "failed", "deletedAt": "2024-08-20T14:15:20.809Z", "finishedAt": "2025-12-20T14:09:20.135Z", "startedAt": "2025-02-27T13:24:23.469Z", "createdAt": "2025-08-09T04:16:21.518Z", "createdBy": "noreply@hathora.dev", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"}
+        "400":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
+  RunBuildRegistry:
+    speakeasy-default-run-build-registry:
+      parameters:
+        path:
+          buildId: "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"
+        query:
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      requestBody:
+        application/json: {"image": "https://loremflickr.com/1435/2196?lock=7778272511635490"}
+      responses:
+        "200":
+          application/octet-stream: "x-file: example.file"
+        "400":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
+  PatchApp:
+    speakeasy-default-patch-app:
+      parameters:
+        path:
+          appId: "app-af469a92-5b45-4565-b3c4-b79878de67d2"
+      requestBody:
+        application/json: {"serviceConfig": {"staticProcessAllocation": []}}
+      responses:
+        "200":
+          application/json: {"deletedBy": "noreply@hathora.dev", "deletedAt": "2024-07-23T05:20:09.479Z", "createdAt": "2023-04-07T22:28:10.234Z", "createdBy": "noreply@hathora.dev", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "serviceConfig": {"staticProcessAllocation": []}, "authConfiguration": {}, "appSecret": "secret-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2", "appName": "minecraft"}
         "401":
           application/json: {"message": "<value>"}
         "500":

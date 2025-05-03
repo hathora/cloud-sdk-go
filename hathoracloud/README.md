@@ -185,6 +185,7 @@ func main() {
 * [GetApp](docs/sdks/appsv2/README.md#getapp) - GetApp
 * [UpdateApp](docs/sdks/appsv2/README.md#updateapp) - UpdateApp
 * [DeleteApp](docs/sdks/appsv2/README.md#deleteapp) - DeleteApp
+* [PatchApp](docs/sdks/appsv2/README.md#patchapp) - PatchApp
 
 ### [AuthV1](docs/sdks/authv1/README.md)
 
@@ -225,7 +226,9 @@ func main() {
 * [CreateBuild](docs/sdks/buildsv3/README.md#createbuild) - CreateBuild
 * [GetBuild](docs/sdks/buildsv3/README.md#getbuild) - GetBuild
 * [DeleteBuild](docs/sdks/buildsv3/README.md#deletebuild) - DeleteBuild
+* [CreateBuildRegistry](docs/sdks/buildsv3/README.md#createbuildregistry) - CreateBuildRegistry
 * [RunBuild](docs/sdks/buildsv3/README.md#runbuild) - RunBuild
+* [RunBuildRegistry](docs/sdks/buildsv3/README.md#runbuildregistry) - RunBuildRegistry
 
 ### [~~DeploymentsV1~~](docs/sdks/deploymentsv1/README.md)
 

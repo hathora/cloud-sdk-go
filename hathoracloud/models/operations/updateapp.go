@@ -18,8 +18,8 @@ func (o *UpdateAppGlobals) GetAppID() *string {
 }
 
 type UpdateAppRequest struct {
-	AppID     *string              `pathParam:"style=simple,explode=false,name=appId"`
-	AppConfig components.AppConfig `request:"mediaType=application/json"`
+	AppID                      *string                               `pathParam:"style=simple,explode=false,name=appId"`
+	AppConfigWithServiceConfig components.AppConfigWithServiceConfig `request:"mediaType=application/json"`
 }
 
 func (o *UpdateAppRequest) GetAppID() *string {
@@ -29,9 +29,9 @@ func (o *UpdateAppRequest) GetAppID() *string {
 	return o.AppID
 }
 
-func (o *UpdateAppRequest) GetAppConfig() components.AppConfig {
+func (o *UpdateAppRequest) GetAppConfigWithServiceConfig() components.AppConfigWithServiceConfig {
 	if o == nil {
-		return components.AppConfig{}
+		return components.AppConfigWithServiceConfig{}
 	}
-	return o.AppConfig
+	return o.AppConfigWithServiceConfig
 }
