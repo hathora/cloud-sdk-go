@@ -3,6 +3,9 @@
 package components
 
 type Organization struct {
+	// The retention period for process logs in hours
+	// If undefined, the default is 72h
+	LogRetentionPeriodHours *float64 `json:"logRetentionPeriodHours,omitempty"`
 	// The maximum lifespan in hours of a pod.
 	PodMaxLifespanHrs *float64 `json:"podMaxLifespanHrs,omitempty"`
 	// The maximum number of monthly process vcpu hours that can be run by the organization
@@ -23,6 +26,13 @@ type Organization struct {
 	Name *string `json:"name,omitempty"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID string `json:"orgId"`
+}
+
+func (o *Organization) GetLogRetentionPeriodHours() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.LogRetentionPeriodHours
 }
 
 func (o *Organization) GetPodMaxLifespanHrs() *float64 {

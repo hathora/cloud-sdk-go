@@ -204,9 +204,9 @@ func New(opts ...SDKOption) *HathoraCloud {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "0.3.14",
-			GenVersion:        "2.596.2",
-			UserAgent:         "speakeasy-sdk/go 0.3.14 2.596.2 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
+			SDKVersion:        "0.3.15",
+			GenVersion:        "2.597.9",
+			UserAgent:         "speakeasy-sdk/go 0.3.15 2.597.9 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
 			Globals:           globals.Globals{},
 			Hooks:             hooks.New(),
 		},
