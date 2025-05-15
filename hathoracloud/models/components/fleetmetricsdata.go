@@ -3,10 +3,18 @@
 package components
 
 type FleetMetricsData struct {
+	SystemOverhead       []MetricValue `json:"systemOverhead,omitempty"`
 	Utilized             []MetricValue `json:"utilized,omitempty"`
 	ProvisionedCloud     []MetricValue `json:"provisionedCloud,omitempty"`
 	ProvisionedBareMetal []MetricValue `json:"provisionedBareMetal,omitempty"`
 	ProvisionedTotal     []MetricValue `json:"provisionedTotal,omitempty"`
+}
+
+func (o *FleetMetricsData) GetSystemOverhead() []MetricValue {
+	if o == nil {
+		return nil
+	}
+	return o.SystemOverhead
 }
 
 func (o *FleetMetricsData) GetUtilized() []MetricValue {

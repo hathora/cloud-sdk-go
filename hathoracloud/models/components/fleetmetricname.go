@@ -2,6 +2,7 @@
 
 package components
 
+// FleetMetricName - Represents the valid metric names available to measure/manage fleets in a given region
 type FleetMetricName string
 
 const (
@@ -9,6 +10,7 @@ const (
 	FleetMetricNameProvisionedBareMetal FleetMetricName = "provisionedBareMetal"
 	FleetMetricNameProvisionedCloud     FleetMetricName = "provisionedCloud"
 	FleetMetricNameUtilized             FleetMetricName = "utilized"
+	FleetMetricNameSystemOverhead       FleetMetricName = "systemOverhead"
 )
 
 func (e FleetMetricName) ToPointer() *FleetMetricName {
