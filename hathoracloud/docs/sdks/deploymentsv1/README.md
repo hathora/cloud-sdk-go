@@ -209,17 +209,25 @@ func main() {
                 Value: "TRUE",
                 Name: "EULA",
             },
+            components.DeploymentConfigEnv{
+                Value: "TRUE",
+                Name: "EULA",
+            },
+            components.DeploymentConfigEnv{
+                Value: "TRUE",
+                Name: "EULA",
+            },
         },
         RoomsPerProcess: 3,
         PlanName: components.PlanNameTiny,
         AdditionalContainerPorts: []components.ContainerPort{
             components.ContainerPort{
-                TransportType: components.TransportTypeTLS,
+                TransportType: components.TransportTypeUDP,
                 Port: 8000,
                 Name: "default",
             },
         },
-        TransportType: components.TransportTypeUDP,
+        TransportType: components.TransportTypeTLS,
         ContainerPort: 4000,
     }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {

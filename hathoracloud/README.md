@@ -151,7 +151,7 @@ func main() {
 	}, components.CreateLobbyV3Params{
 		Visibility: components.LobbyVisibilityPrivate,
 		RoomConfig: hathoracloud.String("{\"name\":\"my-room\"}"),
-		Region:     components.RegionSeattle,
+		Region:     components.RegionDubai,
 	}, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("LFG4"), hathoracloud.String("2swovpy1fnunu"))
 	if err != nil {
 		log.Fatal(err)
@@ -262,6 +262,7 @@ func main() {
 ### [FleetsV1](docs/sdks/fleetsv1/README.md)
 
 * [GetFleets](docs/sdks/fleetsv1/README.md#getfleets) - GetFleets
+* [UpdateFleet](docs/sdks/fleetsv1/README.md#updatefleet) - UpdateFleet
 * [GetFleetRegion](docs/sdks/fleetsv1/README.md#getfleetregion) - GetFleetRegion
 * [UpdateFleetRegion](docs/sdks/fleetsv1/README.md#updatefleetregion) - UpdateFleetRegion
 * [GetFleetMetrics](docs/sdks/fleetsv1/README.md#getfleetmetrics) - GetFleetMetrics

@@ -274,7 +274,7 @@ func main() {
     res, err := s.BuildsV2.CreateWithMultipartUploadsV2Deprecated(ctx, components.CreateMultipartBuildParams{
         BuildID: hathoracloud.String("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
         BuildTag: hathoracloud.String("0.1.14-14c793"),
-        BuildSizeInBytes: 3146.66,
+        BuildSizeInBytes: 5282.13,
     }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)

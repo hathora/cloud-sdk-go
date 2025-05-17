@@ -96,7 +96,7 @@ func main() {
     res, err := s.BuildsV3.CreateBuild(ctx, components.CreateMultipartBuildParams{
         BuildID: hathoracloud.String("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
         BuildTag: hathoracloud.String("0.1.14-14c793"),
-        BuildSizeInBytes: 5387.85,
+        BuildSizeInBytes: 2645.24,
     }, nil)
     if err != nil {
         log.Fatal(err)
@@ -379,7 +379,7 @@ func main() {
     )
 
     res, err := s.BuildsV3.RunBuildRegistry(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", components.RegistryConfig{
-        Image: "https://loremflickr.com/1435/2196?lock=7778272511635490",
+        Image: "https://picsum.photos/seed/3gDPgtj/723/1525",
     }, nil)
     if err != nil {
         log.Fatal(err)

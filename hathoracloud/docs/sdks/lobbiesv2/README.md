@@ -44,7 +44,7 @@ func main() {
         PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, operations.CreatePrivateLobbyRequestBody{
         InitialConfig: "<value>",
-        Region: components.RegionLondon,
+        Region: components.RegionFrankfurt,
     }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
@@ -109,7 +109,7 @@ func main() {
         PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, operations.CreatePublicLobbyRequestBody{
         InitialConfig: "<value>",
-        Region: components.RegionJohannesburg,
+        Region: components.RegionTokyo,
     }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
@@ -240,7 +240,7 @@ func main() {
     }, components.CreateLobbyParams{
         Visibility: components.LobbyVisibilityPrivate,
         InitialConfig: "<value>",
-        Region: components.RegionSaoPaulo,
+        Region: components.RegionFrankfurt,
     }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
@@ -412,7 +412,7 @@ func main() {
     )
 
     res, err := s.LobbiesV2.SetLobbyState(ctx, "2swovpy1fnunu", components.SetLobbyStateParams{
-        State: "South Dakota",
+        State: "Connecticut",
     }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)

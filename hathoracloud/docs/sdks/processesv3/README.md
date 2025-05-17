@@ -151,7 +151,7 @@ func main() {
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.ProcessesV3.CreateProcess(ctx, components.RegionSaoPaulo, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.ProcessesV3.CreateProcess(ctx, components.RegionMumbai, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
         log.Fatal(err)
     }

@@ -258,7 +258,7 @@ func main() {
     )
 
     res, err := s.BillingV1.InitStripeCustomerPortalURL(ctx, components.CustomerPortalURL{
-        ReturnURL: "https://smart-puppet.biz/",
+        ReturnURL: "https://sunny-majority.com/",
     }, nil)
     if err != nil {
         log.Fatal(err)

@@ -205,16 +205,7 @@ func main() {
 
     res, err := s.DeploymentsV2.CreateDeploymentV2Deprecated(ctx, 1, components.DeploymentConfigV2{
         IdleTimeoutEnabled: false,
-        Env: []components.DeploymentConfigV2Env{
-            components.DeploymentConfigV2Env{
-                Value: "TRUE",
-                Name: "EULA",
-            },
-            components.DeploymentConfigV2Env{
-                Value: "TRUE",
-                Name: "EULA",
-            },
-        },
+        Env: []components.DeploymentConfigV2Env{},
         RoomsPerProcess: 3,
         AdditionalContainerPorts: []components.ContainerPort{
             components.ContainerPort{
@@ -223,7 +214,7 @@ func main() {
                 Name: "default",
             },
         },
-        TransportType: components.TransportTypeUDP,
+        TransportType: components.TransportTypeTLS,
         ContainerPort: 4000,
         RequestedMemoryMB: 1024,
         RequestedCPU: 0.5,

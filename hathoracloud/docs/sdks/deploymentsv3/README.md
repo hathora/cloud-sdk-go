@@ -93,17 +93,31 @@ func main() {
 
     res, err := s.DeploymentsV3.CreateDeployment(ctx, components.DeploymentConfigV3{
         DeploymentTag: hathoracloud.String("alpha"),
-        IdleTimeoutEnabled: false,
-        Env: []components.DeploymentConfigV3Env{},
+        IdleTimeoutEnabled: true,
+        Env: []components.DeploymentConfigV3Env{
+            components.DeploymentConfigV3Env{
+                Value: "TRUE",
+                Name: "EULA",
+            },
+            components.DeploymentConfigV3Env{
+                Value: "TRUE",
+                Name: "EULA",
+            },
+        },
         RoomsPerProcess: 3,
         AdditionalContainerPorts: []components.ContainerPort{
             components.ContainerPort{
-                TransportType: components.TransportTypeTCP,
+                TransportType: components.TransportTypeUDP,
+                Port: 8000,
+                Name: "default",
+            },
+            components.ContainerPort{
+                TransportType: components.TransportTypeUDP,
                 Port: 8000,
                 Name: "default",
             },
         },
-        TransportType: components.TransportTypeTLS,
+        TransportType: components.TransportTypeUDP,
         ContainerPort: 4000,
         ExperimentalRequestedGPU: hathoracloud.Float64(1),
         RequestedMemoryMB: 1024,

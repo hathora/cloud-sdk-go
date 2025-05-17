@@ -206,7 +206,20 @@ func main() {
 
     res, err := s.AppsV2.UpdateApp(ctx, components.AppConfigWithServiceConfig{
         ServiceConfig: &components.ServiceConfig{
-            StaticProcessAllocation: []components.StaticProcessAllocationConfig{},
+            StaticProcessAllocation: []components.StaticProcessAllocationConfig{
+                components.StaticProcessAllocationConfig{
+                    MaxProcesses: 3,
+                    TargetProcesses: 2,
+                    MinProcesses: 1,
+                    Region: components.RegionSaoPaulo,
+                },
+                components.StaticProcessAllocationConfig{
+                    MaxProcesses: 3,
+                    TargetProcesses: 2,
+                    MinProcesses: 1,
+                    Region: components.RegionSaoPaulo,
+                },
+            },
         },
         AuthConfiguration: components.AuthConfiguration{},
         AppName: "minecraft",
@@ -319,7 +332,26 @@ func main() {
 
     res, err := s.AppsV2.PatchApp(ctx, components.PartialAppConfigWithServiceConfig{
         ServiceConfig: &components.ServiceConfig{
-            StaticProcessAllocation: []components.StaticProcessAllocationConfig{},
+            StaticProcessAllocation: []components.StaticProcessAllocationConfig{
+                components.StaticProcessAllocationConfig{
+                    MaxProcesses: 3,
+                    TargetProcesses: 2,
+                    MinProcesses: 1,
+                    Region: components.RegionTokyo,
+                },
+                components.StaticProcessAllocationConfig{
+                    MaxProcesses: 3,
+                    TargetProcesses: 2,
+                    MinProcesses: 1,
+                    Region: components.RegionTokyo,
+                },
+                components.StaticProcessAllocationConfig{
+                    MaxProcesses: 3,
+                    TargetProcesses: 2,
+                    MinProcesses: 1,
+                    Region: components.RegionTokyo,
+                },
+            },
         },
     }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
     if err != nil {
