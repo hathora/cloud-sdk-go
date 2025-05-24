@@ -3,9 +3,12 @@
 package components
 
 type Organization struct {
+	// The maximum number of inbound connections that can be made to a process
+	// If undefined, the default is 1024 connections
+	MaxProcessConnections *float64 `json:"maxProcessConnections,omitempty"`
 	// The retention period for process logs in hours
 	// If undefined, the default is 72h
-	LogRetentionPeriodHours *float64 `json:"logRetentionPeriodHours,omitempty"`
+	LogRetentionPeriodHours *int `json:"logRetentionPeriodHours,omitempty"`
 	// The maximum lifespan in hours of a pod.
 	PodMaxLifespanHrs *float64 `json:"podMaxLifespanHrs,omitempty"`
 	// The maximum number of monthly process vcpu hours that can be run by the organization
@@ -28,7 +31,14 @@ type Organization struct {
 	OrgID string `json:"orgId"`
 }
 
-func (o *Organization) GetLogRetentionPeriodHours() *float64 {
+func (o *Organization) GetMaxProcessConnections() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.MaxProcessConnections
+}
+
+func (o *Organization) GetLogRetentionPeriodHours() *int {
 	if o == nil {
 		return nil
 	}
