@@ -9,19 +9,19 @@ sources:
             - 0.0.1
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:0e2f48f91328d8fd067cb73847e05d3f551ce8cde57d04a41292d800ab867a80
-        sourceBlobDigest: sha256:842bc47b563de8dfccb9cd344a9adbb1599a5b394c692e3afd30aad7f869e9e9
+        sourceRevisionDigest: sha256:de6d12e9e35e7a0bd9723ed20b90f1901135e46a09862fab9f8ac10059f652e3
+        sourceBlobDigest: sha256:cf474b64da154302d2fd12b2f60c31bad84ceb2d89aa94b74ce02722532ca75e
         tags:
             - latest
-            - speakeasy-sdk-regen-1748044994
+            - speakeasy-sdk-regen-1748131440
 targets:
     hathora-cloud:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:0e2f48f91328d8fd067cb73847e05d3f551ce8cde57d04a41292d800ab867a80
-        sourceBlobDigest: sha256:842bc47b563de8dfccb9cd344a9adbb1599a5b394c692e3afd30aad7f869e9e9
+        sourceRevisionDigest: sha256:de6d12e9e35e7a0bd9723ed20b90f1901135e46a09862fab9f8ac10059f652e3
+        sourceBlobDigest: sha256:cf474b64da154302d2fd12b2f60c31bad84ceb2d89aa94b74ce02722532ca75e
         codeSamplesNamespace: my-source-go-code-samples
-        codeSamplesRevisionDigest: sha256:af0817f88281a7680610a9b005ba5a322822e0a9cf9ec9945bc49f43a19c121f
+        codeSamplesRevisionDigest: sha256:1e3c6d5529ecb5186fa08362ba7e4a2bef4d8ffefaf8599ab5b65df2f939b332
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
