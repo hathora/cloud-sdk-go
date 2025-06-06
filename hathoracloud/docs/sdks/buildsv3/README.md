@@ -34,12 +34,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.BuildsV3.GetBuilds(ctx, nil)
+    res, err := s.BuildsV3.GetBuilds(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -88,16 +87,15 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.BuildsV3.CreateBuild(ctx, components.CreateMultipartBuildParams{
         BuildID: hathoracloud.String("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
         BuildTag: hathoracloud.String("0.1.14-14c793"),
         BuildSizeInBytes: 2645.24,
-    }, nil)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -147,12 +145,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.BuildsV3.GetBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", nil)
+    res, err := s.BuildsV3.GetBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5")
     if err != nil {
         log.Fatal(err)
     }
@@ -203,12 +200,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.BuildsV3.DeleteBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", nil)
+    res, err := s.BuildsV3.DeleteBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5")
     if err != nil {
         log.Fatal(err)
     }
@@ -259,15 +255,14 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.BuildsV3.CreateBuildRegistry(ctx, components.CreateBuildV3Params{
         BuildID: hathoracloud.String("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
         BuildTag: hathoracloud.String("0.1.14-14c793"),
-    }, nil)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -317,12 +312,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.BuildsV3.RunBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", nil)
+    res, err := s.BuildsV3.RunBuild(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5")
     if err != nil {
         log.Fatal(err)
     }
@@ -373,14 +367,13 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.BuildsV3.RunBuildRegistry(ctx, "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", components.RegistryConfig{
         Image: "https://picsum.photos/seed/3gDPgtj/723/1525",
-    }, nil)
+    })
     if err != nil {
         log.Fatal(err)
     }

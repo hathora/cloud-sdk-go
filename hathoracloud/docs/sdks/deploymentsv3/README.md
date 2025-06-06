@@ -31,12 +31,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV3.GetDeployments(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("alpha"))
+    res, err := s.DeploymentsV3.GetDeployments(ctx, hathoracloud.String("alpha"))
     if err != nil {
         log.Fatal(err)
     }
@@ -86,9 +85,8 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.DeploymentsV3.CreateDeployment(ctx, components.DeploymentConfigV3{
@@ -123,7 +121,7 @@ func main() {
         RequestedMemoryMB: 1024,
         RequestedCPU: 0.5,
         BuildID: "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5",
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -173,12 +171,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV3.GetLatestDeployment(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.DeploymentsV3.GetLatestDeployment(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -226,12 +223,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV3.GetDeployment(ctx, "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.DeploymentsV3.GetDeployment(ctx, "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5")
     if err != nil {
         log.Fatal(err)
     }

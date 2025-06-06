@@ -31,13 +31,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.MetricsV1.GetMetricsDeprecated(ctx, operations.GetMetricsDeprecatedRequest{
-        AppID: hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
         ProcessID: "cbfcddd2-0006-43ae-996c-995fff7bed2e",
     })
     if err != nil {

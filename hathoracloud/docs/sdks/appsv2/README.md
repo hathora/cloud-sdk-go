@@ -33,12 +33,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.AppsV2.GetApps(ctx, nil)
+    res, err := s.AppsV2.GetApps(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -87,15 +86,14 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.AppsV2.CreateApp(ctx, components.AppConfig{
         AuthConfiguration: components.AuthConfiguration{},
         AppName: "minecraft",
-    }, nil)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -145,12 +143,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.AppsV2.GetApp(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.AppsV2.GetApp(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -199,9 +196,8 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.AppsV2.UpdateApp(ctx, components.AppConfigWithServiceConfig{
@@ -223,7 +219,7 @@ func main() {
         },
         AuthConfiguration: components.AuthConfiguration{},
         AppName: "minecraft",
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -273,12 +269,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    err := s.AppsV2.DeleteApp(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    err := s.AppsV2.DeleteApp(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -325,9 +320,8 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.AppsV2.PatchApp(ctx, components.PartialAppConfigWithServiceConfig{
@@ -353,7 +347,7 @@ func main() {
                 },
             },
         },
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    })
     if err != nil {
         log.Fatal(err)
     }

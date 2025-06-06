@@ -34,12 +34,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.BuildsV2.GetBuildsV2Deprecated(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.BuildsV2.GetBuildsV2Deprecated(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -89,12 +88,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.BuildsV2.GetBuildInfoV2Deprecated(ctx, 1, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.BuildsV2.GetBuildInfoV2Deprecated(ctx, 1)
     if err != nil {
         log.Fatal(err)
     }
@@ -146,14 +144,13 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.BuildsV2.CreateBuildV2Deprecated(ctx, components.CreateBuildParams{
         BuildTag: hathoracloud.String("0.1.14-14c793"),
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -206,14 +203,13 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.BuildsV2.CreateBuildWithUploadURLV2Deprecated(ctx, components.CreateBuildParams{
         BuildTag: hathoracloud.String("0.1.14-14c793"),
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -266,16 +262,15 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.BuildsV2.CreateWithMultipartUploadsV2Deprecated(ctx, components.CreateMultipartBuildParams{
         BuildID: hathoracloud.String("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
         BuildTag: hathoracloud.String("0.1.14-14c793"),
         BuildSizeInBytes: 5282.13,
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -327,12 +322,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    err := s.BuildsV2.DeleteBuildV2Deprecated(ctx, 1, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    err := s.BuildsV2.DeleteBuildV2Deprecated(ctx, 1)
     if err != nil {
         log.Fatal(err)
     }
@@ -383,9 +377,8 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     content, fileErr := os.Open("example.file")
@@ -394,7 +387,7 @@ func main() {
     }
 
 
-    res, err := s.BuildsV2.RunBuildV2Deprecated(ctx, 1, operations.RunBuildV2DeprecatedRequestBody{}, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.BuildsV2.RunBuildV2Deprecated(ctx, 1, operations.RunBuildV2DeprecatedRequestBody{})
     if err != nil {
         log.Fatal(err)
     }

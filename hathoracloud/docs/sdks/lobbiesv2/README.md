@@ -36,7 +36,6 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
@@ -45,7 +44,7 @@ func main() {
     }, operations.CreatePrivateLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionFrankfurt,
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -101,7 +100,6 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
@@ -110,7 +108,7 @@ func main() {
     }, operations.CreatePublicLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionTokyo,
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -166,7 +164,6 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
@@ -175,7 +172,7 @@ func main() {
     }, operations.CreateLocalLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionJohannesburg,
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -231,7 +228,6 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
@@ -241,7 +237,7 @@ func main() {
         Visibility: components.LobbyVisibilityPrivate,
         InitialConfig: "<value>",
         Region: components.RegionFrankfurt,
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -295,11 +291,10 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV2.ListActivePublicLobbiesDeprecatedV2(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil)
+    res, err := s.LobbiesV2.ListActivePublicLobbiesDeprecatedV2(ctx, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -350,11 +345,10 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV2.GetLobbyInfo(ctx, "2swovpy1fnunu", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.LobbiesV2.GetLobbyInfo(ctx, "2swovpy1fnunu")
     if err != nil {
         log.Fatal(err)
     }
@@ -406,14 +400,13 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.LobbiesV2.SetLobbyState(ctx, "2swovpy1fnunu", components.SetLobbyStateParams{
         State: "Connecticut",
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    })
     if err != nil {
         log.Fatal(err)
     }

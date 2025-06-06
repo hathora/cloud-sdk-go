@@ -31,12 +31,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV1.GetDeploymentsV1Deprecated(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.DeploymentsV1.GetDeploymentsV1Deprecated(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -86,12 +85,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV1.GetLatestDeploymentV1Deprecated(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.DeploymentsV1.GetLatestDeploymentV1Deprecated(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -141,12 +139,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV1.GetDeploymentInfoV1Deprecated(ctx, 1, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.DeploymentsV1.GetDeploymentInfoV1Deprecated(ctx, 1)
     if err != nil {
         log.Fatal(err)
     }
@@ -198,9 +195,8 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.DeploymentsV1.CreateDeploymentV1Deprecated(ctx, 1, components.DeploymentConfig{
@@ -229,7 +225,7 @@ func main() {
         },
         TransportType: components.TransportTypeTLS,
         ContainerPort: 4000,
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    })
     if err != nil {
         log.Fatal(err)
     }

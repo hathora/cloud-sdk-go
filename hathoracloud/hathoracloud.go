@@ -2,9 +2,12 @@
 
 package hathoracloud
 
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.621.3
+
 import (
 	"context"
 	"fmt"
+	"github.com/hathora/cloud-sdk-go/hathoracloud/internal/config"
 	"github.com/hathora/cloud-sdk-go/hathoracloud/internal/globals"
 	"github.com/hathora/cloud-sdk-go/hathoracloud/internal/hooks"
 	"github.com/hathora/cloud-sdk-go/hathoracloud/internal/utils"
@@ -20,7 +23,7 @@ var ServerList = []string{
 	"/",
 }
 
-// HTTPClient provides an interface for suplying the SDK with a custom HTTP client
+// HTTPClient provides an interface for supplying the SDK with a custom HTTP client
 type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
@@ -46,32 +49,9 @@ func Float64(f float64) *float64 { return &f }
 // Pointer provides a helper function to return a pointer to a type
 func Pointer[T any](v T) *T { return &v }
 
-type sdkConfiguration struct {
-	Client            HTTPClient
-	Security          func(context.Context) (interface{}, error)
-	ServerURL         string
-	ServerIndex       int
-	Language          string
-	OpenAPIDocVersion string
-	SDKVersion        string
-	GenVersion        string
-	UserAgent         string
-	Globals           globals.Globals
-	RetryConfig       *retry.Config
-	Hooks             *hooks.Hooks
-	Timeout           *time.Duration
-}
-
-func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
-	if c.ServerURL != "" {
-		return c.ServerURL, nil
-	}
-
-	return ServerList[c.ServerIndex], nil
-}
-
 // HathoraCloud - Hathora Cloud API: Welcome to the Hathora Cloud API documentation! Learn how to use the Hathora Cloud APIs to build and scale your game servers globally.
 type HathoraCloud struct {
+	SDKVersion string
 	//
 	TokensV1 *TokensV1
 	RoomsV1  *RoomsV1
@@ -113,7 +93,8 @@ type HathoraCloud struct {
 	// Operations that allow you manage your [applications](https://hathora.dev/docs/concepts/hathora-entities#application).
 	AppsV2 *AppsV2
 
-	sdkConfiguration sdkConfiguration
+	sdkConfiguration config.SDKConfiguration
+	hooks            *hooks.Hooks
 }
 
 type SDKOption func(*HathoraCloud)
@@ -201,15 +182,13 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *HathoraCloud {
 	sdk := &HathoraCloud{
-		sdkConfiguration: sdkConfiguration{
-			Language:          "go",
-			OpenAPIDocVersion: "0.0.1",
-			SDKVersion:        "0.3.20",
-			GenVersion:        "2.610.0",
-			UserAgent:         "speakeasy-sdk/go 0.3.20 2.610.0 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
-			Globals:           globals.Globals{},
-			Hooks:             hooks.New(),
+		SDKVersion: "0.4.0",
+		sdkConfiguration: config.SDKConfiguration{
+			UserAgent:  "speakeasy-sdk/go 0.4.0 2.621.3 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
+			Globals:    globals.Globals{},
+			ServerList: ServerList,
 		},
+		hooks: hooks.New(),
 	}
 	for _, opt := range opts {
 		opt(sdk)
@@ -222,62 +201,37 @@ func New(opts ...SDKOption) *HathoraCloud {
 
 	currentServerURL, _ := sdk.sdkConfiguration.GetServerDetails()
 	serverURL := currentServerURL
-	serverURL, sdk.sdkConfiguration.Client = sdk.sdkConfiguration.Hooks.SDKInit(currentServerURL, sdk.sdkConfiguration.Client)
-	if serverURL != currentServerURL {
+	serverURL, sdk.sdkConfiguration.Client = sdk.hooks.SDKInit(currentServerURL, sdk.sdkConfiguration.Client)
+	if currentServerURL != serverURL {
 		sdk.sdkConfiguration.ServerURL = serverURL
 	}
 
-	sdk.TokensV1 = newTokensV1(sdk.sdkConfiguration)
-
-	sdk.RoomsV1 = newRoomsV1(sdk.sdkConfiguration)
-
-	sdk.RoomsV2 = newRoomsV2(sdk.sdkConfiguration)
-
-	sdk.ProcessesV1 = newProcessesV1(sdk.sdkConfiguration)
-
-	sdk.ProcessesV2 = newProcessesV2(sdk.sdkConfiguration)
-
-	sdk.ProcessesV3 = newProcessesV3(sdk.sdkConfiguration)
-
-	sdk.OrganizationsV1 = newOrganizationsV1(sdk.sdkConfiguration)
-
-	sdk.MetricsV1 = newMetricsV1(sdk.sdkConfiguration)
-
-	sdk.ManagementV1 = newManagementV1(sdk.sdkConfiguration)
-
-	sdk.LogsV1 = newLogsV1(sdk.sdkConfiguration)
-
-	sdk.LobbiesV1 = newLobbiesV1(sdk.sdkConfiguration)
-
-	sdk.LobbiesV2 = newLobbiesV2(sdk.sdkConfiguration)
-
-	sdk.LobbiesV3 = newLobbiesV3(sdk.sdkConfiguration)
-
-	sdk.FleetsV1 = newFleetsV1(sdk.sdkConfiguration)
-
-	sdk.DiscoveryV1 = newDiscoveryV1(sdk.sdkConfiguration)
-
-	sdk.DiscoveryV2 = newDiscoveryV2(sdk.sdkConfiguration)
-
-	sdk.DeploymentsV1 = newDeploymentsV1(sdk.sdkConfiguration)
-
-	sdk.DeploymentsV2 = newDeploymentsV2(sdk.sdkConfiguration)
-
-	sdk.DeploymentsV3 = newDeploymentsV3(sdk.sdkConfiguration)
-
-	sdk.BuildsV1 = newBuildsV1(sdk.sdkConfiguration)
-
-	sdk.BuildsV2 = newBuildsV2(sdk.sdkConfiguration)
-
-	sdk.BuildsV3 = newBuildsV3(sdk.sdkConfiguration)
-
-	sdk.BillingV1 = newBillingV1(sdk.sdkConfiguration)
-
-	sdk.AuthV1 = newAuthV1(sdk.sdkConfiguration)
-
-	sdk.AppsV1 = newAppsV1(sdk.sdkConfiguration)
-
-	sdk.AppsV2 = newAppsV2(sdk.sdkConfiguration)
+	sdk.TokensV1 = newTokensV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.RoomsV1 = newRoomsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.RoomsV2 = newRoomsV2(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.ProcessesV1 = newProcessesV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.ProcessesV2 = newProcessesV2(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.ProcessesV3 = newProcessesV3(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.OrganizationsV1 = newOrganizationsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.MetricsV1 = newMetricsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.ManagementV1 = newManagementV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.LogsV1 = newLogsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.LobbiesV1 = newLobbiesV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.LobbiesV2 = newLobbiesV2(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.LobbiesV3 = newLobbiesV3(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.FleetsV1 = newFleetsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.DiscoveryV1 = newDiscoveryV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.DiscoveryV2 = newDiscoveryV2(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.DeploymentsV1 = newDeploymentsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.DeploymentsV2 = newDeploymentsV2(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.DeploymentsV3 = newDeploymentsV3(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.BuildsV1 = newBuildsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.BuildsV2 = newBuildsV2(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.BuildsV3 = newBuildsV3(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.BillingV1 = newBillingV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.AuthV1 = newAuthV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.AppsV1 = newAppsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.AppsV2 = newAppsV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 
 	return sdk
 }

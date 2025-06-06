@@ -32,12 +32,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.GetFleets(ctx, nil)
+    res, err := s.FleetsV1.GetFleets(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -86,16 +85,15 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     err := s.FleetsV1.UpdateFleet(ctx, "<id>", components.UpdateFleet{
         AutoscalerConfig: components.AutoscalerConfig{
             ScaleUpThreshold: 979840,
         },
-    }, nil)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -144,12 +142,11 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.GetFleetRegion(ctx, "<id>", components.RegionSingapore, nil)
+    res, err := s.FleetsV1.GetFleetRegion(ctx, "<id>", components.RegionSingapore)
     if err != nil {
         log.Fatal(err)
     }
@@ -200,14 +197,13 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     err := s.FleetsV1.UpdateFleetRegion(ctx, "<id>", components.RegionChicago, components.FleetRegionConfig{
         CloudMinVcpus: 503995,
-    }, nil)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -258,9 +254,8 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
         hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-        hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
     res, err := s.FleetsV1.GetFleetMetrics(ctx, operations.GetFleetMetricsRequest{

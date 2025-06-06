@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 7a283f7307ce9c6db3f6c193a3065ae3
+  docChecksum: ea9d9ead6dbc6d022fa6e9443c51cfe9
   docVersion: 0.0.1
-  speakeasyVersion: 1.551.0
-  generationVersion: 2.610.0
-  releaseVersion: 0.3.20
-  configChecksum: 6c11cbc29480f343d1b31cd78b04e712
+  speakeasyVersion: 1.556.2
+  generationVersion: 2.621.3
+  releaseVersion: 0.4.0
+  configChecksum: 980c23c33809286bc0c7043835baf901
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -32,8 +32,8 @@ features:
     nullables: 0.1.1
     openEnums: 0.1.0
     responseFormat: 0.1.2
-    retries: 2.83.2
-    sdkHooks: 0.1.0
+    retries: 2.83.3
+    sdkHooks: 0.2.0
     unions: 2.85.10
     uploadStreams: 0.1.0
 generatedFiles:
@@ -681,6 +681,7 @@ generatedFiles:
   - fleetsv1.go
   - go.mod
   - hathoracloud.go
+  - internal/config/sdkconfiguration.go
   - internal/globals/globals.go
   - internal/hooks/hooks.go
   - internal/utils/contenttype.go
@@ -1716,7 +1717,7 @@ examples:
           appId: "app-af469a92-5b45-4565-b3c4-b79878de67d2"
           buildId: 1
       requestBody:
-        multipart/form-data: {"file": {"": "x-file: example.file"}}
+        multipart/form-data: {"file": "x-file: example.file"}
       responses:
         "200":
           text/plain: "<value>"

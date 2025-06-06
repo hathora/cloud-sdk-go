@@ -31,7 +31,6 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
@@ -41,7 +40,7 @@ func main() {
         Visibility: components.LobbyVisibilityPrivate,
         RoomConfig: hathoracloud.String("{\"name\":\"my-room\"}"),
         Region: components.RegionDubai,
-    }, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("LFG4"), hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.String("LFG4"), hathoracloud.String("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -94,11 +93,10 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV3.ListActivePublicLobbies(ctx, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), nil)
+    res, err := s.LobbiesV3.ListActivePublicLobbies(ctx, nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -147,11 +145,10 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV3.GetLobbyInfoByRoomID(ctx, "2swovpy1fnunu", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.LobbiesV3.GetLobbyInfoByRoomID(ctx, "2swovpy1fnunu")
     if err != nil {
         log.Fatal(err)
     }
@@ -200,11 +197,10 @@ func main() {
     ctx := context.Background()
 
     s := hathoracloud.New(
-        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
     )
 
-    res, err := s.LobbiesV3.GetLobbyInfoByShortCode(ctx, "LFG4", hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"))
+    res, err := s.LobbiesV3.GetLobbyInfoByShortCode(ctx, "LFG4")
     if err != nil {
         log.Fatal(err)
     }

@@ -67,8 +67,6 @@ func main() {
 
 	s := hathoracloud.New(
 		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -109,8 +107,6 @@ func main() {
 
 	s := hathoracloud.New(
 		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -142,7 +138,6 @@ func main() {
 	ctx := context.Background()
 
 	s := hathoracloud.New(
-		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
@@ -152,7 +147,7 @@ func main() {
 		Visibility: components.LobbyVisibilityPrivate,
 		RoomConfig: hathoracloud.String("{\"name\":\"my-room\"}"),
 		Region:     components.RegionDubai,
-	}, hathoracloud.String("app-af469a92-5b45-4565-b3c4-b79878de67d2"), hathoracloud.String("LFG4"), hathoracloud.String("2swovpy1fnunu"))
+	}, hathoracloud.String("LFG4"), hathoracloud.String("2swovpy1fnunu"))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -403,9 +398,9 @@ func main() {
 	ctx := context.Background()
 
 	s := hathoracloud.New(
-		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
 		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
+		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -442,8 +437,6 @@ func main() {
 
 	s := hathoracloud.New(
 		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", operations.WithRetries(
@@ -494,8 +487,6 @@ func main() {
 				RetryConnectionErrors: false,
 			}),
 		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -542,8 +533,6 @@ func main() {
 
 	s := hathoracloud.New(
 		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -595,8 +584,6 @@ func main() {
 	s := hathoracloud.New(
 		hathoracloud.WithServerIndex(1),
 		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
@@ -628,8 +615,6 @@ func main() {
 	s := hathoracloud.New(
 		hathoracloud.WithServerURL("https://api.hathora.dev"),
 		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
-		hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
-		hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
 	)
 
 	res, err := s.TokensV1.GetOrgTokens(ctx, "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39")
