@@ -259,16 +259,15 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    content, fileErr := os.Open("example.file")
+    example, fileErr := os.Open("example.file")
     if fileErr != nil {
         panic(fileErr)
     }
 
-
     res, err := s.BuildsV1.RunBuildDeprecated(ctx, 1, operations.RunBuildDeprecatedRequestBody{
         File: operations.File{
             FileName: "example.file",
-            Content: content,
+            Content: example,
         },
     })
     if err != nil {

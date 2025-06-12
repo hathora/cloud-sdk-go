@@ -368,7 +368,6 @@ package main
 import(
 	"context"
 	"github.com/hathora/cloud-sdk-go/hathoracloud"
-	"os"
 	"github.com/hathora/cloud-sdk-go/hathoracloud/models/operations"
 	"log"
 )
@@ -380,12 +379,6 @@ func main() {
         hathoracloud.WithAppID("app-af469a92-5b45-4565-b3c4-b79878de67d2"),
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
-
-    content, fileErr := os.Open("example.file")
-    if fileErr != nil {
-        panic(fileErr)
-    }
-
 
     res, err := s.BuildsV2.RunBuildV2Deprecated(ctx, 1, operations.RunBuildV2DeprecatedRequestBody{})
     if err != nil {
