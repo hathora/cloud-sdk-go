@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 86bf8749dcaeba7a5153f17eaf0fca0f
+  docChecksum: 1100e5190e44aa7dfaa8b4ed35fb944a
   docVersion: 0.0.1
-  speakeasyVersion: 1.561.0
-  generationVersion: 2.628.0
-  releaseVersion: 0.5.1
-  configChecksum: 0b9ba7e67cf400c52fb156f88b1f3a04
+  speakeasyVersion: 1.564.0
+  generationVersion: 2.630.8
+  releaseVersion: 0.5.2
+  configChecksum: ed2cd148905e89ffa607eb1299464ab5
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud

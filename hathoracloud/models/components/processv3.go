@@ -49,6 +49,8 @@ type ProcessV3 struct {
 	Status  ProcessStatus `json:"status"`
 	// Tracks the number of rooms that have been allocated to the process.
 	RoomsAllocated int `json:"roomsAllocated"`
+	// The summary of why the process exited, if it has stopped.
+	SummaryExitReason *string `json:"summaryExitReason,omitempty"`
 	// When the process has been terminated.
 	TerminatedAt *time.Time `json:"terminatedAt"`
 	// When the process is issued to stop. We use this to determine when we should stop billing.
@@ -100,6 +102,13 @@ func (o *ProcessV3) GetRoomsAllocated() int {
 		return 0
 	}
 	return o.RoomsAllocated
+}
+
+func (o *ProcessV3) GetSummaryExitReason() *string {
+	if o == nil {
+		return nil
+	}
+	return o.SummaryExitReason
 }
 
 func (o *ProcessV3) GetTerminatedAt() *time.Time {
