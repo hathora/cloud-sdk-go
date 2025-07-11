@@ -14,7 +14,7 @@ Operations that allow you configure and manage an application's [build](https://
 
 ## GetDeployments
 
-Returns an array of [deployments](https://hathora.dev/docs/concepts/hathora-entities#deployment) for an [application](https://hathora.dev/docs/concepts/hathora-entities#application), optionally filtered by deploymentTag.
+Returns an array of [deployments](https://hathora.dev/docs/concepts/hathora-entities#deployment) for an [application](https://hathora.dev/docs/concepts/hathora-entities#application), optionally filtered by deploymentTag or buildTag.
 
 ### Example Usage
 
@@ -35,7 +35,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV3.GetDeployments(ctx, hathoracloud.String("alpha"))
+    res, err := s.DeploymentsV3.GetDeployments(ctx, hathoracloud.String("alpha"), hathoracloud.String("0.1.14-14c793"))
     if err != nil {
         log.Fatal(err)
     }
@@ -52,6 +52,7 @@ func main() {
 | `ctx`                                                    | [context.Context](https://pkg.go.dev/context#Context)    | :heavy_check_mark:                                       | The context to use for the request.                      |                                                          |
 | `appID`                                                  | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | app-af469a92-5b45-4565-b3c4-b79878de67d2                 |
 | `deploymentTag`                                          | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | alpha                                                    |
+| `buildTag`                                               | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | 0.1.14-14c793                                            |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |                                                          |
 
 ### Response

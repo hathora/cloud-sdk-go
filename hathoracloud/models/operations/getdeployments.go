@@ -16,6 +16,7 @@ func (o *GetDeploymentsGlobals) GetAppID() *string {
 type GetDeploymentsRequest struct {
 	AppID         *string `pathParam:"style=simple,explode=false,name=appId"`
 	DeploymentTag *string `queryParam:"style=form,explode=true,name=deploymentTag"`
+	BuildTag      *string `queryParam:"style=form,explode=true,name=buildTag"`
 }
 
 func (o *GetDeploymentsRequest) GetAppID() *string {
@@ -30,4 +31,11 @@ func (o *GetDeploymentsRequest) GetDeploymentTag() *string {
 		return nil
 	}
 	return o.DeploymentTag
+}
+
+func (o *GetDeploymentsRequest) GetBuildTag() *string {
+	if o == nil {
+		return nil
+	}
+	return o.BuildTag
 }

@@ -32,11 +32,12 @@ func newDeploymentsV3(rootSDK *HathoraCloud, sdkConfig config.SDKConfiguration, 
 }
 
 // GetDeployments
-// Returns an array of [deployments](https://hathora.dev/docs/concepts/hathora-entities#deployment) for an [application](https://hathora.dev/docs/concepts/hathora-entities#application), optionally filtered by deploymentTag.
-func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deploymentTag *string, opts ...operations.Option) (*components.DeploymentsV3Page, error) {
+// Returns an array of [deployments](https://hathora.dev/docs/concepts/hathora-entities#deployment) for an [application](https://hathora.dev/docs/concepts/hathora-entities#application), optionally filtered by deploymentTag or buildTag.
+func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deploymentTag *string, buildTag *string, opts ...operations.Option) (*components.DeploymentsV3Page, error) {
 	request := operations.GetDeploymentsRequest{
 		AppID:         appID,
 		DeploymentTag: deploymentTag,
+		BuildTag:      buildTag,
 	}
 
 	globals := operations.GetDeploymentsGlobals{
