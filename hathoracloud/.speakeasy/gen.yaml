@@ -23,7 +23,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 0.5.6
+  version: 0.5.7
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: HathoraCloudError

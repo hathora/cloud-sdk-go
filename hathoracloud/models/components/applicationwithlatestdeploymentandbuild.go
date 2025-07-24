@@ -212,7 +212,7 @@ type ApplicationWithLatestDeploymentAndBuild struct {
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID         string                                                `json:"orgId"`
 	ServiceConfig *ApplicationWithLatestDeploymentAndBuildServiceConfig `json:"serviceConfig"`
-	// Configure [player authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service) for your application. Use Hathora's built-in auth providers or use your own [custom authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service#custom-auth-provider).
+	// Configure [player authentication](https://hathora.dev/docs/backend-integrations/lobbies-and-matchmaking/auth-service) for your application. Use Hathora's built-in auth providers or use your own [custom authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service#custom-auth-provider).
 	AuthConfiguration AuthConfiguration `json:"authConfiguration"`
 	// Secret that is used for identity and access management.
 	AppSecret string `json:"appSecret"`
