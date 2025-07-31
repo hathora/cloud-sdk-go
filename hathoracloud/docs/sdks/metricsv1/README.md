@@ -17,6 +17,7 @@ Get metrics for a [process](https://hathora.dev/docs/concepts/hathora-entities#p
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetMetricsDeprecated" method="get" path="/metrics/v1/{appId}/process/{processId}" -->
 ```go
 package main
 

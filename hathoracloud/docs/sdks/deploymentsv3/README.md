@@ -18,6 +18,7 @@ Returns an array of [deployments](https://hathora.dev/docs/concepts/hathora-enti
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetDeployments" method="get" path="/deployments/v3/apps/{appId}/deployments" -->
 ```go
 package main
 
@@ -72,6 +73,7 @@ Create a new [deployment](https://hathora.dev/docs/concepts/hathora-entities#dep
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateDeployment" method="post" path="/deployments/v3/apps/{appId}/deployments" -->
 ```go
 package main
 
@@ -159,6 +161,7 @@ Get the latest [deployment](https://hathora.dev/docs/concepts/hathora-entities#d
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetLatestDeployment" method="get" path="/deployments/v3/apps/{appId}/deployments/latest" -->
 ```go
 package main
 
@@ -211,6 +214,7 @@ Get details for a [deployment](https://hathora.dev/docs/concepts/hathora-entitie
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetDeployment" method="get" path="/deployments/v3/apps/{appId}/deployments/{deploymentId}" -->
 ```go
 package main
 

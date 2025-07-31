@@ -17,6 +17,7 @@ List all organization tokens for a given org.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetOrgTokens" method="get" path="/tokens/v1/orgs/{orgId}" -->
 ```go
 package main
 
@@ -68,6 +69,7 @@ Create a new organization token.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateOrgToken" method="post" path="/tokens/v1/orgs/{orgId}/create" -->
 ```go
 package main
 
@@ -123,6 +125,7 @@ Revoke an organization token.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="RevokeOrgToken" method="post" path="/tokens/v1/orgs/{orgId}/tokens/{orgTokenId}/revoke" -->
 ```go
 package main
 

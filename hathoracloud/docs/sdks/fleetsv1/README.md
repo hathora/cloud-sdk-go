@@ -19,6 +19,7 @@ Returns an array of [fleets](https://hathora.dev/docs/concepts/hathora-entities#
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetFleets" method="get" path="/fleets/v1/fleets" -->
 ```go
 package main
 
@@ -71,6 +72,7 @@ Updates a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet)'s co
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="UpdateFleet" method="post" path="/fleets/v1/fleets/{fleetId}" -->
 ```go
 package main
 
@@ -128,6 +130,7 @@ Gets the configuration for a given [fleet](https://hathora.dev/docs/concepts/hat
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetFleetRegion" method="get" path="/fleets/v1/fleets/{fleetId}/regions/{region}" -->
 ```go
 package main
 
@@ -183,6 +186,7 @@ Updates the configuration for a given [fleet](https://hathora.dev/docs/concepts/
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="UpdateFleetRegion" method="put" path="/fleets/v1/fleets/{fleetId}/regions/{region}" -->
 ```go
 package main
 
@@ -239,6 +243,7 @@ Gets metrics for a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fl
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetFleetMetrics" method="get" path="/fleets/v1/fleets/{fleetId}/regions/{region}/metrics" -->
 ```go
 package main
 

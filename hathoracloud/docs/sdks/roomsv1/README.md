@@ -21,6 +21,7 @@ CreateRoomDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateRoomDeprecated" method="post" path="/rooms/v1/{appId}/create" -->
 ```go
 package main
 
@@ -86,6 +87,7 @@ GetRoomInfoDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetRoomInfoDeprecated" method="get" path="/rooms/v1/{appId}/info/{roomId}" -->
 ```go
 package main
 
@@ -141,6 +143,7 @@ GetActiveRoomsForProcessDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetActiveRoomsForProcessDeprecated" method="get" path="/rooms/v1/{appId}/list/{processId}/active" -->
 ```go
 package main
 
@@ -196,6 +199,7 @@ GetInactiveRoomsForProcessDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetInactiveRoomsForProcessDeprecated" method="get" path="/rooms/v1/{appId}/list/{processId}/inactive" -->
 ```go
 package main
 
@@ -251,6 +255,7 @@ DestroyRoomDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="DestroyRoomDeprecated" method="post" path="/rooms/v1/{appId}/destroy/{roomId}" -->
 ```go
 package main
 
@@ -304,6 +309,7 @@ SuspendRoomDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="SuspendRoomDeprecated" method="post" path="/rooms/v1/{appId}/suspend/{roomId}" -->
 ```go
 package main
 
@@ -357,6 +363,7 @@ GetConnectionInfoDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetConnectionInfoDeprecated" method="get" path="/rooms/v1/{appId}/connectioninfo/{roomId}" -->
 ```go
 package main
 

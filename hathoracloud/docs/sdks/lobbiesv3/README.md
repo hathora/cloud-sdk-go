@@ -16,6 +16,7 @@ Create a new lobby for an [application](https://hathora.dev/docs/concepts/hathor
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateLobby" method="post" path="/lobby/v3/{appId}/create" -->
 ```go
 package main
 
@@ -80,6 +81,7 @@ Get all active lobbies for a given [application](https://hathora.dev/docs/concep
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ListActivePublicLobbies" method="get" path="/lobby/v3/{appId}/list/public" -->
 ```go
 package main
 
@@ -132,6 +134,7 @@ Get details for a lobby.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetLobbyInfoByRoomId" method="get" path="/lobby/v3/{appId}/info/roomid/{roomId}" -->
 ```go
 package main
 
@@ -184,6 +187,7 @@ Get details for a lobby. If 2 or more lobbies have the same `shortCode`, then th
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetLobbyInfoByShortCode" method="get" path="/lobby/v3/{appId}/info/shortcode/{shortCode}" -->
 ```go
 package main
 

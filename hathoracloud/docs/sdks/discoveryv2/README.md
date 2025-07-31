@@ -15,6 +15,7 @@ Returns an array of all regions with a host and port that a client can directly 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetPingServiceEndpoints" method="get" path="/discovery/v2/ping" -->
 ```go
 package main
 

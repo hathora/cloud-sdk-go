@@ -17,6 +17,7 @@ CreatePrivateLobbyDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreatePrivateLobbyDeprecated" method="post" path="/lobby/v1/{appId}/create/private" -->
 ```go
 package main
 
@@ -77,6 +78,7 @@ CreatePublicLobbyDeprecated
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreatePublicLobbyDeprecated" method="post" path="/lobby/v1/{appId}/create/public" -->
 ```go
 package main
 
@@ -137,6 +139,7 @@ ListActivePublicLobbiesDeprecatedV1
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ListActivePublicLobbiesDeprecatedV1" method="get" path="/lobby/v1/{appId}/list" -->
 ```go
 package main
 

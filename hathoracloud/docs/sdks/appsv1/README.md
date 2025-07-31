@@ -19,6 +19,7 @@ Returns an unsorted list of your organization’s [applications](https://hathora
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetAppsV1Deprecated" method="get" path="/apps/v1/list" -->
 ```go
 package main
 
@@ -71,6 +72,7 @@ Create a new [application](https://hathora.dev/docs/concepts/hathora-entities#ap
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateAppV1Deprecated" method="post" path="/apps/v1/create" -->
 ```go
 package main
 
@@ -129,6 +131,7 @@ Update data for an existing [application](https://hathora.dev/docs/concepts/hath
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="UpdateAppV1Deprecated" method="post" path="/apps/v1/update/{appId}" -->
 ```go
 package main
 
@@ -189,6 +192,7 @@ Get details for an [application](https://hathora.dev/docs/concepts/hathora-entit
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetAppInfoV1Deprecated" method="get" path="/apps/v1/info/{appId}" -->
 ```go
 package main
 
@@ -243,6 +247,7 @@ Delete an [application](https://hathora.dev/docs/concepts/hathora-entities#appli
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="DeleteAppV1Deprecated" method="delete" path="/apps/v1/delete/{appId}" -->
 ```go
 package main
 

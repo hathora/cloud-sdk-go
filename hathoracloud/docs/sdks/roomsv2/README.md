@@ -21,6 +21,7 @@ Create a new [room](https://hathora.dev/docs/concepts/hathora-entities#room) for
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateRoom" method="post" path="/rooms/v2/{appId}/create" -->
 ```go
 package main
 
@@ -84,6 +85,7 @@ Retreive current and historical allocation data for a [room](https://hathora.dev
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetRoomInfo" method="get" path="/rooms/v2/{appId}/info/{roomId}" -->
 ```go
 package main
 
@@ -137,6 +139,7 @@ Get all active [rooms](https://hathora.dev/docs/concepts/hathora-entities#room) 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetActiveRoomsForProcess" method="get" path="/rooms/v2/{appId}/list/{processId}/active" -->
 ```go
 package main
 
@@ -190,6 +193,7 @@ Get all inactive [rooms](https://hathora.dev/docs/concepts/hathora-entities#room
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetInactiveRoomsForProcess" method="get" path="/rooms/v2/{appId}/list/{processId}/inactive" -->
 ```go
 package main
 
@@ -243,6 +247,7 @@ Destroy a [room](https://hathora.dev/docs/concepts/hathora-entities#room). All a
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="DestroyRoom" method="post" path="/rooms/v2/{appId}/destroy/{roomId}" -->
 ```go
 package main
 
@@ -296,6 +301,7 @@ Suspend a [room](https://hathora.dev/docs/concepts/hathora-entities#room). The r
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="SuspendRoomV2Deprecated" method="post" path="/rooms/v2/{appId}/suspend/{roomId}" -->
 ```go
 package main
 
@@ -347,6 +353,7 @@ Poll this endpoint to get connection details to a [room](https://hathora.dev/doc
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetConnectionInfo" method="get" path="/rooms/v2/{appId}/connectioninfo/{roomId}" -->
 ```go
 package main
 
@@ -400,6 +407,7 @@ UpdateRoomConfig
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="UpdateRoomConfig" method="post" path="/rooms/v2/{appId}/update/{roomId}" -->
 ```go
 package main
 
@@ -455,6 +463,7 @@ ResumeRoom
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ResumeRoom" method="post" path="/rooms/v2/{appId}/resume/{roomId}" -->
 ```go
 package main
 

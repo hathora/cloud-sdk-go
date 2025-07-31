@@ -646,12 +646,13 @@ The built-in `net/http` client satisfies this interface and a default client bas
 import (
 	"net/http"
 	"time"
-	"github.com/myorg/your-go-sdk"
+
+	"github.com/hathora/cloud-sdk-go/hathoracloud"
 )
 
 var (
 	httpClient = &http.Client{Timeout: 30 * time.Second}
-	sdkClient  = sdk.New(sdk.WithClient(httpClient))
+	sdkClient  = hathoracloud.New(hathoracloud.WithClient(httpClient))
 )
 ```
 

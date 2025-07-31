@@ -22,6 +22,7 @@ GetBalance
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetBalance" method="get" path="/billing/v1/balance" -->
 ```go
 package main
 
@@ -75,6 +76,7 @@ GetUpcomingInvoiceItems
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetUpcomingInvoiceItems" method="get" path="/billing/v1/upcoming/items" -->
 ```go
 package main
 
@@ -128,6 +130,7 @@ GetUpcomingInvoiceTotal
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetUpcomingInvoiceTotal" method="get" path="/billing/v1/upcoming/total" -->
 ```go
 package main
 
@@ -181,6 +184,7 @@ GetPaymentMethod
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetPaymentMethod" method="get" path="/billing/v1/paymentmethod" -->
 ```go
 package main
 
@@ -234,6 +238,7 @@ InitStripeCustomerPortalUrl
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="InitStripeCustomerPortalUrl" method="post" path="/billing/v1/customerportalurl" -->
 ```go
 package main
 
@@ -291,6 +296,7 @@ GetInvoices
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetInvoices" method="get" path="/billing/v1/invoices" -->
 ```go
 package main
 

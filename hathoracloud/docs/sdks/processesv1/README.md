@@ -19,6 +19,7 @@ Retrieve 10 most recently started [process](https://hathora.dev/docs/concepts/ha
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetRunningProcesses" method="get" path="/processes/v1/{appId}/list/running" -->
 ```go
 package main
 
@@ -74,6 +75,7 @@ Retrieve 10 most recently stopped [process](https://hathora.dev/docs/concepts/ha
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetStoppedProcesses" method="get" path="/processes/v1/{appId}/list/stopped" -->
 ```go
 package main
 
@@ -129,6 +131,7 @@ Get details for a [process](https://hathora.dev/docs/concepts/hathora-entities#p
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetProcessInfoDeprecated" method="get" path="/processes/v1/{appId}/info/{processId}" -->
 ```go
 package main
 

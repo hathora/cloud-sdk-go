@@ -14,6 +14,7 @@ Returns a stream of logs for a [process](https://hathora.dev/docs/concepts/hatho
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetLogsForProcess" method="get" path="/logs/v1/{appId}/process/{processId}" -->
 ```go
 package main
 
@@ -70,6 +71,7 @@ Download entire log file for a stopped process.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="DownloadLogForProcess" method="get" path="/logs/v1/{appId}/process/{processId}/download" -->
 ```go
 package main
 

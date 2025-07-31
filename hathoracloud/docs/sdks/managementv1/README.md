@@ -15,6 +15,7 @@ SendVerificationEmail
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="SendVerificationEmail" method="post" path="/management/v1/sendverificationemail" -->
 ```go
 package main
 

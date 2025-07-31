@@ -21,6 +21,7 @@ CreatePrivateLobby
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreatePrivateLobby" method="post" path="/lobby/v2/{appId}/create/private" -->
 ```go
 package main
 
@@ -85,6 +86,7 @@ CreatePublicLobby
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreatePublicLobby" method="post" path="/lobby/v2/{appId}/create/public" -->
 ```go
 package main
 
@@ -149,6 +151,7 @@ CreateLocalLobby
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateLocalLobby" method="post" path="/lobby/v2/{appId}/create/local" -->
 ```go
 package main
 
@@ -213,6 +216,7 @@ Create a new lobby for an [application](https://hathora.dev/docs/concepts/hathor
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateLobbyDeprecated" method="post" path="/lobby/v2/{appId}/create" -->
 ```go
 package main
 
@@ -278,6 +282,7 @@ Get all active lobbies for a an [application](https://hathora.dev/docs/concepts/
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="ListActivePublicLobbiesDeprecatedV2" method="get" path="/lobby/v2/{appId}/list/public" -->
 ```go
 package main
 
@@ -332,6 +337,7 @@ Get details for a lobby.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetLobbyInfo" method="get" path="/lobby/v2/{appId}/info/{roomId}" -->
 ```go
 package main
 
@@ -386,6 +392,7 @@ Set the state of a lobby. State is intended to be set by the server and must be 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="SetLobbyState" method="post" path="/lobby/v2/{appId}/setState/{roomId}" -->
 ```go
 package main
 

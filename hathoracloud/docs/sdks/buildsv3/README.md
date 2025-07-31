@@ -21,6 +21,7 @@ Returns an array of [builds](https://hathora.dev/docs/concepts/hathora-entities#
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetBuilds" method="get" path="/builds/v3/builds" -->
 ```go
 package main
 
@@ -73,6 +74,7 @@ Creates a new [build](https://hathora.dev/docs/concepts/hathora-entities#build) 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateBuild" method="post" path="/builds/v3/builds" -->
 ```go
 package main
 
@@ -132,6 +134,7 @@ Get details for a [build](https://hathora.dev/docs/concepts/hathora-entities#bui
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetBuild" method="get" path="/builds/v3/builds/{buildId}" -->
 ```go
 package main
 
@@ -187,6 +190,7 @@ Deleting a build that is actively build used by an app's deployment will cause f
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="DeleteBuild" method="delete" path="/builds/v3/builds/{buildId}" -->
 ```go
 package main
 
@@ -241,6 +245,7 @@ Creates a new [build](https://hathora.dev/docs/concepts/hathora-entities#build) 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateBuildRegistry" method="post" path="/builds/v3/builds/registry" -->
 ```go
 package main
 
@@ -299,6 +304,7 @@ Builds a game server artifact from a tarball you provide. Pass in the `buildId` 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="RunBuild" method="post" path="/builds/v3/builds/{buildId}/run" -->
 ```go
 package main
 
@@ -353,6 +359,7 @@ Builds a game server artifact from a public or private registry. Pass in the `bu
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="RunBuildRegistry" method="post" path="/builds/v3/builds/{buildId}/runRegistry" -->
 ```go
 package main
 

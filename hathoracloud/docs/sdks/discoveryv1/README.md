@@ -17,6 +17,7 @@ Returns an array of V1 regions with a host and port that a client can directly p
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetPingServiceEndpointsDeprecated" method="get" path="/discovery/v1/ping" -->
 ```go
 package main
 

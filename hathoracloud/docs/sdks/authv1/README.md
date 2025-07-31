@@ -17,6 +17,7 @@ Returns a unique player token for an anonymous user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="LoginAnonymous" method="post" path="/auth/v1/{appId}/login/anonymous" -->
 ```go
 package main
 
@@ -68,6 +69,7 @@ Returns a unique player token with a specified nickname for a user.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="LoginNickname" method="post" path="/auth/v1/{appId}/login/nickname" -->
 ```go
 package main
 
@@ -123,6 +125,7 @@ Returns a unique player token using a Google-signed OIDC `idToken`.
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="LoginGoogle" method="post" path="/auth/v1/{appId}/login/google" -->
 ```go
 package main
 

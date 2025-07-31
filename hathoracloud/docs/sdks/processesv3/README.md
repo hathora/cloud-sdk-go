@@ -20,6 +20,7 @@ Retrieve the 10 most recent [processes](https://hathora.dev/docs/concepts/hathor
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetLatestProcesses" method="get" path="/processes/v3/apps/{appId}/processes/latest" -->
 ```go
 package main
 
@@ -75,6 +76,7 @@ Count the number of [processes](https://hathora.dev/docs/concepts/hathora-entiti
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetProcessesCountExperimental" method="get" path="/processes/v3/apps/{appId}/processes/count" -->
 ```go
 package main
 
@@ -130,6 +132,7 @@ Creates a [process](https://hathora.dev/docs/concepts/hathora-entities#process) 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateProcess" method="post" path="/processes/v3/apps/{appId}/processes/regions/{region}" -->
 ```go
 package main
 
@@ -185,6 +188,7 @@ Get details for a [process](https://hathora.dev/docs/concepts/hathora-entities#p
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetProcess" method="get" path="/processes/v3/apps/{appId}/processes/{processId}" -->
 ```go
 package main
 
@@ -238,6 +242,7 @@ Stops a [process](https://hathora.dev/docs/concepts/hathora-entities#process) im
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="StopProcess" method="post" path="/processes/v3/apps/{appId}/processes/{processId}/stop" -->
 ```go
 package main
 
@@ -289,6 +294,7 @@ GetProcessMetrics
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetProcessMetrics" method="get" path="/processes/v3/apps/{appId}/processes/process/{processId}/metrics" -->
 ```go
 package main
 

@@ -22,6 +22,7 @@ Returns an unsorted list of all organizations that you are a member of (an accep
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetOrgs" method="get" path="/orgs/v1" -->
 ```go
 package main
 
@@ -72,6 +73,7 @@ GetUserPendingInvites
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetUserPendingInvites" method="get" path="/orgs/v1/user/invites/pending" -->
 ```go
 package main
 
@@ -122,6 +124,7 @@ GetOrgMembers
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetOrgMembers" method="get" path="/orgs/v1/{orgId}/members" -->
 ```go
 package main
 
@@ -173,6 +176,7 @@ InviteUser
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="InviteUser" method="put" path="/orgs/v1/{orgId}/invites" -->
 ```go
 package main
 
@@ -228,6 +232,7 @@ UpdateUserInvite
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="UpdateUserInvite" method="post" path="/orgs/v1/{orgId}/invites" -->
 ```go
 package main
 
@@ -286,6 +291,7 @@ RescindInvite
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="RescindInvite" method="post" path="/orgs/v1/{orgId}/invites/rescind" -->
 ```go
 package main
 
@@ -339,6 +345,7 @@ GetOrgPendingInvites
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetOrgPendingInvites" method="get" path="/orgs/v1/{orgId}/invites/pending" -->
 ```go
 package main
 
@@ -390,6 +397,7 @@ AcceptInvite
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="AcceptInvite" method="post" path="/orgs/v1/{orgId}/invites/accept" -->
 ```go
 package main
 
@@ -438,6 +446,7 @@ RejectInvite
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="RejectInvite" method="post" path="/orgs/v1/{orgId}/invites/reject" -->
 ```go
 package main
 
@@ -486,6 +495,7 @@ GetUsageLimits
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetUsageLimits" method="get" path="/orgs/v1/metadata/usageLimits" -->
 ```go
 package main
 

@@ -21,6 +21,7 @@ Returns an array of [builds](https://hathora.dev/docs/concepts/hathora-entities#
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetBuildsV2Deprecated" method="get" path="/builds/v2/{appId}/list" -->
 ```go
 package main
 
@@ -75,6 +76,7 @@ Get details for a [build](https://hathora.dev/docs/concepts/hathora-entities#bui
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="GetBuildInfoV2Deprecated" method="get" path="/builds/v2/{appId}/info/{buildId}" -->
 ```go
 package main
 
@@ -130,6 +132,7 @@ Creates a new [build](https://hathora.dev/docs/concepts/hathora-entities#build).
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateBuildV2Deprecated" method="post" path="/builds/v2/{appId}/create" -->
 ```go
 package main
 
@@ -189,6 +192,7 @@ Creates a new [build](https://hathora.dev/docs/concepts/hathora-entities#build) 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateBuildWithUploadUrlV2Deprecated" method="post" path="/builds/v2/{appId}/createWithUploadUrl" -->
 ```go
 package main
 
@@ -248,6 +252,7 @@ Creates a new [build](https://hathora.dev/docs/concepts/hathora-entities#build) 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="CreateWithMultipartUploadsV2Deprecated" method="post" path="/builds/v2/{appId}/createWithMultipartUploads" -->
 ```go
 package main
 
@@ -309,6 +314,7 @@ Delete a [build](https://hathora.dev/docs/concepts/hathora-entities#build). All 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="DeleteBuildV2Deprecated" method="delete" path="/builds/v2/{appId}/delete/{buildId}" -->
 ```go
 package main
 
@@ -362,6 +368,7 @@ Builds a game server artifact from a tarball you provide. Pass in the `buildId` 
 
 ### Example Usage
 
+<!-- UsageSnippet language="go" operationID="RunBuildV2Deprecated" method="post" path="/builds/v2/{appId}/run/{buildId}" -->
 ```go
 package main
 
