@@ -3,9 +3,17 @@
 package components
 
 type ServiceConfig struct {
+	LoadBalancer *LoadBalancerConfig `json:"loadBalancer,omitempty"`
 	// The headroom configuration for each region.
 	// EXPERIMENTAL - this feature is in closed beta.
 	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
+}
+
+func (o *ServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
+	if o == nil {
+		return nil
+	}
+	return o.LoadBalancer
 }
 
 func (o *ServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {

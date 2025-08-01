@@ -18,8 +18,8 @@ func (o *UpdateAppV1DeprecatedGlobals) GetAppID() *string {
 }
 
 type UpdateAppV1DeprecatedRequest struct {
-	AppID     *string              `pathParam:"style=simple,explode=false,name=appId"`
-	AppConfig components.AppConfig `request:"mediaType=application/json"`
+	AppID           *string                    `pathParam:"style=simple,explode=false,name=appId"`
+	CreateAppConfig components.CreateAppConfig `request:"mediaType=application/json"`
 }
 
 func (o *UpdateAppV1DeprecatedRequest) GetAppID() *string {
@@ -29,9 +29,9 @@ func (o *UpdateAppV1DeprecatedRequest) GetAppID() *string {
 	return o.AppID
 }
 
-func (o *UpdateAppV1DeprecatedRequest) GetAppConfig() components.AppConfig {
+func (o *UpdateAppV1DeprecatedRequest) GetCreateAppConfig() components.CreateAppConfig {
 	if o == nil {
-		return components.AppConfig{}
+		return components.CreateAppConfig{}
 	}
-	return o.AppConfig
+	return o.CreateAppConfig
 }

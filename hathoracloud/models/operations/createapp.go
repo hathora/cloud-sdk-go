@@ -18,8 +18,8 @@ func (o *CreateAppGlobals) GetOrgID() *string {
 }
 
 type CreateAppRequest struct {
-	OrgID     *string              `queryParam:"style=form,explode=true,name=orgId"`
-	AppConfig components.AppConfig `request:"mediaType=application/json"`
+	OrgID           *string                    `queryParam:"style=form,explode=true,name=orgId"`
+	CreateAppConfig components.CreateAppConfig `request:"mediaType=application/json"`
 }
 
 func (o *CreateAppRequest) GetOrgID() *string {
@@ -29,9 +29,9 @@ func (o *CreateAppRequest) GetOrgID() *string {
 	return o.OrgID
 }
 
-func (o *CreateAppRequest) GetAppConfig() components.AppConfig {
+func (o *CreateAppRequest) GetCreateAppConfig() components.CreateAppConfig {
 	if o == nil {
-		return components.AppConfig{}
+		return components.CreateAppConfig{}
 	}
-	return o.AppConfig
+	return o.CreateAppConfig
 }

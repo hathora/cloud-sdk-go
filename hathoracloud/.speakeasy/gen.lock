@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: d3f79dde6f4637202e369f34c1256597
+  docChecksum: a2d04663e7a21337231ec1485baaec2a
   docVersion: 0.0.1
-  speakeasyVersion: 1.592.2
-  generationVersion: 2.668.4
-  releaseVersion: 0.6.0
-  configChecksum: 49f7aa2f4a86407c68e22d97058ab2e7
+  speakeasyVersion: 1.595.0
+  generationVersion: 2.670.1
+  releaseVersion: 0.7.0
+  configChecksum: 0e4345221d81e7cee069f764eb6473f8
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.9.1
+    core: 3.9.3
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -32,7 +32,7 @@ features:
     nullables: 0.1.1
     openEnums: 0.1.0
     responseFormat: 0.1.2
-    retries: 2.83.3
+    retries: 2.84.0
     sdkHooks: 0.2.0
     unions: 2.85.12
     uploadStreams: 0.1.0
@@ -43,7 +43,6 @@ generatedFiles:
   - .gitattributes
   - /models/components/achpaymentmethod.go
   - /models/components/activeconnectioninfo.go
-  - /models/components/appconfig.go
   - /models/components/appconfigwithserviceconfig.go
   - /models/components/application.go
   - /models/components/applicationspage.go
@@ -63,6 +62,7 @@ generatedFiles:
   - /models/components/connectioninfo.go
   - /models/components/connectioninfov2.go
   - /models/components/containerport.go
+  - /models/components/createappconfig.go
   - /models/components/createbuildparams.go
   - /models/components/createbuildv3params.go
   - /models/components/createdbuildv3withmultiparturls.go
@@ -99,6 +99,7 @@ generatedFiles:
   - /models/components/invoicestatus.go
   - /models/components/linkpaymentmethod.go
   - /models/components/listorgtokens.go
+  - /models/components/loadbalancerconfig.go
   - /models/components/lobby.go
   - /models/components/lobbyv3.go
   - /models/components/lobbyvisibility.go
@@ -277,7 +278,6 @@ generatedFiles:
   - docs/models/components/achpaymentmethod.md
   - docs/models/components/activeconnectioninfo.md
   - docs/models/components/activeconnectioninfostatus.md
-  - docs/models/components/appconfig.md
   - docs/models/components/appconfigwithserviceconfig.md
   - docs/models/components/application.md
   - docs/models/components/applicationserviceconfig.md
@@ -305,6 +305,7 @@ generatedFiles:
   - docs/models/components/connectioninfo.md
   - docs/models/components/connectioninfov2.md
   - docs/models/components/containerport.md
+  - docs/models/components/createappconfig.md
   - docs/models/components/createbuildparams.md
   - docs/models/components/createbuildv3params.md
   - docs/models/components/createdbuildv3withmultiparturls.md
@@ -355,6 +356,7 @@ generatedFiles:
   - docs/models/components/invoicestatus.md
   - docs/models/components/linkpaymentmethod.md
   - docs/models/components/listorgtokens.md
+  - docs/models/components/loadbalancerconfig.md
   - docs/models/components/lobby.md
   - docs/models/components/lobbyv3.md
   - docs/models/components/lobbyv3createdby.md

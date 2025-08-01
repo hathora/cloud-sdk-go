@@ -258,7 +258,7 @@ func (s *AppsV1) GetAppsV1Deprecated(ctx context.Context, opts ...operations.Opt
 // Create a new [application](https://hathora.dev/docs/concepts/hathora-entities#application).
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-func (s *AppsV1) CreateAppV1Deprecated(ctx context.Context, request components.AppConfig, opts ...operations.Option) (*components.Application, error) {
+func (s *AppsV1) CreateAppV1Deprecated(ctx context.Context, request components.CreateAppConfig, opts ...operations.Option) (*components.Application, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionRetries,
@@ -400,7 +400,7 @@ func (s *AppsV1) CreateAppV1Deprecated(ctx context.Context, request components.A
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -438,6 +438,8 @@ func (s *AppsV1) CreateAppV1Deprecated(ctx context.Context, request components.A
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
+	case httpRes.StatusCode == 404:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -511,10 +513,10 @@ func (s *AppsV1) CreateAppV1Deprecated(ctx context.Context, request components.A
 // Update data for an existing [application](https://hathora.dev/docs/concepts/hathora-entities#application) using `appId`.
 //
 // Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
-func (s *AppsV1) UpdateAppV1Deprecated(ctx context.Context, appConfig components.AppConfig, appID *string, opts ...operations.Option) (*components.Application, error) {
+func (s *AppsV1) UpdateAppV1Deprecated(ctx context.Context, createAppConfig components.CreateAppConfig, appID *string, opts ...operations.Option) (*components.Application, error) {
 	request := operations.UpdateAppV1DeprecatedRequest{
-		AppID:     appID,
-		AppConfig: appConfig,
+		AppID:           appID,
+		CreateAppConfig: createAppConfig,
 	}
 
 	globals := operations.UpdateAppV1DeprecatedGlobals{
@@ -552,7 +554,7 @@ func (s *AppsV1) UpdateAppV1Deprecated(ctx context.Context, appConfig components
 		OperationID:      "UpdateAppV1Deprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AppConfig", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateAppConfig", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}

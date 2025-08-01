@@ -8,9 +8,17 @@ import (
 )
 
 type ApplicationServiceConfig struct {
+	LoadBalancer *LoadBalancerConfig `json:"loadBalancer,omitempty"`
 	// The headroom configuration for each region.
 	// EXPERIMENTAL - this feature is in closed beta.
 	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
+}
+
+func (o *ApplicationServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
+	if o == nil {
+		return nil
+	}
+	return o.LoadBalancer
 }
 
 func (o *ApplicationServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {

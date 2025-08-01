@@ -92,7 +92,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.AppsV2.CreateApp(ctx, components.AppConfig{
+    res, err := s.AppsV2.CreateApp(ctx, components.CreateAppConfig{
         AuthConfiguration: components.AuthConfiguration{},
         AppName: "minecraft",
     })
@@ -107,12 +107,12 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `ctx`                                                        | [context.Context](https://pkg.go.dev/context#Context)        | :heavy_check_mark:                                           | The context to use for the request.                          |                                                              |
-| `appConfig`                                                  | [components.AppConfig](../../models/components/appconfig.md) | :heavy_check_mark:                                           | N/A                                                          |                                                              |
-| `orgID`                                                      | **string*                                                    | :heavy_minus_sign:                                           | N/A                                                          | org-6f706e83-0ec1-437a-9a46-7d4281eb2f39                     |
-| `opts`                                                       | [][operations.Option](../../models/operations/option.md)     | :heavy_minus_sign:                                           | The options for this request.                                |                                                              |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `ctx`                                                                    | [context.Context](https://pkg.go.dev/context#Context)                    | :heavy_check_mark:                                                       | The context to use for the request.                                      |                                                                          |
+| `createAppConfig`                                                        | [components.CreateAppConfig](../../models/components/createappconfig.md) | :heavy_check_mark:                                                       | N/A                                                                      |                                                                          |
+| `orgID`                                                                  | **string*                                                                | :heavy_minus_sign:                                                       | N/A                                                                      | org-6f706e83-0ec1-437a-9a46-7d4281eb2f39                                 |
+| `opts`                                                                   | [][operations.Option](../../models/operations/option.md)                 | :heavy_minus_sign:                                                       | The options for this request.                                            |                                                                          |
 
 ### Response
 

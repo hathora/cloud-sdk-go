@@ -269,10 +269,10 @@ func (s *AppsV2) GetApps(ctx context.Context, orgID *string, opts ...operations.
 
 // CreateApp
 // Create a new [application](https://hathora.dev/docs/concepts/hathora-entities#application).
-func (s *AppsV2) CreateApp(ctx context.Context, appConfig components.AppConfig, orgID *string, opts ...operations.Option) (*components.Application, error) {
+func (s *AppsV2) CreateApp(ctx context.Context, createAppConfig components.CreateAppConfig, orgID *string, opts ...operations.Option) (*components.Application, error) {
 	request := operations.CreateAppRequest{
-		OrgID:     orgID,
-		AppConfig: appConfig,
+		OrgID:           orgID,
+		CreateAppConfig: createAppConfig,
 	}
 
 	globals := operations.CreateAppGlobals{
@@ -310,7 +310,7 @@ func (s *AppsV2) CreateApp(ctx context.Context, appConfig components.AppConfig, 
 		OperationID:      "CreateApp",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "AppConfig", "json", `request:"mediaType=application/json"`)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateAppConfig", "json", `request:"mediaType=application/json"`)
 	if err != nil {
 		return nil, err
 	}
