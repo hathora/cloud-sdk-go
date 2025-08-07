@@ -3,10 +3,10 @@ id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
   docChecksum: a2d04663e7a21337231ec1485baaec2a
   docVersion: 0.0.1
-  speakeasyVersion: 1.598.0
-  generationVersion: 2.674.1
-  releaseVersion: 0.7.1
-  configChecksum: 73bb845ea12c97f0ba800acea7506dea
+  speakeasyVersion: 1.598.3
+  generationVersion: 2.674.3
+  releaseVersion: 0.7.2
+  configChecksum: c2f4071e7eb612ff49f820c413f48e19
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
