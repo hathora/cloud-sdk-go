@@ -3,6 +3,9 @@
 package components
 
 type Organization struct {
+	// The maximum number of cloud nodes that can be set as baseline
+	// If undefined, the default is 10
+	MaxCloudBaseline *int `json:"maxCloudBaseline,omitempty"`
 	// The maximum number of inbound connections that can be made to a process
 	// If undefined, the default is 1024 connections
 	MaxProcessConnections *float64 `json:"maxProcessConnections,omitempty"`
@@ -29,6 +32,13 @@ type Organization struct {
 	Name *string `json:"name,omitempty"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID string `json:"orgId"`
+}
+
+func (o *Organization) GetMaxCloudBaseline() *int {
+	if o == nil {
+		return nil
+	}
+	return o.MaxCloudBaseline
 }
 
 func (o *Organization) GetMaxProcessConnections() *float64 {
