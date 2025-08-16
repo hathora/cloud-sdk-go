@@ -4,11 +4,19 @@ package components
 
 // Fleet - A fleet is a collection of vCPUs across your regions that can scale up and down based on demand.
 type Fleet struct {
+	NodeShape        NodeShape         `json:"nodeShape"`
 	AutoscalerConfig *AutoscalerConfig `json:"autoscalerConfig,omitempty"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID string `json:"orgId"`
 	// the id of the fleet
 	FleetID string `json:"fleetId"`
+}
+
+func (o *Fleet) GetNodeShape() NodeShape {
+	if o == nil {
+		return NodeShape("")
+	}
+	return o.NodeShape
 }
 
 func (o *Fleet) GetAutoscalerConfig() *AutoscalerConfig {

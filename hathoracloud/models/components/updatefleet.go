@@ -3,7 +3,15 @@
 package components
 
 type UpdateFleet struct {
+	NodeShape        *NodeShape       `json:"nodeShape,omitempty"`
 	AutoscalerConfig AutoscalerConfig `json:"autoscalerConfig"`
+}
+
+func (o *UpdateFleet) GetNodeShape() *NodeShape {
+	if o == nil {
+		return nil
+	}
+	return o.NodeShape
 }
 
 func (o *UpdateFleet) GetAutoscalerConfig() AutoscalerConfig {

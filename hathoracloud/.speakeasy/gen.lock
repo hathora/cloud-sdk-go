@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: fab974e6043a3fa0c72945c337dda319
+  docChecksum: b1cb5b0e7bf9280ea1533a066a902cff
   docVersion: 0.0.1
-  speakeasyVersion: 1.603.2
-  generationVersion: 2.681.8
-  releaseVersion: 0.7.4
-  configChecksum: 632fefdbc90724c6f2b3fb04994d6cbf
+  speakeasyVersion: 1.605.0
+  generationVersion: 2.684.0
+  releaseVersion: 0.7.5
+  configChecksum: 9197ecad329173569d2eb917337a55f7
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -105,6 +105,7 @@ generatedFiles:
   - /models/components/lobbyvisibility.go
   - /models/components/metricvalue.go
   - /models/components/nicknameobject.go
+  - /models/components/nodeshape.go
   - /models/components/organization.go
   - /models/components/orgmember.go
   - /models/components/orgmemberspage.go
@@ -363,6 +364,7 @@ generatedFiles:
   - docs/models/components/lobbyvisibility.md
   - docs/models/components/metricvalue.md
   - docs/models/components/nicknameobject.md
+  - docs/models/components/nodeshape.md
   - docs/models/components/organization.md
   - docs/models/components/orgmember.md
   - docs/models/components/orgmemberscopes.md
@@ -1456,7 +1458,7 @@ examples:
           orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
       responses:
         "200":
-          application/json: {"fleets": [{"orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "fleetId": "<id>"}, {"orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "fleetId": "<id>"}]}
+          application/json: {"fleets": [{"nodeShape": "cpu-16-64", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "fleetId": "<id>"}, {"nodeShape": "cpu-16-32", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "fleetId": "<id>"}]}
         "401":
           application/json: {"message": "<value>"}
   UpdateFleet:
@@ -2145,3 +2147,4 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## SDK Changes Detected:\n* `HathoraCloud.FleetsV1.GetFleets()`:  `response.Fleets.[].NodeShape` **Added**\n* `HathoraCloud.FleetsV1.UpdateFleet()`: \n  *  `request.UpdateFleet.NodeShape` **Added**\n"
