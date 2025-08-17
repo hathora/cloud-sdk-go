@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: b1cb5b0e7bf9280ea1533a066a902cff
+  docChecksum: 38724522193fb43eb9368eb9dc114d1e
   docVersion: 0.0.1
   speakeasyVersion: 1.605.0
   generationVersion: 2.684.0
-  releaseVersion: 0.7.5
-  configChecksum: 9197ecad329173569d2eb917337a55f7
+  releaseVersion: 0.7.6
+  configChecksum: b15c8953ebef3d1891ad0aa341ed2275
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -2147,4 +2147,3 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## SDK Changes Detected:\n* `HathoraCloud.FleetsV1.GetFleets()`:  `response.Fleets.[].NodeShape` **Added**\n* `HathoraCloud.FleetsV1.UpdateFleet()`: \n  *  `request.UpdateFleet.NodeShape` **Added**\n"
