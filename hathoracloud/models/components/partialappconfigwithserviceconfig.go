@@ -6,8 +6,8 @@ package components
 type PartialAppConfigWithServiceConfig struct {
 	AppName *string `json:"appName,omitempty"`
 	// Configure [player authentication](https://hathora.dev/docs/backend-integrations/lobbies-and-matchmaking/auth-service) for your application. Use Hathora's built-in auth providers or use your own [custom authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service#custom-auth-provider).
-	AuthConfiguration *AuthConfiguration `json:"authConfiguration,omitempty"`
-	ServiceConfig     *ServiceConfig     `json:"serviceConfig,omitempty"`
+	AuthConfiguration *AuthConfiguration  `json:"authConfiguration,omitempty"`
+	ServiceConfig     *ServiceConfigWrite `json:"serviceConfig,omitempty"`
 }
 
 func (o *PartialAppConfigWithServiceConfig) GetAppName() *string {
@@ -24,7 +24,7 @@ func (o *PartialAppConfigWithServiceConfig) GetAuthConfiguration() *AuthConfigur
 	return o.AuthConfiguration
 }
 
-func (o *PartialAppConfigWithServiceConfig) GetServiceConfig() *ServiceConfig {
+func (o *PartialAppConfigWithServiceConfig) GetServiceConfig() *ServiceConfigWrite {
 	if o == nil {
 		return nil
 	}

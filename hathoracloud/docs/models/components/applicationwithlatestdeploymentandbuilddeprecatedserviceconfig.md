@@ -1,9 +1,0 @@
-# ApplicationWithLatestDeploymentAndBuildDeprecatedServiceConfig
-
-
-## Fields
-
-| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `LoadBalancer`                                                                                         | [*components.LoadBalancerConfig](../../models/components/loadbalancerconfig.md)                        | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
-| `StaticProcessAllocation`                                                                              | [][components.StaticProcessAllocationConfig](../../models/components/staticprocessallocationconfig.md) | :heavy_check_mark:                                                                                     | The headroom configuration for each region.<br/>EXPERIMENTAL - this feature is in closed beta.         |

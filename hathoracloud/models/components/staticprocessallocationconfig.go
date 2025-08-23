@@ -3,15 +3,26 @@
 package components
 
 type StaticProcessAllocationConfig struct {
-	// The maximum number of running processes that can be spun up during upgrades
+	// Whether autoscaling is enabled in this region. When enabled, `targetProcesses` is managed by the Process Autoscaler
+	// in accordance with the `processAutoscalerConfig` field set on the application's `serviceConfig`.
+	AutoscalingEnabled *bool `json:"autoscalingEnabled,omitempty"`
+	// The maximum number of running processes.
 	// Invariant: minProcesses <= maxProcesses
 	MaxProcesses int `json:"maxProcesses"`
 	// The target number of running processes
+	// When autoscaling is enabled, this field is managed by the Process Autoscaler
 	TargetProcesses int `json:"targetProcesses"`
-	// The minimum running processes required during upgrades.
+	// The minimum number of running processes.
 	// Invariant: 0 <= minProcesses < targetProcesses
 	MinProcesses int    `json:"minProcesses"`
 	Region       Region `json:"region"`
+}
+
+func (o *StaticProcessAllocationConfig) GetAutoscalingEnabled() *bool {
+	if o == nil {
+		return nil
+	}
+	return o.AutoscalingEnabled
 }
 
 func (o *StaticProcessAllocationConfig) GetMaxProcesses() int {

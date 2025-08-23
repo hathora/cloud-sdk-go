@@ -3,14 +3,14 @@
 package components
 
 type AppConfigWithServiceConfig struct {
-	ServiceConfig *ServiceConfig `json:"serviceConfig,omitempty"`
+	ServiceConfig *ServiceConfigWrite `json:"serviceConfig,omitempty"`
 	// Configure [player authentication](https://hathora.dev/docs/backend-integrations/lobbies-and-matchmaking/auth-service) for your application. Use Hathora's built-in auth providers or use your own [custom authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service#custom-auth-provider).
 	AuthConfiguration AuthConfiguration `json:"authConfiguration"`
 	// Readable name for an application. Must be unique within an organization.
 	AppName string `json:"appName"`
 }
 
-func (o *AppConfigWithServiceConfig) GetServiceConfig() *ServiceConfig {
+func (o *AppConfigWithServiceConfig) GetServiceConfig() *ServiceConfigWrite {
 	if o == nil {
 		return nil
 	}

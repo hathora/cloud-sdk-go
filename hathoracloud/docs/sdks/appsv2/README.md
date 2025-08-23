@@ -205,17 +205,17 @@ func main() {
     )
 
     res, err := s.AppsV2.UpdateApp(ctx, components.AppConfigWithServiceConfig{
-        ServiceConfig: &components.ServiceConfig{
-            StaticProcessAllocation: []components.StaticProcessAllocationConfig{
-                components.StaticProcessAllocationConfig{
-                    MaxProcesses: 3,
-                    TargetProcesses: 2,
+        ServiceConfig: &components.ServiceConfigWrite{
+            StaticProcessAllocation: []components.StaticProcessAllocationConfigWrite{
+                components.StaticProcessAllocationConfigWrite{
+                    MaxProcesses: hathoracloud.Int(3),
+                    TargetProcesses: hathoracloud.Int(2),
                     MinProcesses: 1,
                     Region: components.RegionSaoPaulo,
                 },
-                components.StaticProcessAllocationConfig{
-                    MaxProcesses: 3,
-                    TargetProcesses: 2,
+                components.StaticProcessAllocationConfigWrite{
+                    MaxProcesses: hathoracloud.Int(3),
+                    TargetProcesses: hathoracloud.Int(2),
                     MinProcesses: 1,
                     Region: components.RegionSaoPaulo,
                 },
@@ -331,23 +331,23 @@ func main() {
     )
 
     res, err := s.AppsV2.PatchApp(ctx, components.PartialAppConfigWithServiceConfig{
-        ServiceConfig: &components.ServiceConfig{
-            StaticProcessAllocation: []components.StaticProcessAllocationConfig{
-                components.StaticProcessAllocationConfig{
-                    MaxProcesses: 3,
-                    TargetProcesses: 2,
+        ServiceConfig: &components.ServiceConfigWrite{
+            StaticProcessAllocation: []components.StaticProcessAllocationConfigWrite{
+                components.StaticProcessAllocationConfigWrite{
+                    MaxProcesses: hathoracloud.Int(3),
+                    TargetProcesses: hathoracloud.Int(2),
                     MinProcesses: 1,
                     Region: components.RegionTokyo,
                 },
-                components.StaticProcessAllocationConfig{
-                    MaxProcesses: 3,
-                    TargetProcesses: 2,
+                components.StaticProcessAllocationConfigWrite{
+                    MaxProcesses: hathoracloud.Int(3),
+                    TargetProcesses: hathoracloud.Int(2),
                     MinProcesses: 1,
                     Region: components.RegionTokyo,
                 },
-                components.StaticProcessAllocationConfig{
-                    MaxProcesses: 3,
-                    TargetProcesses: 2,
+                components.StaticProcessAllocationConfigWrite{
+                    MaxProcesses: hathoracloud.Int(3),
+                    TargetProcesses: hathoracloud.Int(2),
                     MinProcesses: 1,
                     Region: components.RegionTokyo,
                 },

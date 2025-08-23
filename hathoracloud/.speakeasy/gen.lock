@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 38724522193fb43eb9368eb9dc114d1e
+  docChecksum: 93320e945e82a5d0dadfeb8d103b404e
   docVersion: 0.0.1
-  speakeasyVersion: 1.605.0
-  generationVersion: 2.684.0
-  releaseVersion: 0.7.6
-  configChecksum: b15c8953ebef3d1891ad0aa341ed2275
+  speakeasyVersion: 1.606.3
+  generationVersion: 2.687.1
+  releaseVersion: 0.7.7
+  configChecksum: bf69d51dad0976440566338c39a0ab56
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -50,6 +50,7 @@ generatedFiles:
   - /models/components/applicationwithlatestdeploymentandbuilddeprecated.go
   - /models/components/authconfiguration.go
   - /models/components/autoscalerconfig.go
+  - /models/components/autoscalertargetmetric.go
   - /models/components/build.go
   - /models/components/buildpart.go
   - /models/components/buildstatus.go
@@ -120,6 +121,7 @@ generatedFiles:
   - /models/components/planname.go
   - /models/components/playertokenobject.go
   - /models/components/process.go
+  - /models/components/processautoscalerconfig.go
   - /models/components/processmetricname.go
   - /models/components/processmetricsdata.go
   - /models/components/processstatus.go
@@ -138,10 +140,11 @@ generatedFiles:
   - /models/components/roomwithoutallocations.go
   - /models/components/scope.go
   - /models/components/security.go
-  - /models/components/serviceconfig.go
+  - /models/components/serviceconfigwrite.go
   - /models/components/setlobbystateparams.go
   - /models/components/startingconnectioninfo.go
   - /models/components/staticprocessallocationconfig.go
+  - /models/components/staticprocessallocationconfigwrite.go
   - /models/components/transporttype.go
   - /models/components/updatefleet.go
   - /models/components/updateroomconfigparams.go
@@ -287,11 +290,11 @@ generatedFiles:
   - docs/models/components/applicationwithlatestdeploymentandbuilddeployment.md
   - docs/models/components/applicationwithlatestdeploymentandbuilddeprecated.md
   - docs/models/components/applicationwithlatestdeploymentandbuilddeprecatedenv.md
-  - docs/models/components/applicationwithlatestdeploymentandbuilddeprecatedserviceconfig.md
   - docs/models/components/applicationwithlatestdeploymentandbuildenv.md
   - docs/models/components/applicationwithlatestdeploymentandbuildserviceconfig.md
   - docs/models/components/authconfiguration.md
   - docs/models/components/autoscalerconfig.md
+  - docs/models/components/autoscalertargetmetric.md
   - docs/models/components/build.md
   - docs/models/components/buildpart.md
   - docs/models/components/buildstatus.md
@@ -362,6 +365,7 @@ generatedFiles:
   - docs/models/components/lobbyv3.md
   - docs/models/components/lobbyv3createdby.md
   - docs/models/components/lobbyvisibility.md
+  - docs/models/components/metricname.md
   - docs/models/components/metricvalue.md
   - docs/models/components/nicknameobject.md
   - docs/models/components/nodeshape.md
@@ -381,6 +385,7 @@ generatedFiles:
   - docs/models/components/planname.md
   - docs/models/components/playertokenobject.md
   - docs/models/components/process.md
+  - docs/models/components/processautoscalerconfig.md
   - docs/models/components/processexposedport.md
   - docs/models/components/processmetricname.md
   - docs/models/components/processmetricsdata.md
@@ -407,9 +412,11 @@ generatedFiles:
   - docs/models/components/scopes.md
   - docs/models/components/security.md
   - docs/models/components/serviceconfig.md
+  - docs/models/components/serviceconfigwrite.md
   - docs/models/components/setlobbystateparams.md
   - docs/models/components/startingconnectioninfo.md
   - docs/models/components/staticprocessallocationconfig.md
+  - docs/models/components/staticprocessallocationconfigwrite.md
   - docs/models/components/status.md
   - docs/models/components/transporttype.md
   - docs/models/components/two.md
@@ -2147,3 +2154,4 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## SDK Changes Detected:\n* `HathoraCloud.AppsV1.GetAppsV1Deprecated()`:  `response.[].ServiceConfig` **Changed**\n* `HathoraCloud.AppsV1.CreateAppV1Deprecated()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV1.UpdateAppV1Deprecated()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV1.GetAppInfoV1Deprecated()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.GetApps()`:  `response.Applications.[].ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.CreateApp()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.GetApp()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.UpdateApp()`: \n  *  `request.AppConfigWithServiceConfig.ServiceConfig` **Changed**\n  *  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.PatchApp()`: \n  *  `request.PartialAppConfigWithServiceConfig.ServiceConfig` **Changed**\n  *  `response.ServiceConfig` **Changed**\n"

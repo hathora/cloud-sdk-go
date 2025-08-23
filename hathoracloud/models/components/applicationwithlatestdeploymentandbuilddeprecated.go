@@ -7,21 +7,32 @@ import (
 	"time"
 )
 
-type ApplicationWithLatestDeploymentAndBuildDeprecatedServiceConfig struct {
-	LoadBalancer *LoadBalancerConfig `json:"loadBalancer,omitempty"`
+type ServiceConfig struct {
+	// The configuration for the Process Autoscaler for this application.
+	// Autoscaling must be enabled on a per-region basis.
+	// EXPERIMENTAL - This feature is in closed beta.
+	ProcessAutoscalerConfig *ProcessAutoscalerConfig `json:"processAutoscalerConfig,omitempty"`
+	LoadBalancer            *LoadBalancerConfig      `json:"loadBalancer,omitempty"`
 	// The headroom configuration for each region.
 	// EXPERIMENTAL - this feature is in closed beta.
 	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeprecatedServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
+func (o *ServiceConfig) GetProcessAutoscalerConfig() *ProcessAutoscalerConfig {
+	if o == nil {
+		return nil
+	}
+	return o.ProcessAutoscalerConfig
+}
+
+func (o *ServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
 	if o == nil {
 		return nil
 	}
 	return o.LoadBalancer
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeprecatedServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {
+func (o *ServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {
 	if o == nil {
 		return []StaticProcessAllocationConfig{}
 	}
@@ -188,8 +199,8 @@ type ApplicationWithLatestDeploymentAndBuildDeprecated struct {
 	CreatedAt time.Time `json:"createdAt"`
 	CreatedBy string    `json:"createdBy"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
-	OrgID         string                                                          `json:"orgId"`
-	ServiceConfig *ApplicationWithLatestDeploymentAndBuildDeprecatedServiceConfig `json:"serviceConfig"`
+	OrgID         string         `json:"orgId"`
+	ServiceConfig *ServiceConfig `json:"serviceConfig"`
 	// Configure [player authentication](https://hathora.dev/docs/backend-integrations/lobbies-and-matchmaking/auth-service) for your application. Use Hathora's built-in auth providers or use your own [custom authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service#custom-auth-provider).
 	AuthConfiguration AuthConfiguration `json:"authConfiguration"`
 	// Secret that is used for identity and access management.
@@ -247,7 +258,7 @@ func (o *ApplicationWithLatestDeploymentAndBuildDeprecated) GetOrgID() string {
 	return o.OrgID
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeprecated) GetServiceConfig() *ApplicationWithLatestDeploymentAndBuildDeprecatedServiceConfig {
+func (o *ApplicationWithLatestDeploymentAndBuildDeprecated) GetServiceConfig() *ServiceConfig {
 	if o == nil {
 		return nil
 	}

@@ -8,10 +8,21 @@ import (
 )
 
 type ApplicationWithLatestDeploymentAndBuildServiceConfig struct {
-	LoadBalancer *LoadBalancerConfig `json:"loadBalancer,omitempty"`
+	// The configuration for the Process Autoscaler for this application.
+	// Autoscaling must be enabled on a per-region basis.
+	// EXPERIMENTAL - This feature is in closed beta.
+	ProcessAutoscalerConfig *ProcessAutoscalerConfig `json:"processAutoscalerConfig,omitempty"`
+	LoadBalancer            *LoadBalancerConfig      `json:"loadBalancer,omitempty"`
 	// The headroom configuration for each region.
 	// EXPERIMENTAL - this feature is in closed beta.
 	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
+}
+
+func (o *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetProcessAutoscalerConfig() *ProcessAutoscalerConfig {
+	if o == nil {
+		return nil
+	}
+	return o.ProcessAutoscalerConfig
 }
 
 func (o *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
