@@ -75,6 +75,9 @@ type ApplicationWithLatestDeploymentAndBuildDeployment struct {
 	// When the deployment was created.
 	CreatedAt time.Time `json:"createdAt"`
 	CreatedBy string    `json:"createdBy"`
+	// The number of GPUs allocated to your process. Must be an integer.
+	// If not provided, the requested GPU is 0.
+	RequestedGPU *float64 `json:"requestedGPU,omitempty"`
 	// EXPERIMENTAL - this feature is in closed beta.
 	// The number of GPUs allocated to your process. Must be an integer.
 	// If not provided, the requested GPU is 0.
@@ -101,7 +104,7 @@ func (a ApplicationWithLatestDeploymentAndBuildDeployment) MarshalJSON() ([]byte
 }
 
 func (a *ApplicationWithLatestDeploymentAndBuildDeployment) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"idleTimeoutEnabled", "env", "roomsPerProcess", "additionalContainerPorts", "defaultContainerPort", "createdAt", "createdBy", "requestedMemoryMB", "requestedCPU", "deploymentId", "buildId", "appId", "build"}); err != nil {
 		return err
 	}
 	return nil
@@ -161,6 +164,13 @@ func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetCreatedBy() strin
 		return ""
 	}
 	return o.CreatedBy
+}
+
+func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetRequestedGPU() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.RequestedGPU
 }
 
 func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetExperimentalRequestedGPU() *float64 {
@@ -247,7 +257,7 @@ func (a ApplicationWithLatestDeploymentAndBuild) MarshalJSON() ([]byte, error) {
 }
 
 func (a *ApplicationWithLatestDeploymentAndBuild) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"deletedBy", "deletedAt", "createdAt", "createdBy", "orgId", "serviceConfig", "authConfiguration", "appSecret", "appId", "appName"}); err != nil {
 		return err
 	}
 	return nil

@@ -57,7 +57,7 @@ func (d DeploymentConfig) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DeploymentConfig) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"env", "roomsPerProcess", "planName", "transportType", "containerPort"}); err != nil {
 		return err
 	}
 	return nil

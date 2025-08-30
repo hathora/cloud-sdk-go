@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/hathora/cloud-sdk-go/hathoracloud/internal/utils"
+)
+
 type Status string
 
 const (
@@ -17,6 +21,17 @@ type StartingConnectionInfo struct {
 	// Unique identifier to a game session or match. Use the default system generated ID or overwrite it with your own.
 	// Note: error will be returned if `roomId` is not globally unique.
 	RoomID string `json:"roomId"`
+}
+
+func (s StartingConnectionInfo) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(s, "", false)
+}
+
+func (s *StartingConnectionInfo) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &s, "", false, []string{"status", "roomId"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *StartingConnectionInfo) GetStatus() Status {

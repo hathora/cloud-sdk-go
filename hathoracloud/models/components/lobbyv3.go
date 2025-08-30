@@ -45,14 +45,14 @@ func CreateLobbyV3CreatedByNumber(number float64) LobbyV3CreatedBy {
 func (u *LobbyV3CreatedBy) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = LobbyV3CreatedByTypeStr
 		return nil
 	}
 
 	var number float64 = float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
 		u.Type = LobbyV3CreatedByTypeNumber
 		return nil
@@ -103,7 +103,7 @@ func (l LobbyV3) MarshalJSON() ([]byte, error) {
 }
 
 func (l *LobbyV3) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"shortCode", "createdAt", "createdBy", "visibility", "region", "roomId", "appId"}); err != nil {
 		return err
 	}
 	return nil

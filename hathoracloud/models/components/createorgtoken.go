@@ -54,14 +54,14 @@ func CreateCreateOrgTokenScopesCreateOrgToken2(createOrgToken2 CreateOrgToken2) 
 func (u *CreateOrgTokenScopes) UnmarshalJSON(data []byte) error {
 
 	var arrayOfScope []Scope = []Scope{}
-	if err := utils.UnmarshalJSON(data, &arrayOfScope, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &arrayOfScope, "", true, nil); err == nil {
 		u.ArrayOfScope = arrayOfScope
 		u.Type = CreateOrgTokenScopesTypeArrayOfScope
 		return nil
 	}
 
 	var createOrgToken2 CreateOrgToken2 = CreateOrgToken2("")
-	if err := utils.UnmarshalJSON(data, &createOrgToken2, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &createOrgToken2, "", true, nil); err == nil {
 		u.CreateOrgToken2 = &createOrgToken2
 		u.Type = CreateOrgTokenScopesTypeCreateOrgToken2
 		return nil

@@ -37,6 +37,9 @@ type DeploymentConfigV3 struct {
 	TransportType TransportType `json:"transportType"`
 	// Default port the server listens on.
 	ContainerPort int `json:"containerPort"`
+	// The number of GPUs allocated to your process. Must be an integer.
+	// If not provided, the requested GPU is 0.
+	RequestedGPU *float64 `json:"requestedGPU,omitempty"`
 	// EXPERIMENTAL - this feature is in closed beta.
 	// The number of GPUs allocated to your process. Must be an integer.
 	// If not provided, the requested GPU is 0.
@@ -96,6 +99,13 @@ func (o *DeploymentConfigV3) GetContainerPort() int {
 		return 0
 	}
 	return o.ContainerPort
+}
+
+func (o *DeploymentConfigV3) GetRequestedGPU() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.RequestedGPU
 }
 
 func (o *DeploymentConfigV3) GetExperimentalRequestedGPU() *float64 {

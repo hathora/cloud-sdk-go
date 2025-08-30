@@ -21,7 +21,7 @@ func (f FleetRegion) MarshalJSON() ([]byte, error) {
 }
 
 func (f *FleetRegion) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &f, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &f, "", false, []string{"cloudMinVcpusUpdatedAt", "cloudMinVcpus", "scaleIncrementVcpus"}); err != nil {
 		return err
 	}
 	return nil

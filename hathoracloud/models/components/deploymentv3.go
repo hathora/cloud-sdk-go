@@ -43,6 +43,9 @@ type DeploymentV3 struct {
 	// When the deployment was created.
 	CreatedAt time.Time `json:"createdAt"`
 	CreatedBy string    `json:"createdBy"`
+	// The number of GPUs allocated to your process. Must be an integer.
+	// If not provided, the requested GPU is 0.
+	RequestedGPU *float64 `json:"requestedGPU,omitempty"`
 	// EXPERIMENTAL - this feature is in closed beta.
 	// The number of GPUs allocated to your process. Must be an integer.
 	// If not provided, the requested GPU is 0.
@@ -67,7 +70,7 @@ func (d DeploymentV3) MarshalJSON() ([]byte, error) {
 }
 
 func (d *DeploymentV3) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"idleTimeoutEnabled", "env", "roomsPerProcess", "additionalContainerPorts", "defaultContainerPort", "createdAt", "createdBy", "requestedMemoryMB", "requestedCPU", "deploymentId", "buildId", "appId"}); err != nil {
 		return err
 	}
 	return nil
@@ -127,6 +130,13 @@ func (o *DeploymentV3) GetCreatedBy() string {
 		return ""
 	}
 	return o.CreatedBy
+}
+
+func (o *DeploymentV3) GetRequestedGPU() *float64 {
+	if o == nil {
+		return nil
+	}
+	return o.RequestedGPU
 }
 
 func (o *DeploymentV3) GetExperimentalRequestedGPU() *float64 {

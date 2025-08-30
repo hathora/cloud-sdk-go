@@ -2,6 +2,10 @@
 
 package components
 
+import (
+	"github.com/hathora/cloud-sdk-go/hathoracloud/internal/utils"
+)
+
 type ActiveConnectionInfoStatus string
 
 const (
@@ -21,6 +25,17 @@ type ActiveConnectionInfo struct {
 	// Unique identifier to a game session or match. Use the default system generated ID or overwrite it with your own.
 	// Note: error will be returned if `roomId` is not globally unique.
 	RoomID string `json:"roomId"`
+}
+
+func (a ActiveConnectionInfo) MarshalJSON() ([]byte, error) {
+	return utils.MarshalJSON(a, "", false)
+}
+
+func (a *ActiveConnectionInfo) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"status", "transportType", "port", "host", "roomId"}); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (o *ActiveConnectionInfo) GetStatus() ActiveConnectionInfoStatus {

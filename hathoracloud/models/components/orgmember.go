@@ -44,14 +44,14 @@ func CreateOrgMemberScopesArrayOfScope(arrayOfScope []Scope) OrgMemberScopes {
 func (u *OrgMemberScopes) UnmarshalJSON(data []byte) error {
 
 	var userRole UserRole = UserRole("")
-	if err := utils.UnmarshalJSON(data, &userRole, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &userRole, "", true, nil); err == nil {
 		u.UserRole = &userRole
 		u.Type = OrgMemberScopesTypeUserRole
 		return nil
 	}
 
 	var arrayOfScope []Scope = []Scope{}
-	if err := utils.UnmarshalJSON(data, &arrayOfScope, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &arrayOfScope, "", true, nil); err == nil {
 		u.ArrayOfScope = arrayOfScope
 		u.Type = OrgMemberScopesTypeArrayOfScope
 		return nil
@@ -89,7 +89,7 @@ func (o OrgMember) MarshalJSON() ([]byte, error) {
 }
 
 func (o *OrgMember) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &o, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &o, "", false, []string{"scopes", "joinedAt", "createdAt", "invitedBy", "userEmail", "orgId"}); err != nil {
 		return err
 	}
 	return nil

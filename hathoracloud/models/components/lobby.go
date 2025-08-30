@@ -45,14 +45,14 @@ func CreateCreatedByNumber(number float64) CreatedBy {
 func (u *CreatedBy) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = CreatedByTypeStr
 		return nil
 	}
 
 	var number float64 = float64(0)
-	if err := utils.UnmarshalJSON(data, &number, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &number, "", true, nil); err == nil {
 		u.Number = &number
 		u.Type = CreatedByTypeNumber
 		return nil
@@ -107,7 +107,7 @@ func (l Lobby) MarshalJSON() ([]byte, error) {
 }
 
 func (l *Lobby) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"shortCode", "initialConfig", "createdAt", "createdBy", "local", "visibility", "region", "roomId", "appId"}); err != nil {
 		return err
 	}
 	return nil

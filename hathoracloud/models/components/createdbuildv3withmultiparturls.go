@@ -42,7 +42,7 @@ func (c CreatedBuildV3WithMultipartUrls) MarshalJSON() ([]byte, error) {
 }
 
 func (c *CreatedBuildV3WithMultipartUrls) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &c, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &c, "", false, []string{"imageSize", "status", "deletedAt", "finishedAt", "startedAt", "createdAt", "createdBy", "buildId", "orgId", "completeUploadPostRequestUrl", "maxChunkSize", "uploadParts"}); err != nil {
 		return err
 	}
 	return nil

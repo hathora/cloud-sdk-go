@@ -43,17 +43,17 @@ func CreateConnectionInfoActiveConnectionInfo(activeConnectionInfo ActiveConnect
 
 func (u *ConnectionInfo) UnmarshalJSON(data []byte) error {
 
-	var startingConnectionInfo StartingConnectionInfo = StartingConnectionInfo{}
-	if err := utils.UnmarshalJSON(data, &startingConnectionInfo, "", true, true); err == nil {
-		u.StartingConnectionInfo = &startingConnectionInfo
-		u.Type = ConnectionInfoTypeStartingConnectionInfo
+	var activeConnectionInfo ActiveConnectionInfo = ActiveConnectionInfo{}
+	if err := utils.UnmarshalJSON(data, &activeConnectionInfo, "", true, nil); err == nil {
+		u.ActiveConnectionInfo = &activeConnectionInfo
+		u.Type = ConnectionInfoTypeActiveConnectionInfo
 		return nil
 	}
 
-	var activeConnectionInfo ActiveConnectionInfo = ActiveConnectionInfo{}
-	if err := utils.UnmarshalJSON(data, &activeConnectionInfo, "", true, true); err == nil {
-		u.ActiveConnectionInfo = &activeConnectionInfo
-		u.Type = ConnectionInfoTypeActiveConnectionInfo
+	var startingConnectionInfo StartingConnectionInfo = StartingConnectionInfo{}
+	if err := utils.UnmarshalJSON(data, &startingConnectionInfo, "", true, nil); err == nil {
+		u.StartingConnectionInfo = &startingConnectionInfo
+		u.Type = ConnectionInfoTypeStartingConnectionInfo
 		return nil
 	}
 

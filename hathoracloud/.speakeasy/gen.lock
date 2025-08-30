@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 93320e945e82a5d0dadfeb8d103b404e
+  docChecksum: 14846203b196bab9b457d7385035e68b
   docVersion: 0.0.1
-  speakeasyVersion: 1.606.3
-  generationVersion: 2.687.1
-  releaseVersion: 0.7.7
-  configChecksum: bf69d51dad0976440566338c39a0ab56
+  speakeasyVersion: 1.606.9
+  generationVersion: 2.687.13
+  releaseVersion: 0.7.8
+  configChecksum: ac848982bd002d4fc5f631aa4d9ecd21
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -34,7 +34,7 @@ features:
     responseFormat: 0.1.2
     retries: 2.84.2
     sdkHooks: 0.2.0
-    unions: 2.85.12
+    unions: 2.85.13
     uploadStreams: 0.1.0
 generatedFiles:
   - .devcontainer/README.md
@@ -1647,10 +1647,10 @@ examples:
         path:
           appId: "app-af469a92-5b45-4565-b3c4-b79878de67d2"
       requestBody:
-        application/json: {"deploymentTag": "alpha", "idleTimeoutEnabled": true, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "udp", "port": 8000, "name": "default"}, {"transportType": "udp", "port": 8000, "name": "default"}], "transportType": "udp", "containerPort": 4000, "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"}
+        application/json: {"deploymentTag": "alpha", "idleTimeoutEnabled": true, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "udp", "port": 8000, "name": "default"}, {"transportType": "udp", "port": 8000, "name": "default"}], "transportType": "udp", "containerPort": 4000, "requestedGPU": 1, "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"}
       responses:
         "201":
-          application/json: {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 4000, "name": "debug"}], "defaultContainerPort": {"transportType": "tls", "port": 8000, "name": "default"}, "createdAt": "2025-05-19T21:17:23.822Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2"}
+          application/json: {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 4000, "name": "debug"}], "defaultContainerPort": {"transportType": "tls", "port": 8000, "name": "default"}, "createdAt": "2025-05-19T21:17:23.822Z", "createdBy": "noreply@hathora.dev", "requestedGPU": 1, "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2"}
         "400":
           application/json: {"message": "<value>"}
         "500":
@@ -1662,7 +1662,7 @@ examples:
           appId: "app-af469a92-5b45-4565-b3c4-b79878de67d2"
       responses:
         "200":
-          application/json: {"deploymentTag": "alpha", "idleTimeoutEnabled": true, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 4000, "name": "debug"}], "defaultContainerPort": {"transportType": "tcp", "port": 8000, "name": "default"}, "createdAt": "2025-07-20T16:00:10.304Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2"}
+          application/json: {"deploymentTag": "alpha", "idleTimeoutEnabled": true, "env": [{"value": "TRUE", "name": "EULA"}, {"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 4000, "name": "debug"}], "defaultContainerPort": {"transportType": "tcp", "port": 8000, "name": "default"}, "createdAt": "2025-07-20T16:00:10.304Z", "createdBy": "noreply@hathora.dev", "requestedGPU": 1, "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2"}
         "401":
           application/json: {"message": "<value>"}
   GetDeployment:
@@ -1673,7 +1673,7 @@ examples:
           deploymentId: "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"
       responses:
         "200":
-          application/json: {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 4000, "name": "debug"}], "defaultContainerPort": {"transportType": "tcp", "port": 8000, "name": "default"}, "createdAt": "2024-03-05T11:52:41.680Z", "createdBy": "noreply@hathora.dev", "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2"}
+          application/json: {"deploymentTag": "alpha", "idleTimeoutEnabled": false, "env": [{"value": "TRUE", "name": "EULA"}], "roomsPerProcess": 3, "additionalContainerPorts": [{"transportType": "tcp", "port": 4000, "name": "debug"}], "defaultContainerPort": {"transportType": "tcp", "port": 8000, "name": "default"}, "createdAt": "2024-03-05T11:52:41.680Z", "createdBy": "noreply@hathora.dev", "requestedGPU": 1, "experimentalRequestedGPU": 1, "requestedMemoryMB": 1024, "requestedCPU": 0.5, "deploymentId": "dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "buildTag": "0.1.14-14c793", "buildId": "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5", "appId": "app-af469a92-5b45-4565-b3c4-b79878de67d2"}
         "401":
           application/json: {"message": "<value>"}
   GetBuildsDeprecated:
@@ -2154,4 +2154,4 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## SDK Changes Detected:\n* `HathoraCloud.AppsV1.GetAppsV1Deprecated()`:  `response.[].ServiceConfig` **Changed**\n* `HathoraCloud.AppsV1.CreateAppV1Deprecated()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV1.UpdateAppV1Deprecated()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV1.GetAppInfoV1Deprecated()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.GetApps()`:  `response.Applications.[].ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.CreateApp()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.GetApp()`:  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.UpdateApp()`: \n  *  `request.AppConfigWithServiceConfig.ServiceConfig` **Changed**\n  *  `response.ServiceConfig` **Changed**\n* `HathoraCloud.AppsV2.PatchApp()`: \n  *  `request.PartialAppConfigWithServiceConfig.ServiceConfig` **Changed**\n  *  `response.ServiceConfig` **Changed**\n"
+releaseNotes: "## SDK Changes Detected:\n* `HathoraCloud.DeploymentsV3.GetDeployments()`:  `response.Deployments.[].RequestedGpu` **Added**\n* `HathoraCloud.DeploymentsV3.CreateDeployment()`: \n  *  `request.DeploymentConfigV3.RequestedGpu` **Added**\n  *  `response.RequestedGpu` **Added**\n* `HathoraCloud.DeploymentsV3.GetLatestDeployment()`:  `response.RequestedGpu` **Added**\n* `HathoraCloud.DeploymentsV3.GetDeployment()`:  `response.RequestedGpu` **Added**\n* `HathoraCloud.AppsV2.GetApps()`:  `response.Applications.[].Deployment.RequestedGpu` **Added**\n"

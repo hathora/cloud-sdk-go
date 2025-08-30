@@ -55,14 +55,14 @@ func CreateScopesTwo(two Two) Scopes {
 func (u *Scopes) UnmarshalJSON(data []byte) error {
 
 	var arrayOfScope []Scope = []Scope{}
-	if err := utils.UnmarshalJSON(data, &arrayOfScope, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &arrayOfScope, "", true, nil); err == nil {
 		u.ArrayOfScope = arrayOfScope
 		u.Type = ScopesTypeArrayOfScope
 		return nil
 	}
 
 	var two Two = Two("")
-	if err := utils.UnmarshalJSON(data, &two, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &two, "", true, nil); err == nil {
 		u.Two = &two
 		u.Type = ScopesTypeTwo
 		return nil
@@ -102,7 +102,7 @@ func (o OrgToken) MarshalJSON() ([]byte, error) {
 }
 
 func (o *OrgToken) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &o, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &o, "", false, []string{"createdAt", "createdBy", "lastFourCharsOfKey", "status", "name", "orgId", "orgTokenId"}); err != nil {
 		return err
 	}
 	return nil

@@ -44,14 +44,14 @@ func CreateCreateUserInviteScopesArrayOfScope(arrayOfScope []Scope) CreateUserIn
 func (u *CreateUserInviteScopes) UnmarshalJSON(data []byte) error {
 
 	var userRole UserRole = UserRole("")
-	if err := utils.UnmarshalJSON(data, &userRole, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &userRole, "", true, nil); err == nil {
 		u.UserRole = &userRole
 		u.Type = CreateUserInviteScopesTypeUserRole
 		return nil
 	}
 
 	var arrayOfScope []Scope = []Scope{}
-	if err := utils.UnmarshalJSON(data, &arrayOfScope, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &arrayOfScope, "", true, nil); err == nil {
 		u.ArrayOfScope = arrayOfScope
 		u.Type = CreateUserInviteScopesTypeArrayOfScope
 		return nil

@@ -95,7 +95,7 @@ func (p Process) MarshalJSON() ([]byte, error) {
 }
 
 func (p *Process) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"egressedBytes", "idleSince", "activeConnectionsUpdatedAt", "activeConnections", "roomsAllocatedUpdatedAt", "roomsAllocated", "roomSlotsAvailableUpdatedAt", "roomSlotsAvailable", "draining", "terminatedAt", "stoppingAt", "startedAt", "startingAt", "roomsPerProcess", "additionalExposedPorts", "exposedPort", "port", "host", "region", "processId", "deploymentId", "appId"}); err != nil {
 		return err
 	}
 	return nil

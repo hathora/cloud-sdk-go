@@ -120,6 +120,7 @@ func main() {
         },
         TransportType: components.TransportTypeUDP,
         ContainerPort: 4000,
+        RequestedGPU: hathoracloud.Float64(1),
         ExperimentalRequestedGPU: hathoracloud.Float64(1),
         RequestedMemoryMB: 1024,
         RequestedCPU: 0.5,
