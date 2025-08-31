@@ -22,6 +22,8 @@ func (o *DeploymentConfigV3Env) GetName() string {
 }
 
 type DeploymentConfigV3 struct {
+	// the id of the fleet
+	FleetID *string `json:"fleetId,omitempty"`
 	// Arbitrary metadata associated with a deployment.
 	DeploymentTag *string `json:"deploymentTag,omitempty"`
 	// Option to shut down processes that have had no new connections or rooms
@@ -50,6 +52,13 @@ type DeploymentConfigV3 struct {
 	RequestedCPU float64 `json:"requestedCPU"`
 	// System generated id for a build. Can also be user defined when creating a build.
 	BuildID string `json:"buildId"`
+}
+
+func (o *DeploymentConfigV3) GetFleetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.FleetID
 }
 
 func (o *DeploymentConfigV3) GetDeploymentTag() *string {

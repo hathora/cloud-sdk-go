@@ -59,6 +59,8 @@ func (o *ApplicationWithLatestDeploymentAndBuildEnv) GetName() string {
 }
 
 type ApplicationWithLatestDeploymentAndBuildDeployment struct {
+	// the id of the fleet
+	FleetID *string `json:"fleetId,omitempty"`
 	// Arbitrary metadata associated with a deployment.
 	DeploymentTag *string `json:"deploymentTag,omitempty"`
 	// Option to shut down processes that have had no new connections or rooms
@@ -108,6 +110,13 @@ func (a *ApplicationWithLatestDeploymentAndBuildDeployment) UnmarshalJSON(data [
 		return err
 	}
 	return nil
+}
+
+func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetFleetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.FleetID
 }
 
 func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetDeploymentTag() *string {

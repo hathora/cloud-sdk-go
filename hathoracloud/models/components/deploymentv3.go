@@ -27,6 +27,8 @@ func (o *DeploymentV3Env) GetName() string {
 }
 
 type DeploymentV3 struct {
+	// the id of the fleet
+	FleetID *string `json:"fleetId,omitempty"`
 	// Arbitrary metadata associated with a deployment.
 	DeploymentTag *string `json:"deploymentTag,omitempty"`
 	// Option to shut down processes that have had no new connections or rooms
@@ -74,6 +76,13 @@ func (d *DeploymentV3) UnmarshalJSON(data []byte) error {
 		return err
 	}
 	return nil
+}
+
+func (o *DeploymentV3) GetFleetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.FleetID
 }
 
 func (o *DeploymentV3) GetDeploymentTag() *string {
