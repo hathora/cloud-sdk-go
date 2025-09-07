@@ -23,7 +23,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 0.7.9
+  version: 0.7.10
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: HathoraCloudError
@@ -44,5 +44,6 @@ go:
   modulePath: ""
   outputModelSuffix: output
   packageName: github.com/hathora/cloud-sdk-go/hathoracloud
+  respectRequiredFields: false
   responseFormat: flat
   sdkPackageName: ""

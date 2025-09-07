@@ -125,7 +125,7 @@ func main() {
 
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 429         | application/json |
+| errors.APIError  | 401, 422, 429    | application/json |
 | errors.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## GetLobbyInfoByRoomID

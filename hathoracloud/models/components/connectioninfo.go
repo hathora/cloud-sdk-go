@@ -17,8 +17,8 @@ const (
 
 // ConnectionInfo - Connection information to the default port.
 type ConnectionInfo struct {
-	StartingConnectionInfo *StartingConnectionInfo `queryParam:"inline"`
-	ActiveConnectionInfo   *ActiveConnectionInfo   `queryParam:"inline"`
+	StartingConnectionInfo *StartingConnectionInfo `queryParam:"inline" name:"ConnectionInfo"`
+	ActiveConnectionInfo   *ActiveConnectionInfo   `queryParam:"inline" name:"ConnectionInfo"`
 
 	Type ConnectionInfoType
 }
