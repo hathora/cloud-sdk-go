@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 8022bc16008b5336bf6990068d4ee27b
+  docChecksum: 7c80156d7210e7e9964ca7c7f8da8a0a
   docVersion: 0.0.1
-  speakeasyVersion: 1.611.0
-  generationVersion: 2.694.1
-  releaseVersion: 0.7.10
-  configChecksum: 70614cf5a549dd1bcce8683c5e654e6b
+  speakeasyVersion: 1.615.2
+  generationVersion: 2.698.4
+  releaseVersion: 0.7.11
+  configChecksum: 045850b01c581884bed4b25e8168bcb8
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -21,7 +21,7 @@ features:
     downloadStreams: 0.1.2
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
-    globalSecurity: 2.82.11
+    globalSecurity: 2.82.12
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.3
@@ -2154,6 +2154,3 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes Detected:
-  * `HathoraCloud.LobbiesV3.ListActivePublicLobbies()`:  `error.status[422]` **Added**
