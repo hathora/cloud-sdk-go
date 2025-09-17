@@ -11,11 +11,11 @@ type GetMetricsDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetMetricsDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetMetricsDeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetMetricsDeprecatedRequest struct {
@@ -41,44 +41,44 @@ func (g *GetMetricsDeprecatedRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetMetricsDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetMetricsDeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetMetricsDeprecatedRequest) GetProcessID() string {
-	if o == nil {
+func (g *GetMetricsDeprecatedRequest) GetProcessID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ProcessID
+	return g.ProcessID
 }
 
-func (o *GetMetricsDeprecatedRequest) GetMetrics() []components.DeprecatedProcessMetricName {
-	if o == nil {
+func (g *GetMetricsDeprecatedRequest) GetMetrics() []components.DeprecatedProcessMetricName {
+	if g == nil {
 		return nil
 	}
-	return o.Metrics
+	return g.Metrics
 }
 
-func (o *GetMetricsDeprecatedRequest) GetEnd() *float64 {
-	if o == nil {
+func (g *GetMetricsDeprecatedRequest) GetEnd() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.End
+	return g.End
 }
 
-func (o *GetMetricsDeprecatedRequest) GetStart() *float64 {
-	if o == nil {
+func (g *GetMetricsDeprecatedRequest) GetStart() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.Start
+	return g.Start
 }
 
-func (o *GetMetricsDeprecatedRequest) GetStep() *int {
-	if o == nil {
+func (g *GetMetricsDeprecatedRequest) GetStep() *int {
+	if g == nil {
 		return nil
 	}
-	return o.Step
+	return g.Step
 }

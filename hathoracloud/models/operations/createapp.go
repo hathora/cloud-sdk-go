@@ -10,11 +10,11 @@ type CreateAppGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *CreateAppGlobals) GetOrgID() *string {
-	if o == nil {
+func (c *CreateAppGlobals) GetOrgID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OrgID
+	return c.OrgID
 }
 
 type CreateAppRequest struct {
@@ -22,16 +22,16 @@ type CreateAppRequest struct {
 	CreateAppConfig components.CreateAppConfig `request:"mediaType=application/json"`
 }
 
-func (o *CreateAppRequest) GetOrgID() *string {
-	if o == nil {
+func (c *CreateAppRequest) GetOrgID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OrgID
+	return c.OrgID
 }
 
-func (o *CreateAppRequest) GetCreateAppConfig() components.CreateAppConfig {
-	if o == nil {
+func (c *CreateAppRequest) GetCreateAppConfig() components.CreateAppConfig {
+	if c == nil {
 		return components.CreateAppConfig{}
 	}
-	return o.CreateAppConfig
+	return c.CreateAppConfig
 }

@@ -11,23 +11,23 @@ type ContainerPort struct {
 	Name string `json:"name"`
 }
 
-func (o *ContainerPort) GetTransportType() TransportType {
-	if o == nil {
+func (c *ContainerPort) GetTransportType() TransportType {
+	if c == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return c.TransportType
 }
 
-func (o *ContainerPort) GetPort() int {
-	if o == nil {
+func (c *ContainerPort) GetPort() int {
+	if c == nil {
 		return 0
 	}
-	return o.Port
+	return c.Port
 }
 
-func (o *ContainerPort) GetName() string {
-	if o == nil {
+func (c *ContainerPort) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }

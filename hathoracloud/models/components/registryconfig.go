@@ -8,23 +8,23 @@ type RegistryConfig struct {
 	Image       string  `json:"image"`
 }
 
-func (o *RegistryConfig) GetAuth() *string {
-	if o == nil {
+func (r *RegistryConfig) GetAuth() *string {
+	if r == nil {
 		return nil
 	}
-	return o.Auth
+	return r.Auth
 }
 
-func (o *RegistryConfig) GetRegistryURL() *string {
-	if o == nil {
+func (r *RegistryConfig) GetRegistryURL() *string {
+	if r == nil {
 		return nil
 	}
-	return o.RegistryURL
+	return r.RegistryURL
 }
 
-func (o *RegistryConfig) GetImage() string {
-	if o == nil {
+func (r *RegistryConfig) GetImage() string {
+	if r == nil {
 		return ""
 	}
-	return o.Image
+	return r.Image
 }

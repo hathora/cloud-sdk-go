@@ -23,16 +23,16 @@ type AutoscalerTargetMetric struct {
 	MetricName MetricName `json:"metricName"`
 }
 
-func (o *AutoscalerTargetMetric) GetMetricValue() float64 {
-	if o == nil {
+func (a *AutoscalerTargetMetric) GetMetricValue() float64 {
+	if a == nil {
 		return 0.0
 	}
-	return o.MetricValue
+	return a.MetricValue
 }
 
-func (o *AutoscalerTargetMetric) GetMetricName() MetricName {
-	if o == nil {
+func (a *AutoscalerTargetMetric) GetMetricName() MetricName {
+	if a == nil {
 		return MetricName("")
 	}
-	return o.MetricName
+	return a.MetricName
 }

@@ -10,23 +10,23 @@ type CreateAppConfig struct {
 	AppName string `json:"appName"`
 }
 
-func (o *CreateAppConfig) GetLoadBalancer() *LoadBalancerConfig {
-	if o == nil {
+func (c *CreateAppConfig) GetLoadBalancer() *LoadBalancerConfig {
+	if c == nil {
 		return nil
 	}
-	return o.LoadBalancer
+	return c.LoadBalancer
 }
 
-func (o *CreateAppConfig) GetAuthConfiguration() AuthConfiguration {
-	if o == nil {
+func (c *CreateAppConfig) GetAuthConfiguration() AuthConfiguration {
+	if c == nil {
 		return AuthConfiguration{}
 	}
-	return o.AuthConfiguration
+	return c.AuthConfiguration
 }
 
-func (o *CreateAppConfig) GetAppName() string {
-	if o == nil {
+func (c *CreateAppConfig) GetAppName() string {
+	if c == nil {
 		return ""
 	}
-	return o.AppName
+	return c.AppName
 }

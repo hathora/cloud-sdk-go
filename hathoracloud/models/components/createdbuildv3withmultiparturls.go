@@ -48,114 +48,114 @@ func (c *CreatedBuildV3WithMultipartUrls) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetExpiredAt() *time.Time {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetExpiredAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.ExpiredAt
+	return c.ExpiredAt
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetShareURL() *string {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetShareURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ShareURL
+	return c.ShareURL
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetContentHash() *string {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetContentHash() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ContentHash
+	return c.ContentHash
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetBuildTag() *string {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetBuildTag() *string {
+	if c == nil {
 		return nil
 	}
-	return o.BuildTag
+	return c.BuildTag
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetImageSize() int64 {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetImageSize() int64 {
+	if c == nil {
 		return 0
 	}
-	return o.ImageSize
+	return c.ImageSize
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetStatus() BuildStatus {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetStatus() BuildStatus {
+	if c == nil {
 		return BuildStatus("")
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetDeletedAt() *time.Time {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetDeletedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return c.DeletedAt
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetFinishedAt() *time.Time {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetFinishedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.FinishedAt
+	return c.FinishedAt
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetStartedAt() *time.Time {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetStartedAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.StartedAt
+	return c.StartedAt
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetCreatedAt() time.Time {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetCreatedAt() time.Time {
+	if c == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return c.CreatedAt
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetCreatedBy() string {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetCreatedBy() string {
+	if c == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return c.CreatedBy
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetBuildID() string {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetBuildID() string {
+	if c == nil {
 		return ""
 	}
-	return o.BuildID
+	return c.BuildID
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetOrgID() string {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetOrgID() string {
+	if c == nil {
 		return ""
 	}
-	return o.OrgID
+	return c.OrgID
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetCompleteUploadPostRequestURL() string {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetCompleteUploadPostRequestURL() string {
+	if c == nil {
 		return ""
 	}
-	return o.CompleteUploadPostRequestURL
+	return c.CompleteUploadPostRequestURL
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetMaxChunkSize() float64 {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetMaxChunkSize() float64 {
+	if c == nil {
 		return 0.0
 	}
-	return o.MaxChunkSize
+	return c.MaxChunkSize
 }
 
-func (o *CreatedBuildV3WithMultipartUrls) GetUploadParts() []BuildPart {
-	if o == nil {
+func (c *CreatedBuildV3WithMultipartUrls) GetUploadParts() []BuildPart {
+	if c == nil {
 		return []BuildPart{}
 	}
-	return o.UploadParts
+	return c.UploadParts
 }

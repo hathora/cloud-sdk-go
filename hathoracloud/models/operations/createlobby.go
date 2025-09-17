@@ -10,22 +10,22 @@ type CreateLobbyGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateLobbyGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateLobbyGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateLobbySecurity struct {
 	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *CreateLobbySecurity) GetPlayerAuth() string {
-	if o == nil {
+func (c *CreateLobbySecurity) GetPlayerAuth() string {
+	if c == nil {
 		return ""
 	}
-	return o.PlayerAuth
+	return c.PlayerAuth
 }
 
 type CreateLobbyRequest struct {
@@ -35,30 +35,30 @@ type CreateLobbyRequest struct {
 	CreateLobbyV3Params components.CreateLobbyV3Params `request:"mediaType=application/json"`
 }
 
-func (o *CreateLobbyRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateLobbyRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateLobbyRequest) GetShortCode() *string {
-	if o == nil {
+func (c *CreateLobbyRequest) GetShortCode() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ShortCode
+	return c.ShortCode
 }
 
-func (o *CreateLobbyRequest) GetRoomID() *string {
-	if o == nil {
+func (c *CreateLobbyRequest) GetRoomID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RoomID
+	return c.RoomID
 }
 
-func (o *CreateLobbyRequest) GetCreateLobbyV3Params() components.CreateLobbyV3Params {
-	if o == nil {
+func (c *CreateLobbyRequest) GetCreateLobbyV3Params() components.CreateLobbyV3Params {
+	if c == nil {
 		return components.CreateLobbyV3Params{}
 	}
-	return o.CreateLobbyV3Params
+	return c.CreateLobbyV3Params
 }

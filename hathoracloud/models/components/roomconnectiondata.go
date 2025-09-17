@@ -15,37 +15,37 @@ type RoomConnectionData struct {
 	ProcessID string `json:"processId"`
 }
 
-func (o *RoomConnectionData) GetAdditionalExposedPorts() []ExposedPort {
-	if o == nil {
+func (r *RoomConnectionData) GetAdditionalExposedPorts() []ExposedPort {
+	if r == nil {
 		return []ExposedPort{}
 	}
-	return o.AdditionalExposedPorts
+	return r.AdditionalExposedPorts
 }
 
-func (o *RoomConnectionData) GetExposedPort() *ExposedPort {
-	if o == nil {
+func (r *RoomConnectionData) GetExposedPort() *ExposedPort {
+	if r == nil {
 		return nil
 	}
-	return o.ExposedPort
+	return r.ExposedPort
 }
 
-func (o *RoomConnectionData) GetStatus() RoomReadyStatus {
-	if o == nil {
+func (r *RoomConnectionData) GetStatus() RoomReadyStatus {
+	if r == nil {
 		return RoomReadyStatus("")
 	}
-	return o.Status
+	return r.Status
 }
 
-func (o *RoomConnectionData) GetRoomID() string {
-	if o == nil {
+func (r *RoomConnectionData) GetRoomID() string {
+	if r == nil {
 		return ""
 	}
-	return o.RoomID
+	return r.RoomID
 }
 
-func (o *RoomConnectionData) GetProcessID() string {
-	if o == nil {
+func (r *RoomConnectionData) GetProcessID() string {
+	if r == nil {
 		return ""
 	}
-	return o.ProcessID
+	return r.ProcessID
 }

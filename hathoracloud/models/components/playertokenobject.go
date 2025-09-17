@@ -7,9 +7,9 @@ type PlayerTokenObject struct {
 	Token string `json:"token"`
 }
 
-func (o *PlayerTokenObject) GetToken() string {
-	if o == nil {
+func (p *PlayerTokenObject) GetToken() string {
+	if p == nil {
 		return ""
 	}
-	return o.Token
+	return p.Token
 }

@@ -10,37 +10,37 @@ type InvoiceItem struct {
 	ProductName string  `json:"productName"`
 }
 
-func (o *InvoiceItem) GetAmount() float64 {
-	if o == nil {
+func (i *InvoiceItem) GetAmount() float64 {
+	if i == nil {
 		return 0.0
 	}
-	return o.Amount
+	return i.Amount
 }
 
-func (o *InvoiceItem) GetUnitPrice() float64 {
-	if o == nil {
+func (i *InvoiceItem) GetUnitPrice() float64 {
+	if i == nil {
 		return 0.0
 	}
-	return o.UnitPrice
+	return i.UnitPrice
 }
 
-func (o *InvoiceItem) GetQuantity() float64 {
-	if o == nil {
+func (i *InvoiceItem) GetQuantity() float64 {
+	if i == nil {
 		return 0.0
 	}
-	return o.Quantity
+	return i.Quantity
 }
 
-func (o *InvoiceItem) GetUnit() string {
-	if o == nil {
+func (i *InvoiceItem) GetUnit() string {
+	if i == nil {
 		return ""
 	}
-	return o.Unit
+	return i.Unit
 }
 
-func (o *InvoiceItem) GetProductName() string {
-	if o == nil {
+func (i *InvoiceItem) GetProductName() string {
+	if i == nil {
 		return ""
 	}
-	return o.ProductName
+	return i.ProductName
 }

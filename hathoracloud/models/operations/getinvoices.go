@@ -6,20 +6,20 @@ type GetInvoicesGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetInvoicesGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetInvoicesGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetInvoicesRequest struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetInvoicesRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetInvoicesRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

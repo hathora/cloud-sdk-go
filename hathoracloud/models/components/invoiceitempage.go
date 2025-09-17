@@ -6,9 +6,9 @@ type InvoiceItemPage struct {
 	InvoiceItems []InvoiceItem `json:"invoiceItems"`
 }
 
-func (o *InvoiceItemPage) GetInvoiceItems() []InvoiceItem {
-	if o == nil {
+func (i *InvoiceItemPage) GetInvoiceItems() []InvoiceItem {
+	if i == nil {
 		return []InvoiceItem{}
 	}
-	return o.InvoiceItems
+	return i.InvoiceItems
 }

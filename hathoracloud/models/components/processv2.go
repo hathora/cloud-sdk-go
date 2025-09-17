@@ -16,32 +16,32 @@ type ProcessV2ExposedPort struct {
 	Name          string        `json:"name"`
 }
 
-func (o *ProcessV2ExposedPort) GetTransportType() TransportType {
-	if o == nil {
+func (p *ProcessV2ExposedPort) GetTransportType() TransportType {
+	if p == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return p.TransportType
 }
 
-func (o *ProcessV2ExposedPort) GetPort() int {
-	if o == nil {
+func (p *ProcessV2ExposedPort) GetPort() int {
+	if p == nil {
 		return 0
 	}
-	return o.Port
+	return p.Port
 }
 
-func (o *ProcessV2ExposedPort) GetHost() string {
-	if o == nil {
+func (p *ProcessV2ExposedPort) GetHost() string {
+	if p == nil {
 		return ""
 	}
-	return o.Host
+	return p.Host
 }
 
-func (o *ProcessV2ExposedPort) GetName() string {
-	if o == nil {
+func (p *ProcessV2ExposedPort) GetName() string {
+	if p == nil {
 		return ""
 	}
-	return o.Name
+	return p.Name
 }
 
 type ProcessV2 struct {
@@ -80,93 +80,93 @@ func (p *ProcessV2) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ProcessV2) GetStatus() ProcessStatus {
-	if o == nil {
+func (p *ProcessV2) GetStatus() ProcessStatus {
+	if p == nil {
 		return ProcessStatus("")
 	}
-	return o.Status
+	return p.Status
 }
 
-func (o *ProcessV2) GetRoomsAllocated() int {
-	if o == nil {
+func (p *ProcessV2) GetRoomsAllocated() int {
+	if p == nil {
 		return 0
 	}
-	return o.RoomsAllocated
+	return p.RoomsAllocated
 }
 
-func (o *ProcessV2) GetTerminatedAt() *time.Time {
-	if o == nil {
+func (p *ProcessV2) GetTerminatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.TerminatedAt
+	return p.TerminatedAt
 }
 
-func (o *ProcessV2) GetStoppingAt() *time.Time {
-	if o == nil {
+func (p *ProcessV2) GetStoppingAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.StoppingAt
+	return p.StoppingAt
 }
 
-func (o *ProcessV2) GetStartedAt() *time.Time {
-	if o == nil {
+func (p *ProcessV2) GetStartedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.StartedAt
+	return p.StartedAt
 }
 
-func (o *ProcessV2) GetCreatedAt() time.Time {
-	if o == nil {
+func (p *ProcessV2) GetCreatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *ProcessV2) GetRoomsPerProcess() int {
-	if o == nil {
+func (p *ProcessV2) GetRoomsPerProcess() int {
+	if p == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return p.RoomsPerProcess
 }
 
-func (o *ProcessV2) GetAdditionalExposedPorts() []ExposedPort {
-	if o == nil {
+func (p *ProcessV2) GetAdditionalExposedPorts() []ExposedPort {
+	if p == nil {
 		return []ExposedPort{}
 	}
-	return o.AdditionalExposedPorts
+	return p.AdditionalExposedPorts
 }
 
-func (o *ProcessV2) GetExposedPort() *ProcessV2ExposedPort {
-	if o == nil {
+func (p *ProcessV2) GetExposedPort() *ProcessV2ExposedPort {
+	if p == nil {
 		return nil
 	}
-	return o.ExposedPort
+	return p.ExposedPort
 }
 
-func (o *ProcessV2) GetRegion() Region {
-	if o == nil {
+func (p *ProcessV2) GetRegion() Region {
+	if p == nil {
 		return Region("")
 	}
-	return o.Region
+	return p.Region
 }
 
-func (o *ProcessV2) GetProcessID() string {
-	if o == nil {
+func (p *ProcessV2) GetProcessID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ProcessID
+	return p.ProcessID
 }
 
-func (o *ProcessV2) GetDeploymentID() int {
-	if o == nil {
+func (p *ProcessV2) GetDeploymentID() int {
+	if p == nil {
 		return 0
 	}
-	return o.DeploymentID
+	return p.DeploymentID
 }
 
-func (o *ProcessV2) GetAppID() string {
-	if o == nil {
+func (p *ProcessV2) GetAppID() string {
+	if p == nil {
 		return ""
 	}
-	return o.AppID
+	return p.AppID
 }

@@ -6,11 +6,11 @@ type GetDeploymentGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetDeploymentGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetDeploymentGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetDeploymentRequest struct {
@@ -18,16 +18,16 @@ type GetDeploymentRequest struct {
 	DeploymentID string  `pathParam:"style=simple,explode=false,name=deploymentId"`
 }
 
-func (o *GetDeploymentRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetDeploymentRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetDeploymentRequest) GetDeploymentID() string {
-	if o == nil {
+func (g *GetDeploymentRequest) GetDeploymentID() string {
+	if g == nil {
 		return ""
 	}
-	return o.DeploymentID
+	return g.DeploymentID
 }

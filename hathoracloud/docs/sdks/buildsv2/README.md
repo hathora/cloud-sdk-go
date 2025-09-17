@@ -152,7 +152,7 @@ func main() {
     )
 
     res, err := s.BuildsV2.CreateBuildV2Deprecated(ctx, components.CreateBuildParams{
-        BuildTag: hathoracloud.String("0.1.14-14c793"),
+        BuildTag: hathoracloud.Pointer("0.1.14-14c793"),
     })
     if err != nil {
         log.Fatal(err)
@@ -212,7 +212,7 @@ func main() {
     )
 
     res, err := s.BuildsV2.CreateBuildWithUploadURLV2Deprecated(ctx, components.CreateBuildParams{
-        BuildTag: hathoracloud.String("0.1.14-14c793"),
+        BuildTag: hathoracloud.Pointer("0.1.14-14c793"),
     })
     if err != nil {
         log.Fatal(err)
@@ -272,8 +272,8 @@ func main() {
     )
 
     res, err := s.BuildsV2.CreateWithMultipartUploadsV2Deprecated(ctx, components.CreateMultipartBuildParams{
-        BuildID: hathoracloud.String("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
-        BuildTag: hathoracloud.String("0.1.14-14c793"),
+        BuildID: hathoracloud.Pointer("bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
+        BuildTag: hathoracloud.Pointer("0.1.14-14c793"),
         BuildSizeInBytes: 5282.13,
     })
     if err != nil {

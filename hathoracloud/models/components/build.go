@@ -12,18 +12,18 @@ type RegionalContainerTags struct {
 	Region       Region `json:"region"`
 }
 
-func (o *RegionalContainerTags) GetContainerTag() string {
-	if o == nil {
+func (r *RegionalContainerTags) GetContainerTag() string {
+	if r == nil {
 		return ""
 	}
-	return o.ContainerTag
+	return r.ContainerTag
 }
 
-func (o *RegionalContainerTags) GetRegion() Region {
-	if o == nil {
+func (r *RegionalContainerTags) GetRegion() Region {
+	if r == nil {
 		return Region("")
 	}
-	return o.Region
+	return r.Region
 }
 
 // Build - A build represents a game server artifact and its associated metadata.
@@ -62,86 +62,86 @@ func (b *Build) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Build) GetExpiredAt() *time.Time {
-	if o == nil {
+func (b *Build) GetExpiredAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.ExpiredAt
+	return b.ExpiredAt
 }
 
-func (o *Build) GetBuildTag() *string {
-	if o == nil {
+func (b *Build) GetBuildTag() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BuildTag
+	return b.BuildTag
 }
 
-func (o *Build) GetRegionalContainerTags() []RegionalContainerTags {
-	if o == nil {
+func (b *Build) GetRegionalContainerTags() []RegionalContainerTags {
+	if b == nil {
 		return []RegionalContainerTags{}
 	}
-	return o.RegionalContainerTags
+	return b.RegionalContainerTags
 }
 
-func (o *Build) GetImageSize() int64 {
-	if o == nil {
+func (b *Build) GetImageSize() int64 {
+	if b == nil {
 		return 0
 	}
-	return o.ImageSize
+	return b.ImageSize
 }
 
-func (o *Build) GetStatus() BuildStatus {
-	if o == nil {
+func (b *Build) GetStatus() BuildStatus {
+	if b == nil {
 		return BuildStatus("")
 	}
-	return o.Status
+	return b.Status
 }
 
-func (o *Build) GetDeletedAt() *time.Time {
-	if o == nil {
+func (b *Build) GetDeletedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return b.DeletedAt
 }
 
-func (o *Build) GetFinishedAt() *time.Time {
-	if o == nil {
+func (b *Build) GetFinishedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.FinishedAt
+	return b.FinishedAt
 }
 
-func (o *Build) GetStartedAt() *time.Time {
-	if o == nil {
+func (b *Build) GetStartedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.StartedAt
+	return b.StartedAt
 }
 
-func (o *Build) GetCreatedAt() time.Time {
-	if o == nil {
+func (b *Build) GetCreatedAt() time.Time {
+	if b == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return b.CreatedAt
 }
 
-func (o *Build) GetCreatedBy() string {
-	if o == nil {
+func (b *Build) GetCreatedBy() string {
+	if b == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return b.CreatedBy
 }
 
-func (o *Build) GetBuildID() int {
-	if o == nil {
+func (b *Build) GetBuildID() int {
+	if b == nil {
 		return 0
 	}
-	return o.BuildID
+	return b.BuildID
 }
 
-func (o *Build) GetAppID() string {
-	if o == nil {
+func (b *Build) GetAppID() string {
+	if b == nil {
 		return ""
 	}
-	return o.AppID
+	return b.AppID
 }

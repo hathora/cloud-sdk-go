@@ -6,20 +6,20 @@ type LoginAnonymousGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *LoginAnonymousGlobals) GetAppID() *string {
-	if o == nil {
+func (l *LoginAnonymousGlobals) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
 type LoginAnonymousRequest struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *LoginAnonymousRequest) GetAppID() *string {
-	if o == nil {
+func (l *LoginAnonymousRequest) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }

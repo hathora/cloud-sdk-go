@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 88e9e357defbbd3d79539d855d1148b8
+  docChecksum: 5feed7b56f9519d5aafa828319911de3
   docVersion: 0.0.1
-  speakeasyVersion: 1.615.2
-  generationVersion: 2.698.4
-  releaseVersion: 0.7.13
-  configChecksum: d5be49016f75a91c6d9cb217f5356607
+  speakeasyVersion: 1.617.1
+  generationVersion: 2.701.8
+  releaseVersion: 0.8.0
+  configChecksum: dc8088fb667a6e6973984803509bb562
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.9.6
+    core: 3.10.0
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -29,7 +29,7 @@ features:
     groups: 2.81.2
     intellisenseMarkdownSupport: 0.1.0
     methodSecurity: 2.82.3
-    nullables: 0.1.1
+    nullables: 0.2.0
     openEnums: 0.1.0
     responseFormat: 0.1.2
     retries: 2.84.2
@@ -68,6 +68,7 @@ generatedFiles:
   - /models/components/createbuildv3params.go
   - /models/components/createdbuildv3withmultiparturls.go
   - /models/components/createdorgtoken.go
+  - /models/components/createfleet.go
   - /models/components/createlobbyparams.go
   - /models/components/createlobbyv3params.go
   - /models/components/createmultipartbuildparams.go
@@ -164,6 +165,7 @@ generatedFiles:
   - /models/operations/createdeployment.go
   - /models/operations/createdeploymentv1deprecated.go
   - /models/operations/createdeploymentv2deprecated.go
+  - /models/operations/createfleet.go
   - /models/operations/createlobby.go
   - /models/operations/createlobbydeprecated.go
   - /models/operations/createlocallobby.go
@@ -315,6 +317,7 @@ generatedFiles:
   - docs/models/components/createdbuildv3withmultiparturls.md
   - docs/models/components/createdby.md
   - docs/models/components/createdorgtoken.md
+  - docs/models/components/createfleet.md
   - docs/models/components/createlobbyparams.md
   - docs/models/components/createlobbyv3params.md
   - docs/models/components/createmultipartbuildparams.md
@@ -449,6 +452,8 @@ generatedFiles:
   - docs/models/operations/createdeploymentv1deprecatedrequest.md
   - docs/models/operations/createdeploymentv2deprecatedglobals.md
   - docs/models/operations/createdeploymentv2deprecatedrequest.md
+  - docs/models/operations/createfleetglobals.md
+  - docs/models/operations/createfleetrequest.md
   - docs/models/operations/createlobbydeprecatedglobals.md
   - docs/models/operations/createlobbydeprecatedrequest.md
   - docs/models/operations/createlobbydeprecatedsecurity.md
@@ -714,6 +719,8 @@ generatedFiles:
   - metricsv1.go
   - models/errors/sdkerror.go
   - models/operations/options.go
+  - optionalnullable/optionalnullable.go
+  - optionalnullable/optionalnullable_test.go
   - organizationsv1.go
   - processesv1.go
   - processesv2.go
@@ -2152,5 +2159,23 @@ examples:
           application/json: {"message": "<value>"}
         "500":
           application/json: {"message": "<value>"}
+  CreateFleet:
+    speakeasy-default-create-fleet:
+      parameters:
+        query:
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"nodeShape": "gpu-l4-1-12-48", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "fleetId": "<id>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Go SDK Changes Detected:
+  * `HathoraCloud.FleetsV1.CreateFleet()`: **Added**
+  * `HathoraCloud.OrganizationsV1.GetOrgs()`:  `response.Orgs.[].DefaultFleetId` **Added**

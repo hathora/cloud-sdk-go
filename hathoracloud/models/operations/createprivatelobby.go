@@ -10,22 +10,22 @@ type CreatePrivateLobbyGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreatePrivateLobbyGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreatePrivateLobbyGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreatePrivateLobbySecurity struct {
 	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *CreatePrivateLobbySecurity) GetPlayerAuth() string {
-	if o == nil {
+func (c *CreatePrivateLobbySecurity) GetPlayerAuth() string {
+	if c == nil {
 		return ""
 	}
-	return o.PlayerAuth
+	return c.PlayerAuth
 }
 
 type CreatePrivateLobbyRequestBody struct {
@@ -34,18 +34,18 @@ type CreatePrivateLobbyRequestBody struct {
 	Region        components.Region `json:"region"`
 }
 
-func (o *CreatePrivateLobbyRequestBody) GetInitialConfig() any {
-	if o == nil {
+func (c *CreatePrivateLobbyRequestBody) GetInitialConfig() any {
+	if c == nil {
 		return nil
 	}
-	return o.InitialConfig
+	return c.InitialConfig
 }
 
-func (o *CreatePrivateLobbyRequestBody) GetRegion() components.Region {
-	if o == nil {
+func (c *CreatePrivateLobbyRequestBody) GetRegion() components.Region {
+	if c == nil {
 		return components.Region("")
 	}
-	return o.Region
+	return c.Region
 }
 
 type CreatePrivateLobbyRequest struct {
@@ -54,23 +54,23 @@ type CreatePrivateLobbyRequest struct {
 	RequestBody CreatePrivateLobbyRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *CreatePrivateLobbyRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreatePrivateLobbyRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreatePrivateLobbyRequest) GetRoomID() *string {
-	if o == nil {
+func (c *CreatePrivateLobbyRequest) GetRoomID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RoomID
+	return c.RoomID
 }
 
-func (o *CreatePrivateLobbyRequest) GetRequestBody() CreatePrivateLobbyRequestBody {
-	if o == nil {
+func (c *CreatePrivateLobbyRequest) GetRequestBody() CreatePrivateLobbyRequestBody {
+	if c == nil {
 		return CreatePrivateLobbyRequestBody{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

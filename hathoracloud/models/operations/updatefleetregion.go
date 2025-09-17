@@ -10,11 +10,11 @@ type UpdateFleetRegionGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *UpdateFleetRegionGlobals) GetOrgID() *string {
-	if o == nil {
+func (u *UpdateFleetRegionGlobals) GetOrgID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.OrgID
+	return u.OrgID
 }
 
 type UpdateFleetRegionRequest struct {
@@ -24,30 +24,30 @@ type UpdateFleetRegionRequest struct {
 	FleetRegionConfig components.FleetRegionConfig `request:"mediaType=application/json"`
 }
 
-func (o *UpdateFleetRegionRequest) GetFleetID() string {
-	if o == nil {
+func (u *UpdateFleetRegionRequest) GetFleetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.FleetID
+	return u.FleetID
 }
 
-func (o *UpdateFleetRegionRequest) GetRegion() components.Region {
-	if o == nil {
+func (u *UpdateFleetRegionRequest) GetRegion() components.Region {
+	if u == nil {
 		return components.Region("")
 	}
-	return o.Region
+	return u.Region
 }
 
-func (o *UpdateFleetRegionRequest) GetOrgID() *string {
-	if o == nil {
+func (u *UpdateFleetRegionRequest) GetOrgID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.OrgID
+	return u.OrgID
 }
 
-func (o *UpdateFleetRegionRequest) GetFleetRegionConfig() components.FleetRegionConfig {
-	if o == nil {
+func (u *UpdateFleetRegionRequest) GetFleetRegionConfig() components.FleetRegionConfig {
+	if u == nil {
 		return components.FleetRegionConfig{}
 	}
-	return o.FleetRegionConfig
+	return u.FleetRegionConfig
 }

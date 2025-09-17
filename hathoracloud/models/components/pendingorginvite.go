@@ -93,37 +93,37 @@ func (p *PendingOrgInvite) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *PendingOrgInvite) GetScopes() PendingOrgInviteScopes {
-	if o == nil {
+func (p *PendingOrgInvite) GetScopes() PendingOrgInviteScopes {
+	if p == nil {
 		return PendingOrgInviteScopes{}
 	}
-	return o.Scopes
+	return p.Scopes
 }
 
-func (o *PendingOrgInvite) GetCreatedAt() time.Time {
-	if o == nil {
+func (p *PendingOrgInvite) GetCreatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *PendingOrgInvite) GetInvitedBy() string {
-	if o == nil {
+func (p *PendingOrgInvite) GetInvitedBy() string {
+	if p == nil {
 		return ""
 	}
-	return o.InvitedBy
+	return p.InvitedBy
 }
 
-func (o *PendingOrgInvite) GetUserEmail() string {
-	if o == nil {
+func (p *PendingOrgInvite) GetUserEmail() string {
+	if p == nil {
 		return ""
 	}
-	return o.UserEmail
+	return p.UserEmail
 }
 
-func (o *PendingOrgInvite) GetOrgID() string {
-	if o == nil {
+func (p *PendingOrgInvite) GetOrgID() string {
+	if p == nil {
 		return ""
 	}
-	return o.OrgID
+	return p.OrgID
 }

@@ -7,9 +7,9 @@ type CreateBuildParams struct {
 	BuildTag *string `json:"buildTag,omitempty"`
 }
 
-func (o *CreateBuildParams) GetBuildTag() *string {
-	if o == nil {
+func (c *CreateBuildParams) GetBuildTag() *string {
+	if c == nil {
 		return nil
 	}
-	return o.BuildTag
+	return c.BuildTag
 }

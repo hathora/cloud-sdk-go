@@ -16,32 +16,32 @@ type ProcessExposedPort struct {
 	Name          string        `json:"name"`
 }
 
-func (o *ProcessExposedPort) GetTransportType() TransportType {
-	if o == nil {
+func (p *ProcessExposedPort) GetTransportType() TransportType {
+	if p == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return p.TransportType
 }
 
-func (o *ProcessExposedPort) GetPort() int {
-	if o == nil {
+func (p *ProcessExposedPort) GetPort() int {
+	if p == nil {
 		return 0
 	}
-	return o.Port
+	return p.Port
 }
 
-func (o *ProcessExposedPort) GetHost() string {
-	if o == nil {
+func (p *ProcessExposedPort) GetHost() string {
+	if p == nil {
 		return ""
 	}
-	return o.Host
+	return p.Host
 }
 
-func (o *ProcessExposedPort) GetName() string {
-	if o == nil {
+func (p *ProcessExposedPort) GetName() string {
+	if p == nil {
 		return ""
 	}
-	return o.Name
+	return p.Name
 }
 
 // Process - A process object represents a runtime instance of your game server and its metadata.
@@ -101,156 +101,156 @@ func (p *Process) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Process) GetEgressedBytes() int {
-	if o == nil {
+func (p *Process) GetEgressedBytes() int {
+	if p == nil {
 		return 0
 	}
-	return o.EgressedBytes
+	return p.EgressedBytes
 }
 
-func (o *Process) GetIdleSince() *time.Time {
-	if o == nil {
+func (p *Process) GetIdleSince() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.IdleSince
+	return p.IdleSince
 }
 
-func (o *Process) GetActiveConnectionsUpdatedAt() time.Time {
-	if o == nil {
+func (p *Process) GetActiveConnectionsUpdatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.ActiveConnectionsUpdatedAt
+	return p.ActiveConnectionsUpdatedAt
 }
 
-func (o *Process) GetActiveConnections() int {
-	if o == nil {
+func (p *Process) GetActiveConnections() int {
+	if p == nil {
 		return 0
 	}
-	return o.ActiveConnections
+	return p.ActiveConnections
 }
 
-func (o *Process) GetRoomsAllocatedUpdatedAt() time.Time {
-	if o == nil {
+func (p *Process) GetRoomsAllocatedUpdatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.RoomsAllocatedUpdatedAt
+	return p.RoomsAllocatedUpdatedAt
 }
 
-func (o *Process) GetRoomsAllocated() int {
-	if o == nil {
+func (p *Process) GetRoomsAllocated() int {
+	if p == nil {
 		return 0
 	}
-	return o.RoomsAllocated
+	return p.RoomsAllocated
 }
 
-func (o *Process) GetRoomSlotsAvailableUpdatedAt() time.Time {
-	if o == nil {
+func (p *Process) GetRoomSlotsAvailableUpdatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.RoomSlotsAvailableUpdatedAt
+	return p.RoomSlotsAvailableUpdatedAt
 }
 
-func (o *Process) GetRoomSlotsAvailable() float64 {
-	if o == nil {
+func (p *Process) GetRoomSlotsAvailable() float64 {
+	if p == nil {
 		return 0.0
 	}
-	return o.RoomSlotsAvailable
+	return p.RoomSlotsAvailable
 }
 
-func (o *Process) GetDraining() bool {
-	if o == nil {
+func (p *Process) GetDraining() bool {
+	if p == nil {
 		return false
 	}
-	return o.Draining
+	return p.Draining
 }
 
-func (o *Process) GetTerminatedAt() *time.Time {
-	if o == nil {
+func (p *Process) GetTerminatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.TerminatedAt
+	return p.TerminatedAt
 }
 
-func (o *Process) GetStoppingAt() *time.Time {
-	if o == nil {
+func (p *Process) GetStoppingAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.StoppingAt
+	return p.StoppingAt
 }
 
-func (o *Process) GetStartedAt() *time.Time {
-	if o == nil {
+func (p *Process) GetStartedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.StartedAt
+	return p.StartedAt
 }
 
-func (o *Process) GetStartingAt() time.Time {
-	if o == nil {
+func (p *Process) GetStartingAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.StartingAt
+	return p.StartingAt
 }
 
-func (o *Process) GetRoomsPerProcess() int {
-	if o == nil {
+func (p *Process) GetRoomsPerProcess() int {
+	if p == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return p.RoomsPerProcess
 }
 
-func (o *Process) GetAdditionalExposedPorts() []ExposedPort {
-	if o == nil {
+func (p *Process) GetAdditionalExposedPorts() []ExposedPort {
+	if p == nil {
 		return []ExposedPort{}
 	}
-	return o.AdditionalExposedPorts
+	return p.AdditionalExposedPorts
 }
 
-func (o *Process) GetExposedPort() *ProcessExposedPort {
-	if o == nil {
+func (p *Process) GetExposedPort() *ProcessExposedPort {
+	if p == nil {
 		return nil
 	}
-	return o.ExposedPort
+	return p.ExposedPort
 }
 
-func (o *Process) GetPort() float64 {
-	if o == nil {
+func (p *Process) GetPort() float64 {
+	if p == nil {
 		return 0.0
 	}
-	return o.Port
+	return p.Port
 }
 
-func (o *Process) GetHost() string {
-	if o == nil {
+func (p *Process) GetHost() string {
+	if p == nil {
 		return ""
 	}
-	return o.Host
+	return p.Host
 }
 
-func (o *Process) GetRegion() Region {
-	if o == nil {
+func (p *Process) GetRegion() Region {
+	if p == nil {
 		return Region("")
 	}
-	return o.Region
+	return p.Region
 }
 
-func (o *Process) GetProcessID() string {
-	if o == nil {
+func (p *Process) GetProcessID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ProcessID
+	return p.ProcessID
 }
 
-func (o *Process) GetDeploymentID() int {
-	if o == nil {
+func (p *Process) GetDeploymentID() int {
+	if p == nil {
 		return 0
 	}
-	return o.DeploymentID
+	return p.DeploymentID
 }
 
-func (o *Process) GetAppID() string {
-	if o == nil {
+func (p *Process) GetAppID() string {
+	if p == nil {
 		return ""
 	}
-	return o.AppID
+	return p.AppID
 }

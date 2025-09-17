@@ -10,11 +10,11 @@ type ListActivePublicLobbiesDeprecatedV2Globals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *ListActivePublicLobbiesDeprecatedV2Globals) GetAppID() *string {
-	if o == nil {
+func (l *ListActivePublicLobbiesDeprecatedV2Globals) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
 type ListActivePublicLobbiesDeprecatedV2Request struct {
@@ -23,16 +23,16 @@ type ListActivePublicLobbiesDeprecatedV2Request struct {
 	Region *components.Region `queryParam:"style=form,explode=true,name=region"`
 }
 
-func (o *ListActivePublicLobbiesDeprecatedV2Request) GetAppID() *string {
-	if o == nil {
+func (l *ListActivePublicLobbiesDeprecatedV2Request) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
-func (o *ListActivePublicLobbiesDeprecatedV2Request) GetRegion() *components.Region {
-	if o == nil {
+func (l *ListActivePublicLobbiesDeprecatedV2Request) GetRegion() *components.Region {
+	if l == nil {
 		return nil
 	}
-	return o.Region
+	return l.Region
 }

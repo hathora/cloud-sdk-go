@@ -28,32 +28,32 @@ func (r *RoomWithoutAllocationsCurrentAllocation) UnmarshalJSON(data []byte) err
 	return nil
 }
 
-func (o *RoomWithoutAllocationsCurrentAllocation) GetUnscheduledAt() *time.Time {
-	if o == nil {
+func (r *RoomWithoutAllocationsCurrentAllocation) GetUnscheduledAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.UnscheduledAt
+	return r.UnscheduledAt
 }
 
-func (o *RoomWithoutAllocationsCurrentAllocation) GetScheduledAt() time.Time {
-	if o == nil {
+func (r *RoomWithoutAllocationsCurrentAllocation) GetScheduledAt() time.Time {
+	if r == nil {
 		return time.Time{}
 	}
-	return o.ScheduledAt
+	return r.ScheduledAt
 }
 
-func (o *RoomWithoutAllocationsCurrentAllocation) GetProcessID() string {
-	if o == nil {
+func (r *RoomWithoutAllocationsCurrentAllocation) GetProcessID() string {
+	if r == nil {
 		return ""
 	}
-	return o.ProcessID
+	return r.ProcessID
 }
 
-func (o *RoomWithoutAllocationsCurrentAllocation) GetRoomAllocationID() string {
-	if o == nil {
+func (r *RoomWithoutAllocationsCurrentAllocation) GetRoomAllocationID() string {
+	if r == nil {
 		return ""
 	}
-	return o.RoomAllocationID
+	return r.RoomAllocationID
 }
 
 type RoomWithoutAllocations struct {
@@ -74,37 +74,37 @@ type RoomWithoutAllocations struct {
 	AppID string `json:"appId"`
 }
 
-func (o *RoomWithoutAllocations) GetCurrentAllocation() *RoomWithoutAllocationsCurrentAllocation {
-	if o == nil {
+func (r *RoomWithoutAllocations) GetCurrentAllocation() *RoomWithoutAllocationsCurrentAllocation {
+	if r == nil {
 		return nil
 	}
-	return o.CurrentAllocation
+	return r.CurrentAllocation
 }
 
-func (o *RoomWithoutAllocations) GetStatus() RoomStatus {
-	if o == nil {
+func (r *RoomWithoutAllocations) GetStatus() RoomStatus {
+	if r == nil {
 		return RoomStatus("")
 	}
-	return o.Status
+	return r.Status
 }
 
-func (o *RoomWithoutAllocations) GetRoomConfig() *string {
-	if o == nil {
+func (r *RoomWithoutAllocations) GetRoomConfig() *string {
+	if r == nil {
 		return nil
 	}
-	return o.RoomConfig
+	return r.RoomConfig
 }
 
-func (o *RoomWithoutAllocations) GetRoomID() string {
-	if o == nil {
+func (r *RoomWithoutAllocations) GetRoomID() string {
+	if r == nil {
 		return ""
 	}
-	return o.RoomID
+	return r.RoomID
 }
 
-func (o *RoomWithoutAllocations) GetAppID() string {
-	if o == nil {
+func (r *RoomWithoutAllocations) GetAppID() string {
+	if r == nil {
 		return ""
 	}
-	return o.AppID
+	return r.AppID
 }

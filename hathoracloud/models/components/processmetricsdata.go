@@ -10,37 +10,37 @@ type ProcessMetricsData struct {
 	CPU               []MetricValue `json:"cpu,omitempty"`
 }
 
-func (o *ProcessMetricsData) GetActiveConnections() []MetricValue {
-	if o == nil {
+func (p *ProcessMetricsData) GetActiveConnections() []MetricValue {
+	if p == nil {
 		return nil
 	}
-	return o.ActiveConnections
+	return p.ActiveConnections
 }
 
-func (o *ProcessMetricsData) GetTotalEgress() []MetricValue {
-	if o == nil {
+func (p *ProcessMetricsData) GetTotalEgress() []MetricValue {
+	if p == nil {
 		return nil
 	}
-	return o.TotalEgress
+	return p.TotalEgress
 }
 
-func (o *ProcessMetricsData) GetRateEgress() []MetricValue {
-	if o == nil {
+func (p *ProcessMetricsData) GetRateEgress() []MetricValue {
+	if p == nil {
 		return nil
 	}
-	return o.RateEgress
+	return p.RateEgress
 }
 
-func (o *ProcessMetricsData) GetMemory() []MetricValue {
-	if o == nil {
+func (p *ProcessMetricsData) GetMemory() []MetricValue {
+	if p == nil {
 		return nil
 	}
-	return o.Memory
+	return p.Memory
 }
 
-func (o *ProcessMetricsData) GetCPU() []MetricValue {
-	if o == nil {
+func (p *ProcessMetricsData) GetCPU() []MetricValue {
+	if p == nil {
 		return nil
 	}
-	return o.CPU
+	return p.CPU
 }

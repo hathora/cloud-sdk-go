@@ -28,51 +28,51 @@ func (i *Invoice) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Invoice) GetStatus() InvoiceStatus {
-	if o == nil {
+func (i *Invoice) GetStatus() InvoiceStatus {
+	if i == nil {
 		return InvoiceStatus("")
 	}
-	return o.Status
+	return i.Status
 }
 
-func (o *Invoice) GetAmountDue() float64 {
-	if o == nil {
+func (i *Invoice) GetAmountDue() float64 {
+	if i == nil {
 		return 0.0
 	}
-	return o.AmountDue
+	return i.AmountDue
 }
 
-func (o *Invoice) GetPdfURL() string {
-	if o == nil {
+func (i *Invoice) GetPdfURL() string {
+	if i == nil {
 		return ""
 	}
-	return o.PdfURL
+	return i.PdfURL
 }
 
-func (o *Invoice) GetDueDate() time.Time {
-	if o == nil {
+func (i *Invoice) GetDueDate() time.Time {
+	if i == nil {
 		return time.Time{}
 	}
-	return o.DueDate
+	return i.DueDate
 }
 
-func (o *Invoice) GetYear() float64 {
-	if o == nil {
+func (i *Invoice) GetYear() float64 {
+	if i == nil {
 		return 0.0
 	}
-	return o.Year
+	return i.Year
 }
 
-func (o *Invoice) GetMonth() float64 {
-	if o == nil {
+func (i *Invoice) GetMonth() float64 {
+	if i == nil {
 		return 0.0
 	}
-	return o.Month
+	return i.Month
 }
 
-func (o *Invoice) GetID() string {
-	if o == nil {
+func (i *Invoice) GetID() string {
+	if i == nil {
 		return ""
 	}
-	return o.ID
+	return i.ID
 }

@@ -10,11 +10,11 @@ type GetProcessesCountExperimentalV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetProcessesCountExperimentalV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetProcessesCountExperimentalV2DeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetProcessesCountExperimentalV2DeprecatedRequest struct {
@@ -23,25 +23,25 @@ type GetProcessesCountExperimentalV2DeprecatedRequest struct {
 	Region []components.Region        `queryParam:"style=form,explode=true,name=region"`
 }
 
-func (o *GetProcessesCountExperimentalV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetProcessesCountExperimentalV2DeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetProcessesCountExperimentalV2DeprecatedRequest) GetStatus() []components.ProcessStatus {
-	if o == nil {
+func (g *GetProcessesCountExperimentalV2DeprecatedRequest) GetStatus() []components.ProcessStatus {
+	if g == nil {
 		return nil
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetProcessesCountExperimentalV2DeprecatedRequest) GetRegion() []components.Region {
-	if o == nil {
+func (g *GetProcessesCountExperimentalV2DeprecatedRequest) GetRegion() []components.Region {
+	if g == nil {
 		return nil
 	}
-	return o.Region
+	return g.Region
 }
 
 // GetProcessesCountExperimentalV2DeprecatedResponseBody - Ok
@@ -49,9 +49,9 @@ type GetProcessesCountExperimentalV2DeprecatedResponseBody struct {
 	Count float64 `json:"count"`
 }
 
-func (o *GetProcessesCountExperimentalV2DeprecatedResponseBody) GetCount() float64 {
-	if o == nil {
+func (g *GetProcessesCountExperimentalV2DeprecatedResponseBody) GetCount() float64 {
+	if g == nil {
 		return 0.0
 	}
-	return o.Count
+	return g.Count
 }

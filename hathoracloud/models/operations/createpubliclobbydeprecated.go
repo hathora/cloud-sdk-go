@@ -11,22 +11,22 @@ type CreatePublicLobbyDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreatePublicLobbyDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreatePublicLobbyDeprecatedGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreatePublicLobbyDeprecatedSecurity struct {
 	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *CreatePublicLobbyDeprecatedSecurity) GetPlayerAuth() string {
-	if o == nil {
+func (c *CreatePublicLobbyDeprecatedSecurity) GetPlayerAuth() string {
+	if c == nil {
 		return ""
 	}
-	return o.PlayerAuth
+	return c.PlayerAuth
 }
 
 type CreatePublicLobbyDeprecatedRequest struct {
@@ -46,23 +46,23 @@ func (c *CreatePublicLobbyDeprecatedRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreatePublicLobbyDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreatePublicLobbyDeprecatedRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreatePublicLobbyDeprecatedRequest) GetRegion() *components.Region {
-	if o == nil {
+func (c *CreatePublicLobbyDeprecatedRequest) GetRegion() *components.Region {
+	if c == nil {
 		return nil
 	}
-	return o.Region
+	return c.Region
 }
 
-func (o *CreatePublicLobbyDeprecatedRequest) GetLocal() *bool {
-	if o == nil {
+func (c *CreatePublicLobbyDeprecatedRequest) GetLocal() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Local
+	return c.Local
 }

@@ -10,11 +10,11 @@ type CreateRoomDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateRoomDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateRoomDeprecatedGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateRoomDeprecatedRequest struct {
@@ -23,23 +23,23 @@ type CreateRoomDeprecatedRequest struct {
 	CreateRoomParams components.CreateRoomParams `request:"mediaType=application/json"`
 }
 
-func (o *CreateRoomDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateRoomDeprecatedRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateRoomDeprecatedRequest) GetRoomID() *string {
-	if o == nil {
+func (c *CreateRoomDeprecatedRequest) GetRoomID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RoomID
+	return c.RoomID
 }
 
-func (o *CreateRoomDeprecatedRequest) GetCreateRoomParams() components.CreateRoomParams {
-	if o == nil {
+func (c *CreateRoomDeprecatedRequest) GetCreateRoomParams() components.CreateRoomParams {
+	if c == nil {
 		return components.CreateRoomParams{}
 	}
-	return o.CreateRoomParams
+	return c.CreateRoomParams
 }

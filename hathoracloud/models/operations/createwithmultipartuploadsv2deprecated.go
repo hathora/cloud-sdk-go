@@ -10,11 +10,11 @@ type CreateWithMultipartUploadsV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateWithMultipartUploadsV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateWithMultipartUploadsV2DeprecatedGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateWithMultipartUploadsV2DeprecatedRequest struct {
@@ -22,16 +22,16 @@ type CreateWithMultipartUploadsV2DeprecatedRequest struct {
 	CreateMultipartBuildParams components.CreateMultipartBuildParams `request:"mediaType=application/json"`
 }
 
-func (o *CreateWithMultipartUploadsV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateWithMultipartUploadsV2DeprecatedRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateWithMultipartUploadsV2DeprecatedRequest) GetCreateMultipartBuildParams() components.CreateMultipartBuildParams {
-	if o == nil {
+func (c *CreateWithMultipartUploadsV2DeprecatedRequest) GetCreateMultipartBuildParams() components.CreateMultipartBuildParams {
+	if c == nil {
 		return components.CreateMultipartBuildParams{}
 	}
-	return o.CreateMultipartBuildParams
+	return c.CreateMultipartBuildParams
 }

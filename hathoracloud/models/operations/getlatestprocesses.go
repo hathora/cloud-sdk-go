@@ -10,11 +10,11 @@ type GetLatestProcessesGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetLatestProcessesGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetLatestProcessesGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetLatestProcessesRequest struct {
@@ -24,30 +24,30 @@ type GetLatestProcessesRequest struct {
 	Before *float64                   `queryParam:"style=form,explode=true,name=before"`
 }
 
-func (o *GetLatestProcessesRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetLatestProcessesRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetLatestProcessesRequest) GetStatus() []components.ProcessStatus {
-	if o == nil {
+func (g *GetLatestProcessesRequest) GetStatus() []components.ProcessStatus {
+	if g == nil {
 		return nil
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetLatestProcessesRequest) GetRegion() []components.Region {
-	if o == nil {
+func (g *GetLatestProcessesRequest) GetRegion() []components.Region {
+	if g == nil {
 		return nil
 	}
-	return o.Region
+	return g.Region
 }
 
-func (o *GetLatestProcessesRequest) GetBefore() *float64 {
-	if o == nil {
+func (g *GetLatestProcessesRequest) GetBefore() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.Before
+	return g.Before
 }

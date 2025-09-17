@@ -6,22 +6,22 @@ type GetUpcomingInvoiceTotalGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetUpcomingInvoiceTotalGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetUpcomingInvoiceTotalGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetUpcomingInvoiceTotalRequest struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetUpcomingInvoiceTotalRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetUpcomingInvoiceTotalRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 // GetUpcomingInvoiceTotalResponseBody - Ok
@@ -29,9 +29,9 @@ type GetUpcomingInvoiceTotalResponseBody struct {
 	Value float64 `json:"value"`
 }
 
-func (o *GetUpcomingInvoiceTotalResponseBody) GetValue() float64 {
-	if o == nil {
+func (g *GetUpcomingInvoiceTotalResponseBody) GetValue() float64 {
+	if g == nil {
 		return 0.0
 	}
-	return o.Value
+	return g.Value
 }

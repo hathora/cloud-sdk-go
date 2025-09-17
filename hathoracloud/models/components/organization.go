@@ -20,13 +20,15 @@ type Organization struct {
 	// The maximum number of concurrent processes that can be run by the organization
 	// If undefined, the organization has no limit.
 	ConcurrentProcessVcpusLimit *float64 `json:"concurrentProcessVcpusLimit,omitempty"`
-	// The features enabled for this org and user.
+	// The features enabled for this organization and user.
 	EnabledFeatureFlags []string `json:"enabledFeatureFlags,omitempty"`
-	// The maximum memory in MB that can be used by any process in this org.
+	// The maximum memory in MB that can be used by any process in this organization.
 	MaxRequestedMemoryMB float64 `json:"maxRequestedMemoryMB"`
-	// The scopes the user who loaded this has on this org.
-	Scopes           []Scope `json:"scopes"`
-	IsSingleTenant   bool    `json:"isSingleTenant"`
+	// The scopes the user who loaded this has on this organization.
+	Scopes         []Scope `json:"scopes"`
+	IsSingleTenant bool    `json:"isSingleTenant"`
+	// The default fleet ID for this organization.
+	DefaultFleetID   *string `json:"defaultFleetId,omitempty"`
 	StripeCustomerID string  `json:"stripeCustomerId"`
 	// The name of an organization.
 	Name *string `json:"name,omitempty"`
@@ -102,6 +104,13 @@ func (o *Organization) GetIsSingleTenant() bool {
 		return false
 	}
 	return o.IsSingleTenant
+}
+
+func (o *Organization) GetDefaultFleetID() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DefaultFleetID
 }
 
 func (o *Organization) GetStripeCustomerID() string {

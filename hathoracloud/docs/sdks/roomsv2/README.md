@@ -41,13 +41,13 @@ func main() {
     )
 
     res, err := s.RoomsV2.CreateRoom(ctx, components.CreateRoomParams{
-        DeploymentID: hathoracloud.String("dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
+        DeploymentID: hathoracloud.Pointer("dep-6d4c6a71-2d75-4b42-94e1-f312f57f33c5"),
         ClientIPs: []string{
             "123.123.123.123",
         },
-        RoomConfig: hathoracloud.String("{\"name\":\"my-room\"}"),
+        RoomConfig: hathoracloud.Pointer("{\"name\":\"my-room\"}"),
         Region: components.RegionDallas,
-    }, hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.Pointer("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }

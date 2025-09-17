@@ -18,25 +18,25 @@ type ApplicationWithLatestDeploymentAndBuildServiceConfig struct {
 	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetProcessAutoscalerConfig() *ProcessAutoscalerConfig {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetProcessAutoscalerConfig() *ProcessAutoscalerConfig {
+	if a == nil {
 		return nil
 	}
-	return o.ProcessAutoscalerConfig
+	return a.ProcessAutoscalerConfig
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
+	if a == nil {
 		return nil
 	}
-	return o.LoadBalancer
+	return a.LoadBalancer
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {
+	if a == nil {
 		return []StaticProcessAllocationConfig{}
 	}
-	return o.StaticProcessAllocation
+	return a.StaticProcessAllocation
 }
 
 type ApplicationWithLatestDeploymentAndBuildEnv struct {
@@ -44,18 +44,18 @@ type ApplicationWithLatestDeploymentAndBuildEnv struct {
 	Name  string `json:"name"`
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildEnv) GetValue() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildEnv) GetValue() string {
+	if a == nil {
 		return ""
 	}
-	return o.Value
+	return a.Value
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildEnv) GetName() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildEnv) GetName() string {
+	if a == nil {
 		return ""
 	}
-	return o.Name
+	return a.Name
 }
 
 type ApplicationWithLatestDeploymentAndBuildDeployment struct {
@@ -112,130 +112,130 @@ func (a *ApplicationWithLatestDeploymentAndBuildDeployment) UnmarshalJSON(data [
 	return nil
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetFleetID() *string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetFleetID() *string {
+	if a == nil {
 		return nil
 	}
-	return o.FleetID
+	return a.FleetID
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetDeploymentTag() *string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetDeploymentTag() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DeploymentTag
+	return a.DeploymentTag
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetIdleTimeoutEnabled() bool {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetIdleTimeoutEnabled() bool {
+	if a == nil {
 		return false
 	}
-	return o.IdleTimeoutEnabled
+	return a.IdleTimeoutEnabled
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetEnv() []ApplicationWithLatestDeploymentAndBuildEnv {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetEnv() []ApplicationWithLatestDeploymentAndBuildEnv {
+	if a == nil {
 		return []ApplicationWithLatestDeploymentAndBuildEnv{}
 	}
-	return o.Env
+	return a.Env
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetRoomsPerProcess() int {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetRoomsPerProcess() int {
+	if a == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return a.RoomsPerProcess
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetAdditionalContainerPorts() []ContainerPort {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetAdditionalContainerPorts() []ContainerPort {
+	if a == nil {
 		return []ContainerPort{}
 	}
-	return o.AdditionalContainerPorts
+	return a.AdditionalContainerPorts
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetDefaultContainerPort() ContainerPort {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetDefaultContainerPort() ContainerPort {
+	if a == nil {
 		return ContainerPort{}
 	}
-	return o.DefaultContainerPort
+	return a.DefaultContainerPort
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetCreatedAt() time.Time {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetCreatedAt() time.Time {
+	if a == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetCreatedBy() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetCreatedBy() string {
+	if a == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetRequestedGPU() *float64 {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetRequestedGPU() *float64 {
+	if a == nil {
 		return nil
 	}
-	return o.RequestedGPU
+	return a.RequestedGPU
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetExperimentalRequestedGPU() *float64 {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetExperimentalRequestedGPU() *float64 {
+	if a == nil {
 		return nil
 	}
-	return o.ExperimentalRequestedGPU
+	return a.ExperimentalRequestedGPU
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetRequestedMemoryMB() float64 {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetRequestedMemoryMB() float64 {
+	if a == nil {
 		return 0.0
 	}
-	return o.RequestedMemoryMB
+	return a.RequestedMemoryMB
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetRequestedCPU() float64 {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetRequestedCPU() float64 {
+	if a == nil {
 		return 0.0
 	}
-	return o.RequestedCPU
+	return a.RequestedCPU
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetDeploymentID() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetDeploymentID() string {
+	if a == nil {
 		return ""
 	}
-	return o.DeploymentID
+	return a.DeploymentID
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetBuildTag() *string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetBuildTag() *string {
+	if a == nil {
 		return nil
 	}
-	return o.BuildTag
+	return a.BuildTag
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetBuildID() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetBuildID() string {
+	if a == nil {
 		return ""
 	}
-	return o.BuildID
+	return a.BuildID
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetAppID() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetAppID() string {
+	if a == nil {
 		return ""
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuildDeployment) GetBuild() BuildV3 {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuildDeployment) GetBuild() BuildV3 {
+	if a == nil {
 		return BuildV3{}
 	}
-	return o.Build
+	return a.Build
 }
 
 // ApplicationWithLatestDeploymentAndBuild - An application object is the top level namespace for the game server.
@@ -272,79 +272,79 @@ func (a *ApplicationWithLatestDeploymentAndBuild) UnmarshalJSON(data []byte) err
 	return nil
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetDeletedBy() *string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetDeletedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DeletedBy
+	return a.DeletedBy
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetDeletedAt() *time.Time {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetDeletedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return a.DeletedAt
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetCreatedAt() time.Time {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetCreatedAt() time.Time {
+	if a == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetCreatedBy() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetCreatedBy() string {
+	if a == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetOrgID() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetOrgID() string {
+	if a == nil {
 		return ""
 	}
-	return o.OrgID
+	return a.OrgID
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetServiceConfig() *ApplicationWithLatestDeploymentAndBuildServiceConfig {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetServiceConfig() *ApplicationWithLatestDeploymentAndBuildServiceConfig {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceConfig
+	return a.ServiceConfig
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetAuthConfiguration() AuthConfiguration {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetAuthConfiguration() AuthConfiguration {
+	if a == nil {
 		return AuthConfiguration{}
 	}
-	return o.AuthConfiguration
+	return a.AuthConfiguration
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetAppSecret() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetAppSecret() string {
+	if a == nil {
 		return ""
 	}
-	return o.AppSecret
+	return a.AppSecret
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetAppID() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetAppID() string {
+	if a == nil {
 		return ""
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetAppName() string {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetAppName() string {
+	if a == nil {
 		return ""
 	}
-	return o.AppName
+	return a.AppName
 }
 
-func (o *ApplicationWithLatestDeploymentAndBuild) GetDeployment() *ApplicationWithLatestDeploymentAndBuildDeployment {
-	if o == nil {
+func (a *ApplicationWithLatestDeploymentAndBuild) GetDeployment() *ApplicationWithLatestDeploymentAndBuildDeployment {
+	if a == nil {
 		return nil
 	}
-	return o.Deployment
+	return a.Deployment
 }

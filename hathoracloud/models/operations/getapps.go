@@ -6,20 +6,20 @@ type GetAppsGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetAppsGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetAppsGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetAppsRequest struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetAppsRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetAppsRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

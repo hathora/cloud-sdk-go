@@ -7,9 +7,9 @@ type RescindUserInvite struct {
 	UserEmail string `json:"userEmail"`
 }
 
-func (o *RescindUserInvite) GetUserEmail() string {
-	if o == nil {
+func (r *RescindUserInvite) GetUserEmail() string {
+	if r == nil {
 		return ""
 	}
-	return o.UserEmail
+	return r.UserEmail
 }

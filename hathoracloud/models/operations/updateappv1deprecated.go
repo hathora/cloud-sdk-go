@@ -10,11 +10,11 @@ type UpdateAppV1DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *UpdateAppV1DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (u *UpdateAppV1DeprecatedGlobals) GetAppID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AppID
+	return u.AppID
 }
 
 type UpdateAppV1DeprecatedRequest struct {
@@ -22,16 +22,16 @@ type UpdateAppV1DeprecatedRequest struct {
 	CreateAppConfig components.CreateAppConfig `request:"mediaType=application/json"`
 }
 
-func (o *UpdateAppV1DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (u *UpdateAppV1DeprecatedRequest) GetAppID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AppID
+	return u.AppID
 }
 
-func (o *UpdateAppV1DeprecatedRequest) GetCreateAppConfig() components.CreateAppConfig {
-	if o == nil {
+func (u *UpdateAppV1DeprecatedRequest) GetCreateAppConfig() components.CreateAppConfig {
+	if u == nil {
 		return components.CreateAppConfig{}
 	}
-	return o.CreateAppConfig
+	return u.CreateAppConfig
 }

@@ -10,11 +10,11 @@ type UpdateRoomConfigGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *UpdateRoomConfigGlobals) GetAppID() *string {
-	if o == nil {
+func (u *UpdateRoomConfigGlobals) GetAppID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AppID
+	return u.AppID
 }
 
 type UpdateRoomConfigRequest struct {
@@ -23,23 +23,23 @@ type UpdateRoomConfigRequest struct {
 	UpdateRoomConfigParams components.UpdateRoomConfigParams `request:"mediaType=application/json"`
 }
 
-func (o *UpdateRoomConfigRequest) GetAppID() *string {
-	if o == nil {
+func (u *UpdateRoomConfigRequest) GetAppID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AppID
+	return u.AppID
 }
 
-func (o *UpdateRoomConfigRequest) GetRoomID() string {
-	if o == nil {
+func (u *UpdateRoomConfigRequest) GetRoomID() string {
+	if u == nil {
 		return ""
 	}
-	return o.RoomID
+	return u.RoomID
 }
 
-func (o *UpdateRoomConfigRequest) GetUpdateRoomConfigParams() components.UpdateRoomConfigParams {
-	if o == nil {
+func (u *UpdateRoomConfigRequest) GetUpdateRoomConfigParams() components.UpdateRoomConfigParams {
+	if u == nil {
 		return components.UpdateRoomConfigParams{}
 	}
-	return o.UpdateRoomConfigParams
+	return u.UpdateRoomConfigParams
 }

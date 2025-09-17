@@ -45,7 +45,7 @@ func main() {
     }, operations.CreatePrivateLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionFrankfurt,
-    }, hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.Pointer("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -110,7 +110,7 @@ func main() {
     }, operations.CreatePublicLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionTokyo,
-    }, hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.Pointer("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -175,7 +175,7 @@ func main() {
     }, operations.CreateLocalLobbyRequestBody{
         InitialConfig: "<value>",
         Region: components.RegionJohannesburg,
-    }, hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.Pointer("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }
@@ -241,7 +241,7 @@ func main() {
         Visibility: components.LobbyVisibilityPrivate,
         InitialConfig: "<value>",
         Region: components.RegionFrankfurt,
-    }, hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.Pointer("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }

@@ -6,9 +6,9 @@ type DeploymentsV3Page struct {
 	Deployments []DeploymentV3 `json:"deployments"`
 }
 
-func (o *DeploymentsV3Page) GetDeployments() []DeploymentV3 {
-	if o == nil {
+func (d *DeploymentsV3Page) GetDeployments() []DeploymentV3 {
+	if d == nil {
 		return []DeploymentV3{}
 	}
-	return o.Deployments
+	return d.Deployments
 }

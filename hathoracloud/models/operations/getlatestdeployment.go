@@ -6,20 +6,20 @@ type GetLatestDeploymentGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetLatestDeploymentGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetLatestDeploymentGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetLatestDeploymentRequest struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetLatestDeploymentRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetLatestDeploymentRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }

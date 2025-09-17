@@ -34,16 +34,16 @@ func (s *StartingConnectionInfo) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *StartingConnectionInfo) GetStatus() Status {
-	if o == nil {
+func (s *StartingConnectionInfo) GetStatus() Status {
+	if s == nil {
 		return Status("")
 	}
-	return o.Status
+	return s.Status
 }
 
-func (o *StartingConnectionInfo) GetRoomID() string {
-	if o == nil {
+func (s *StartingConnectionInfo) GetRoomID() string {
+	if s == nil {
 		return ""
 	}
-	return o.RoomID
+	return s.RoomID
 }

@@ -7,16 +7,16 @@ type MetricValue struct {
 	Timestamp float64 `json:"timestamp"`
 }
 
-func (o *MetricValue) GetValue() float64 {
-	if o == nil {
+func (m *MetricValue) GetValue() float64 {
+	if m == nil {
 		return 0.0
 	}
-	return o.Value
+	return m.Value
 }
 
-func (o *MetricValue) GetTimestamp() float64 {
-	if o == nil {
+func (m *MetricValue) GetTimestamp() float64 {
+	if m == nil {
 		return 0.0
 	}
-	return o.Timestamp
+	return m.Timestamp
 }

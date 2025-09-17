@@ -6,9 +6,9 @@ type RejectInviteRequest struct {
 	OrgID string `pathParam:"style=simple,explode=false,name=orgId"`
 }
 
-func (o *RejectInviteRequest) GetOrgID() string {
-	if o == nil {
+func (r *RejectInviteRequest) GetOrgID() string {
+	if r == nil {
 		return ""
 	}
-	return o.OrgID
+	return r.OrgID
 }

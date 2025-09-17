@@ -6,9 +6,9 @@ type PendingOrgInvitesPage struct {
 	Invites []PendingOrgInvite `json:"invites"`
 }
 
-func (o *PendingOrgInvitesPage) GetInvites() []PendingOrgInvite {
-	if o == nil {
+func (p *PendingOrgInvitesPage) GetInvites() []PendingOrgInvite {
+	if p == nil {
 		return []PendingOrgInvite{}
 	}
-	return o.Invites
+	return p.Invites
 }

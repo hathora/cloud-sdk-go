@@ -11,23 +11,23 @@ type ServiceConfigWrite struct {
 	StaticProcessAllocation []StaticProcessAllocationConfigWrite `json:"staticProcessAllocation"`
 }
 
-func (o *ServiceConfigWrite) GetProcessAutoscalerConfig() *ProcessAutoscalerConfig {
-	if o == nil {
+func (s *ServiceConfigWrite) GetProcessAutoscalerConfig() *ProcessAutoscalerConfig {
+	if s == nil {
 		return nil
 	}
-	return o.ProcessAutoscalerConfig
+	return s.ProcessAutoscalerConfig
 }
 
-func (o *ServiceConfigWrite) GetLoadBalancer() *LoadBalancerConfig {
-	if o == nil {
+func (s *ServiceConfigWrite) GetLoadBalancer() *LoadBalancerConfig {
+	if s == nil {
 		return nil
 	}
-	return o.LoadBalancer
+	return s.LoadBalancer
 }
 
-func (o *ServiceConfigWrite) GetStaticProcessAllocation() []StaticProcessAllocationConfigWrite {
-	if o == nil {
+func (s *ServiceConfigWrite) GetStaticProcessAllocation() []StaticProcessAllocationConfigWrite {
+	if s == nil {
 		return []StaticProcessAllocationConfigWrite{}
 	}
-	return o.StaticProcessAllocation
+	return s.StaticProcessAllocation
 }

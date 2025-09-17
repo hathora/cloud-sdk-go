@@ -7,16 +7,16 @@ type BuildPart struct {
 	PartNumber    float64 `json:"partNumber"`
 }
 
-func (o *BuildPart) GetPutRequestURL() string {
-	if o == nil {
+func (b *BuildPart) GetPutRequestURL() string {
+	if b == nil {
 		return ""
 	}
-	return o.PutRequestURL
+	return b.PutRequestURL
 }
 
-func (o *BuildPart) GetPartNumber() float64 {
-	if o == nil {
+func (b *BuildPart) GetPartNumber() float64 {
+	if b == nil {
 		return 0.0
 	}
-	return o.PartNumber
+	return b.PartNumber
 }

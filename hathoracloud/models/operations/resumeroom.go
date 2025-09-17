@@ -6,11 +6,11 @@ type ResumeRoomGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *ResumeRoomGlobals) GetAppID() *string {
-	if o == nil {
+func (r *ResumeRoomGlobals) GetAppID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.AppID
+	return r.AppID
 }
 
 type ResumeRoomRequest struct {
@@ -18,16 +18,16 @@ type ResumeRoomRequest struct {
 	RoomID string  `pathParam:"style=simple,explode=false,name=roomId"`
 }
 
-func (o *ResumeRoomRequest) GetAppID() *string {
-	if o == nil {
+func (r *ResumeRoomRequest) GetAppID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.AppID
+	return r.AppID
 }
 
-func (o *ResumeRoomRequest) GetRoomID() string {
-	if o == nil {
+func (r *ResumeRoomRequest) GetRoomID() string {
+	if r == nil {
 		return ""
 	}
-	return o.RoomID
+	return r.RoomID
 }

@@ -9,9 +9,9 @@ type AutoscalerConfig struct {
 	ScaleUpThreshold int `json:"scaleUpThreshold"`
 }
 
-func (o *AutoscalerConfig) GetScaleUpThreshold() int {
-	if o == nil {
+func (a *AutoscalerConfig) GetScaleUpThreshold() int {
+	if a == nil {
 		return 0
 	}
-	return o.ScaleUpThreshold
+	return a.ScaleUpThreshold
 }

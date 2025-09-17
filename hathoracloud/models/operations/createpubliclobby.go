@@ -10,22 +10,22 @@ type CreatePublicLobbyGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreatePublicLobbyGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreatePublicLobbyGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreatePublicLobbySecurity struct {
 	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *CreatePublicLobbySecurity) GetPlayerAuth() string {
-	if o == nil {
+func (c *CreatePublicLobbySecurity) GetPlayerAuth() string {
+	if c == nil {
 		return ""
 	}
-	return o.PlayerAuth
+	return c.PlayerAuth
 }
 
 type CreatePublicLobbyRequestBody struct {
@@ -34,18 +34,18 @@ type CreatePublicLobbyRequestBody struct {
 	Region        components.Region `json:"region"`
 }
 
-func (o *CreatePublicLobbyRequestBody) GetInitialConfig() any {
-	if o == nil {
+func (c *CreatePublicLobbyRequestBody) GetInitialConfig() any {
+	if c == nil {
 		return nil
 	}
-	return o.InitialConfig
+	return c.InitialConfig
 }
 
-func (o *CreatePublicLobbyRequestBody) GetRegion() components.Region {
-	if o == nil {
+func (c *CreatePublicLobbyRequestBody) GetRegion() components.Region {
+	if c == nil {
 		return components.Region("")
 	}
-	return o.Region
+	return c.Region
 }
 
 type CreatePublicLobbyRequest struct {
@@ -54,23 +54,23 @@ type CreatePublicLobbyRequest struct {
 	RequestBody CreatePublicLobbyRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *CreatePublicLobbyRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreatePublicLobbyRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreatePublicLobbyRequest) GetRoomID() *string {
-	if o == nil {
+func (c *CreatePublicLobbyRequest) GetRoomID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RoomID
+	return c.RoomID
 }
 
-func (o *CreatePublicLobbyRequest) GetRequestBody() CreatePublicLobbyRequestBody {
-	if o == nil {
+func (c *CreatePublicLobbyRequest) GetRequestBody() CreatePublicLobbyRequestBody {
+	if c == nil {
 		return CreatePublicLobbyRequestBody{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

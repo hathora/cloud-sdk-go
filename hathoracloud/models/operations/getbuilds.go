@@ -6,20 +6,20 @@ type GetBuildsGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetBuildsGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetBuildsGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetBuildsRequest struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetBuildsRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetBuildsRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

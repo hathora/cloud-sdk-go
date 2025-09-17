@@ -11,11 +11,11 @@ type ListActivePublicLobbiesDeprecatedV1Globals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *ListActivePublicLobbiesDeprecatedV1Globals) GetAppID() *string {
-	if o == nil {
+func (l *ListActivePublicLobbiesDeprecatedV1Globals) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
 type ListActivePublicLobbiesDeprecatedV1Request struct {
@@ -35,23 +35,23 @@ func (l *ListActivePublicLobbiesDeprecatedV1Request) UnmarshalJSON(data []byte) 
 	return nil
 }
 
-func (o *ListActivePublicLobbiesDeprecatedV1Request) GetAppID() *string {
-	if o == nil {
+func (l *ListActivePublicLobbiesDeprecatedV1Request) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
-func (o *ListActivePublicLobbiesDeprecatedV1Request) GetLocal() *bool {
-	if o == nil {
+func (l *ListActivePublicLobbiesDeprecatedV1Request) GetLocal() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Local
+	return l.Local
 }
 
-func (o *ListActivePublicLobbiesDeprecatedV1Request) GetRegion() *components.Region {
-	if o == nil {
+func (l *ListActivePublicLobbiesDeprecatedV1Request) GetRegion() *components.Region {
+	if l == nil {
 		return nil
 	}
-	return o.Region
+	return l.Region
 }

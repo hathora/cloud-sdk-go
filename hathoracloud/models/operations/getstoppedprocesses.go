@@ -10,11 +10,11 @@ type GetStoppedProcessesGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetStoppedProcessesGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetStoppedProcessesGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetStoppedProcessesRequest struct {
@@ -22,16 +22,16 @@ type GetStoppedProcessesRequest struct {
 	Region *components.Region `queryParam:"style=form,explode=true,name=region"`
 }
 
-func (o *GetStoppedProcessesRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetStoppedProcessesRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetStoppedProcessesRequest) GetRegion() *components.Region {
-	if o == nil {
+func (g *GetStoppedProcessesRequest) GetRegion() *components.Region {
+	if g == nil {
 		return nil
 	}
-	return o.Region
+	return g.Region
 }

@@ -6,20 +6,20 @@ type DeleteAppV1DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *DeleteAppV1DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (d *DeleteAppV1DeprecatedGlobals) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }
 
 type DeleteAppV1DeprecatedRequest struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *DeleteAppV1DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (d *DeleteAppV1DeprecatedRequest) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }

@@ -6,9 +6,9 @@ type BuildsV3Page struct {
 	Builds []BuildV3 `json:"builds"`
 }
 
-func (o *BuildsV3Page) GetBuilds() []BuildV3 {
-	if o == nil {
+func (b *BuildsV3Page) GetBuilds() []BuildV3 {
+	if b == nil {
 		return []BuildV3{}
 	}
-	return o.Builds
+	return b.Builds
 }

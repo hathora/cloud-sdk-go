@@ -11,16 +11,16 @@ type InviteUserRequest struct {
 	CreateUserInvite components.CreateUserInvite `request:"mediaType=application/json"`
 }
 
-func (o *InviteUserRequest) GetOrgID() string {
-	if o == nil {
+func (i *InviteUserRequest) GetOrgID() string {
+	if i == nil {
 		return ""
 	}
-	return o.OrgID
+	return i.OrgID
 }
 
-func (o *InviteUserRequest) GetCreateUserInvite() components.CreateUserInvite {
-	if o == nil {
+func (i *InviteUserRequest) GetCreateUserInvite() components.CreateUserInvite {
+	if i == nil {
 		return components.CreateUserInvite{}
 	}
-	return o.CreateUserInvite
+	return i.CreateUserInvite
 }

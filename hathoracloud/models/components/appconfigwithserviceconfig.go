@@ -10,23 +10,23 @@ type AppConfigWithServiceConfig struct {
 	AppName string `json:"appName"`
 }
 
-func (o *AppConfigWithServiceConfig) GetServiceConfig() *ServiceConfigWrite {
-	if o == nil {
+func (a *AppConfigWithServiceConfig) GetServiceConfig() *ServiceConfigWrite {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceConfig
+	return a.ServiceConfig
 }
 
-func (o *AppConfigWithServiceConfig) GetAuthConfiguration() AuthConfiguration {
-	if o == nil {
+func (a *AppConfigWithServiceConfig) GetAuthConfiguration() AuthConfiguration {
+	if a == nil {
 		return AuthConfiguration{}
 	}
-	return o.AuthConfiguration
+	return a.AuthConfiguration
 }
 
-func (o *AppConfigWithServiceConfig) GetAppName() string {
-	if o == nil {
+func (a *AppConfigWithServiceConfig) GetAppName() string {
+	if a == nil {
 		return ""
 	}
-	return o.AppName
+	return a.AppName
 }

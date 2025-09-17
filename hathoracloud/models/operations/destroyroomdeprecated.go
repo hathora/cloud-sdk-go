@@ -6,11 +6,11 @@ type DestroyRoomDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *DestroyRoomDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (d *DestroyRoomDeprecatedGlobals) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }
 
 type DestroyRoomDeprecatedRequest struct {
@@ -18,16 +18,16 @@ type DestroyRoomDeprecatedRequest struct {
 	RoomID string  `pathParam:"style=simple,explode=false,name=roomId"`
 }
 
-func (o *DestroyRoomDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (d *DestroyRoomDeprecatedRequest) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }
 
-func (o *DestroyRoomDeprecatedRequest) GetRoomID() string {
-	if o == nil {
+func (d *DestroyRoomDeprecatedRequest) GetRoomID() string {
+	if d == nil {
 		return ""
 	}
-	return o.RoomID
+	return d.RoomID
 }

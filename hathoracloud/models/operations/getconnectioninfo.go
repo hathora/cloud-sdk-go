@@ -6,11 +6,11 @@ type GetConnectionInfoGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetConnectionInfoGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetConnectionInfoGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetConnectionInfoRequest struct {
@@ -18,16 +18,16 @@ type GetConnectionInfoRequest struct {
 	RoomID string  `pathParam:"style=simple,explode=false,name=roomId"`
 }
 
-func (o *GetConnectionInfoRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetConnectionInfoRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetConnectionInfoRequest) GetRoomID() string {
-	if o == nil {
+func (g *GetConnectionInfoRequest) GetRoomID() string {
+	if g == nil {
 		return ""
 	}
-	return o.RoomID
+	return g.RoomID
 }

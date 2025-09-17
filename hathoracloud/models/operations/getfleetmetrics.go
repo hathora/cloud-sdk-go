@@ -11,11 +11,11 @@ type GetFleetMetricsGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetFleetMetricsGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetFleetMetricsGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetFleetMetricsRequest struct {
@@ -41,51 +41,51 @@ func (g *GetFleetMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetFleetMetricsRequest) GetFleetID() string {
-	if o == nil {
+func (g *GetFleetMetricsRequest) GetFleetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.FleetID
+	return g.FleetID
 }
 
-func (o *GetFleetMetricsRequest) GetRegion() components.Region {
-	if o == nil {
+func (g *GetFleetMetricsRequest) GetRegion() components.Region {
+	if g == nil {
 		return components.Region("")
 	}
-	return o.Region
+	return g.Region
 }
 
-func (o *GetFleetMetricsRequest) GetMetrics() []components.FleetMetricName {
-	if o == nil {
+func (g *GetFleetMetricsRequest) GetMetrics() []components.FleetMetricName {
+	if g == nil {
 		return nil
 	}
-	return o.Metrics
+	return g.Metrics
 }
 
-func (o *GetFleetMetricsRequest) GetEnd() *float64 {
-	if o == nil {
+func (g *GetFleetMetricsRequest) GetEnd() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.End
+	return g.End
 }
 
-func (o *GetFleetMetricsRequest) GetStart() *float64 {
-	if o == nil {
+func (g *GetFleetMetricsRequest) GetStart() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.Start
+	return g.Start
 }
 
-func (o *GetFleetMetricsRequest) GetStep() *int {
-	if o == nil {
+func (g *GetFleetMetricsRequest) GetStep() *int {
+	if g == nil {
 		return nil
 	}
-	return o.Step
+	return g.Step
 }
 
-func (o *GetFleetMetricsRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetFleetMetricsRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

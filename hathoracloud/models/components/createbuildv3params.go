@@ -9,16 +9,16 @@ type CreateBuildV3Params struct {
 	BuildTag *string `json:"buildTag,omitempty"`
 }
 
-func (o *CreateBuildV3Params) GetBuildID() *string {
-	if o == nil {
+func (c *CreateBuildV3Params) GetBuildID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.BuildID
+	return c.BuildID
 }
 
-func (o *CreateBuildV3Params) GetBuildTag() *string {
-	if o == nil {
+func (c *CreateBuildV3Params) GetBuildTag() *string {
+	if c == nil {
 		return nil
 	}
-	return o.BuildTag
+	return c.BuildTag
 }

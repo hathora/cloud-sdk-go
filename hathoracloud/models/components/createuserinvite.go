@@ -79,16 +79,16 @@ type CreateUserInvite struct {
 	UserEmail string `json:"userEmail"`
 }
 
-func (o *CreateUserInvite) GetScopes() *CreateUserInviteScopes {
-	if o == nil {
+func (c *CreateUserInvite) GetScopes() *CreateUserInviteScopes {
+	if c == nil {
 		return nil
 	}
-	return o.Scopes
+	return c.Scopes
 }
 
-func (o *CreateUserInvite) GetUserEmail() string {
-	if o == nil {
+func (c *CreateUserInvite) GetUserEmail() string {
+	if c == nil {
 		return ""
 	}
-	return o.UserEmail
+	return c.UserEmail
 }

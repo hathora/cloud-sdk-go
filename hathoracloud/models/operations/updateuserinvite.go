@@ -11,16 +11,16 @@ type UpdateUserInviteRequest struct {
 	UpdateUserInvite components.UpdateUserInvite `request:"mediaType=application/json"`
 }
 
-func (o *UpdateUserInviteRequest) GetOrgID() string {
-	if o == nil {
+func (u *UpdateUserInviteRequest) GetOrgID() string {
+	if u == nil {
 		return ""
 	}
-	return o.OrgID
+	return u.OrgID
 }
 
-func (o *UpdateUserInviteRequest) GetUpdateUserInvite() components.UpdateUserInvite {
-	if o == nil {
+func (u *UpdateUserInviteRequest) GetUpdateUserInvite() components.UpdateUserInvite {
+	if u == nil {
 		return components.UpdateUserInvite{}
 	}
-	return o.UpdateUserInvite
+	return u.UpdateUserInvite
 }

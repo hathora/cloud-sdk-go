@@ -6,9 +6,9 @@ type ListOrgTokens struct {
 	Tokens []OrgToken `json:"tokens"`
 }
 
-func (o *ListOrgTokens) GetTokens() []OrgToken {
-	if o == nil {
+func (l *ListOrgTokens) GetTokens() []OrgToken {
+	if l == nil {
 		return []OrgToken{}
 	}
-	return o.Tokens
+	return l.Tokens
 }

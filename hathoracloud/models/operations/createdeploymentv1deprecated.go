@@ -10,11 +10,11 @@ type CreateDeploymentV1DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateDeploymentV1DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateDeploymentV1DeprecatedGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateDeploymentV1DeprecatedRequest struct {
@@ -23,23 +23,23 @@ type CreateDeploymentV1DeprecatedRequest struct {
 	DeploymentConfig components.DeploymentConfig `request:"mediaType=application/json"`
 }
 
-func (o *CreateDeploymentV1DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateDeploymentV1DeprecatedRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateDeploymentV1DeprecatedRequest) GetBuildID() int {
-	if o == nil {
+func (c *CreateDeploymentV1DeprecatedRequest) GetBuildID() int {
+	if c == nil {
 		return 0
 	}
-	return o.BuildID
+	return c.BuildID
 }
 
-func (o *CreateDeploymentV1DeprecatedRequest) GetDeploymentConfig() components.DeploymentConfig {
-	if o == nil {
+func (c *CreateDeploymentV1DeprecatedRequest) GetDeploymentConfig() components.DeploymentConfig {
+	if c == nil {
 		return components.DeploymentConfig{}
 	}
-	return o.DeploymentConfig
+	return c.DeploymentConfig
 }

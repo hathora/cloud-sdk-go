@@ -89,16 +89,16 @@ type CreateOrgToken struct {
 	Name string `json:"name"`
 }
 
-func (o *CreateOrgToken) GetScopes() *CreateOrgTokenScopes {
-	if o == nil {
+func (c *CreateOrgToken) GetScopes() *CreateOrgTokenScopes {
+	if c == nil {
 		return nil
 	}
-	return o.Scopes
+	return c.Scopes
 }
 
-func (o *CreateOrgToken) GetName() string {
-	if o == nil {
+func (c *CreateOrgToken) GetName() string {
+	if c == nil {
 		return ""
 	}
-	return o.Name
+	return c.Name
 }

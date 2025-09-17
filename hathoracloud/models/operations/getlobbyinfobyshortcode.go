@@ -6,11 +6,11 @@ type GetLobbyInfoByShortCodeGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetLobbyInfoByShortCodeGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetLobbyInfoByShortCodeGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetLobbyInfoByShortCodeRequest struct {
@@ -18,16 +18,16 @@ type GetLobbyInfoByShortCodeRequest struct {
 	ShortCode string  `pathParam:"style=simple,explode=false,name=shortCode"`
 }
 
-func (o *GetLobbyInfoByShortCodeRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetLobbyInfoByShortCodeRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetLobbyInfoByShortCodeRequest) GetShortCode() string {
-	if o == nil {
+func (g *GetLobbyInfoByShortCodeRequest) GetShortCode() string {
+	if g == nil {
 		return ""
 	}
-	return o.ShortCode
+	return g.ShortCode
 }

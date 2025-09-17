@@ -10,11 +10,11 @@ type CreateProcessGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateProcessGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateProcessGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateProcessRequest struct {
@@ -22,16 +22,16 @@ type CreateProcessRequest struct {
 	Region components.Region `pathParam:"style=simple,explode=false,name=region"`
 }
 
-func (o *CreateProcessRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateProcessRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateProcessRequest) GetRegion() components.Region {
-	if o == nil {
+func (c *CreateProcessRequest) GetRegion() components.Region {
+	if c == nil {
 		return components.Region("")
 	}
-	return o.Region
+	return c.Region
 }

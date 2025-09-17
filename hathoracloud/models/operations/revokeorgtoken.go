@@ -7,16 +7,16 @@ type RevokeOrgTokenRequest struct {
 	OrgTokenID string `pathParam:"style=simple,explode=false,name=orgTokenId"`
 }
 
-func (o *RevokeOrgTokenRequest) GetOrgID() string {
-	if o == nil {
+func (r *RevokeOrgTokenRequest) GetOrgID() string {
+	if r == nil {
 		return ""
 	}
-	return o.OrgID
+	return r.OrgID
 }
 
-func (o *RevokeOrgTokenRequest) GetOrgTokenID() string {
-	if o == nil {
+func (r *RevokeOrgTokenRequest) GetOrgTokenID() string {
+	if r == nil {
 		return ""
 	}
-	return o.OrgTokenID
+	return r.OrgTokenID
 }

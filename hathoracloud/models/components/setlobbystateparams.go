@@ -7,9 +7,9 @@ type SetLobbyStateParams struct {
 	State any `json:"state"`
 }
 
-func (o *SetLobbyStateParams) GetState() any {
-	if o == nil {
+func (s *SetLobbyStateParams) GetState() any {
+	if s == nil {
 		return nil
 	}
-	return o.State
+	return s.State
 }

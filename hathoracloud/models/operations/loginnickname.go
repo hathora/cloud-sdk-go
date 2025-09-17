@@ -10,11 +10,11 @@ type LoginNicknameGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *LoginNicknameGlobals) GetAppID() *string {
-	if o == nil {
+func (l *LoginNicknameGlobals) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
 type LoginNicknameRequest struct {
@@ -22,16 +22,16 @@ type LoginNicknameRequest struct {
 	NicknameObject components.NicknameObject `request:"mediaType=application/json"`
 }
 
-func (o *LoginNicknameRequest) GetAppID() *string {
-	if o == nil {
+func (l *LoginNicknameRequest) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
-func (o *LoginNicknameRequest) GetNicknameObject() components.NicknameObject {
-	if o == nil {
+func (l *LoginNicknameRequest) GetNicknameObject() components.NicknameObject {
+	if l == nil {
 		return components.NicknameObject{}
 	}
-	return o.NicknameObject
+	return l.NicknameObject
 }

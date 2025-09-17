@@ -10,11 +10,11 @@ type UpdateFleetGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *UpdateFleetGlobals) GetOrgID() *string {
-	if o == nil {
+func (u *UpdateFleetGlobals) GetOrgID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.OrgID
+	return u.OrgID
 }
 
 type UpdateFleetRequest struct {
@@ -23,23 +23,23 @@ type UpdateFleetRequest struct {
 	UpdateFleet components.UpdateFleet `request:"mediaType=application/json"`
 }
 
-func (o *UpdateFleetRequest) GetFleetID() string {
-	if o == nil {
+func (u *UpdateFleetRequest) GetFleetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.FleetID
+	return u.FleetID
 }
 
-func (o *UpdateFleetRequest) GetOrgID() *string {
-	if o == nil {
+func (u *UpdateFleetRequest) GetOrgID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.OrgID
+	return u.OrgID
 }
 
-func (o *UpdateFleetRequest) GetUpdateFleet() components.UpdateFleet {
-	if o == nil {
+func (u *UpdateFleetRequest) GetUpdateFleet() components.UpdateFleet {
+	if u == nil {
 		return components.UpdateFleet{}
 	}
-	return o.UpdateFleet
+	return u.UpdateFleet
 }

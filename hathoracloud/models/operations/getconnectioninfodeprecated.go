@@ -6,11 +6,11 @@ type GetConnectionInfoDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetConnectionInfoDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetConnectionInfoDeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetConnectionInfoDeprecatedRequest struct {
@@ -18,16 +18,16 @@ type GetConnectionInfoDeprecatedRequest struct {
 	RoomID string  `pathParam:"style=simple,explode=false,name=roomId"`
 }
 
-func (o *GetConnectionInfoDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetConnectionInfoDeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetConnectionInfoDeprecatedRequest) GetRoomID() string {
-	if o == nil {
+func (g *GetConnectionInfoDeprecatedRequest) GetRoomID() string {
+	if g == nil {
 		return ""
 	}
-	return o.RoomID
+	return g.RoomID
 }

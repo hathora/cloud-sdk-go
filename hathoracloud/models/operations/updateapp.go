@@ -10,11 +10,11 @@ type UpdateAppGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *UpdateAppGlobals) GetAppID() *string {
-	if o == nil {
+func (u *UpdateAppGlobals) GetAppID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AppID
+	return u.AppID
 }
 
 type UpdateAppRequest struct {
@@ -22,16 +22,16 @@ type UpdateAppRequest struct {
 	AppConfigWithServiceConfig components.AppConfigWithServiceConfig `request:"mediaType=application/json"`
 }
 
-func (o *UpdateAppRequest) GetAppID() *string {
-	if o == nil {
+func (u *UpdateAppRequest) GetAppID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.AppID
+	return u.AppID
 }
 
-func (o *UpdateAppRequest) GetAppConfigWithServiceConfig() components.AppConfigWithServiceConfig {
-	if o == nil {
+func (u *UpdateAppRequest) GetAppConfigWithServiceConfig() components.AppConfigWithServiceConfig {
+	if u == nil {
 		return components.AppConfigWithServiceConfig{}
 	}
-	return o.AppConfigWithServiceConfig
+	return u.AppConfigWithServiceConfig
 }

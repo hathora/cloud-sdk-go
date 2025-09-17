@@ -7,16 +7,16 @@ type UpdateFleet struct {
 	AutoscalerConfig AutoscalerConfig `json:"autoscalerConfig"`
 }
 
-func (o *UpdateFleet) GetNodeShape() *NodeShape {
-	if o == nil {
+func (u *UpdateFleet) GetNodeShape() *NodeShape {
+	if u == nil {
 		return nil
 	}
-	return o.NodeShape
+	return u.NodeShape
 }
 
-func (o *UpdateFleet) GetAutoscalerConfig() AutoscalerConfig {
-	if o == nil {
+func (u *UpdateFleet) GetAutoscalerConfig() AutoscalerConfig {
+	if u == nil {
 		return AutoscalerConfig{}
 	}
-	return o.AutoscalerConfig
+	return u.AutoscalerConfig
 }

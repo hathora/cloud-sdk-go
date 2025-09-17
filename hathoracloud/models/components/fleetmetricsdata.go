@@ -10,37 +10,37 @@ type FleetMetricsData struct {
 	ProvisionedTotal     []MetricValue `json:"provisionedTotal,omitempty"`
 }
 
-func (o *FleetMetricsData) GetSystemOverhead() []MetricValue {
-	if o == nil {
+func (f *FleetMetricsData) GetSystemOverhead() []MetricValue {
+	if f == nil {
 		return nil
 	}
-	return o.SystemOverhead
+	return f.SystemOverhead
 }
 
-func (o *FleetMetricsData) GetUtilized() []MetricValue {
-	if o == nil {
+func (f *FleetMetricsData) GetUtilized() []MetricValue {
+	if f == nil {
 		return nil
 	}
-	return o.Utilized
+	return f.Utilized
 }
 
-func (o *FleetMetricsData) GetProvisionedCloud() []MetricValue {
-	if o == nil {
+func (f *FleetMetricsData) GetProvisionedCloud() []MetricValue {
+	if f == nil {
 		return nil
 	}
-	return o.ProvisionedCloud
+	return f.ProvisionedCloud
 }
 
-func (o *FleetMetricsData) GetProvisionedBareMetal() []MetricValue {
-	if o == nil {
+func (f *FleetMetricsData) GetProvisionedBareMetal() []MetricValue {
+	if f == nil {
 		return nil
 	}
-	return o.ProvisionedBareMetal
+	return f.ProvisionedBareMetal
 }
 
-func (o *FleetMetricsData) GetProvisionedTotal() []MetricValue {
-	if o == nil {
+func (f *FleetMetricsData) GetProvisionedTotal() []MetricValue {
+	if f == nil {
 		return nil
 	}
-	return o.ProvisionedTotal
+	return f.ProvisionedTotal
 }

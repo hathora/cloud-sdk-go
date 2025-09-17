@@ -6,11 +6,11 @@ type GetInactiveRoomsForProcessGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetInactiveRoomsForProcessGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetInactiveRoomsForProcessGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetInactiveRoomsForProcessRequest struct {
@@ -18,16 +18,16 @@ type GetInactiveRoomsForProcessRequest struct {
 	ProcessID string  `pathParam:"style=simple,explode=false,name=processId"`
 }
 
-func (o *GetInactiveRoomsForProcessRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetInactiveRoomsForProcessRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetInactiveRoomsForProcessRequest) GetProcessID() string {
-	if o == nil {
+func (g *GetInactiveRoomsForProcessRequest) GetProcessID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ProcessID
+	return g.ProcessID
 }

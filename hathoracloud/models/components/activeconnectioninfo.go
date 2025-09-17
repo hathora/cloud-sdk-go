@@ -38,37 +38,37 @@ func (a *ActiveConnectionInfo) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ActiveConnectionInfo) GetStatus() ActiveConnectionInfoStatus {
-	if o == nil {
+func (a *ActiveConnectionInfo) GetStatus() ActiveConnectionInfoStatus {
+	if a == nil {
 		return ActiveConnectionInfoStatus("")
 	}
-	return o.Status
+	return a.Status
 }
 
-func (o *ActiveConnectionInfo) GetTransportType() TransportType {
-	if o == nil {
+func (a *ActiveConnectionInfo) GetTransportType() TransportType {
+	if a == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return a.TransportType
 }
 
-func (o *ActiveConnectionInfo) GetPort() float64 {
-	if o == nil {
+func (a *ActiveConnectionInfo) GetPort() float64 {
+	if a == nil {
 		return 0.0
 	}
-	return o.Port
+	return a.Port
 }
 
-func (o *ActiveConnectionInfo) GetHost() string {
-	if o == nil {
+func (a *ActiveConnectionInfo) GetHost() string {
+	if a == nil {
 		return ""
 	}
-	return o.Host
+	return a.Host
 }
 
-func (o *ActiveConnectionInfo) GetRoomID() string {
-	if o == nil {
+func (a *ActiveConnectionInfo) GetRoomID() string {
+	if a == nil {
 		return ""
 	}
-	return o.RoomID
+	return a.RoomID
 }

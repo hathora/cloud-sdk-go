@@ -9,23 +9,23 @@ type PaymentMethod struct {
 	Link *LinkPaymentMethod `json:"link,omitempty"`
 }
 
-func (o *PaymentMethod) GetCard() *CardPaymentMethod {
-	if o == nil {
+func (p *PaymentMethod) GetCard() *CardPaymentMethod {
+	if p == nil {
 		return nil
 	}
-	return o.Card
+	return p.Card
 }
 
-func (o *PaymentMethod) GetAch() *AchPaymentMethod {
-	if o == nil {
+func (p *PaymentMethod) GetAch() *AchPaymentMethod {
+	if p == nil {
 		return nil
 	}
-	return o.Ach
+	return p.Ach
 }
 
-func (o *PaymentMethod) GetLink() *LinkPaymentMethod {
-	if o == nil {
+func (p *PaymentMethod) GetLink() *LinkPaymentMethod {
+	if p == nil {
 		return nil
 	}
-	return o.Link
+	return p.Link
 }

@@ -13,7 +13,10 @@ import (
 type FleetRegion struct {
 	CloudMinVcpusUpdatedAt time.Time `json:"cloudMinVcpusUpdatedAt"`
 	CloudMinVcpus          int       `json:"cloudMinVcpus"`
-	ScaleIncrementVcpus    int       `json:"scaleIncrementVcpus"`
+	// This field is deprecated and may contain the value -1. For node increment values, refer to nodeShape on the Fleet.
+	//
+	// Deprecated: This will be removed in a future release, please migrate away from it as soon as possible.
+	ScaleIncrementVcpus int `json:"scaleIncrementVcpus"`
 }
 
 func (f FleetRegion) MarshalJSON() ([]byte, error) {
@@ -27,23 +30,23 @@ func (f *FleetRegion) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *FleetRegion) GetCloudMinVcpusUpdatedAt() time.Time {
-	if o == nil {
+func (f *FleetRegion) GetCloudMinVcpusUpdatedAt() time.Time {
+	if f == nil {
 		return time.Time{}
 	}
-	return o.CloudMinVcpusUpdatedAt
+	return f.CloudMinVcpusUpdatedAt
 }
 
-func (o *FleetRegion) GetCloudMinVcpus() int {
-	if o == nil {
+func (f *FleetRegion) GetCloudMinVcpus() int {
+	if f == nil {
 		return 0
 	}
-	return o.CloudMinVcpus
+	return f.CloudMinVcpus
 }
 
-func (o *FleetRegion) GetScaleIncrementVcpus() int {
-	if o == nil {
+func (f *FleetRegion) GetScaleIncrementVcpus() int {
+	if f == nil {
 		return 0
 	}
-	return o.ScaleIncrementVcpus
+	return f.ScaleIncrementVcpus
 }

@@ -79,16 +79,16 @@ type UpdateUserInvite struct {
 	UserEmail string `json:"userEmail"`
 }
 
-func (o *UpdateUserInvite) GetScopes() UpdateUserInviteScopes {
-	if o == nil {
+func (u *UpdateUserInvite) GetScopes() UpdateUserInviteScopes {
+	if u == nil {
 		return UpdateUserInviteScopes{}
 	}
-	return o.Scopes
+	return u.Scopes
 }
 
-func (o *UpdateUserInvite) GetUserEmail() string {
-	if o == nil {
+func (u *UpdateUserInvite) GetUserEmail() string {
+	if u == nil {
 		return ""
 	}
-	return o.UserEmail
+	return u.UserEmail
 }

@@ -6,11 +6,11 @@ type DeleteBuildGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *DeleteBuildGlobals) GetOrgID() *string {
-	if o == nil {
+func (d *DeleteBuildGlobals) GetOrgID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.OrgID
+	return d.OrgID
 }
 
 type DeleteBuildRequest struct {
@@ -18,16 +18,16 @@ type DeleteBuildRequest struct {
 	OrgID   *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *DeleteBuildRequest) GetBuildID() string {
-	if o == nil {
+func (d *DeleteBuildRequest) GetBuildID() string {
+	if d == nil {
 		return ""
 	}
-	return o.BuildID
+	return d.BuildID
 }
 
-func (o *DeleteBuildRequest) GetOrgID() *string {
-	if o == nil {
+func (d *DeleteBuildRequest) GetOrgID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.OrgID
+	return d.OrgID
 }

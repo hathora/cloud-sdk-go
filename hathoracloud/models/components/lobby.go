@@ -113,72 +113,72 @@ func (l *Lobby) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Lobby) GetShortCode() *string {
-	if o == nil {
+func (l *Lobby) GetShortCode() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ShortCode
+	return l.ShortCode
 }
 
-func (o *Lobby) GetState() any {
-	if o == nil {
+func (l *Lobby) GetState() any {
+	if l == nil {
 		return nil
 	}
-	return o.State
+	return l.State
 }
 
-func (o *Lobby) GetInitialConfig() any {
-	if o == nil {
+func (l *Lobby) GetInitialConfig() any {
+	if l == nil {
 		return nil
 	}
-	return o.InitialConfig
+	return l.InitialConfig
 }
 
-func (o *Lobby) GetCreatedAt() time.Time {
-	if o == nil {
+func (l *Lobby) GetCreatedAt() time.Time {
+	if l == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return l.CreatedAt
 }
 
-func (o *Lobby) GetCreatedBy() CreatedBy {
-	if o == nil {
+func (l *Lobby) GetCreatedBy() CreatedBy {
+	if l == nil {
 		return CreatedBy{}
 	}
-	return o.CreatedBy
+	return l.CreatedBy
 }
 
-func (o *Lobby) GetLocal() bool {
-	if o == nil {
+func (l *Lobby) GetLocal() bool {
+	if l == nil {
 		return false
 	}
-	return o.Local
+	return l.Local
 }
 
-func (o *Lobby) GetVisibility() LobbyVisibility {
-	if o == nil {
+func (l *Lobby) GetVisibility() LobbyVisibility {
+	if l == nil {
 		return LobbyVisibility("")
 	}
-	return o.Visibility
+	return l.Visibility
 }
 
-func (o *Lobby) GetRegion() Region {
-	if o == nil {
+func (l *Lobby) GetRegion() Region {
+	if l == nil {
 		return Region("")
 	}
-	return o.Region
+	return l.Region
 }
 
-func (o *Lobby) GetRoomID() string {
-	if o == nil {
+func (l *Lobby) GetRoomID() string {
+	if l == nil {
 		return ""
 	}
-	return o.RoomID
+	return l.RoomID
 }
 
-func (o *Lobby) GetAppID() string {
-	if o == nil {
+func (l *Lobby) GetAppID() string {
+	if l == nil {
 		return ""
 	}
-	return o.AppID
+	return l.AppID
 }

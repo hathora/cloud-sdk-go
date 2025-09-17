@@ -16,32 +16,32 @@ type ProcessWithRoomsExposedPort struct {
 	Name          string        `json:"name"`
 }
 
-func (o *ProcessWithRoomsExposedPort) GetTransportType() TransportType {
-	if o == nil {
+func (p *ProcessWithRoomsExposedPort) GetTransportType() TransportType {
+	if p == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return p.TransportType
 }
 
-func (o *ProcessWithRoomsExposedPort) GetPort() int {
-	if o == nil {
+func (p *ProcessWithRoomsExposedPort) GetPort() int {
+	if p == nil {
 		return 0
 	}
-	return o.Port
+	return p.Port
 }
 
-func (o *ProcessWithRoomsExposedPort) GetHost() string {
-	if o == nil {
+func (p *ProcessWithRoomsExposedPort) GetHost() string {
+	if p == nil {
 		return ""
 	}
-	return o.Host
+	return p.Host
 }
 
-func (o *ProcessWithRoomsExposedPort) GetName() string {
-	if o == nil {
+func (p *ProcessWithRoomsExposedPort) GetName() string {
+	if p == nil {
 		return ""
 	}
-	return o.Name
+	return p.Name
 }
 
 // ProcessWithRooms - A process object represents a runtime instance of your game server and its metadata.
@@ -103,170 +103,170 @@ func (p *ProcessWithRooms) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ProcessWithRooms) GetEgressedBytes() int {
-	if o == nil {
+func (p *ProcessWithRooms) GetEgressedBytes() int {
+	if p == nil {
 		return 0
 	}
-	return o.EgressedBytes
+	return p.EgressedBytes
 }
 
-func (o *ProcessWithRooms) GetIdleSince() *time.Time {
-	if o == nil {
+func (p *ProcessWithRooms) GetIdleSince() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.IdleSince
+	return p.IdleSince
 }
 
-func (o *ProcessWithRooms) GetActiveConnectionsUpdatedAt() time.Time {
-	if o == nil {
+func (p *ProcessWithRooms) GetActiveConnectionsUpdatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.ActiveConnectionsUpdatedAt
+	return p.ActiveConnectionsUpdatedAt
 }
 
-func (o *ProcessWithRooms) GetActiveConnections() int {
-	if o == nil {
+func (p *ProcessWithRooms) GetActiveConnections() int {
+	if p == nil {
 		return 0
 	}
-	return o.ActiveConnections
+	return p.ActiveConnections
 }
 
-func (o *ProcessWithRooms) GetRoomsAllocatedUpdatedAt() time.Time {
-	if o == nil {
+func (p *ProcessWithRooms) GetRoomsAllocatedUpdatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.RoomsAllocatedUpdatedAt
+	return p.RoomsAllocatedUpdatedAt
 }
 
-func (o *ProcessWithRooms) GetRoomsAllocated() int {
-	if o == nil {
+func (p *ProcessWithRooms) GetRoomsAllocated() int {
+	if p == nil {
 		return 0
 	}
-	return o.RoomsAllocated
+	return p.RoomsAllocated
 }
 
-func (o *ProcessWithRooms) GetRoomSlotsAvailableUpdatedAt() time.Time {
-	if o == nil {
+func (p *ProcessWithRooms) GetRoomSlotsAvailableUpdatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.RoomSlotsAvailableUpdatedAt
+	return p.RoomSlotsAvailableUpdatedAt
 }
 
-func (o *ProcessWithRooms) GetRoomSlotsAvailable() float64 {
-	if o == nil {
+func (p *ProcessWithRooms) GetRoomSlotsAvailable() float64 {
+	if p == nil {
 		return 0.0
 	}
-	return o.RoomSlotsAvailable
+	return p.RoomSlotsAvailable
 }
 
-func (o *ProcessWithRooms) GetDraining() bool {
-	if o == nil {
+func (p *ProcessWithRooms) GetDraining() bool {
+	if p == nil {
 		return false
 	}
-	return o.Draining
+	return p.Draining
 }
 
-func (o *ProcessWithRooms) GetTerminatedAt() *time.Time {
-	if o == nil {
+func (p *ProcessWithRooms) GetTerminatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.TerminatedAt
+	return p.TerminatedAt
 }
 
-func (o *ProcessWithRooms) GetStoppingAt() *time.Time {
-	if o == nil {
+func (p *ProcessWithRooms) GetStoppingAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.StoppingAt
+	return p.StoppingAt
 }
 
-func (o *ProcessWithRooms) GetStartedAt() *time.Time {
-	if o == nil {
+func (p *ProcessWithRooms) GetStartedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.StartedAt
+	return p.StartedAt
 }
 
-func (o *ProcessWithRooms) GetStartingAt() time.Time {
-	if o == nil {
+func (p *ProcessWithRooms) GetStartingAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.StartingAt
+	return p.StartingAt
 }
 
-func (o *ProcessWithRooms) GetRoomsPerProcess() int {
-	if o == nil {
+func (p *ProcessWithRooms) GetRoomsPerProcess() int {
+	if p == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return p.RoomsPerProcess
 }
 
-func (o *ProcessWithRooms) GetAdditionalExposedPorts() []ExposedPort {
-	if o == nil {
+func (p *ProcessWithRooms) GetAdditionalExposedPorts() []ExposedPort {
+	if p == nil {
 		return []ExposedPort{}
 	}
-	return o.AdditionalExposedPorts
+	return p.AdditionalExposedPorts
 }
 
-func (o *ProcessWithRooms) GetExposedPort() *ProcessWithRoomsExposedPort {
-	if o == nil {
+func (p *ProcessWithRooms) GetExposedPort() *ProcessWithRoomsExposedPort {
+	if p == nil {
 		return nil
 	}
-	return o.ExposedPort
+	return p.ExposedPort
 }
 
-func (o *ProcessWithRooms) GetPort() float64 {
-	if o == nil {
+func (p *ProcessWithRooms) GetPort() float64 {
+	if p == nil {
 		return 0.0
 	}
-	return o.Port
+	return p.Port
 }
 
-func (o *ProcessWithRooms) GetHost() string {
-	if o == nil {
+func (p *ProcessWithRooms) GetHost() string {
+	if p == nil {
 		return ""
 	}
-	return o.Host
+	return p.Host
 }
 
-func (o *ProcessWithRooms) GetRegion() Region {
-	if o == nil {
+func (p *ProcessWithRooms) GetRegion() Region {
+	if p == nil {
 		return Region("")
 	}
-	return o.Region
+	return p.Region
 }
 
-func (o *ProcessWithRooms) GetProcessID() string {
-	if o == nil {
+func (p *ProcessWithRooms) GetProcessID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ProcessID
+	return p.ProcessID
 }
 
-func (o *ProcessWithRooms) GetDeploymentID() int {
-	if o == nil {
+func (p *ProcessWithRooms) GetDeploymentID() int {
+	if p == nil {
 		return 0
 	}
-	return o.DeploymentID
+	return p.DeploymentID
 }
 
-func (o *ProcessWithRooms) GetAppID() string {
-	if o == nil {
+func (p *ProcessWithRooms) GetAppID() string {
+	if p == nil {
 		return ""
 	}
-	return o.AppID
+	return p.AppID
 }
 
-func (o *ProcessWithRooms) GetRooms() []RoomWithoutAllocations {
-	if o == nil {
+func (p *ProcessWithRooms) GetRooms() []RoomWithoutAllocations {
+	if p == nil {
 		return []RoomWithoutAllocations{}
 	}
-	return o.Rooms
+	return p.Rooms
 }
 
-func (o *ProcessWithRooms) GetTotalRooms() int {
-	if o == nil {
+func (p *ProcessWithRooms) GetTotalRooms() int {
+	if p == nil {
 		return 0
 	}
-	return o.TotalRooms
+	return p.TotalRooms
 }

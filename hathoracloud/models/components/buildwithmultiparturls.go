@@ -12,18 +12,18 @@ type BuildWithMultipartUrlsRegionalContainerTags struct {
 	Region       Region `json:"region"`
 }
 
-func (o *BuildWithMultipartUrlsRegionalContainerTags) GetContainerTag() string {
-	if o == nil {
+func (b *BuildWithMultipartUrlsRegionalContainerTags) GetContainerTag() string {
+	if b == nil {
 		return ""
 	}
-	return o.ContainerTag
+	return b.ContainerTag
 }
 
-func (o *BuildWithMultipartUrlsRegionalContainerTags) GetRegion() Region {
-	if o == nil {
+func (b *BuildWithMultipartUrlsRegionalContainerTags) GetRegion() Region {
+	if b == nil {
 		return Region("")
 	}
-	return o.Region
+	return b.Region
 }
 
 // BuildWithMultipartUrls - A build represents a game server artifact and its associated metadata.
@@ -65,107 +65,107 @@ func (b *BuildWithMultipartUrls) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BuildWithMultipartUrls) GetExpiredAt() *time.Time {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetExpiredAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.ExpiredAt
+	return b.ExpiredAt
 }
 
-func (o *BuildWithMultipartUrls) GetBuildTag() *string {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetBuildTag() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BuildTag
+	return b.BuildTag
 }
 
-func (o *BuildWithMultipartUrls) GetRegionalContainerTags() []BuildWithMultipartUrlsRegionalContainerTags {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetRegionalContainerTags() []BuildWithMultipartUrlsRegionalContainerTags {
+	if b == nil {
 		return []BuildWithMultipartUrlsRegionalContainerTags{}
 	}
-	return o.RegionalContainerTags
+	return b.RegionalContainerTags
 }
 
-func (o *BuildWithMultipartUrls) GetImageSize() int64 {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetImageSize() int64 {
+	if b == nil {
 		return 0
 	}
-	return o.ImageSize
+	return b.ImageSize
 }
 
-func (o *BuildWithMultipartUrls) GetStatus() BuildStatus {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetStatus() BuildStatus {
+	if b == nil {
 		return BuildStatus("")
 	}
-	return o.Status
+	return b.Status
 }
 
-func (o *BuildWithMultipartUrls) GetDeletedAt() *time.Time {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetDeletedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return b.DeletedAt
 }
 
-func (o *BuildWithMultipartUrls) GetFinishedAt() *time.Time {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetFinishedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.FinishedAt
+	return b.FinishedAt
 }
 
-func (o *BuildWithMultipartUrls) GetStartedAt() *time.Time {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetStartedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.StartedAt
+	return b.StartedAt
 }
 
-func (o *BuildWithMultipartUrls) GetCreatedAt() time.Time {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetCreatedAt() time.Time {
+	if b == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return b.CreatedAt
 }
 
-func (o *BuildWithMultipartUrls) GetCreatedBy() string {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetCreatedBy() string {
+	if b == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return b.CreatedBy
 }
 
-func (o *BuildWithMultipartUrls) GetBuildID() int {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetBuildID() int {
+	if b == nil {
 		return 0
 	}
-	return o.BuildID
+	return b.BuildID
 }
 
-func (o *BuildWithMultipartUrls) GetAppID() string {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetAppID() string {
+	if b == nil {
 		return ""
 	}
-	return o.AppID
+	return b.AppID
 }
 
-func (o *BuildWithMultipartUrls) GetCompleteUploadPostRequestURL() string {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetCompleteUploadPostRequestURL() string {
+	if b == nil {
 		return ""
 	}
-	return o.CompleteUploadPostRequestURL
+	return b.CompleteUploadPostRequestURL
 }
 
-func (o *BuildWithMultipartUrls) GetMaxChunkSize() float64 {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetMaxChunkSize() float64 {
+	if b == nil {
 		return 0.0
 	}
-	return o.MaxChunkSize
+	return b.MaxChunkSize
 }
 
-func (o *BuildWithMultipartUrls) GetUploadParts() []BuildPart {
-	if o == nil {
+func (b *BuildWithMultipartUrls) GetUploadParts() []BuildPart {
+	if b == nil {
 		return []BuildPart{}
 	}
-	return o.UploadParts
+	return b.UploadParts
 }

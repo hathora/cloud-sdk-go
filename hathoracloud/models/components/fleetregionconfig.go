@@ -6,9 +6,9 @@ type FleetRegionConfig struct {
 	CloudMinVcpus int `json:"cloudMinVcpus"`
 }
 
-func (o *FleetRegionConfig) GetCloudMinVcpus() int {
-	if o == nil {
+func (f *FleetRegionConfig) GetCloudMinVcpus() int {
+	if f == nil {
 		return 0
 	}
-	return o.CloudMinVcpus
+	return f.CloudMinVcpus
 }

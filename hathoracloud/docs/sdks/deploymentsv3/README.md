@@ -36,7 +36,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV3.GetDeployments(ctx, hathoracloud.String("alpha"), hathoracloud.String("0.1.14-14c793"))
+    res, err := s.DeploymentsV3.GetDeployments(ctx, hathoracloud.Pointer("alpha"), hathoracloud.Pointer("0.1.14-14c793"))
     if err != nil {
         log.Fatal(err)
     }
@@ -93,7 +93,7 @@ func main() {
     )
 
     res, err := s.DeploymentsV3.CreateDeployment(ctx, components.DeploymentConfigV3{
-        DeploymentTag: hathoracloud.String("alpha"),
+        DeploymentTag: hathoracloud.Pointer("alpha"),
         IdleTimeoutEnabled: true,
         Env: []components.DeploymentConfigV3Env{
             components.DeploymentConfigV3Env{
@@ -120,8 +120,8 @@ func main() {
         },
         TransportType: components.TransportTypeUDP,
         ContainerPort: 4000,
-        RequestedGPU: hathoracloud.Float64(1),
-        ExperimentalRequestedGPU: hathoracloud.Float64(1),
+        RequestedGPU: hathoracloud.Pointer[float64](1),
+        ExperimentalRequestedGPU: hathoracloud.Pointer[float64](1),
         RequestedMemoryMB: 1024,
         RequestedCPU: 0.5,
         BuildID: "bld-6d4c6a71-2d75-4b42-94e1-f312f57f33c5",

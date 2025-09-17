@@ -6,11 +6,11 @@ type RunBuildV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *RunBuildV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (r *RunBuildV2DeprecatedGlobals) GetAppID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.AppID
+	return r.AppID
 }
 
 type RunBuildV2DeprecatedFile struct {
@@ -19,29 +19,29 @@ type RunBuildV2DeprecatedFile struct {
 	Content any `multipartForm:"content"`
 }
 
-func (o *RunBuildV2DeprecatedFile) GetFileName() string {
-	if o == nil {
+func (r *RunBuildV2DeprecatedFile) GetFileName() string {
+	if r == nil {
 		return ""
 	}
-	return o.FileName
+	return r.FileName
 }
 
-func (o *RunBuildV2DeprecatedFile) GetContent() any {
-	if o == nil {
+func (r *RunBuildV2DeprecatedFile) GetContent() any {
+	if r == nil {
 		return nil
 	}
-	return o.Content
+	return r.Content
 }
 
 type RunBuildV2DeprecatedRequestBody struct {
 	File *RunBuildV2DeprecatedFile `multipartForm:"file,name=file"`
 }
 
-func (o *RunBuildV2DeprecatedRequestBody) GetFile() *RunBuildV2DeprecatedFile {
-	if o == nil {
+func (r *RunBuildV2DeprecatedRequestBody) GetFile() *RunBuildV2DeprecatedFile {
+	if r == nil {
 		return nil
 	}
-	return o.File
+	return r.File
 }
 
 type RunBuildV2DeprecatedRequest struct {
@@ -50,23 +50,23 @@ type RunBuildV2DeprecatedRequest struct {
 	RequestBody RunBuildV2DeprecatedRequestBody `request:"mediaType=multipart/form-data"`
 }
 
-func (o *RunBuildV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (r *RunBuildV2DeprecatedRequest) GetAppID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.AppID
+	return r.AppID
 }
 
-func (o *RunBuildV2DeprecatedRequest) GetBuildID() int {
-	if o == nil {
+func (r *RunBuildV2DeprecatedRequest) GetBuildID() int {
+	if r == nil {
 		return 0
 	}
-	return o.BuildID
+	return r.BuildID
 }
 
-func (o *RunBuildV2DeprecatedRequest) GetRequestBody() RunBuildV2DeprecatedRequestBody {
-	if o == nil {
+func (r *RunBuildV2DeprecatedRequest) GetRequestBody() RunBuildV2DeprecatedRequestBody {
+	if r == nil {
 		return RunBuildV2DeprecatedRequestBody{}
 	}
-	return o.RequestBody
+	return r.RequestBody
 }

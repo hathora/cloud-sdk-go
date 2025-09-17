@@ -10,11 +10,11 @@ type GetLatestProcessesV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetLatestProcessesV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetLatestProcessesV2DeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetLatestProcessesV2DeprecatedRequest struct {
@@ -23,23 +23,23 @@ type GetLatestProcessesV2DeprecatedRequest struct {
 	Region []components.Region        `queryParam:"style=form,explode=true,name=region"`
 }
 
-func (o *GetLatestProcessesV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetLatestProcessesV2DeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetLatestProcessesV2DeprecatedRequest) GetStatus() []components.ProcessStatus {
-	if o == nil {
+func (g *GetLatestProcessesV2DeprecatedRequest) GetStatus() []components.ProcessStatus {
+	if g == nil {
 		return nil
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetLatestProcessesV2DeprecatedRequest) GetRegion() []components.Region {
-	if o == nil {
+func (g *GetLatestProcessesV2DeprecatedRequest) GetRegion() []components.Region {
+	if g == nil {
 		return nil
 	}
-	return o.Region
+	return g.Region
 }

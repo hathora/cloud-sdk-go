@@ -39,9 +39,9 @@ func main() {
         PlayerAuth: "<YOUR_BEARER_TOKEN_HERE>",
     }, components.CreateLobbyV3Params{
         Visibility: components.LobbyVisibilityPrivate,
-        RoomConfig: hathoracloud.String("{\"name\":\"my-room\"}"),
+        RoomConfig: hathoracloud.Pointer("{\"name\":\"my-room\"}"),
         Region: components.RegionDubai,
-    }, hathoracloud.String("LFG4"), hathoracloud.String("2swovpy1fnunu"))
+    }, hathoracloud.Pointer("LFG4"), hathoracloud.Pointer("2swovpy1fnunu"))
     if err != nil {
         log.Fatal(err)
     }

@@ -10,37 +10,37 @@ type DeprecatedProcessMetricsData struct {
 	CPU               []MetricValue `json:"cpu,omitempty"`
 }
 
-func (o *DeprecatedProcessMetricsData) GetActiveConnections() []MetricValue {
-	if o == nil {
+func (d *DeprecatedProcessMetricsData) GetActiveConnections() []MetricValue {
+	if d == nil {
 		return nil
 	}
-	return o.ActiveConnections
+	return d.ActiveConnections
 }
 
-func (o *DeprecatedProcessMetricsData) GetTotalEgress() []MetricValue {
-	if o == nil {
+func (d *DeprecatedProcessMetricsData) GetTotalEgress() []MetricValue {
+	if d == nil {
 		return nil
 	}
-	return o.TotalEgress
+	return d.TotalEgress
 }
 
-func (o *DeprecatedProcessMetricsData) GetRateEgress() []MetricValue {
-	if o == nil {
+func (d *DeprecatedProcessMetricsData) GetRateEgress() []MetricValue {
+	if d == nil {
 		return nil
 	}
-	return o.RateEgress
+	return d.RateEgress
 }
 
-func (o *DeprecatedProcessMetricsData) GetMemory() []MetricValue {
-	if o == nil {
+func (d *DeprecatedProcessMetricsData) GetMemory() []MetricValue {
+	if d == nil {
 		return nil
 	}
-	return o.Memory
+	return d.Memory
 }
 
-func (o *DeprecatedProcessMetricsData) GetCPU() []MetricValue {
-	if o == nil {
+func (d *DeprecatedProcessMetricsData) GetCPU() []MetricValue {
+	if d == nil {
 		return nil
 	}
-	return o.CPU
+	return d.CPU
 }

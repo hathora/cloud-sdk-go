@@ -10,11 +10,11 @@ type CreateDeploymentGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateDeploymentGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateDeploymentGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateDeploymentRequest struct {
@@ -22,16 +22,16 @@ type CreateDeploymentRequest struct {
 	DeploymentConfigV3 components.DeploymentConfigV3 `request:"mediaType=application/json"`
 }
 
-func (o *CreateDeploymentRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateDeploymentRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateDeploymentRequest) GetDeploymentConfigV3() components.DeploymentConfigV3 {
-	if o == nil {
+func (c *CreateDeploymentRequest) GetDeploymentConfigV3() components.DeploymentConfigV3 {
+	if c == nil {
 		return components.DeploymentConfigV3{}
 	}
-	return o.DeploymentConfigV3
+	return c.DeploymentConfigV3
 }

@@ -12,18 +12,18 @@ type DeploymentV2Env struct {
 	Name  string `json:"name"`
 }
 
-func (o *DeploymentV2Env) GetValue() string {
-	if o == nil {
+func (d *DeploymentV2Env) GetValue() string {
+	if d == nil {
 		return ""
 	}
-	return o.Value
+	return d.Value
 }
 
-func (o *DeploymentV2Env) GetName() string {
-	if o == nil {
+func (d *DeploymentV2Env) GetName() string {
+	if d == nil {
 		return ""
 	}
-	return o.Name
+	return d.Name
 }
 
 type DeploymentV2 struct {
@@ -64,86 +64,86 @@ func (d *DeploymentV2) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *DeploymentV2) GetIdleTimeoutEnabled() bool {
-	if o == nil {
+func (d *DeploymentV2) GetIdleTimeoutEnabled() bool {
+	if d == nil {
 		return false
 	}
-	return o.IdleTimeoutEnabled
+	return d.IdleTimeoutEnabled
 }
 
-func (o *DeploymentV2) GetEnv() []DeploymentV2Env {
-	if o == nil {
+func (d *DeploymentV2) GetEnv() []DeploymentV2Env {
+	if d == nil {
 		return []DeploymentV2Env{}
 	}
-	return o.Env
+	return d.Env
 }
 
-func (o *DeploymentV2) GetRoomsPerProcess() int {
-	if o == nil {
+func (d *DeploymentV2) GetRoomsPerProcess() int {
+	if d == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return d.RoomsPerProcess
 }
 
-func (o *DeploymentV2) GetAdditionalContainerPorts() []ContainerPort {
-	if o == nil {
+func (d *DeploymentV2) GetAdditionalContainerPorts() []ContainerPort {
+	if d == nil {
 		return []ContainerPort{}
 	}
-	return o.AdditionalContainerPorts
+	return d.AdditionalContainerPorts
 }
 
-func (o *DeploymentV2) GetDefaultContainerPort() ContainerPort {
-	if o == nil {
+func (d *DeploymentV2) GetDefaultContainerPort() ContainerPort {
+	if d == nil {
 		return ContainerPort{}
 	}
-	return o.DefaultContainerPort
+	return d.DefaultContainerPort
 }
 
-func (o *DeploymentV2) GetCreatedAt() time.Time {
-	if o == nil {
+func (d *DeploymentV2) GetCreatedAt() time.Time {
+	if d == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return d.CreatedAt
 }
 
-func (o *DeploymentV2) GetCreatedBy() string {
-	if o == nil {
+func (d *DeploymentV2) GetCreatedBy() string {
+	if d == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return d.CreatedBy
 }
 
-func (o *DeploymentV2) GetRequestedMemoryMB() float64 {
-	if o == nil {
+func (d *DeploymentV2) GetRequestedMemoryMB() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedMemoryMB
+	return d.RequestedMemoryMB
 }
 
-func (o *DeploymentV2) GetRequestedCPU() float64 {
-	if o == nil {
+func (d *DeploymentV2) GetRequestedCPU() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedCPU
+	return d.RequestedCPU
 }
 
-func (o *DeploymentV2) GetDeploymentID() int {
-	if o == nil {
+func (d *DeploymentV2) GetDeploymentID() int {
+	if d == nil {
 		return 0
 	}
-	return o.DeploymentID
+	return d.DeploymentID
 }
 
-func (o *DeploymentV2) GetBuildID() int {
-	if o == nil {
+func (d *DeploymentV2) GetBuildID() int {
+	if d == nil {
 		return 0
 	}
-	return o.BuildID
+	return d.BuildID
 }
 
-func (o *DeploymentV2) GetAppID() string {
-	if o == nil {
+func (d *DeploymentV2) GetAppID() string {
+	if d == nil {
 		return ""
 	}
-	return o.AppID
+	return d.AppID
 }

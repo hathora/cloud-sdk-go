@@ -109,58 +109,58 @@ func (l *LobbyV3) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *LobbyV3) GetShortCode() string {
-	if o == nil {
+func (l *LobbyV3) GetShortCode() string {
+	if l == nil {
 		return ""
 	}
-	return o.ShortCode
+	return l.ShortCode
 }
 
-func (o *LobbyV3) GetCreatedAt() time.Time {
-	if o == nil {
+func (l *LobbyV3) GetCreatedAt() time.Time {
+	if l == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return l.CreatedAt
 }
 
-func (o *LobbyV3) GetCreatedBy() LobbyV3CreatedBy {
-	if o == nil {
+func (l *LobbyV3) GetCreatedBy() LobbyV3CreatedBy {
+	if l == nil {
 		return LobbyV3CreatedBy{}
 	}
-	return o.CreatedBy
+	return l.CreatedBy
 }
 
-func (o *LobbyV3) GetRoomConfig() *string {
-	if o == nil {
+func (l *LobbyV3) GetRoomConfig() *string {
+	if l == nil {
 		return nil
 	}
-	return o.RoomConfig
+	return l.RoomConfig
 }
 
-func (o *LobbyV3) GetVisibility() LobbyVisibility {
-	if o == nil {
+func (l *LobbyV3) GetVisibility() LobbyVisibility {
+	if l == nil {
 		return LobbyVisibility("")
 	}
-	return o.Visibility
+	return l.Visibility
 }
 
-func (o *LobbyV3) GetRegion() Region {
-	if o == nil {
+func (l *LobbyV3) GetRegion() Region {
+	if l == nil {
 		return Region("")
 	}
-	return o.Region
+	return l.Region
 }
 
-func (o *LobbyV3) GetRoomID() string {
-	if o == nil {
+func (l *LobbyV3) GetRoomID() string {
+	if l == nil {
 		return ""
 	}
-	return o.RoomID
+	return l.RoomID
 }
 
-func (o *LobbyV3) GetAppID() string {
-	if o == nil {
+func (l *LobbyV3) GetAppID() string {
+	if l == nil {
 		return ""
 	}
-	return o.AppID
+	return l.AppID
 }

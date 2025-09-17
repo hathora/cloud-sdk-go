@@ -45,93 +45,93 @@ func (b *BuildV3) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BuildV3) GetExpiredAt() *time.Time {
-	if o == nil {
+func (b *BuildV3) GetExpiredAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.ExpiredAt
+	return b.ExpiredAt
 }
 
-func (o *BuildV3) GetShareURL() *string {
-	if o == nil {
+func (b *BuildV3) GetShareURL() *string {
+	if b == nil {
 		return nil
 	}
-	return o.ShareURL
+	return b.ShareURL
 }
 
-func (o *BuildV3) GetContentHash() *string {
-	if o == nil {
+func (b *BuildV3) GetContentHash() *string {
+	if b == nil {
 		return nil
 	}
-	return o.ContentHash
+	return b.ContentHash
 }
 
-func (o *BuildV3) GetBuildTag() *string {
-	if o == nil {
+func (b *BuildV3) GetBuildTag() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BuildTag
+	return b.BuildTag
 }
 
-func (o *BuildV3) GetImageSize() int64 {
-	if o == nil {
+func (b *BuildV3) GetImageSize() int64 {
+	if b == nil {
 		return 0
 	}
-	return o.ImageSize
+	return b.ImageSize
 }
 
-func (o *BuildV3) GetStatus() BuildStatus {
-	if o == nil {
+func (b *BuildV3) GetStatus() BuildStatus {
+	if b == nil {
 		return BuildStatus("")
 	}
-	return o.Status
+	return b.Status
 }
 
-func (o *BuildV3) GetDeletedAt() *time.Time {
-	if o == nil {
+func (b *BuildV3) GetDeletedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return b.DeletedAt
 }
 
-func (o *BuildV3) GetFinishedAt() *time.Time {
-	if o == nil {
+func (b *BuildV3) GetFinishedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.FinishedAt
+	return b.FinishedAt
 }
 
-func (o *BuildV3) GetStartedAt() *time.Time {
-	if o == nil {
+func (b *BuildV3) GetStartedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.StartedAt
+	return b.StartedAt
 }
 
-func (o *BuildV3) GetCreatedAt() time.Time {
-	if o == nil {
+func (b *BuildV3) GetCreatedAt() time.Time {
+	if b == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return b.CreatedAt
 }
 
-func (o *BuildV3) GetCreatedBy() string {
-	if o == nil {
+func (b *BuildV3) GetCreatedBy() string {
+	if b == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return b.CreatedBy
 }
 
-func (o *BuildV3) GetBuildID() string {
-	if o == nil {
+func (b *BuildV3) GetBuildID() string {
+	if b == nil {
 		return ""
 	}
-	return o.BuildID
+	return b.BuildID
 }
 
-func (o *BuildV3) GetOrgID() string {
-	if o == nil {
+func (b *BuildV3) GetOrgID() string {
+	if b == nil {
 		return ""
 	}
-	return o.OrgID
+	return b.OrgID
 }

@@ -11,16 +11,16 @@ type RescindInviteRequest struct {
 	RescindUserInvite components.RescindUserInvite `request:"mediaType=application/json"`
 }
 
-func (o *RescindInviteRequest) GetOrgID() string {
-	if o == nil {
+func (r *RescindInviteRequest) GetOrgID() string {
+	if r == nil {
 		return ""
 	}
-	return o.OrgID
+	return r.OrgID
 }
 
-func (o *RescindInviteRequest) GetRescindUserInvite() components.RescindUserInvite {
-	if o == nil {
+func (r *RescindInviteRequest) GetRescindUserInvite() components.RescindUserInvite {
+	if r == nil {
 		return components.RescindUserInvite{}
 	}
-	return o.RescindUserInvite
+	return r.RescindUserInvite
 }

@@ -12,18 +12,18 @@ type DeploymentV3Env struct {
 	Name  string `json:"name"`
 }
 
-func (o *DeploymentV3Env) GetValue() string {
-	if o == nil {
+func (d *DeploymentV3Env) GetValue() string {
+	if d == nil {
 		return ""
 	}
-	return o.Value
+	return d.Value
 }
 
-func (o *DeploymentV3Env) GetName() string {
-	if o == nil {
+func (d *DeploymentV3Env) GetName() string {
+	if d == nil {
 		return ""
 	}
-	return o.Name
+	return d.Name
 }
 
 type DeploymentV3 struct {
@@ -78,121 +78,121 @@ func (d *DeploymentV3) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *DeploymentV3) GetFleetID() *string {
-	if o == nil {
+func (d *DeploymentV3) GetFleetID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.FleetID
+	return d.FleetID
 }
 
-func (o *DeploymentV3) GetDeploymentTag() *string {
-	if o == nil {
+func (d *DeploymentV3) GetDeploymentTag() *string {
+	if d == nil {
 		return nil
 	}
-	return o.DeploymentTag
+	return d.DeploymentTag
 }
 
-func (o *DeploymentV3) GetIdleTimeoutEnabled() bool {
-	if o == nil {
+func (d *DeploymentV3) GetIdleTimeoutEnabled() bool {
+	if d == nil {
 		return false
 	}
-	return o.IdleTimeoutEnabled
+	return d.IdleTimeoutEnabled
 }
 
-func (o *DeploymentV3) GetEnv() []DeploymentV3Env {
-	if o == nil {
+func (d *DeploymentV3) GetEnv() []DeploymentV3Env {
+	if d == nil {
 		return []DeploymentV3Env{}
 	}
-	return o.Env
+	return d.Env
 }
 
-func (o *DeploymentV3) GetRoomsPerProcess() int {
-	if o == nil {
+func (d *DeploymentV3) GetRoomsPerProcess() int {
+	if d == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return d.RoomsPerProcess
 }
 
-func (o *DeploymentV3) GetAdditionalContainerPorts() []ContainerPort {
-	if o == nil {
+func (d *DeploymentV3) GetAdditionalContainerPorts() []ContainerPort {
+	if d == nil {
 		return []ContainerPort{}
 	}
-	return o.AdditionalContainerPorts
+	return d.AdditionalContainerPorts
 }
 
-func (o *DeploymentV3) GetDefaultContainerPort() ContainerPort {
-	if o == nil {
+func (d *DeploymentV3) GetDefaultContainerPort() ContainerPort {
+	if d == nil {
 		return ContainerPort{}
 	}
-	return o.DefaultContainerPort
+	return d.DefaultContainerPort
 }
 
-func (o *DeploymentV3) GetCreatedAt() time.Time {
-	if o == nil {
+func (d *DeploymentV3) GetCreatedAt() time.Time {
+	if d == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return d.CreatedAt
 }
 
-func (o *DeploymentV3) GetCreatedBy() string {
-	if o == nil {
+func (d *DeploymentV3) GetCreatedBy() string {
+	if d == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return d.CreatedBy
 }
 
-func (o *DeploymentV3) GetRequestedGPU() *float64 {
-	if o == nil {
+func (d *DeploymentV3) GetRequestedGPU() *float64 {
+	if d == nil {
 		return nil
 	}
-	return o.RequestedGPU
+	return d.RequestedGPU
 }
 
-func (o *DeploymentV3) GetExperimentalRequestedGPU() *float64 {
-	if o == nil {
+func (d *DeploymentV3) GetExperimentalRequestedGPU() *float64 {
+	if d == nil {
 		return nil
 	}
-	return o.ExperimentalRequestedGPU
+	return d.ExperimentalRequestedGPU
 }
 
-func (o *DeploymentV3) GetRequestedMemoryMB() float64 {
-	if o == nil {
+func (d *DeploymentV3) GetRequestedMemoryMB() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedMemoryMB
+	return d.RequestedMemoryMB
 }
 
-func (o *DeploymentV3) GetRequestedCPU() float64 {
-	if o == nil {
+func (d *DeploymentV3) GetRequestedCPU() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedCPU
+	return d.RequestedCPU
 }
 
-func (o *DeploymentV3) GetDeploymentID() string {
-	if o == nil {
+func (d *DeploymentV3) GetDeploymentID() string {
+	if d == nil {
 		return ""
 	}
-	return o.DeploymentID
+	return d.DeploymentID
 }
 
-func (o *DeploymentV3) GetBuildTag() *string {
-	if o == nil {
+func (d *DeploymentV3) GetBuildTag() *string {
+	if d == nil {
 		return nil
 	}
-	return o.BuildTag
+	return d.BuildTag
 }
 
-func (o *DeploymentV3) GetBuildID() string {
-	if o == nil {
+func (d *DeploymentV3) GetBuildID() string {
+	if d == nil {
 		return ""
 	}
-	return o.BuildID
+	return d.BuildID
 }
 
-func (o *DeploymentV3) GetAppID() string {
-	if o == nil {
+func (d *DeploymentV3) GetAppID() string {
+	if d == nil {
 		return ""
 	}
-	return o.AppID
+	return d.AppID
 }

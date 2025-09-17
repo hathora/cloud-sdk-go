@@ -6,11 +6,11 @@ type RunBuildDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *RunBuildDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (r *RunBuildDeprecatedGlobals) GetAppID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.AppID
+	return r.AppID
 }
 
 type File struct {
@@ -19,29 +19,29 @@ type File struct {
 	Content any `multipartForm:"content"`
 }
 
-func (o *File) GetFileName() string {
-	if o == nil {
+func (f *File) GetFileName() string {
+	if f == nil {
 		return ""
 	}
-	return o.FileName
+	return f.FileName
 }
 
-func (o *File) GetContent() any {
-	if o == nil {
+func (f *File) GetContent() any {
+	if f == nil {
 		return nil
 	}
-	return o.Content
+	return f.Content
 }
 
 type RunBuildDeprecatedRequestBody struct {
 	File File `multipartForm:"file,name=file"`
 }
 
-func (o *RunBuildDeprecatedRequestBody) GetFile() File {
-	if o == nil {
+func (r *RunBuildDeprecatedRequestBody) GetFile() File {
+	if r == nil {
 		return File{}
 	}
-	return o.File
+	return r.File
 }
 
 type RunBuildDeprecatedRequest struct {
@@ -50,23 +50,23 @@ type RunBuildDeprecatedRequest struct {
 	RequestBody RunBuildDeprecatedRequestBody `request:"mediaType=multipart/form-data"`
 }
 
-func (o *RunBuildDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (r *RunBuildDeprecatedRequest) GetAppID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.AppID
+	return r.AppID
 }
 
-func (o *RunBuildDeprecatedRequest) GetBuildID() int {
-	if o == nil {
+func (r *RunBuildDeprecatedRequest) GetBuildID() int {
+	if r == nil {
 		return 0
 	}
-	return o.BuildID
+	return r.BuildID
 }
 
-func (o *RunBuildDeprecatedRequest) GetRequestBody() RunBuildDeprecatedRequestBody {
-	if o == nil {
+func (r *RunBuildDeprecatedRequest) GetRequestBody() RunBuildDeprecatedRequestBody {
+	if r == nil {
 		return RunBuildDeprecatedRequestBody{}
 	}
-	return o.RequestBody
+	return r.RequestBody
 }

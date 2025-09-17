@@ -6,11 +6,11 @@ type GetBuildInfoV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetBuildInfoV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetBuildInfoV2DeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetBuildInfoV2DeprecatedRequest struct {
@@ -18,16 +18,16 @@ type GetBuildInfoV2DeprecatedRequest struct {
 	BuildID int     `pathParam:"style=simple,explode=false,name=buildId"`
 }
 
-func (o *GetBuildInfoV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetBuildInfoV2DeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetBuildInfoV2DeprecatedRequest) GetBuildID() int {
-	if o == nil {
+func (g *GetBuildInfoV2DeprecatedRequest) GetBuildID() int {
+	if g == nil {
 		return 0
 	}
-	return o.BuildID
+	return g.BuildID
 }

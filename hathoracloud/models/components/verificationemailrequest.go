@@ -6,9 +6,9 @@ type VerificationEmailRequest struct {
 	UserID string `json:"userId"`
 }
 
-func (o *VerificationEmailRequest) GetUserID() string {
-	if o == nil {
+func (v *VerificationEmailRequest) GetUserID() string {
+	if v == nil {
 		return ""
 	}
-	return o.UserID
+	return v.UserID
 }

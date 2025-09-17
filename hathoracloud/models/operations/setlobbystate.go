@@ -10,11 +10,11 @@ type SetLobbyStateGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *SetLobbyStateGlobals) GetAppID() *string {
-	if o == nil {
+func (s *SetLobbyStateGlobals) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
 type SetLobbyStateRequest struct {
@@ -23,23 +23,23 @@ type SetLobbyStateRequest struct {
 	SetLobbyStateParams components.SetLobbyStateParams `request:"mediaType=application/json"`
 }
 
-func (o *SetLobbyStateRequest) GetAppID() *string {
-	if o == nil {
+func (s *SetLobbyStateRequest) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
-func (o *SetLobbyStateRequest) GetRoomID() string {
-	if o == nil {
+func (s *SetLobbyStateRequest) GetRoomID() string {
+	if s == nil {
 		return ""
 	}
-	return o.RoomID
+	return s.RoomID
 }
 
-func (o *SetLobbyStateRequest) GetSetLobbyStateParams() components.SetLobbyStateParams {
-	if o == nil {
+func (s *SetLobbyStateRequest) GetSetLobbyStateParams() components.SetLobbyStateParams {
+	if s == nil {
 		return components.SetLobbyStateParams{}
 	}
-	return o.SetLobbyStateParams
+	return s.SetLobbyStateParams
 }

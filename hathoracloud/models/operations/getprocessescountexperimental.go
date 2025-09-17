@@ -10,11 +10,11 @@ type GetProcessesCountExperimentalGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetProcessesCountExperimentalGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetProcessesCountExperimentalGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetProcessesCountExperimentalRequest struct {
@@ -24,32 +24,32 @@ type GetProcessesCountExperimentalRequest struct {
 	Before *float64                   `queryParam:"style=form,explode=true,name=before"`
 }
 
-func (o *GetProcessesCountExperimentalRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetProcessesCountExperimentalRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetProcessesCountExperimentalRequest) GetStatus() []components.ProcessStatus {
-	if o == nil {
+func (g *GetProcessesCountExperimentalRequest) GetStatus() []components.ProcessStatus {
+	if g == nil {
 		return nil
 	}
-	return o.Status
+	return g.Status
 }
 
-func (o *GetProcessesCountExperimentalRequest) GetRegion() []components.Region {
-	if o == nil {
+func (g *GetProcessesCountExperimentalRequest) GetRegion() []components.Region {
+	if g == nil {
 		return nil
 	}
-	return o.Region
+	return g.Region
 }
 
-func (o *GetProcessesCountExperimentalRequest) GetBefore() *float64 {
-	if o == nil {
+func (g *GetProcessesCountExperimentalRequest) GetBefore() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.Before
+	return g.Before
 }
 
 // GetProcessesCountExperimentalResponseBody - Ok
@@ -57,9 +57,9 @@ type GetProcessesCountExperimentalResponseBody struct {
 	Count float64 `json:"count"`
 }
 
-func (o *GetProcessesCountExperimentalResponseBody) GetCount() float64 {
-	if o == nil {
+func (g *GetProcessesCountExperimentalResponseBody) GetCount() float64 {
+	if g == nil {
 		return 0.0
 	}
-	return o.Count
+	return g.Count
 }

@@ -10,11 +10,11 @@ type GetFleetRegionGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetFleetRegionGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetFleetRegionGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetFleetRegionRequest struct {
@@ -23,23 +23,23 @@ type GetFleetRegionRequest struct {
 	OrgID   *string           `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetFleetRegionRequest) GetFleetID() string {
-	if o == nil {
+func (g *GetFleetRegionRequest) GetFleetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.FleetID
+	return g.FleetID
 }
 
-func (o *GetFleetRegionRequest) GetRegion() components.Region {
-	if o == nil {
+func (g *GetFleetRegionRequest) GetRegion() components.Region {
+	if g == nil {
 		return components.Region("")
 	}
-	return o.Region
+	return g.Region
 }
 
-func (o *GetFleetRegionRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetFleetRegionRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

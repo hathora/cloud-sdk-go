@@ -18,37 +18,37 @@ type StaticProcessAllocationConfig struct {
 	Region       Region `json:"region"`
 }
 
-func (o *StaticProcessAllocationConfig) GetAutoscalingEnabled() *bool {
-	if o == nil {
+func (s *StaticProcessAllocationConfig) GetAutoscalingEnabled() *bool {
+	if s == nil {
 		return nil
 	}
-	return o.AutoscalingEnabled
+	return s.AutoscalingEnabled
 }
 
-func (o *StaticProcessAllocationConfig) GetMaxProcesses() int {
-	if o == nil {
+func (s *StaticProcessAllocationConfig) GetMaxProcesses() int {
+	if s == nil {
 		return 0
 	}
-	return o.MaxProcesses
+	return s.MaxProcesses
 }
 
-func (o *StaticProcessAllocationConfig) GetTargetProcesses() int {
-	if o == nil {
+func (s *StaticProcessAllocationConfig) GetTargetProcesses() int {
+	if s == nil {
 		return 0
 	}
-	return o.TargetProcesses
+	return s.TargetProcesses
 }
 
-func (o *StaticProcessAllocationConfig) GetMinProcesses() int {
-	if o == nil {
+func (s *StaticProcessAllocationConfig) GetMinProcesses() int {
+	if s == nil {
 		return 0
 	}
-	return o.MinProcesses
+	return s.MinProcesses
 }
 
-func (o *StaticProcessAllocationConfig) GetRegion() Region {
-	if o == nil {
+func (s *StaticProcessAllocationConfig) GetRegion() Region {
+	if s == nil {
 		return Region("")
 	}
-	return o.Region
+	return s.Region
 }

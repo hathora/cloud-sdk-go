@@ -10,11 +10,11 @@ type CreateBuildWithUploadURLV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateBuildWithUploadURLV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateBuildWithUploadURLV2DeprecatedGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateBuildWithUploadURLV2DeprecatedRequest struct {
@@ -22,16 +22,16 @@ type CreateBuildWithUploadURLV2DeprecatedRequest struct {
 	CreateBuildParams components.CreateBuildParams `request:"mediaType=application/json"`
 }
 
-func (o *CreateBuildWithUploadURLV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateBuildWithUploadURLV2DeprecatedRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateBuildWithUploadURLV2DeprecatedRequest) GetCreateBuildParams() components.CreateBuildParams {
-	if o == nil {
+func (c *CreateBuildWithUploadURLV2DeprecatedRequest) GetCreateBuildParams() components.CreateBuildParams {
+	if c == nil {
 		return components.CreateBuildParams{}
 	}
-	return o.CreateBuildParams
+	return c.CreateBuildParams
 }

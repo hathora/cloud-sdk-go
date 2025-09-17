@@ -11,18 +11,18 @@ type DeploymentConfigEnv struct {
 	Name  string `json:"name"`
 }
 
-func (o *DeploymentConfigEnv) GetValue() string {
-	if o == nil {
+func (d *DeploymentConfigEnv) GetValue() string {
+	if d == nil {
 		return ""
 	}
-	return o.Value
+	return d.Value
 }
 
-func (o *DeploymentConfigEnv) GetName() string {
-	if o == nil {
+func (d *DeploymentConfigEnv) GetName() string {
+	if d == nil {
 		return ""
 	}
-	return o.Name
+	return d.Name
 }
 
 // DeploymentConfig - User specified deployment configuration for your application at runtime.
@@ -63,51 +63,51 @@ func (d *DeploymentConfig) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *DeploymentConfig) GetIdleTimeoutEnabled() *bool {
-	if o == nil {
+func (d *DeploymentConfig) GetIdleTimeoutEnabled() *bool {
+	if d == nil {
 		return nil
 	}
-	return o.IdleTimeoutEnabled
+	return d.IdleTimeoutEnabled
 }
 
-func (o *DeploymentConfig) GetEnv() []DeploymentConfigEnv {
-	if o == nil {
+func (d *DeploymentConfig) GetEnv() []DeploymentConfigEnv {
+	if d == nil {
 		return []DeploymentConfigEnv{}
 	}
-	return o.Env
+	return d.Env
 }
 
-func (o *DeploymentConfig) GetRoomsPerProcess() int {
-	if o == nil {
+func (d *DeploymentConfig) GetRoomsPerProcess() int {
+	if d == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return d.RoomsPerProcess
 }
 
-func (o *DeploymentConfig) GetPlanName() PlanName {
-	if o == nil {
+func (d *DeploymentConfig) GetPlanName() PlanName {
+	if d == nil {
 		return PlanName("")
 	}
-	return o.PlanName
+	return d.PlanName
 }
 
-func (o *DeploymentConfig) GetAdditionalContainerPorts() []ContainerPort {
-	if o == nil {
+func (d *DeploymentConfig) GetAdditionalContainerPorts() []ContainerPort {
+	if d == nil {
 		return nil
 	}
-	return o.AdditionalContainerPorts
+	return d.AdditionalContainerPorts
 }
 
-func (o *DeploymentConfig) GetTransportType() TransportType {
-	if o == nil {
+func (d *DeploymentConfig) GetTransportType() TransportType {
+	if d == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return d.TransportType
 }
 
-func (o *DeploymentConfig) GetContainerPort() int {
-	if o == nil {
+func (d *DeploymentConfig) GetContainerPort() int {
+	if d == nil {
 		return 0
 	}
-	return o.ContainerPort
+	return d.ContainerPort
 }

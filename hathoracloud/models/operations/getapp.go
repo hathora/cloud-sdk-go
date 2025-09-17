@@ -6,20 +6,20 @@ type GetAppGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetAppGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetAppGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetAppRequest struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetAppRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetAppRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }

@@ -6,9 +6,9 @@ type ApplicationsPage struct {
 	Applications []ApplicationWithLatestDeploymentAndBuild `json:"applications"`
 }
 
-func (o *ApplicationsPage) GetApplications() []ApplicationWithLatestDeploymentAndBuild {
-	if o == nil {
+func (a *ApplicationsPage) GetApplications() []ApplicationWithLatestDeploymentAndBuild {
+	if a == nil {
 		return []ApplicationWithLatestDeploymentAndBuild{}
 	}
-	return o.Applications
+	return a.Applications
 }

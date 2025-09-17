@@ -8,23 +8,23 @@ type PingEndpoints struct {
 	Region Region  `json:"region"`
 }
 
-func (o *PingEndpoints) GetPort() float64 {
-	if o == nil {
+func (p *PingEndpoints) GetPort() float64 {
+	if p == nil {
 		return 0.0
 	}
-	return o.Port
+	return p.Port
 }
 
-func (o *PingEndpoints) GetHost() string {
-	if o == nil {
+func (p *PingEndpoints) GetHost() string {
+	if p == nil {
 		return ""
 	}
-	return o.Host
+	return p.Host
 }
 
-func (o *PingEndpoints) GetRegion() Region {
-	if o == nil {
+func (p *PingEndpoints) GetRegion() Region {
+	if p == nil {
 		return Region("")
 	}
-	return o.Region
+	return p.Region
 }

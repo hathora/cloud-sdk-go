@@ -10,11 +10,11 @@ type RunBuildRegistryGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *RunBuildRegistryGlobals) GetOrgID() *string {
-	if o == nil {
+func (r *RunBuildRegistryGlobals) GetOrgID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.OrgID
+	return r.OrgID
 }
 
 type RunBuildRegistryRequest struct {
@@ -23,23 +23,23 @@ type RunBuildRegistryRequest struct {
 	RegistryConfig components.RegistryConfig `request:"mediaType=application/json"`
 }
 
-func (o *RunBuildRegistryRequest) GetBuildID() string {
-	if o == nil {
+func (r *RunBuildRegistryRequest) GetBuildID() string {
+	if r == nil {
 		return ""
 	}
-	return o.BuildID
+	return r.BuildID
 }
 
-func (o *RunBuildRegistryRequest) GetOrgID() *string {
-	if o == nil {
+func (r *RunBuildRegistryRequest) GetOrgID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.OrgID
+	return r.OrgID
 }
 
-func (o *RunBuildRegistryRequest) GetRegistryConfig() components.RegistryConfig {
-	if o == nil {
+func (r *RunBuildRegistryRequest) GetRegistryConfig() components.RegistryConfig {
+	if r == nil {
 		return components.RegistryConfig{}
 	}
-	return o.RegistryConfig
+	return r.RegistryConfig
 }

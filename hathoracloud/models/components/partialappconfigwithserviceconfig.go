@@ -10,23 +10,23 @@ type PartialAppConfigWithServiceConfig struct {
 	ServiceConfig     *ServiceConfigWrite `json:"serviceConfig,omitempty"`
 }
 
-func (o *PartialAppConfigWithServiceConfig) GetAppName() *string {
-	if o == nil {
+func (p *PartialAppConfigWithServiceConfig) GetAppName() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AppName
+	return p.AppName
 }
 
-func (o *PartialAppConfigWithServiceConfig) GetAuthConfiguration() *AuthConfiguration {
-	if o == nil {
+func (p *PartialAppConfigWithServiceConfig) GetAuthConfiguration() *AuthConfiguration {
+	if p == nil {
 		return nil
 	}
-	return o.AuthConfiguration
+	return p.AuthConfiguration
 }
 
-func (o *PartialAppConfigWithServiceConfig) GetServiceConfig() *ServiceConfigWrite {
-	if o == nil {
+func (p *PartialAppConfigWithServiceConfig) GetServiceConfig() *ServiceConfigWrite {
+	if p == nil {
 		return nil
 	}
-	return o.ServiceConfig
+	return p.ServiceConfig
 }

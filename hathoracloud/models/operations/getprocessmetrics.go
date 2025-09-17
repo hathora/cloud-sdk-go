@@ -11,11 +11,11 @@ type GetProcessMetricsGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetProcessMetricsGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetProcessMetricsGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetProcessMetricsRequest struct {
@@ -41,44 +41,44 @@ func (g *GetProcessMetricsRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetProcessMetricsRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetProcessMetricsRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetProcessMetricsRequest) GetProcessID() string {
-	if o == nil {
+func (g *GetProcessMetricsRequest) GetProcessID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ProcessID
+	return g.ProcessID
 }
 
-func (o *GetProcessMetricsRequest) GetMetrics() []components.ProcessMetricName {
-	if o == nil {
+func (g *GetProcessMetricsRequest) GetMetrics() []components.ProcessMetricName {
+	if g == nil {
 		return nil
 	}
-	return o.Metrics
+	return g.Metrics
 }
 
-func (o *GetProcessMetricsRequest) GetEnd() *float64 {
-	if o == nil {
+func (g *GetProcessMetricsRequest) GetEnd() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.End
+	return g.End
 }
 
-func (o *GetProcessMetricsRequest) GetStart() *float64 {
-	if o == nil {
+func (g *GetProcessMetricsRequest) GetStart() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.Start
+	return g.Start
 }
 
-func (o *GetProcessMetricsRequest) GetStep() *int {
-	if o == nil {
+func (g *GetProcessMetricsRequest) GetStep() *int {
+	if g == nil {
 		return nil
 	}
-	return o.Step
+	return g.Step
 }

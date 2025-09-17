@@ -10,11 +10,11 @@ type CreateBuildRegistryGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *CreateBuildRegistryGlobals) GetOrgID() *string {
-	if o == nil {
+func (c *CreateBuildRegistryGlobals) GetOrgID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OrgID
+	return c.OrgID
 }
 
 type CreateBuildRegistryRequest struct {
@@ -22,16 +22,16 @@ type CreateBuildRegistryRequest struct {
 	CreateBuildV3Params components.CreateBuildV3Params `request:"mediaType=application/json"`
 }
 
-func (o *CreateBuildRegistryRequest) GetOrgID() *string {
-	if o == nil {
+func (c *CreateBuildRegistryRequest) GetOrgID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OrgID
+	return c.OrgID
 }
 
-func (o *CreateBuildRegistryRequest) GetCreateBuildV3Params() components.CreateBuildV3Params {
-	if o == nil {
+func (c *CreateBuildRegistryRequest) GetCreateBuildV3Params() components.CreateBuildV3Params {
+	if c == nil {
 		return components.CreateBuildV3Params{}
 	}
-	return o.CreateBuildV3Params
+	return c.CreateBuildV3Params
 }

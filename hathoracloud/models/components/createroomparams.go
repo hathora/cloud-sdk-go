@@ -12,30 +12,30 @@ type CreateRoomParams struct {
 	Region     Region  `json:"region"`
 }
 
-func (o *CreateRoomParams) GetDeploymentID() *string {
-	if o == nil {
+func (c *CreateRoomParams) GetDeploymentID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.DeploymentID
+	return c.DeploymentID
 }
 
-func (o *CreateRoomParams) GetClientIPs() []string {
-	if o == nil {
+func (c *CreateRoomParams) GetClientIPs() []string {
+	if c == nil {
 		return nil
 	}
-	return o.ClientIPs
+	return c.ClientIPs
 }
 
-func (o *CreateRoomParams) GetRoomConfig() *string {
-	if o == nil {
+func (c *CreateRoomParams) GetRoomConfig() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RoomConfig
+	return c.RoomConfig
 }
 
-func (o *CreateRoomParams) GetRegion() Region {
-	if o == nil {
+func (c *CreateRoomParams) GetRegion() Region {
+	if c == nil {
 		return Region("")
 	}
-	return o.Region
+	return c.Region
 }

@@ -13,30 +13,30 @@ type ConnectionInfoV2 struct {
 	RoomID string `json:"roomId"`
 }
 
-func (o *ConnectionInfoV2) GetAdditionalExposedPorts() []ExposedPort {
-	if o == nil {
+func (c *ConnectionInfoV2) GetAdditionalExposedPorts() []ExposedPort {
+	if c == nil {
 		return []ExposedPort{}
 	}
-	return o.AdditionalExposedPorts
+	return c.AdditionalExposedPorts
 }
 
-func (o *ConnectionInfoV2) GetExposedPort() *ExposedPort {
-	if o == nil {
+func (c *ConnectionInfoV2) GetExposedPort() *ExposedPort {
+	if c == nil {
 		return nil
 	}
-	return o.ExposedPort
+	return c.ExposedPort
 }
 
-func (o *ConnectionInfoV2) GetStatus() RoomReadyStatus {
-	if o == nil {
+func (c *ConnectionInfoV2) GetStatus() RoomReadyStatus {
+	if c == nil {
 		return RoomReadyStatus("")
 	}
-	return o.Status
+	return c.Status
 }
 
-func (o *ConnectionInfoV2) GetRoomID() string {
-	if o == nil {
+func (c *ConnectionInfoV2) GetRoomID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RoomID
+	return c.RoomID
 }

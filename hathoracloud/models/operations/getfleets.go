@@ -6,20 +6,20 @@ type GetFleetsGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetFleetsGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetFleetsGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetFleetsRequest struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetFleetsRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetFleetsRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

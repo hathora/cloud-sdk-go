@@ -11,22 +11,22 @@ type CreatePrivateLobbyDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreatePrivateLobbyDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreatePrivateLobbyDeprecatedGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreatePrivateLobbyDeprecatedSecurity struct {
 	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *CreatePrivateLobbyDeprecatedSecurity) GetPlayerAuth() string {
-	if o == nil {
+func (c *CreatePrivateLobbyDeprecatedSecurity) GetPlayerAuth() string {
+	if c == nil {
 		return ""
 	}
-	return o.PlayerAuth
+	return c.PlayerAuth
 }
 
 type CreatePrivateLobbyDeprecatedRequest struct {
@@ -46,23 +46,23 @@ func (c *CreatePrivateLobbyDeprecatedRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CreatePrivateLobbyDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreatePrivateLobbyDeprecatedRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreatePrivateLobbyDeprecatedRequest) GetRegion() *components.Region {
-	if o == nil {
+func (c *CreatePrivateLobbyDeprecatedRequest) GetRegion() *components.Region {
+	if c == nil {
 		return nil
 	}
-	return o.Region
+	return c.Region
 }
 
-func (o *CreatePrivateLobbyDeprecatedRequest) GetLocal() *bool {
-	if o == nil {
+func (c *CreatePrivateLobbyDeprecatedRequest) GetLocal() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Local
+	return c.Local
 }

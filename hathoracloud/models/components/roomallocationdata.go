@@ -15,37 +15,37 @@ type RoomAllocationData struct {
 	ProcessID *string `json:"processId,omitempty"`
 }
 
-func (o *RoomAllocationData) GetAdditionalExposedPorts() []ExposedPort {
-	if o == nil {
+func (r *RoomAllocationData) GetAdditionalExposedPorts() []ExposedPort {
+	if r == nil {
 		return []ExposedPort{}
 	}
-	return o.AdditionalExposedPorts
+	return r.AdditionalExposedPorts
 }
 
-func (o *RoomAllocationData) GetExposedPort() *ExposedPort {
-	if o == nil {
+func (r *RoomAllocationData) GetExposedPort() *ExposedPort {
+	if r == nil {
 		return nil
 	}
-	return o.ExposedPort
+	return r.ExposedPort
 }
 
-func (o *RoomAllocationData) GetStatus() RoomReadyStatus {
-	if o == nil {
+func (r *RoomAllocationData) GetStatus() RoomReadyStatus {
+	if r == nil {
 		return RoomReadyStatus("")
 	}
-	return o.Status
+	return r.Status
 }
 
-func (o *RoomAllocationData) GetRoomID() string {
-	if o == nil {
+func (r *RoomAllocationData) GetRoomID() string {
+	if r == nil {
 		return ""
 	}
-	return o.RoomID
+	return r.RoomID
 }
 
-func (o *RoomAllocationData) GetProcessID() *string {
-	if o == nil {
+func (r *RoomAllocationData) GetProcessID() *string {
+	if r == nil {
 		return nil
 	}
-	return o.ProcessID
+	return r.ProcessID
 }

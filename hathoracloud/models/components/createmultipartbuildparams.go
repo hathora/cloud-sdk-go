@@ -10,23 +10,23 @@ type CreateMultipartBuildParams struct {
 	BuildSizeInBytes float64 `json:"buildSizeInBytes"`
 }
 
-func (o *CreateMultipartBuildParams) GetBuildID() *string {
-	if o == nil {
+func (c *CreateMultipartBuildParams) GetBuildID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.BuildID
+	return c.BuildID
 }
 
-func (o *CreateMultipartBuildParams) GetBuildTag() *string {
-	if o == nil {
+func (c *CreateMultipartBuildParams) GetBuildTag() *string {
+	if c == nil {
 		return nil
 	}
-	return o.BuildTag
+	return c.BuildTag
 }
 
-func (o *CreateMultipartBuildParams) GetBuildSizeInBytes() float64 {
-	if o == nil {
+func (c *CreateMultipartBuildParams) GetBuildSizeInBytes() float64 {
+	if c == nil {
 		return 0.0
 	}
-	return o.BuildSizeInBytes
+	return c.BuildSizeInBytes
 }

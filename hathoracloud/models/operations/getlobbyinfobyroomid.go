@@ -6,11 +6,11 @@ type GetLobbyInfoByRoomIDGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetLobbyInfoByRoomIDGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetLobbyInfoByRoomIDGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetLobbyInfoByRoomIDRequest struct {
@@ -18,16 +18,16 @@ type GetLobbyInfoByRoomIDRequest struct {
 	RoomID string  `pathParam:"style=simple,explode=false,name=roomId"`
 }
 
-func (o *GetLobbyInfoByRoomIDRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetLobbyInfoByRoomIDRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetLobbyInfoByRoomIDRequest) GetRoomID() string {
-	if o == nil {
+func (g *GetLobbyInfoByRoomIDRequest) GetRoomID() string {
+	if g == nil {
 		return ""
 	}
-	return o.RoomID
+	return g.RoomID
 }

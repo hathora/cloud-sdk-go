@@ -6,20 +6,20 @@ type GetPaymentMethodGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetPaymentMethodGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetPaymentMethodGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetPaymentMethodRequest struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetPaymentMethodRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetPaymentMethodRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

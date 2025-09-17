@@ -150,7 +150,7 @@ func main() {
     )
 
     res, err := s.BuildsV1.CreateBuildDeprecated(ctx, components.CreateBuildParams{
-        BuildTag: hathoracloud.String("0.1.14-14c793"),
+        BuildTag: hathoracloud.Pointer("0.1.14-14c793"),
     })
     if err != nil {
         log.Fatal(err)

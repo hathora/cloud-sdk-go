@@ -7,18 +7,18 @@ type DeploymentConfigV3Env struct {
 	Name  string `json:"name"`
 }
 
-func (o *DeploymentConfigV3Env) GetValue() string {
-	if o == nil {
+func (d *DeploymentConfigV3Env) GetValue() string {
+	if d == nil {
 		return ""
 	}
-	return o.Value
+	return d.Value
 }
 
-func (o *DeploymentConfigV3Env) GetName() string {
-	if o == nil {
+func (d *DeploymentConfigV3Env) GetName() string {
+	if d == nil {
 		return ""
 	}
-	return o.Name
+	return d.Name
 }
 
 type DeploymentConfigV3 struct {
@@ -54,93 +54,93 @@ type DeploymentConfigV3 struct {
 	BuildID string `json:"buildId"`
 }
 
-func (o *DeploymentConfigV3) GetFleetID() *string {
-	if o == nil {
+func (d *DeploymentConfigV3) GetFleetID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.FleetID
+	return d.FleetID
 }
 
-func (o *DeploymentConfigV3) GetDeploymentTag() *string {
-	if o == nil {
+func (d *DeploymentConfigV3) GetDeploymentTag() *string {
+	if d == nil {
 		return nil
 	}
-	return o.DeploymentTag
+	return d.DeploymentTag
 }
 
-func (o *DeploymentConfigV3) GetIdleTimeoutEnabled() bool {
-	if o == nil {
+func (d *DeploymentConfigV3) GetIdleTimeoutEnabled() bool {
+	if d == nil {
 		return false
 	}
-	return o.IdleTimeoutEnabled
+	return d.IdleTimeoutEnabled
 }
 
-func (o *DeploymentConfigV3) GetEnv() []DeploymentConfigV3Env {
-	if o == nil {
+func (d *DeploymentConfigV3) GetEnv() []DeploymentConfigV3Env {
+	if d == nil {
 		return []DeploymentConfigV3Env{}
 	}
-	return o.Env
+	return d.Env
 }
 
-func (o *DeploymentConfigV3) GetRoomsPerProcess() int {
-	if o == nil {
+func (d *DeploymentConfigV3) GetRoomsPerProcess() int {
+	if d == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return d.RoomsPerProcess
 }
 
-func (o *DeploymentConfigV3) GetAdditionalContainerPorts() []ContainerPort {
-	if o == nil {
+func (d *DeploymentConfigV3) GetAdditionalContainerPorts() []ContainerPort {
+	if d == nil {
 		return nil
 	}
-	return o.AdditionalContainerPorts
+	return d.AdditionalContainerPorts
 }
 
-func (o *DeploymentConfigV3) GetTransportType() TransportType {
-	if o == nil {
+func (d *DeploymentConfigV3) GetTransportType() TransportType {
+	if d == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return d.TransportType
 }
 
-func (o *DeploymentConfigV3) GetContainerPort() int {
-	if o == nil {
+func (d *DeploymentConfigV3) GetContainerPort() int {
+	if d == nil {
 		return 0
 	}
-	return o.ContainerPort
+	return d.ContainerPort
 }
 
-func (o *DeploymentConfigV3) GetRequestedGPU() *float64 {
-	if o == nil {
+func (d *DeploymentConfigV3) GetRequestedGPU() *float64 {
+	if d == nil {
 		return nil
 	}
-	return o.RequestedGPU
+	return d.RequestedGPU
 }
 
-func (o *DeploymentConfigV3) GetExperimentalRequestedGPU() *float64 {
-	if o == nil {
+func (d *DeploymentConfigV3) GetExperimentalRequestedGPU() *float64 {
+	if d == nil {
 		return nil
 	}
-	return o.ExperimentalRequestedGPU
+	return d.ExperimentalRequestedGPU
 }
 
-func (o *DeploymentConfigV3) GetRequestedMemoryMB() float64 {
-	if o == nil {
+func (d *DeploymentConfigV3) GetRequestedMemoryMB() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedMemoryMB
+	return d.RequestedMemoryMB
 }
 
-func (o *DeploymentConfigV3) GetRequestedCPU() float64 {
-	if o == nil {
+func (d *DeploymentConfigV3) GetRequestedCPU() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedCPU
+	return d.RequestedCPU
 }
 
-func (o *DeploymentConfigV3) GetBuildID() string {
-	if o == nil {
+func (d *DeploymentConfigV3) GetBuildID() string {
+	if d == nil {
 		return ""
 	}
-	return o.BuildID
+	return d.BuildID
 }

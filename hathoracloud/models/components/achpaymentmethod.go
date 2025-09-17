@@ -7,16 +7,16 @@ type AchPaymentMethod struct {
 	BankName *string `json:"bankName,omitempty"`
 }
 
-func (o *AchPaymentMethod) GetLast4() *string {
-	if o == nil {
+func (a *AchPaymentMethod) GetLast4() *string {
+	if a == nil {
 		return nil
 	}
-	return o.Last4
+	return a.Last4
 }
 
-func (o *AchPaymentMethod) GetBankName() *string {
-	if o == nil {
+func (a *AchPaymentMethod) GetBankName() *string {
+	if a == nil {
 		return nil
 	}
-	return o.BankName
+	return a.BankName
 }

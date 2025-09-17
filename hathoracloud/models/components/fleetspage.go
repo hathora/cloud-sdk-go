@@ -6,9 +6,9 @@ type FleetsPage struct {
 	Fleets []Fleet `json:"fleets"`
 }
 
-func (o *FleetsPage) GetFleets() []Fleet {
-	if o == nil {
+func (f *FleetsPage) GetFleets() []Fleet {
+	if f == nil {
 		return []Fleet{}
 	}
-	return o.Fleets
+	return f.Fleets
 }

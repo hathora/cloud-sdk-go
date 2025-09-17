@@ -6,20 +6,20 @@ type GetDeploymentsV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetDeploymentsV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetDeploymentsV2DeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetDeploymentsV2DeprecatedRequest struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetDeploymentsV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetDeploymentsV2DeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }

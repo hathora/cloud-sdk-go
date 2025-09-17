@@ -8,11 +8,11 @@ type Google struct {
 	ClientID string `json:"clientId"`
 }
 
-func (o *Google) GetClientID() string {
-	if o == nil {
+func (g *Google) GetClientID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ClientID
+	return g.ClientID
 }
 
 // AuthConfiguration - Configure [player authentication](https://hathora.dev/docs/backend-integrations/lobbies-and-matchmaking/auth-service) for your application. Use Hathora's built-in auth providers or use your own [custom authentication](https://hathora.dev/docs/lobbies-and-matchmaking/auth-service#custom-auth-provider).
@@ -25,23 +25,23 @@ type AuthConfiguration struct {
 	Anonymous *DeletedBuild `json:"anonymous,omitempty"`
 }
 
-func (o *AuthConfiguration) GetGoogle() *Google {
-	if o == nil {
+func (a *AuthConfiguration) GetGoogle() *Google {
+	if a == nil {
 		return nil
 	}
-	return o.Google
+	return a.Google
 }
 
-func (o *AuthConfiguration) GetNickname() *DeletedBuild {
-	if o == nil {
+func (a *AuthConfiguration) GetNickname() *DeletedBuild {
+	if a == nil {
 		return nil
 	}
-	return o.Nickname
+	return a.Nickname
 }
 
-func (o *AuthConfiguration) GetAnonymous() *DeletedBuild {
-	if o == nil {
+func (a *AuthConfiguration) GetAnonymous() *DeletedBuild {
+	if a == nil {
 		return nil
 	}
-	return o.Anonymous
+	return a.Anonymous
 }

@@ -7,9 +7,9 @@ type NicknameObject struct {
 	Nickname string `json:"nickname"`
 }
 
-func (o *NicknameObject) GetNickname() string {
-	if o == nil {
+func (n *NicknameObject) GetNickname() string {
+	if n == nil {
 		return ""
 	}
-	return o.Nickname
+	return n.Nickname
 }

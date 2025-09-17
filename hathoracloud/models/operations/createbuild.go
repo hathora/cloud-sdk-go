@@ -10,11 +10,11 @@ type CreateBuildGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *CreateBuildGlobals) GetOrgID() *string {
-	if o == nil {
+func (c *CreateBuildGlobals) GetOrgID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OrgID
+	return c.OrgID
 }
 
 type CreateBuildRequest struct {
@@ -22,16 +22,16 @@ type CreateBuildRequest struct {
 	CreateMultipartBuildParams components.CreateMultipartBuildParams `request:"mediaType=application/json"`
 }
 
-func (o *CreateBuildRequest) GetOrgID() *string {
-	if o == nil {
+func (c *CreateBuildRequest) GetOrgID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.OrgID
+	return c.OrgID
 }
 
-func (o *CreateBuildRequest) GetCreateMultipartBuildParams() components.CreateMultipartBuildParams {
-	if o == nil {
+func (c *CreateBuildRequest) GetCreateMultipartBuildParams() components.CreateMultipartBuildParams {
+	if c == nil {
 		return components.CreateMultipartBuildParams{}
 	}
-	return o.CreateMultipartBuildParams
+	return c.CreateMultipartBuildParams
 }

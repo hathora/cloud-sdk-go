@@ -6,11 +6,11 @@ type GetProcessInfoV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetProcessInfoV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetProcessInfoV2DeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetProcessInfoV2DeprecatedRequest struct {
@@ -18,16 +18,16 @@ type GetProcessInfoV2DeprecatedRequest struct {
 	ProcessID string  `pathParam:"style=simple,explode=false,name=processId"`
 }
 
-func (o *GetProcessInfoV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetProcessInfoV2DeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetProcessInfoV2DeprecatedRequest) GetProcessID() string {
-	if o == nil {
+func (g *GetProcessInfoV2DeprecatedRequest) GetProcessID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ProcessID
+	return g.ProcessID
 }

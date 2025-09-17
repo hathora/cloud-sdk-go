@@ -6,11 +6,11 @@ type GetActiveRoomsForProcessDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetActiveRoomsForProcessDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetActiveRoomsForProcessDeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetActiveRoomsForProcessDeprecatedRequest struct {
@@ -18,16 +18,16 @@ type GetActiveRoomsForProcessDeprecatedRequest struct {
 	ProcessID string  `pathParam:"style=simple,explode=false,name=processId"`
 }
 
-func (o *GetActiveRoomsForProcessDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetActiveRoomsForProcessDeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetActiveRoomsForProcessDeprecatedRequest) GetProcessID() string {
-	if o == nil {
+func (g *GetActiveRoomsForProcessDeprecatedRequest) GetProcessID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ProcessID
+	return g.ProcessID
 }

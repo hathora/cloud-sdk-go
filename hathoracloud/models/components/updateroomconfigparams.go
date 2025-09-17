@@ -7,9 +7,9 @@ type UpdateRoomConfigParams struct {
 	RoomConfig string `json:"roomConfig"`
 }
 
-func (o *UpdateRoomConfigParams) GetRoomConfig() string {
-	if o == nil {
+func (u *UpdateRoomConfigParams) GetRoomConfig() string {
+	if u == nil {
 		return ""
 	}
-	return o.RoomConfig
+	return u.RoomConfig
 }

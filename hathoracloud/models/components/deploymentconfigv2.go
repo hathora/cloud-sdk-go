@@ -7,18 +7,18 @@ type DeploymentConfigV2Env struct {
 	Name  string `json:"name"`
 }
 
-func (o *DeploymentConfigV2Env) GetValue() string {
-	if o == nil {
+func (d *DeploymentConfigV2Env) GetValue() string {
+	if d == nil {
 		return ""
 	}
-	return o.Value
+	return d.Value
 }
 
-func (o *DeploymentConfigV2Env) GetName() string {
-	if o == nil {
+func (d *DeploymentConfigV2Env) GetName() string {
+	if d == nil {
 		return ""
 	}
-	return o.Name
+	return d.Name
 }
 
 type DeploymentConfigV2 struct {
@@ -41,58 +41,58 @@ type DeploymentConfigV2 struct {
 	RequestedCPU float64 `json:"requestedCPU"`
 }
 
-func (o *DeploymentConfigV2) GetIdleTimeoutEnabled() bool {
-	if o == nil {
+func (d *DeploymentConfigV2) GetIdleTimeoutEnabled() bool {
+	if d == nil {
 		return false
 	}
-	return o.IdleTimeoutEnabled
+	return d.IdleTimeoutEnabled
 }
 
-func (o *DeploymentConfigV2) GetEnv() []DeploymentConfigV2Env {
-	if o == nil {
+func (d *DeploymentConfigV2) GetEnv() []DeploymentConfigV2Env {
+	if d == nil {
 		return []DeploymentConfigV2Env{}
 	}
-	return o.Env
+	return d.Env
 }
 
-func (o *DeploymentConfigV2) GetRoomsPerProcess() int {
-	if o == nil {
+func (d *DeploymentConfigV2) GetRoomsPerProcess() int {
+	if d == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return d.RoomsPerProcess
 }
 
-func (o *DeploymentConfigV2) GetAdditionalContainerPorts() []ContainerPort {
-	if o == nil {
+func (d *DeploymentConfigV2) GetAdditionalContainerPorts() []ContainerPort {
+	if d == nil {
 		return nil
 	}
-	return o.AdditionalContainerPorts
+	return d.AdditionalContainerPorts
 }
 
-func (o *DeploymentConfigV2) GetTransportType() TransportType {
-	if o == nil {
+func (d *DeploymentConfigV2) GetTransportType() TransportType {
+	if d == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return d.TransportType
 }
 
-func (o *DeploymentConfigV2) GetContainerPort() int {
-	if o == nil {
+func (d *DeploymentConfigV2) GetContainerPort() int {
+	if d == nil {
 		return 0
 	}
-	return o.ContainerPort
+	return d.ContainerPort
 }
 
-func (o *DeploymentConfigV2) GetRequestedMemoryMB() float64 {
-	if o == nil {
+func (d *DeploymentConfigV2) GetRequestedMemoryMB() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedMemoryMB
+	return d.RequestedMemoryMB
 }
 
-func (o *DeploymentConfigV2) GetRequestedCPU() float64 {
-	if o == nil {
+func (d *DeploymentConfigV2) GetRequestedCPU() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedCPU
+	return d.RequestedCPU
 }

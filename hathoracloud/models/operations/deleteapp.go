@@ -6,20 +6,20 @@ type DeleteAppGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *DeleteAppGlobals) GetAppID() *string {
-	if o == nil {
+func (d *DeleteAppGlobals) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }
 
 type DeleteAppRequest struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *DeleteAppRequest) GetAppID() *string {
-	if o == nil {
+func (d *DeleteAppRequest) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }

@@ -11,16 +11,16 @@ type CreateOrgTokenRequest struct {
 	CreateOrgToken components.CreateOrgToken `request:"mediaType=application/json"`
 }
 
-func (o *CreateOrgTokenRequest) GetOrgID() string {
-	if o == nil {
+func (c *CreateOrgTokenRequest) GetOrgID() string {
+	if c == nil {
 		return ""
 	}
-	return o.OrgID
+	return c.OrgID
 }
 
-func (o *CreateOrgTokenRequest) GetCreateOrgToken() components.CreateOrgToken {
-	if o == nil {
+func (c *CreateOrgTokenRequest) GetCreateOrgToken() components.CreateOrgToken {
+	if c == nil {
 		return components.CreateOrgToken{}
 	}
-	return o.CreateOrgToken
+	return c.CreateOrgToken
 }

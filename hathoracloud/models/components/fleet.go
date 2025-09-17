@@ -12,30 +12,30 @@ type Fleet struct {
 	FleetID string `json:"fleetId"`
 }
 
-func (o *Fleet) GetNodeShape() NodeShape {
-	if o == nil {
+func (f *Fleet) GetNodeShape() NodeShape {
+	if f == nil {
 		return NodeShape("")
 	}
-	return o.NodeShape
+	return f.NodeShape
 }
 
-func (o *Fleet) GetAutoscalerConfig() *AutoscalerConfig {
-	if o == nil {
+func (f *Fleet) GetAutoscalerConfig() *AutoscalerConfig {
+	if f == nil {
 		return nil
 	}
-	return o.AutoscalerConfig
+	return f.AutoscalerConfig
 }
 
-func (o *Fleet) GetOrgID() string {
-	if o == nil {
+func (f *Fleet) GetOrgID() string {
+	if f == nil {
 		return ""
 	}
-	return o.OrgID
+	return f.OrgID
 }
 
-func (o *Fleet) GetFleetID() string {
-	if o == nil {
+func (f *Fleet) GetFleetID() string {
+	if f == nil {
 		return ""
 	}
-	return o.FleetID
+	return f.FleetID
 }

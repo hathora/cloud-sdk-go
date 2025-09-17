@@ -28,30 +28,30 @@ func (r *RoomAllocation) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *RoomAllocation) GetUnscheduledAt() *time.Time {
-	if o == nil {
+func (r *RoomAllocation) GetUnscheduledAt() *time.Time {
+	if r == nil {
 		return nil
 	}
-	return o.UnscheduledAt
+	return r.UnscheduledAt
 }
 
-func (o *RoomAllocation) GetScheduledAt() time.Time {
-	if o == nil {
+func (r *RoomAllocation) GetScheduledAt() time.Time {
+	if r == nil {
 		return time.Time{}
 	}
-	return o.ScheduledAt
+	return r.ScheduledAt
 }
 
-func (o *RoomAllocation) GetProcessID() string {
-	if o == nil {
+func (r *RoomAllocation) GetProcessID() string {
+	if r == nil {
 		return ""
 	}
-	return o.ProcessID
+	return r.ProcessID
 }
 
-func (o *RoomAllocation) GetRoomAllocationID() string {
-	if o == nil {
+func (r *RoomAllocation) GetRoomAllocationID() string {
+	if r == nil {
 		return ""
 	}
-	return o.RoomAllocationID
+	return r.RoomAllocationID
 }

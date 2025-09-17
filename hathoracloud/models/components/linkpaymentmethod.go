@@ -6,9 +6,9 @@ type LinkPaymentMethod struct {
 	Email *string `json:"email,omitempty"`
 }
 
-func (o *LinkPaymentMethod) GetEmail() *string {
-	if o == nil {
+func (l *LinkPaymentMethod) GetEmail() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Email
+	return l.Email
 }

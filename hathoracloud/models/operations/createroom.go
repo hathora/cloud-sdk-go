@@ -10,11 +10,11 @@ type CreateRoomGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateRoomGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateRoomGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateRoomRequest struct {
@@ -23,23 +23,23 @@ type CreateRoomRequest struct {
 	CreateRoomParams components.CreateRoomParams `request:"mediaType=application/json"`
 }
 
-func (o *CreateRoomRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateRoomRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateRoomRequest) GetRoomID() *string {
-	if o == nil {
+func (c *CreateRoomRequest) GetRoomID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RoomID
+	return c.RoomID
 }
 
-func (o *CreateRoomRequest) GetCreateRoomParams() components.CreateRoomParams {
-	if o == nil {
+func (c *CreateRoomRequest) GetCreateRoomParams() components.CreateRoomParams {
+	if c == nil {
 		return components.CreateRoomParams{}
 	}
-	return o.CreateRoomParams
+	return c.CreateRoomParams
 }

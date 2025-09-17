@@ -6,11 +6,11 @@ type DestroyRoomGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *DestroyRoomGlobals) GetAppID() *string {
-	if o == nil {
+func (d *DestroyRoomGlobals) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }
 
 type DestroyRoomRequest struct {
@@ -18,16 +18,16 @@ type DestroyRoomRequest struct {
 	RoomID string  `pathParam:"style=simple,explode=false,name=roomId"`
 }
 
-func (o *DestroyRoomRequest) GetAppID() *string {
-	if o == nil {
+func (d *DestroyRoomRequest) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }
 
-func (o *DestroyRoomRequest) GetRoomID() string {
-	if o == nil {
+func (d *DestroyRoomRequest) GetRoomID() string {
+	if d == nil {
 		return ""
 	}
-	return o.RoomID
+	return d.RoomID
 }

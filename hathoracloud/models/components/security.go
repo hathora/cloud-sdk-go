@@ -6,9 +6,9 @@ type Security struct {
 	HathoraDevToken *string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *Security) GetHathoraDevToken() *string {
-	if o == nil {
+func (s *Security) GetHathoraDevToken() *string {
+	if s == nil {
 		return nil
 	}
-	return o.HathoraDevToken
+	return s.HathoraDevToken
 }

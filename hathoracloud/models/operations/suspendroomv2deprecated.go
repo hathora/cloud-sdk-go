@@ -6,11 +6,11 @@ type SuspendRoomV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *SuspendRoomV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (s *SuspendRoomV2DeprecatedGlobals) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
 type SuspendRoomV2DeprecatedRequest struct {
@@ -18,16 +18,16 @@ type SuspendRoomV2DeprecatedRequest struct {
 	RoomID string  `pathParam:"style=simple,explode=false,name=roomId"`
 }
 
-func (o *SuspendRoomV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (s *SuspendRoomV2DeprecatedRequest) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
-func (o *SuspendRoomV2DeprecatedRequest) GetRoomID() string {
-	if o == nil {
+func (s *SuspendRoomV2DeprecatedRequest) GetRoomID() string {
+	if s == nil {
 		return ""
 	}
-	return o.RoomID
+	return s.RoomID
 }

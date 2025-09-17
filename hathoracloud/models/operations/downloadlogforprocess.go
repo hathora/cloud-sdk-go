@@ -6,11 +6,11 @@ type DownloadLogForProcessGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *DownloadLogForProcessGlobals) GetAppID() *string {
-	if o == nil {
+func (d *DownloadLogForProcessGlobals) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }
 
 type DownloadLogForProcessRequest struct {
@@ -18,16 +18,16 @@ type DownloadLogForProcessRequest struct {
 	ProcessID string  `pathParam:"style=simple,explode=false,name=processId"`
 }
 
-func (o *DownloadLogForProcessRequest) GetAppID() *string {
-	if o == nil {
+func (d *DownloadLogForProcessRequest) GetAppID() *string {
+	if d == nil {
 		return nil
 	}
-	return o.AppID
+	return d.AppID
 }
 
-func (o *DownloadLogForProcessRequest) GetProcessID() string {
-	if o == nil {
+func (d *DownloadLogForProcessRequest) GetProcessID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ProcessID
+	return d.ProcessID
 }

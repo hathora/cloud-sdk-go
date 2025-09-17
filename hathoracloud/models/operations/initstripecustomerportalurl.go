@@ -10,11 +10,11 @@ type InitStripeCustomerPortalURLGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *InitStripeCustomerPortalURLGlobals) GetOrgID() *string {
-	if o == nil {
+func (i *InitStripeCustomerPortalURLGlobals) GetOrgID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.OrgID
+	return i.OrgID
 }
 
 type InitStripeCustomerPortalURLRequest struct {
@@ -22,16 +22,16 @@ type InitStripeCustomerPortalURLRequest struct {
 	CustomerPortalURL components.CustomerPortalURL `request:"mediaType=application/json"`
 }
 
-func (o *InitStripeCustomerPortalURLRequest) GetOrgID() *string {
-	if o == nil {
+func (i *InitStripeCustomerPortalURLRequest) GetOrgID() *string {
+	if i == nil {
 		return nil
 	}
-	return o.OrgID
+	return i.OrgID
 }
 
-func (o *InitStripeCustomerPortalURLRequest) GetCustomerPortalURL() components.CustomerPortalURL {
-	if o == nil {
+func (i *InitStripeCustomerPortalURLRequest) GetCustomerPortalURL() components.CustomerPortalURL {
+	if i == nil {
 		return components.CustomerPortalURL{}
 	}
-	return o.CustomerPortalURL
+	return i.CustomerPortalURL
 }

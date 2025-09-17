@@ -10,11 +10,11 @@ type GetRunningProcessesGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetRunningProcessesGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetRunningProcessesGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetRunningProcessesRequest struct {
@@ -22,16 +22,16 @@ type GetRunningProcessesRequest struct {
 	Region *components.Region `queryParam:"style=form,explode=true,name=region"`
 }
 
-func (o *GetRunningProcessesRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetRunningProcessesRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetRunningProcessesRequest) GetRegion() *components.Region {
-	if o == nil {
+func (g *GetRunningProcessesRequest) GetRegion() *components.Region {
+	if g == nil {
 		return nil
 	}
-	return o.Region
+	return g.Region
 }

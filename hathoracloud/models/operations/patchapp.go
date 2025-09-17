@@ -10,11 +10,11 @@ type PatchAppGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *PatchAppGlobals) GetAppID() *string {
-	if o == nil {
+func (p *PatchAppGlobals) GetAppID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AppID
+	return p.AppID
 }
 
 type PatchAppRequest struct {
@@ -22,16 +22,16 @@ type PatchAppRequest struct {
 	PartialAppConfigWithServiceConfig components.PartialAppConfigWithServiceConfig `request:"mediaType=application/json"`
 }
 
-func (o *PatchAppRequest) GetAppID() *string {
-	if o == nil {
+func (p *PatchAppRequest) GetAppID() *string {
+	if p == nil {
 		return nil
 	}
-	return o.AppID
+	return p.AppID
 }
 
-func (o *PatchAppRequest) GetPartialAppConfigWithServiceConfig() components.PartialAppConfigWithServiceConfig {
-	if o == nil {
+func (p *PatchAppRequest) GetPartialAppConfigWithServiceConfig() components.PartialAppConfigWithServiceConfig {
+	if p == nil {
 		return components.PartialAppConfigWithServiceConfig{}
 	}
-	return o.PartialAppConfigWithServiceConfig
+	return p.PartialAppConfigWithServiceConfig
 }

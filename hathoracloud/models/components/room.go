@@ -28,32 +28,32 @@ func (c *CurrentAllocation) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *CurrentAllocation) GetUnscheduledAt() *time.Time {
-	if o == nil {
+func (c *CurrentAllocation) GetUnscheduledAt() *time.Time {
+	if c == nil {
 		return nil
 	}
-	return o.UnscheduledAt
+	return c.UnscheduledAt
 }
 
-func (o *CurrentAllocation) GetScheduledAt() time.Time {
-	if o == nil {
+func (c *CurrentAllocation) GetScheduledAt() time.Time {
+	if c == nil {
 		return time.Time{}
 	}
-	return o.ScheduledAt
+	return c.ScheduledAt
 }
 
-func (o *CurrentAllocation) GetProcessID() string {
-	if o == nil {
+func (c *CurrentAllocation) GetProcessID() string {
+	if c == nil {
 		return ""
 	}
-	return o.ProcessID
+	return c.ProcessID
 }
 
-func (o *CurrentAllocation) GetRoomAllocationID() string {
-	if o == nil {
+func (c *CurrentAllocation) GetRoomAllocationID() string {
+	if c == nil {
 		return ""
 	}
-	return o.RoomAllocationID
+	return c.RoomAllocationID
 }
 
 // Room - A room object represents a game session or match.
@@ -76,44 +76,44 @@ type Room struct {
 	AppID string `json:"appId"`
 }
 
-func (o *Room) GetCurrentAllocation() *CurrentAllocation {
-	if o == nil {
+func (r *Room) GetCurrentAllocation() *CurrentAllocation {
+	if r == nil {
 		return nil
 	}
-	return o.CurrentAllocation
+	return r.CurrentAllocation
 }
 
-func (o *Room) GetStatus() RoomStatus {
-	if o == nil {
+func (r *Room) GetStatus() RoomStatus {
+	if r == nil {
 		return RoomStatus("")
 	}
-	return o.Status
+	return r.Status
 }
 
-func (o *Room) GetAllocations() []RoomAllocation {
-	if o == nil {
+func (r *Room) GetAllocations() []RoomAllocation {
+	if r == nil {
 		return []RoomAllocation{}
 	}
-	return o.Allocations
+	return r.Allocations
 }
 
-func (o *Room) GetRoomConfig() *string {
-	if o == nil {
+func (r *Room) GetRoomConfig() *string {
+	if r == nil {
 		return nil
 	}
-	return o.RoomConfig
+	return r.RoomConfig
 }
 
-func (o *Room) GetRoomID() string {
-	if o == nil {
+func (r *Room) GetRoomID() string {
+	if r == nil {
 		return ""
 	}
-	return o.RoomID
+	return r.RoomID
 }
 
-func (o *Room) GetAppID() string {
-	if o == nil {
+func (r *Room) GetAppID() string {
+	if r == nil {
 		return ""
 	}
-	return o.AppID
+	return r.AppID
 }

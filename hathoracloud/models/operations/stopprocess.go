@@ -6,11 +6,11 @@ type StopProcessGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *StopProcessGlobals) GetAppID() *string {
-	if o == nil {
+func (s *StopProcessGlobals) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
 type StopProcessRequest struct {
@@ -18,16 +18,16 @@ type StopProcessRequest struct {
 	ProcessID string  `pathParam:"style=simple,explode=false,name=processId"`
 }
 
-func (o *StopProcessRequest) GetAppID() *string {
-	if o == nil {
+func (s *StopProcessRequest) GetAppID() *string {
+	if s == nil {
 		return nil
 	}
-	return o.AppID
+	return s.AppID
 }
 
-func (o *StopProcessRequest) GetProcessID() string {
-	if o == nil {
+func (s *StopProcessRequest) GetProcessID() string {
+	if s == nil {
 		return ""
 	}
-	return o.ProcessID
+	return s.ProcessID
 }

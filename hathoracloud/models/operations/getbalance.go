@@ -6,20 +6,20 @@ type GetBalanceGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetBalanceGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetBalanceGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetBalanceRequest struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetBalanceRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetBalanceRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

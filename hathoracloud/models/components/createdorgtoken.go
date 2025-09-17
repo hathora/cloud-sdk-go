@@ -7,16 +7,16 @@ type CreatedOrgToken struct {
 	OrgToken       OrgToken `json:"orgToken"`
 }
 
-func (o *CreatedOrgToken) GetPlainTextToken() string {
-	if o == nil {
+func (c *CreatedOrgToken) GetPlainTextToken() string {
+	if c == nil {
 		return ""
 	}
-	return o.PlainTextToken
+	return c.PlainTextToken
 }
 
-func (o *CreatedOrgToken) GetOrgToken() OrgToken {
-	if o == nil {
+func (c *CreatedOrgToken) GetOrgToken() OrgToken {
+	if c == nil {
 		return OrgToken{}
 	}
-	return o.OrgToken
+	return c.OrgToken
 }

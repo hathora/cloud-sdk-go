@@ -10,11 +10,11 @@ type CreateProcessV2DeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateProcessV2DeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateProcessV2DeprecatedGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateProcessV2DeprecatedRequest struct {
@@ -22,16 +22,16 @@ type CreateProcessV2DeprecatedRequest struct {
 	Region components.Region `pathParam:"style=simple,explode=false,name=region"`
 }
 
-func (o *CreateProcessV2DeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateProcessV2DeprecatedRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateProcessV2DeprecatedRequest) GetRegion() components.Region {
-	if o == nil {
+func (c *CreateProcessV2DeprecatedRequest) GetRegion() components.Region {
+	if c == nil {
 		return components.Region("")
 	}
-	return o.Region
+	return c.Region
 }

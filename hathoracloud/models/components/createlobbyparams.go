@@ -16,23 +16,23 @@ type CreateLobbyParams struct {
 	Region        Region `json:"region"`
 }
 
-func (o *CreateLobbyParams) GetVisibility() LobbyVisibility {
-	if o == nil {
+func (c *CreateLobbyParams) GetVisibility() LobbyVisibility {
+	if c == nil {
 		return LobbyVisibility("")
 	}
-	return o.Visibility
+	return c.Visibility
 }
 
-func (o *CreateLobbyParams) GetInitialConfig() any {
-	if o == nil {
+func (c *CreateLobbyParams) GetInitialConfig() any {
+	if c == nil {
 		return nil
 	}
-	return o.InitialConfig
+	return c.InitialConfig
 }
 
-func (o *CreateLobbyParams) GetRegion() Region {
-	if o == nil {
+func (c *CreateLobbyParams) GetRegion() Region {
+	if c == nil {
 		return Region("")
 	}
-	return o.Region
+	return c.Region
 }

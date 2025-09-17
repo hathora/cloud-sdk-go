@@ -6,20 +6,20 @@ type GetUsageLimitsGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetUsageLimitsGlobals) GetOrgID() *string {
-	if o == nil {
+func (g *GetUsageLimitsGlobals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
 type GetUsageLimitsRequest struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (o *GetUsageLimitsRequest) GetOrgID() *string {
-	if o == nil {
+func (g *GetUsageLimitsRequest) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }

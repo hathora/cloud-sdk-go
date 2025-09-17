@@ -7,9 +7,9 @@ type LoadBalancerConfig struct {
 	Enabled bool `json:"enabled"`
 }
 
-func (o *LoadBalancerConfig) GetEnabled() bool {
-	if o == nil {
+func (l *LoadBalancerConfig) GetEnabled() bool {
+	if l == nil {
 		return false
 	}
-	return o.Enabled
+	return l.Enabled
 }

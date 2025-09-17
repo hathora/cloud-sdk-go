@@ -12,18 +12,18 @@ type BuildWithUploadURLRegionalContainerTags struct {
 	Region       Region `json:"region"`
 }
 
-func (o *BuildWithUploadURLRegionalContainerTags) GetContainerTag() string {
-	if o == nil {
+func (b *BuildWithUploadURLRegionalContainerTags) GetContainerTag() string {
+	if b == nil {
 		return ""
 	}
-	return o.ContainerTag
+	return b.ContainerTag
 }
 
-func (o *BuildWithUploadURLRegionalContainerTags) GetRegion() Region {
-	if o == nil {
+func (b *BuildWithUploadURLRegionalContainerTags) GetRegion() Region {
+	if b == nil {
 		return Region("")
 	}
-	return o.Region
+	return b.Region
 }
 
 type UploadBodyParams struct {
@@ -31,18 +31,18 @@ type UploadBodyParams struct {
 	Key   string `json:"key"`
 }
 
-func (o *UploadBodyParams) GetValue() string {
-	if o == nil {
+func (u *UploadBodyParams) GetValue() string {
+	if u == nil {
 		return ""
 	}
-	return o.Value
+	return u.Value
 }
 
-func (o *UploadBodyParams) GetKey() string {
-	if o == nil {
+func (u *UploadBodyParams) GetKey() string {
+	if u == nil {
 		return ""
 	}
-	return o.Key
+	return u.Key
 }
 
 // BuildWithUploadURL - A build represents a game server artifact and its associated metadata.
@@ -83,100 +83,100 @@ func (b *BuildWithUploadURL) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *BuildWithUploadURL) GetExpiredAt() *time.Time {
-	if o == nil {
+func (b *BuildWithUploadURL) GetExpiredAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.ExpiredAt
+	return b.ExpiredAt
 }
 
-func (o *BuildWithUploadURL) GetBuildTag() *string {
-	if o == nil {
+func (b *BuildWithUploadURL) GetBuildTag() *string {
+	if b == nil {
 		return nil
 	}
-	return o.BuildTag
+	return b.BuildTag
 }
 
-func (o *BuildWithUploadURL) GetRegionalContainerTags() []BuildWithUploadURLRegionalContainerTags {
-	if o == nil {
+func (b *BuildWithUploadURL) GetRegionalContainerTags() []BuildWithUploadURLRegionalContainerTags {
+	if b == nil {
 		return []BuildWithUploadURLRegionalContainerTags{}
 	}
-	return o.RegionalContainerTags
+	return b.RegionalContainerTags
 }
 
-func (o *BuildWithUploadURL) GetImageSize() int64 {
-	if o == nil {
+func (b *BuildWithUploadURL) GetImageSize() int64 {
+	if b == nil {
 		return 0
 	}
-	return o.ImageSize
+	return b.ImageSize
 }
 
-func (o *BuildWithUploadURL) GetStatus() BuildStatus {
-	if o == nil {
+func (b *BuildWithUploadURL) GetStatus() BuildStatus {
+	if b == nil {
 		return BuildStatus("")
 	}
-	return o.Status
+	return b.Status
 }
 
-func (o *BuildWithUploadURL) GetDeletedAt() *time.Time {
-	if o == nil {
+func (b *BuildWithUploadURL) GetDeletedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return b.DeletedAt
 }
 
-func (o *BuildWithUploadURL) GetFinishedAt() *time.Time {
-	if o == nil {
+func (b *BuildWithUploadURL) GetFinishedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.FinishedAt
+	return b.FinishedAt
 }
 
-func (o *BuildWithUploadURL) GetStartedAt() *time.Time {
-	if o == nil {
+func (b *BuildWithUploadURL) GetStartedAt() *time.Time {
+	if b == nil {
 		return nil
 	}
-	return o.StartedAt
+	return b.StartedAt
 }
 
-func (o *BuildWithUploadURL) GetCreatedAt() time.Time {
-	if o == nil {
+func (b *BuildWithUploadURL) GetCreatedAt() time.Time {
+	if b == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return b.CreatedAt
 }
 
-func (o *BuildWithUploadURL) GetCreatedBy() string {
-	if o == nil {
+func (b *BuildWithUploadURL) GetCreatedBy() string {
+	if b == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return b.CreatedBy
 }
 
-func (o *BuildWithUploadURL) GetBuildID() int {
-	if o == nil {
+func (b *BuildWithUploadURL) GetBuildID() int {
+	if b == nil {
 		return 0
 	}
-	return o.BuildID
+	return b.BuildID
 }
 
-func (o *BuildWithUploadURL) GetAppID() string {
-	if o == nil {
+func (b *BuildWithUploadURL) GetAppID() string {
+	if b == nil {
 		return ""
 	}
-	return o.AppID
+	return b.AppID
 }
 
-func (o *BuildWithUploadURL) GetUploadBodyParams() []UploadBodyParams {
-	if o == nil {
+func (b *BuildWithUploadURL) GetUploadBodyParams() []UploadBodyParams {
+	if b == nil {
 		return []UploadBodyParams{}
 	}
-	return o.UploadBodyParams
+	return b.UploadBodyParams
 }
 
-func (o *BuildWithUploadURL) GetUploadURL() string {
-	if o == nil {
+func (b *BuildWithUploadURL) GetUploadURL() string {
+	if b == nil {
 		return ""
 	}
-	return o.UploadURL
+	return b.UploadURL
 }

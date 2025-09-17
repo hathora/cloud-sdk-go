@@ -7,9 +7,9 @@ type GoogleIDTokenObject struct {
 	IDToken string `json:"idToken"`
 }
 
-func (o *GoogleIDTokenObject) GetIDToken() string {
-	if o == nil {
+func (g *GoogleIDTokenObject) GetIDToken() string {
+	if g == nil {
 		return ""
 	}
-	return o.IDToken
+	return g.IDToken
 }

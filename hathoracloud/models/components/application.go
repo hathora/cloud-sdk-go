@@ -18,25 +18,25 @@ type ApplicationServiceConfig struct {
 	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
 }
 
-func (o *ApplicationServiceConfig) GetProcessAutoscalerConfig() *ProcessAutoscalerConfig {
-	if o == nil {
+func (a *ApplicationServiceConfig) GetProcessAutoscalerConfig() *ProcessAutoscalerConfig {
+	if a == nil {
 		return nil
 	}
-	return o.ProcessAutoscalerConfig
+	return a.ProcessAutoscalerConfig
 }
 
-func (o *ApplicationServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
-	if o == nil {
+func (a *ApplicationServiceConfig) GetLoadBalancer() *LoadBalancerConfig {
+	if a == nil {
 		return nil
 	}
-	return o.LoadBalancer
+	return a.LoadBalancer
 }
 
-func (o *ApplicationServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {
-	if o == nil {
+func (a *ApplicationServiceConfig) GetStaticProcessAllocation() []StaticProcessAllocationConfig {
+	if a == nil {
 		return []StaticProcessAllocationConfig{}
 	}
-	return o.StaticProcessAllocation
+	return a.StaticProcessAllocation
 }
 
 // Application - An application object is the top level namespace for the game server.
@@ -72,72 +72,72 @@ func (a *Application) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *Application) GetDeletedBy() *string {
-	if o == nil {
+func (a *Application) GetDeletedBy() *string {
+	if a == nil {
 		return nil
 	}
-	return o.DeletedBy
+	return a.DeletedBy
 }
 
-func (o *Application) GetDeletedAt() *time.Time {
-	if o == nil {
+func (a *Application) GetDeletedAt() *time.Time {
+	if a == nil {
 		return nil
 	}
-	return o.DeletedAt
+	return a.DeletedAt
 }
 
-func (o *Application) GetCreatedAt() time.Time {
-	if o == nil {
+func (a *Application) GetCreatedAt() time.Time {
+	if a == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return a.CreatedAt
 }
 
-func (o *Application) GetCreatedBy() string {
-	if o == nil {
+func (a *Application) GetCreatedBy() string {
+	if a == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return a.CreatedBy
 }
 
-func (o *Application) GetOrgID() string {
-	if o == nil {
+func (a *Application) GetOrgID() string {
+	if a == nil {
 		return ""
 	}
-	return o.OrgID
+	return a.OrgID
 }
 
-func (o *Application) GetServiceConfig() *ApplicationServiceConfig {
-	if o == nil {
+func (a *Application) GetServiceConfig() *ApplicationServiceConfig {
+	if a == nil {
 		return nil
 	}
-	return o.ServiceConfig
+	return a.ServiceConfig
 }
 
-func (o *Application) GetAuthConfiguration() AuthConfiguration {
-	if o == nil {
+func (a *Application) GetAuthConfiguration() AuthConfiguration {
+	if a == nil {
 		return AuthConfiguration{}
 	}
-	return o.AuthConfiguration
+	return a.AuthConfiguration
 }
 
-func (o *Application) GetAppSecret() string {
-	if o == nil {
+func (a *Application) GetAppSecret() string {
+	if a == nil {
 		return ""
 	}
-	return o.AppSecret
+	return a.AppSecret
 }
 
-func (o *Application) GetAppID() string {
-	if o == nil {
+func (a *Application) GetAppID() string {
+	if a == nil {
 		return ""
 	}
-	return o.AppID
+	return a.AppID
 }
 
-func (o *Application) GetAppName() string {
-	if o == nil {
+func (a *Application) GetAppName() string {
+	if a == nil {
 		return ""
 	}
-	return o.AppName
+	return a.AppName
 }

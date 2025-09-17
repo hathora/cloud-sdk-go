@@ -16,32 +16,32 @@ type ProcessV3ExposedPort struct {
 	Name          string        `json:"name"`
 }
 
-func (o *ProcessV3ExposedPort) GetTransportType() TransportType {
-	if o == nil {
+func (p *ProcessV3ExposedPort) GetTransportType() TransportType {
+	if p == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return p.TransportType
 }
 
-func (o *ProcessV3ExposedPort) GetPort() int {
-	if o == nil {
+func (p *ProcessV3ExposedPort) GetPort() int {
+	if p == nil {
 		return 0
 	}
-	return o.Port
+	return p.Port
 }
 
-func (o *ProcessV3ExposedPort) GetHost() string {
-	if o == nil {
+func (p *ProcessV3ExposedPort) GetHost() string {
+	if p == nil {
 		return ""
 	}
-	return o.Host
+	return p.Host
 }
 
-func (o *ProcessV3ExposedPort) GetName() string {
-	if o == nil {
+func (p *ProcessV3ExposedPort) GetName() string {
+	if p == nil {
 		return ""
 	}
-	return o.Name
+	return p.Name
 }
 
 type ProcessV3 struct {
@@ -83,107 +83,107 @@ func (p *ProcessV3) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *ProcessV3) GetHosting() *Hosting {
-	if o == nil {
+func (p *ProcessV3) GetHosting() *Hosting {
+	if p == nil {
 		return nil
 	}
-	return o.Hosting
+	return p.Hosting
 }
 
-func (o *ProcessV3) GetStatus() ProcessStatus {
-	if o == nil {
+func (p *ProcessV3) GetStatus() ProcessStatus {
+	if p == nil {
 		return ProcessStatus("")
 	}
-	return o.Status
+	return p.Status
 }
 
-func (o *ProcessV3) GetRoomsAllocated() int {
-	if o == nil {
+func (p *ProcessV3) GetRoomsAllocated() int {
+	if p == nil {
 		return 0
 	}
-	return o.RoomsAllocated
+	return p.RoomsAllocated
 }
 
-func (o *ProcessV3) GetSummaryExitReason() *string {
-	if o == nil {
+func (p *ProcessV3) GetSummaryExitReason() *string {
+	if p == nil {
 		return nil
 	}
-	return o.SummaryExitReason
+	return p.SummaryExitReason
 }
 
-func (o *ProcessV3) GetTerminatedAt() *time.Time {
-	if o == nil {
+func (p *ProcessV3) GetTerminatedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.TerminatedAt
+	return p.TerminatedAt
 }
 
-func (o *ProcessV3) GetStoppingAt() *time.Time {
-	if o == nil {
+func (p *ProcessV3) GetStoppingAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.StoppingAt
+	return p.StoppingAt
 }
 
-func (o *ProcessV3) GetStartedAt() *time.Time {
-	if o == nil {
+func (p *ProcessV3) GetStartedAt() *time.Time {
+	if p == nil {
 		return nil
 	}
-	return o.StartedAt
+	return p.StartedAt
 }
 
-func (o *ProcessV3) GetCreatedAt() time.Time {
-	if o == nil {
+func (p *ProcessV3) GetCreatedAt() time.Time {
+	if p == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return p.CreatedAt
 }
 
-func (o *ProcessV3) GetRoomsPerProcess() int {
-	if o == nil {
+func (p *ProcessV3) GetRoomsPerProcess() int {
+	if p == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return p.RoomsPerProcess
 }
 
-func (o *ProcessV3) GetAdditionalExposedPorts() []ExposedPort {
-	if o == nil {
+func (p *ProcessV3) GetAdditionalExposedPorts() []ExposedPort {
+	if p == nil {
 		return []ExposedPort{}
 	}
-	return o.AdditionalExposedPorts
+	return p.AdditionalExposedPorts
 }
 
-func (o *ProcessV3) GetExposedPort() *ProcessV3ExposedPort {
-	if o == nil {
+func (p *ProcessV3) GetExposedPort() *ProcessV3ExposedPort {
+	if p == nil {
 		return nil
 	}
-	return o.ExposedPort
+	return p.ExposedPort
 }
 
-func (o *ProcessV3) GetRegion() Region {
-	if o == nil {
+func (p *ProcessV3) GetRegion() Region {
+	if p == nil {
 		return Region("")
 	}
-	return o.Region
+	return p.Region
 }
 
-func (o *ProcessV3) GetProcessID() string {
-	if o == nil {
+func (p *ProcessV3) GetProcessID() string {
+	if p == nil {
 		return ""
 	}
-	return o.ProcessID
+	return p.ProcessID
 }
 
-func (o *ProcessV3) GetDeploymentID() string {
-	if o == nil {
+func (p *ProcessV3) GetDeploymentID() string {
+	if p == nil {
 		return ""
 	}
-	return o.DeploymentID
+	return p.DeploymentID
 }
 
-func (o *ProcessV3) GetAppID() string {
-	if o == nil {
+func (p *ProcessV3) GetAppID() string {
+	if p == nil {
 		return ""
 	}
-	return o.AppID
+	return p.AppID
 }

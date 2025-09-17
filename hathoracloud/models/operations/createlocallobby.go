@@ -10,22 +10,22 @@ type CreateLocalLobbyGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateLocalLobbyGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateLocalLobbyGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateLocalLobbySecurity struct {
 	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *CreateLocalLobbySecurity) GetPlayerAuth() string {
-	if o == nil {
+func (c *CreateLocalLobbySecurity) GetPlayerAuth() string {
+	if c == nil {
 		return ""
 	}
-	return o.PlayerAuth
+	return c.PlayerAuth
 }
 
 type CreateLocalLobbyRequestBody struct {
@@ -34,18 +34,18 @@ type CreateLocalLobbyRequestBody struct {
 	Region        components.Region `json:"region"`
 }
 
-func (o *CreateLocalLobbyRequestBody) GetInitialConfig() any {
-	if o == nil {
+func (c *CreateLocalLobbyRequestBody) GetInitialConfig() any {
+	if c == nil {
 		return nil
 	}
-	return o.InitialConfig
+	return c.InitialConfig
 }
 
-func (o *CreateLocalLobbyRequestBody) GetRegion() components.Region {
-	if o == nil {
+func (c *CreateLocalLobbyRequestBody) GetRegion() components.Region {
+	if c == nil {
 		return components.Region("")
 	}
-	return o.Region
+	return c.Region
 }
 
 type CreateLocalLobbyRequest struct {
@@ -54,23 +54,23 @@ type CreateLocalLobbyRequest struct {
 	RequestBody CreateLocalLobbyRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *CreateLocalLobbyRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateLocalLobbyRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateLocalLobbyRequest) GetRoomID() *string {
-	if o == nil {
+func (c *CreateLocalLobbyRequest) GetRoomID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RoomID
+	return c.RoomID
 }
 
-func (o *CreateLocalLobbyRequest) GetRequestBody() CreateLocalLobbyRequestBody {
-	if o == nil {
+func (c *CreateLocalLobbyRequest) GetRequestBody() CreateLocalLobbyRequestBody {
+	if c == nil {
 		return CreateLocalLobbyRequestBody{}
 	}
-	return o.RequestBody
+	return c.RequestBody
 }

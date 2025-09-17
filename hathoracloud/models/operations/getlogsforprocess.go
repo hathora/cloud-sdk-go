@@ -10,11 +10,11 @@ type GetLogsForProcessGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetLogsForProcessGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetLogsForProcessGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetLogsForProcessRequest struct {
@@ -35,30 +35,30 @@ func (g *GetLogsForProcessRequest) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *GetLogsForProcessRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetLogsForProcessRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
-func (o *GetLogsForProcessRequest) GetProcessID() string {
-	if o == nil {
+func (g *GetLogsForProcessRequest) GetProcessID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ProcessID
+	return g.ProcessID
 }
 
-func (o *GetLogsForProcessRequest) GetFollow() *bool {
-	if o == nil {
+func (g *GetLogsForProcessRequest) GetFollow() *bool {
+	if g == nil {
 		return nil
 	}
-	return o.Follow
+	return g.Follow
 }
 
-func (o *GetLogsForProcessRequest) GetTailLines() *int {
-	if o == nil {
+func (g *GetLogsForProcessRequest) GetTailLines() *int {
+	if g == nil {
 		return nil
 	}
-	return o.TailLines
+	return g.TailLines
 }

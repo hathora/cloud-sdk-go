@@ -9,9 +9,9 @@ type ProcessAutoscalerConfig struct {
 	TargetMetric AutoscalerTargetMetric `json:"targetMetric"`
 }
 
-func (o *ProcessAutoscalerConfig) GetTargetMetric() AutoscalerTargetMetric {
-	if o == nil {
+func (p *ProcessAutoscalerConfig) GetTargetMetric() AutoscalerTargetMetric {
+	if p == nil {
 		return AutoscalerTargetMetric{}
 	}
-	return o.TargetMetric
+	return p.TargetMetric
 }

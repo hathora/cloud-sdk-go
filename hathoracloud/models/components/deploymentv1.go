@@ -12,18 +12,18 @@ type Env struct {
 	Name  string `json:"name"`
 }
 
-func (o *Env) GetValue() string {
-	if o == nil {
+func (e *Env) GetValue() string {
+	if e == nil {
 		return ""
 	}
-	return o.Value
+	return e.Value
 }
 
-func (o *Env) GetName() string {
-	if o == nil {
+func (e *Env) GetName() string {
+	if e == nil {
 		return ""
 	}
-	return o.Name
+	return e.Name
 }
 
 // DeploymentV1TransportType
@@ -94,107 +94,107 @@ func (d *DeploymentV1) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func (o *DeploymentV1) GetIdleTimeoutEnabled() *bool {
-	if o == nil {
+func (d *DeploymentV1) GetIdleTimeoutEnabled() *bool {
+	if d == nil {
 		return nil
 	}
-	return o.IdleTimeoutEnabled
+	return d.IdleTimeoutEnabled
 }
 
-func (o *DeploymentV1) GetEnv() []Env {
-	if o == nil {
+func (d *DeploymentV1) GetEnv() []Env {
+	if d == nil {
 		return []Env{}
 	}
-	return o.Env
+	return d.Env
 }
 
-func (o *DeploymentV1) GetRoomsPerProcess() int {
-	if o == nil {
+func (d *DeploymentV1) GetRoomsPerProcess() int {
+	if d == nil {
 		return 0
 	}
-	return o.RoomsPerProcess
+	return d.RoomsPerProcess
 }
 
-func (o *DeploymentV1) GetPlanName() PlanName {
-	if o == nil {
+func (d *DeploymentV1) GetPlanName() PlanName {
+	if d == nil {
 		return PlanName("")
 	}
-	return o.PlanName
+	return d.PlanName
 }
 
-func (o *DeploymentV1) GetAdditionalContainerPorts() []ContainerPort {
-	if o == nil {
+func (d *DeploymentV1) GetAdditionalContainerPorts() []ContainerPort {
+	if d == nil {
 		return []ContainerPort{}
 	}
-	return o.AdditionalContainerPorts
+	return d.AdditionalContainerPorts
 }
 
-func (o *DeploymentV1) GetDefaultContainerPort() ContainerPort {
-	if o == nil {
+func (d *DeploymentV1) GetDefaultContainerPort() ContainerPort {
+	if d == nil {
 		return ContainerPort{}
 	}
-	return o.DefaultContainerPort
+	return d.DefaultContainerPort
 }
 
-func (o *DeploymentV1) GetTransportType() DeploymentV1TransportType {
-	if o == nil {
+func (d *DeploymentV1) GetTransportType() DeploymentV1TransportType {
+	if d == nil {
 		return DeploymentV1TransportType("")
 	}
-	return o.TransportType
+	return d.TransportType
 }
 
-func (o *DeploymentV1) GetContainerPort() float64 {
-	if o == nil {
+func (d *DeploymentV1) GetContainerPort() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.ContainerPort
+	return d.ContainerPort
 }
 
-func (o *DeploymentV1) GetCreatedAt() time.Time {
-	if o == nil {
+func (d *DeploymentV1) GetCreatedAt() time.Time {
+	if d == nil {
 		return time.Time{}
 	}
-	return o.CreatedAt
+	return d.CreatedAt
 }
 
-func (o *DeploymentV1) GetCreatedBy() string {
-	if o == nil {
+func (d *DeploymentV1) GetCreatedBy() string {
+	if d == nil {
 		return ""
 	}
-	return o.CreatedBy
+	return d.CreatedBy
 }
 
-func (o *DeploymentV1) GetRequestedMemoryMB() int {
-	if o == nil {
+func (d *DeploymentV1) GetRequestedMemoryMB() int {
+	if d == nil {
 		return 0
 	}
-	return o.RequestedMemoryMB
+	return d.RequestedMemoryMB
 }
 
-func (o *DeploymentV1) GetRequestedCPU() float64 {
-	if o == nil {
+func (d *DeploymentV1) GetRequestedCPU() float64 {
+	if d == nil {
 		return 0.0
 	}
-	return o.RequestedCPU
+	return d.RequestedCPU
 }
 
-func (o *DeploymentV1) GetDeploymentID() int {
-	if o == nil {
+func (d *DeploymentV1) GetDeploymentID() int {
+	if d == nil {
 		return 0
 	}
-	return o.DeploymentID
+	return d.DeploymentID
 }
 
-func (o *DeploymentV1) GetBuildID() int {
-	if o == nil {
+func (d *DeploymentV1) GetBuildID() int {
+	if d == nil {
 		return 0
 	}
-	return o.BuildID
+	return d.BuildID
 }
 
-func (o *DeploymentV1) GetAppID() string {
-	if o == nil {
+func (d *DeploymentV1) GetAppID() string {
+	if d == nil {
 		return ""
 	}
-	return o.AppID
+	return d.AppID
 }

@@ -6,20 +6,20 @@ type GetBuildsDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetBuildsDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (g *GetBuildsDeprecatedGlobals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
 
 type GetBuildsDeprecatedRequest struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *GetBuildsDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (g *GetBuildsDeprecatedRequest) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }

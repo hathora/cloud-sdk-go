@@ -6,9 +6,9 @@ type CustomerPortalURL struct {
 	ReturnURL string `json:"returnUrl"`
 }
 
-func (o *CustomerPortalURL) GetReturnURL() string {
-	if o == nil {
+func (c *CustomerPortalURL) GetReturnURL() string {
+	if c == nil {
 		return ""
 	}
-	return o.ReturnURL
+	return c.ReturnURL
 }

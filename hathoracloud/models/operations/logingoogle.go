@@ -10,11 +10,11 @@ type LoginGoogleGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *LoginGoogleGlobals) GetAppID() *string {
-	if o == nil {
+func (l *LoginGoogleGlobals) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
 type LoginGoogleRequest struct {
@@ -22,16 +22,16 @@ type LoginGoogleRequest struct {
 	GoogleIDTokenObject components.GoogleIDTokenObject `request:"mediaType=application/json"`
 }
 
-func (o *LoginGoogleRequest) GetAppID() *string {
-	if o == nil {
+func (l *LoginGoogleRequest) GetAppID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.AppID
+	return l.AppID
 }
 
-func (o *LoginGoogleRequest) GetGoogleIDTokenObject() components.GoogleIDTokenObject {
-	if o == nil {
+func (l *LoginGoogleRequest) GetGoogleIDTokenObject() components.GoogleIDTokenObject {
+	if l == nil {
 		return components.GoogleIDTokenObject{}
 	}
-	return o.GoogleIDTokenObject
+	return l.GoogleIDTokenObject
 }

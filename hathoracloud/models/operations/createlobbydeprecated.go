@@ -10,22 +10,22 @@ type CreateLobbyDeprecatedGlobals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *CreateLobbyDeprecatedGlobals) GetAppID() *string {
-	if o == nil {
+func (c *CreateLobbyDeprecatedGlobals) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
 type CreateLobbyDeprecatedSecurity struct {
 	PlayerAuth string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
 }
 
-func (o *CreateLobbyDeprecatedSecurity) GetPlayerAuth() string {
-	if o == nil {
+func (c *CreateLobbyDeprecatedSecurity) GetPlayerAuth() string {
+	if c == nil {
 		return ""
 	}
-	return o.PlayerAuth
+	return c.PlayerAuth
 }
 
 type CreateLobbyDeprecatedRequest struct {
@@ -34,23 +34,23 @@ type CreateLobbyDeprecatedRequest struct {
 	CreateLobbyParams components.CreateLobbyParams `request:"mediaType=application/json"`
 }
 
-func (o *CreateLobbyDeprecatedRequest) GetAppID() *string {
-	if o == nil {
+func (c *CreateLobbyDeprecatedRequest) GetAppID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.AppID
+	return c.AppID
 }
 
-func (o *CreateLobbyDeprecatedRequest) GetRoomID() *string {
-	if o == nil {
+func (c *CreateLobbyDeprecatedRequest) GetRoomID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.RoomID
+	return c.RoomID
 }
 
-func (o *CreateLobbyDeprecatedRequest) GetCreateLobbyParams() components.CreateLobbyParams {
-	if o == nil {
+func (c *CreateLobbyDeprecatedRequest) GetCreateLobbyParams() components.CreateLobbyParams {
+	if c == nil {
 		return components.CreateLobbyParams{}
 	}
-	return o.CreateLobbyParams
+	return c.CreateLobbyParams
 }

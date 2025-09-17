@@ -11,30 +11,30 @@ type ExposedPort struct {
 	Name          string        `json:"name"`
 }
 
-func (o *ExposedPort) GetTransportType() TransportType {
-	if o == nil {
+func (e *ExposedPort) GetTransportType() TransportType {
+	if e == nil {
 		return TransportType("")
 	}
-	return o.TransportType
+	return e.TransportType
 }
 
-func (o *ExposedPort) GetPort() int {
-	if o == nil {
+func (e *ExposedPort) GetPort() int {
+	if e == nil {
 		return 0
 	}
-	return o.Port
+	return e.Port
 }
 
-func (o *ExposedPort) GetHost() string {
-	if o == nil {
+func (e *ExposedPort) GetHost() string {
+	if e == nil {
 		return ""
 	}
-	return o.Host
+	return e.Host
 }
 
-func (o *ExposedPort) GetName() string {
-	if o == nil {
+func (e *ExposedPort) GetName() string {
+	if e == nil {
 		return ""
 	}
-	return o.Name
+	return e.Name
 }

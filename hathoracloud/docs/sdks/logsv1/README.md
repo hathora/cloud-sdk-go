@@ -32,7 +32,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.LogsV1.GetLogsForProcess(ctx, "cbfcddd2-0006-43ae-996c-995fff7bed2e", nil, hathoracloud.Int(100))
+    res, err := s.LogsV1.GetLogsForProcess(ctx, "cbfcddd2-0006-43ae-996c-995fff7bed2e", nil, hathoracloud.Pointer[int](100))
     if err != nil {
         log.Fatal(err)
     }

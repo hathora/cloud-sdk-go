@@ -6,9 +6,9 @@ type GetOrgMembersRequest struct {
 	OrgID string `pathParam:"style=simple,explode=false,name=orgId"`
 }
 
-func (o *GetOrgMembersRequest) GetOrgID() string {
-	if o == nil {
+func (g *GetOrgMembersRequest) GetOrgID() string {
+	if g == nil {
 		return ""
 	}
-	return o.OrgID
+	return g.OrgID
 }

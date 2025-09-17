@@ -15,30 +15,30 @@ type UsageLimits struct {
 	ConcurrentProcessVcpusLimit *float64 `json:"concurrentProcessVcpusLimit,omitempty"`
 }
 
-func (o *UsageLimits) GetMonthlyProcessVcpuHoursConsumed() float64 {
-	if o == nil {
+func (u *UsageLimits) GetMonthlyProcessVcpuHoursConsumed() float64 {
+	if u == nil {
 		return 0.0
 	}
-	return o.MonthlyProcessVcpuHoursConsumed
+	return u.MonthlyProcessVcpuHoursConsumed
 }
 
-func (o *UsageLimits) GetMonthlyProcessVcpuHoursLimit() *float64 {
-	if o == nil {
+func (u *UsageLimits) GetMonthlyProcessVcpuHoursLimit() *float64 {
+	if u == nil {
 		return nil
 	}
-	return o.MonthlyProcessVcpuHoursLimit
+	return u.MonthlyProcessVcpuHoursLimit
 }
 
-func (o *UsageLimits) GetConcurrentProcessVcpus7DayMax() float64 {
-	if o == nil {
+func (u *UsageLimits) GetConcurrentProcessVcpus7DayMax() float64 {
+	if u == nil {
 		return 0.0
 	}
-	return o.ConcurrentProcessVcpus7DayMax
+	return u.ConcurrentProcessVcpus7DayMax
 }
 
-func (o *UsageLimits) GetConcurrentProcessVcpusLimit() *float64 {
-	if o == nil {
+func (u *UsageLimits) GetConcurrentProcessVcpusLimit() *float64 {
+	if u == nil {
 		return nil
 	}
-	return o.ConcurrentProcessVcpusLimit
+	return u.ConcurrentProcessVcpusLimit
 }

@@ -7,16 +7,16 @@ type CardPaymentMethod struct {
 	Brand CardBrand `json:"brand"`
 }
 
-func (o *CardPaymentMethod) GetLast4() string {
-	if o == nil {
+func (c *CardPaymentMethod) GetLast4() string {
+	if c == nil {
 		return ""
 	}
-	return o.Last4
+	return c.Last4
 }
 
-func (o *CardPaymentMethod) GetBrand() CardBrand {
-	if o == nil {
+func (c *CardPaymentMethod) GetBrand() CardBrand {
+	if c == nil {
 		return CardBrand("")
 	}
-	return o.Brand
+	return c.Brand
 }

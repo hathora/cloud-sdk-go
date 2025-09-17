@@ -7,16 +7,16 @@ type Globals struct {
 	AppID *string `pathParam:"style=simple,explode=false,name=appId"`
 }
 
-func (o *Globals) GetOrgID() *string {
-	if o == nil {
+func (g *Globals) GetOrgID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.OrgID
+	return g.OrgID
 }
 
-func (o *Globals) GetAppID() *string {
-	if o == nil {
+func (g *Globals) GetAppID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.AppID
+	return g.AppID
 }
