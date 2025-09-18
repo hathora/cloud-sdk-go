@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 5feed7b56f9519d5aafa828319911de3
+  docChecksum: 7de8878bb547adee9c774a3a8bc24618
   docVersion: 0.0.1
-  speakeasyVersion: 1.617.1
-  generationVersion: 2.701.8
-  releaseVersion: 0.8.0
-  configChecksum: dc8088fb667a6e6973984803509bb562
+  speakeasyVersion: 1.618.1
+  generationVersion: 2.702.0
+  releaseVersion: 0.8.1
+  configChecksum: dba744cc1cbae05461981226cb103cfa
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -207,6 +207,7 @@ generatedFiles:
   - /models/operations/getdeployments.go
   - /models/operations/getdeploymentsv1deprecated.go
   - /models/operations/getdeploymentsv2deprecated.go
+  - /models/operations/getfleet.go
   - /models/operations/getfleetmetrics.go
   - /models/operations/getfleetregion.go
   - /models/operations/getfleets.go
@@ -546,10 +547,12 @@ generatedFiles:
   - docs/models/operations/getdeploymentsv1deprecatedrequest.md
   - docs/models/operations/getdeploymentsv2deprecatedglobals.md
   - docs/models/operations/getdeploymentsv2deprecatedrequest.md
+  - docs/models/operations/getfleetglobals.md
   - docs/models/operations/getfleetmetricsglobals.md
   - docs/models/operations/getfleetmetricsrequest.md
   - docs/models/operations/getfleetregionglobals.md
   - docs/models/operations/getfleetregionrequest.md
+  - docs/models/operations/getfleetrequest.md
   - docs/models/operations/getfleetsglobals.md
   - docs/models/operations/getfleetsrequest.md
   - docs/models/operations/getinactiveroomsforprocessdeprecatedglobals.md
@@ -1483,7 +1486,7 @@ examples:
         query:
           orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
       requestBody:
-        application/json: {"autoscalerConfig": {"scaleUpThreshold": 979840}}
+        application/json: {"autoscalerConfig": {"scaleUpThreshold": 979840}, "name": "production"}
       responses:
         "401":
           application/json: {"message": "<value>"}
@@ -2165,17 +2168,28 @@ examples:
         query:
           orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
       requestBody:
-        application/json: {}
+        application/json: {"nodeShape": "gpu-l4-1-12-48", "autoscalerConfig": {"scaleUpThreshold": 400145}, "name": "production"}
       responses:
         "200":
-          application/json: {"nodeShape": "gpu-l4-1-12-48", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "fleetId": "<id>"}
+          application/json: {"nodeShape": "gpu-l4-1-12-48", "name": "production", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "fleetId": "<id>"}
+        "401":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
+  GetFleet:
+    speakeasy-default-get-fleet:
+      parameters:
+        path:
+          fleetId: "<id>"
+        query:
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      responses:
+        "200":
+          application/json: {"nodeShape": "gpu-h100-4-104-936", "name": "production", "orgId": "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39", "fleetId": "<id>"}
         "401":
           application/json: {"message": "<value>"}
         "500":
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes Detected:
-  * `HathoraCloud.FleetsV1.CreateFleet()`: **Added**
-  * `HathoraCloud.OrganizationsV1.GetOrgs()`:  `response.Orgs.[].DefaultFleetId` **Added**
+releaseNotes: "## Go SDK Changes Detected:\n* `HathoraCloud.FleetsV1.CreateFleet()`: \n  *  `request.CreateFleet` **Changed** **Breaking** :warning:\n  *  `response.Name` **Added**\n* `HathoraCloud.FleetsV1.GetFleet()`: **Added**\n* `HathoraCloud.FleetsV1.GetFleets()`:  `response.Fleets.[].Name` **Added**\n* `HathoraCloud.FleetsV1.UpdateFleet()`: \n  *  `request.UpdateFleet.Name` **Added**\n"

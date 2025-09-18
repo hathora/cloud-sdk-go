@@ -258,6 +258,7 @@ func main() {
 
 * [GetFleets](docs/sdks/fleetsv1/README.md#getfleets) - GetFleets
 * [CreateFleet](docs/sdks/fleetsv1/README.md#createfleet) - CreateFleet
+* [GetFleet](docs/sdks/fleetsv1/README.md#getfleet) - GetFleet
 * [UpdateFleet](docs/sdks/fleetsv1/README.md#updatefleet) - UpdateFleet
 * [GetFleetRegion](docs/sdks/fleetsv1/README.md#getfleetregion) - GetFleetRegion
 * [UpdateFleetRegion](docs/sdks/fleetsv1/README.md#updatefleetregion) - UpdateFleetRegion

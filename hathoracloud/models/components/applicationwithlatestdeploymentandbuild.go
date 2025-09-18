@@ -59,7 +59,7 @@ func (a *ApplicationWithLatestDeploymentAndBuildEnv) GetName() string {
 }
 
 type ApplicationWithLatestDeploymentAndBuildDeployment struct {
-	// the id of the fleet
+	// The id of the fleet.
 	FleetID *string `json:"fleetId,omitempty"`
 	// Arbitrary metadata associated with a deployment.
 	DeploymentTag *string `json:"deploymentTag,omitempty"`

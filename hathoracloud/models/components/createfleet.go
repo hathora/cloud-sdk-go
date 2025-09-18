@@ -3,20 +3,29 @@
 package components
 
 type CreateFleet struct {
-	NodeShape        *NodeShape        `json:"nodeShape,omitempty"`
-	AutoscalerConfig *AutoscalerConfig `json:"autoscalerConfig,omitempty"`
+	NodeShape        NodeShape        `json:"nodeShape"`
+	AutoscalerConfig AutoscalerConfig `json:"autoscalerConfig"`
+	// Readable name for a fleet. Must be unique within an organization.
+	Name string `json:"name"`
 }
 
-func (c *CreateFleet) GetNodeShape() *NodeShape {
+func (c *CreateFleet) GetNodeShape() NodeShape {
 	if c == nil {
-		return nil
+		return NodeShape("")
 	}
 	return c.NodeShape
 }
 
-func (c *CreateFleet) GetAutoscalerConfig() *AutoscalerConfig {
+func (c *CreateFleet) GetAutoscalerConfig() AutoscalerConfig {
 	if c == nil {
-		return nil
+		return AutoscalerConfig{}
 	}
 	return c.AutoscalerConfig
+}
+
+func (c *CreateFleet) GetName() string {
+	if c == nil {
+		return ""
+	}
+	return c.Name
 }

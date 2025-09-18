@@ -6,9 +6,11 @@ package components
 type Fleet struct {
 	NodeShape        NodeShape         `json:"nodeShape"`
 	AutoscalerConfig *AutoscalerConfig `json:"autoscalerConfig,omitempty"`
+	// Readable name for a fleet. Must be unique within an organization.
+	Name *string `json:"name,omitempty"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID string `json:"orgId"`
-	// the id of the fleet
+	// The id of the fleet.
 	FleetID string `json:"fleetId"`
 }
 
@@ -24,6 +26,13 @@ func (f *Fleet) GetAutoscalerConfig() *AutoscalerConfig {
 		return nil
 	}
 	return f.AutoscalerConfig
+}
+
+func (f *Fleet) GetName() *string {
+	if f == nil {
+		return nil
+	}
+	return f.Name
 }
 
 func (f *Fleet) GetOrgID() string {

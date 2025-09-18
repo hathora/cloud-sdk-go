@@ -5,6 +5,8 @@ package components
 type UpdateFleet struct {
 	NodeShape        *NodeShape       `json:"nodeShape,omitempty"`
 	AutoscalerConfig AutoscalerConfig `json:"autoscalerConfig"`
+	// Readable name for a fleet. Must be unique within an organization.
+	Name *string `json:"name,omitempty"`
 }
 
 func (u *UpdateFleet) GetNodeShape() *NodeShape {
@@ -19,4 +21,11 @@ func (u *UpdateFleet) GetAutoscalerConfig() AutoscalerConfig {
 		return AutoscalerConfig{}
 	}
 	return u.AutoscalerConfig
+}
+
+func (u *UpdateFleet) GetName() *string {
+	if u == nil {
+		return nil
+	}
+	return u.Name
 }

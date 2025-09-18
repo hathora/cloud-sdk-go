@@ -27,7 +27,7 @@ func (d *DeploymentV3Env) GetName() string {
 }
 
 type DeploymentV3 struct {
-	// the id of the fleet
+	// The id of the fleet.
 	FleetID *string `json:"fleetId,omitempty"`
 	// Arbitrary metadata associated with a deployment.
 	DeploymentTag *string `json:"deploymentTag,omitempty"`
