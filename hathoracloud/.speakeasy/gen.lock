@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 7de8878bb547adee9c774a3a8bc24618
+  docChecksum: 93bbf787eb5009172c1db5806e7c8eb2
   docVersion: 0.0.1
-  speakeasyVersion: 1.618.1
-  generationVersion: 2.702.0
-  releaseVersion: 0.8.1
-  configChecksum: dba744cc1cbae05461981226cb103cfa
+  speakeasyVersion: 1.621.1
+  generationVersion: 2.708.2
+  releaseVersion: 0.9.0
+  configChecksum: 23151b7227b6d265662c4863b23a1585
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.10.0
+    core: 3.11.0
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -28,7 +28,7 @@ features:
     globals: 2.82.2
     groups: 2.81.2
     intellisenseMarkdownSupport: 0.1.0
-    methodSecurity: 2.82.3
+    methodSecurity: 2.82.4
     nullables: 0.2.0
     openEnums: 0.1.0
     responseFormat: 0.1.2
@@ -2192,4 +2192,3 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes Detected:\n* `HathoraCloud.FleetsV1.CreateFleet()`: \n  *  `request.CreateFleet` **Changed** **Breaking** :warning:\n  *  `response.Name` **Added**\n* `HathoraCloud.FleetsV1.GetFleet()`: **Added**\n* `HathoraCloud.FleetsV1.GetFleets()`:  `response.Fleets.[].Name` **Added**\n* `HathoraCloud.FleetsV1.UpdateFleet()`: \n  *  `request.UpdateFleet.Name` **Added**\n"
