@@ -14,7 +14,6 @@ type ServiceConfig struct {
 	ProcessAutoscalerConfig *ProcessAutoscalerConfig `json:"processAutoscalerConfig,omitempty"`
 	LoadBalancer            *LoadBalancerConfig      `json:"loadBalancer,omitempty"`
 	// The headroom configuration for each region.
-	// EXPERIMENTAL - this feature is in closed beta.
 	StaticProcessAllocation []StaticProcessAllocationConfig `json:"staticProcessAllocation"`
 }
 

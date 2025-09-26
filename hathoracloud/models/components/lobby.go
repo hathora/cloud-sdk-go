@@ -18,8 +18,8 @@ const (
 
 // CreatedBy - UserId or email address for the user that created the lobby.
 type CreatedBy struct {
-	Str    *string  `queryParam:"inline" name:"createdBy"`
-	Number *float64 `queryParam:"inline" name:"createdBy"`
+	Str    *string  `queryParam:"inline,name=createdBy"`
+	Number *float64 `queryParam:"inline,name=createdBy"`
 
 	Type CreatedByType
 }

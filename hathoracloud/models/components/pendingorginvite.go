@@ -17,8 +17,8 @@ const (
 )
 
 type PendingOrgInviteScopes struct {
-	UserRole     *UserRole `queryParam:"inline" name:"scopes"`
-	ArrayOfScope []Scope   `queryParam:"inline" name:"scopes"`
+	UserRole     *UserRole `queryParam:"inline,name=scopes"`
+	ArrayOfScope []Scope   `queryParam:"inline,name=scopes"`
 
 	Type PendingOrgInviteScopesType
 }

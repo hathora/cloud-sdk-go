@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 93bbf787eb5009172c1db5806e7c8eb2
+  docChecksum: 3bae25ef5c813fd1873dc2fb68d9aa4c
   docVersion: 0.0.1
-  speakeasyVersion: 1.621.1
-  generationVersion: 2.708.2
-  releaseVersion: 0.9.0
-  configChecksum: 23151b7227b6d265662c4863b23a1585
+  speakeasyVersion: 1.628.7
+  generationVersion: 2.716.9
+  releaseVersion: 0.9.1
+  configChecksum: d965451758cf01ba772c4acd8f7a9526
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.11.0
+    core: 3.11.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -735,7 +735,6 @@ generatedFiles:
   - types/bigint.go
   - types/date.go
   - types/datetime.go
-  - types/decimal.go
   - types/pointers.go
 examples:
   GetOrgTokens:
