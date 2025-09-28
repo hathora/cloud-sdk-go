@@ -14,6 +14,7 @@ Operations to manage and view a [fleet](https://hathora.dev/docs/concepts/hathor
 * [GetFleetRegion](#getfleetregion) - GetFleetRegion
 * [UpdateFleetRegion](#updatefleetregion) - UpdateFleetRegion
 * [GetFleetMetrics](#getfleetmetrics) - GetFleetMetrics
+* [GetFleetRegionMetrics](#getfleetregionmetrics) - GetFleetRegionMetrics
 
 ## GetFleets
 
@@ -359,11 +360,68 @@ func main() {
 
 ## GetFleetMetrics
 
-Gets metrics for a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
+Gets aggregate metrics for a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="GetFleetMetrics" method="get" path="/fleets/v1/fleets/{fleetId}/regions/{region}/metrics" -->
+<!-- UsageSnippet language="go" operationID="GetFleetMetrics" method="get" path="/fleets/v1/fleets/{fleetId}/metrics" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/hathora/cloud-sdk-go/hathoracloud"
+	"github.com/hathora/cloud-sdk-go/hathoracloud/models/operations"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+    )
+
+    res, err := s.FleetsV1.GetFleetMetrics(ctx, operations.GetFleetMetricsRequest{
+        FleetID: "<id>",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res != nil {
+        // handle response
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
+| `request`                                                                              | [operations.GetFleetMetricsRequest](../../models/operations/getfleetmetricsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
+
+### Response
+
+**[*components.FleetMetricsData](../../models/components/fleetmetricsdata.md), error**
+
+### Errors
+
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 422, 429 | application/json   |
+| errors.APIError    | 500                | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+
+## GetFleetRegionMetrics
+
+Gets metrics for a region in a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="GetFleetRegionMetrics" method="get" path="/fleets/v1/fleets/{fleetId}/regions/{region}/metrics" -->
 ```go
 package main
 
@@ -383,9 +441,9 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.GetFleetMetrics(ctx, operations.GetFleetMetricsRequest{
+    res, err := s.FleetsV1.GetFleetRegionMetrics(ctx, operations.GetFleetRegionMetricsRequest{
         FleetID: "<id>",
-        Region: components.RegionWashingtonDc,
+        Region: components.RegionChicago,
     })
     if err != nil {
         log.Fatal(err)
@@ -398,11 +456,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.GetFleetMetricsRequest](../../models/operations/getfleetmetricsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
+| `request`                                                                                          | [operations.GetFleetRegionMetricsRequest](../../models/operations/getfleetregionmetricsrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
 
 ### Response
 

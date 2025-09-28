@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 3bae25ef5c813fd1873dc2fb68d9aa4c
+  docChecksum: 11afebd754f37591a525f42e3c8f384a
   docVersion: 0.0.1
-  speakeasyVersion: 1.628.7
-  generationVersion: 2.716.9
-  releaseVersion: 0.9.1
-  configChecksum: d965451758cf01ba772c4acd8f7a9526
+  speakeasyVersion: 1.631.3
+  generationVersion: 2.716.14
+  releaseVersion: 0.9.2
+  configChecksum: 2c217922b7a37f480c13e7e1e2e6f6e9
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -210,6 +210,7 @@ generatedFiles:
   - /models/operations/getfleet.go
   - /models/operations/getfleetmetrics.go
   - /models/operations/getfleetregion.go
+  - /models/operations/getfleetregionmetrics.go
   - /models/operations/getfleets.go
   - /models/operations/getinactiveroomsforprocess.go
   - /models/operations/getinactiveroomsforprocessdeprecated.go
@@ -551,6 +552,8 @@ generatedFiles:
   - docs/models/operations/getfleetmetricsglobals.md
   - docs/models/operations/getfleetmetricsrequest.md
   - docs/models/operations/getfleetregionglobals.md
+  - docs/models/operations/getfleetregionmetricsglobals.md
+  - docs/models/operations/getfleetregionmetricsrequest.md
   - docs/models/operations/getfleetregionrequest.md
   - docs/models/operations/getfleetrequest.md
   - docs/models/operations/getfleetsglobals.md
@@ -2189,5 +2192,22 @@ examples:
           application/json: {"message": "<value>"}
         "500":
           application/json: {"message": "<value>"}
+  GetFleetRegionMetrics:
+    speakeasy-default-get-fleet-region-metrics:
+      parameters:
+        path:
+          fleetId: "<id>"
+          region: "Chicago"
+        query:
+          step: 60
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      responses:
+        "200":
+          application/json: {}
+        "401":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Go SDK Changes Detected:\n* `HathoraCloud.FleetsV1.GetFleetMetrics()`: \n  *  `request.Request.Region` **Removed** **Breaking** :warning:\n* `HathoraCloud.FleetsV1.GetFleetRegionMetrics()`: **Added**\n"

@@ -7,19 +7,20 @@ import (
 	"github.com/hathora/cloud-sdk-go/hathoracloud/models/components"
 )
 
-type GetFleetMetricsGlobals struct {
+type GetFleetRegionMetricsGlobals struct {
 	OrgID *string `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (g *GetFleetMetricsGlobals) GetOrgID() *string {
+func (g *GetFleetRegionMetricsGlobals) GetOrgID() *string {
 	if g == nil {
 		return nil
 	}
 	return g.OrgID
 }
 
-type GetFleetMetricsRequest struct {
-	FleetID string `pathParam:"style=simple,explode=false,name=fleetId"`
+type GetFleetRegionMetricsRequest struct {
+	FleetID string            `pathParam:"style=simple,explode=false,name=fleetId"`
+	Region  components.Region `pathParam:"style=simple,explode=false,name=region"`
 	// Available metrics to query over time.
 	Metrics []components.FleetMetricName `queryParam:"style=form,explode=true,name=metrics"`
 	End     *float64                     `queryParam:"style=form,explode=true,name=end"`
@@ -29,53 +30,60 @@ type GetFleetMetricsRequest struct {
 	OrgID *string  `queryParam:"style=form,explode=true,name=orgId"`
 }
 
-func (g GetFleetMetricsRequest) MarshalJSON() ([]byte, error) {
+func (g GetFleetRegionMetricsRequest) MarshalJSON() ([]byte, error) {
 	return utils.MarshalJSON(g, "", false)
 }
 
-func (g *GetFleetMetricsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"fleetId"}); err != nil {
+func (g *GetFleetRegionMetricsRequest) UnmarshalJSON(data []byte) error {
+	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"fleetId", "region"}); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (g *GetFleetMetricsRequest) GetFleetID() string {
+func (g *GetFleetRegionMetricsRequest) GetFleetID() string {
 	if g == nil {
 		return ""
 	}
 	return g.FleetID
 }
 
-func (g *GetFleetMetricsRequest) GetMetrics() []components.FleetMetricName {
+func (g *GetFleetRegionMetricsRequest) GetRegion() components.Region {
+	if g == nil {
+		return components.Region("")
+	}
+	return g.Region
+}
+
+func (g *GetFleetRegionMetricsRequest) GetMetrics() []components.FleetMetricName {
 	if g == nil {
 		return nil
 	}
 	return g.Metrics
 }
 
-func (g *GetFleetMetricsRequest) GetEnd() *float64 {
+func (g *GetFleetRegionMetricsRequest) GetEnd() *float64 {
 	if g == nil {
 		return nil
 	}
 	return g.End
 }
 
-func (g *GetFleetMetricsRequest) GetStart() *float64 {
+func (g *GetFleetRegionMetricsRequest) GetStart() *float64 {
 	if g == nil {
 		return nil
 	}
 	return g.Start
 }
 
-func (g *GetFleetMetricsRequest) GetStep() *int {
+func (g *GetFleetRegionMetricsRequest) GetStep() *int {
 	if g == nil {
 		return nil
 	}
 	return g.Step
 }
 
-func (g *GetFleetMetricsRequest) GetOrgID() *string {
+func (g *GetFleetRegionMetricsRequest) GetOrgID() *string {
 	if g == nil {
 		return nil
 	}
