@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 11afebd754f37591a525f42e3c8f384a
+  docChecksum: bc29b10e64b270f589da405329fcd7c0
   docVersion: 0.0.1
-  speakeasyVersion: 1.631.3
-  generationVersion: 2.716.14
-  releaseVersion: 0.9.2
-  configChecksum: 2c217922b7a37f480c13e7e1e2e6f6e9
+  speakeasyVersion: 1.631.5
+  generationVersion: 2.716.16
+  releaseVersion: 0.9.3
+  configChecksum: 1240f94e4f88533c1aa4e8311add6913
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -2210,4 +2210,6 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes Detected:\n* `HathoraCloud.FleetsV1.GetFleetMetrics()`: \n  *  `request.Request.Region` **Removed** **Breaking** :warning:\n* `HathoraCloud.FleetsV1.GetFleetRegionMetrics()`: **Added**\n"
+releaseNotes: |
+  ## Go SDK Changes Detected:
+  * `HathoraCloud.BillingV1.GetUpcomingInvoiceItems()`:  `response.InvoiceItems.[].Discount` **Added**

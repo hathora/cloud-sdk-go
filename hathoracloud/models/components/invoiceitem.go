@@ -3,11 +3,19 @@
 package components
 
 type InvoiceItem struct {
-	Amount      float64 `json:"amount"`
-	UnitPrice   float64 `json:"unitPrice"`
-	Quantity    float64 `json:"quantity"`
-	Unit        string  `json:"unit"`
-	ProductName string  `json:"productName"`
+	Discount    *float64 `json:"discount,omitempty"`
+	Amount      float64  `json:"amount"`
+	UnitPrice   float64  `json:"unitPrice"`
+	Quantity    float64  `json:"quantity"`
+	Unit        string   `json:"unit"`
+	ProductName string   `json:"productName"`
+}
+
+func (i *InvoiceItem) GetDiscount() *float64 {
+	if i == nil {
+		return nil
+	}
+	return i.Discount
 }
 
 func (i *InvoiceItem) GetAmount() float64 {
