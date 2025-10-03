@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: bc29b10e64b270f589da405329fcd7c0
+  docChecksum: 159ad0c530216e92861700de3cb54ee8
   docVersion: 0.0.1
-  speakeasyVersion: 1.631.5
-  generationVersion: 2.716.16
-  releaseVersion: 0.9.3
-  configChecksum: 1240f94e4f88533c1aa4e8311add6913
+  speakeasyVersion: 1.634.0
+  generationVersion: 2.721.0
+  releaseVersion: 0.10.0
+  configChecksum: 53c0fef3e74123c147d0eeadb8089cb2
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -34,7 +34,7 @@ features:
     responseFormat: 0.1.2
     retries: 2.84.2
     sdkHooks: 0.2.0
-    unions: 2.85.14
+    unions: 2.86.0
     uploadStreams: 0.1.0
 generatedFiles:
   - .devcontainer/README.md
@@ -2212,4 +2212,6 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Go SDK Changes Detected:
-  * `HathoraCloud.BillingV1.GetUpcomingInvoiceItems()`:  `response.InvoiceItems.[].Discount` **Added**
+  * `HathoraCloud.ProcessesV3.GetLatestProcesses()`:  `response.[].FleetId` **Added**
+  * `HathoraCloud.ProcessesV3.CreateProcess()`:  `response.FleetId` **Added**
+  * `HathoraCloud.ProcessesV3.GetProcess()`:  `response.FleetId` **Added**

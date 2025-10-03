@@ -66,6 +66,8 @@ type ProcessV3 struct {
 	Region                 Region                `json:"region"`
 	// System generated unique identifier to a runtime instance of your game server.
 	ProcessID string `json:"processId"`
+	// The id of the fleet.
+	FleetID *string `json:"fleetId,omitempty"`
 	// System generated id for a deployment.
 	DeploymentID string `json:"deploymentId"`
 	// System generated unique identifier for an application.
@@ -172,6 +174,13 @@ func (p *ProcessV3) GetProcessID() string {
 		return ""
 	}
 	return p.ProcessID
+}
+
+func (p *ProcessV3) GetFleetID() *string {
+	if p == nil {
+		return nil
+	}
+	return p.FleetID
 }
 
 func (p *ProcessV3) GetDeploymentID() string {
