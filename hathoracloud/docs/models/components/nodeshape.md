@@ -23,3 +23,7 @@
 | `NodeShapeGpuH100252468`   | gpu-h100-2-52-468          |
 | `NodeShapeGpuH1004104936`  | gpu-h100-4-104-936         |
 | `NodeShapeGpuH10082081872` | gpu-h100-8-208-1872        |
+| `NodeShapeGpuH100128180`   | gpu-h100-1-28-180          |
+| `NodeShapeGpuH100260360`   | gpu-h100-2-60-360          |
+| `NodeShapeGpuH1004124720`  | gpu-h100-4-124-720         |
+| `NodeShapeGpuH10082521440` | gpu-h100-8-252-1440        |

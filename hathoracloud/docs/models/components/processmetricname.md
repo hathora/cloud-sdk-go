@@ -12,3 +12,5 @@ Available metrics to query over time.
 | `ProcessMetricNameRateEgress`        | rateEgress                           |
 | `ProcessMetricNameTotalEgress`       | totalEgress                          |
 | `ProcessMetricNameActiveConnections` | activeConnections                    |
+| `ProcessMetricNameGpuMemory`         | gpuMemory                            |
+| `ProcessMetricNameGpuUtilization`    | gpuUtilization                       |

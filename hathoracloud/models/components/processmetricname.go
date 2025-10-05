@@ -11,6 +11,8 @@ const (
 	ProcessMetricNameRateEgress        ProcessMetricName = "rateEgress"
 	ProcessMetricNameTotalEgress       ProcessMetricName = "totalEgress"
 	ProcessMetricNameActiveConnections ProcessMetricName = "activeConnections"
+	ProcessMetricNameGpuMemory         ProcessMetricName = "gpuMemory"
+	ProcessMetricNameGpuUtilization    ProcessMetricName = "gpuUtilization"
 )
 
 func (e ProcessMetricName) ToPointer() *ProcessMetricName {

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 159ad0c530216e92861700de3cb54ee8
+  docChecksum: 2ef227037b168243f15e31021eda61d1
   docVersion: 0.0.1
-  speakeasyVersion: 1.634.0
-  generationVersion: 2.721.0
-  releaseVersion: 0.10.0
-  configChecksum: 53c0fef3e74123c147d0eeadb8089cb2
+  speakeasyVersion: 1.634.2
+  generationVersion: 2.721.3
+  releaseVersion: 0.10.1
+  configChecksum: 462451b5b31ff5b9530f374feecb12d6
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -2210,8 +2210,4 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes Detected:
-  * `HathoraCloud.ProcessesV3.GetLatestProcesses()`:  `response.[].FleetId` **Added**
-  * `HathoraCloud.ProcessesV3.CreateProcess()`:  `response.FleetId` **Added**
-  * `HathoraCloud.ProcessesV3.GetProcess()`:  `response.FleetId` **Added**
+releaseNotes: "## Go SDK Changes Detected:\n* `HathoraCloud.ProcessesV3.GetProcessMetrics()`: \n  *  `request.Request.Metrics` **Changed**\n  *  `response` **Changed**\n"

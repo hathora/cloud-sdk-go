@@ -3,11 +3,27 @@
 package components
 
 type ProcessMetricsData struct {
+	GpuMemory         []MetricValue `json:"gpuMemory,omitempty"`
+	GpuUtilization    []MetricValue `json:"gpuUtilization,omitempty"`
 	ActiveConnections []MetricValue `json:"activeConnections,omitempty"`
 	TotalEgress       []MetricValue `json:"totalEgress,omitempty"`
 	RateEgress        []MetricValue `json:"rateEgress,omitempty"`
 	Memory            []MetricValue `json:"memory,omitempty"`
 	CPU               []MetricValue `json:"cpu,omitempty"`
+}
+
+func (p *ProcessMetricsData) GetGpuMemory() []MetricValue {
+	if p == nil {
+		return nil
+	}
+	return p.GpuMemory
+}
+
+func (p *ProcessMetricsData) GetGpuUtilization() []MetricValue {
+	if p == nil {
+		return nil
+	}
+	return p.GpuUtilization
 }
 
 func (p *ProcessMetricsData) GetActiveConnections() []MetricValue {
