@@ -3,10 +3,10 @@ id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
   docChecksum: 2ef227037b168243f15e31021eda61d1
   docVersion: 0.0.1
-  speakeasyVersion: 1.634.2
-  generationVersion: 2.721.3
-  releaseVersion: 0.10.1
-  configChecksum: 462451b5b31ff5b9530f374feecb12d6
+  speakeasyVersion: 1.635.1
+  generationVersion: 2.722.2
+  releaseVersion: 0.10.2
+  configChecksum: cffff059c7bc67d5df4e7201ff760d23
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -29,7 +29,7 @@ features:
     groups: 2.81.2
     intellisenseMarkdownSupport: 0.1.0
     methodSecurity: 2.82.4
-    nullables: 0.2.0
+    nullables: 0.2.1
     openEnums: 0.1.0
     responseFormat: 0.1.2
     retries: 2.84.2
@@ -2210,4 +2210,3 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes Detected:\n* `HathoraCloud.ProcessesV3.GetProcessMetrics()`: \n  *  `request.Request.Metrics` **Changed**\n  *  `response` **Changed**\n"

@@ -107,7 +107,7 @@ func (l Lobby) MarshalJSON() ([]byte, error) {
 }
 
 func (l *Lobby) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"shortCode", "initialConfig", "createdAt", "createdBy", "local", "visibility", "region", "roomId", "appId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"initialConfig", "createdAt", "createdBy", "local", "visibility", "region", "roomId", "appId"}); err != nil {
 		return err
 	}
 	return nil

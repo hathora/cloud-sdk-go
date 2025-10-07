@@ -265,7 +265,7 @@ func (a ApplicationWithLatestDeploymentAndBuild) MarshalJSON() ([]byte, error) {
 }
 
 func (a *ApplicationWithLatestDeploymentAndBuild) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"deletedBy", "deletedAt", "createdAt", "createdBy", "orgId", "serviceConfig", "authConfiguration", "appSecret", "appId", "appName"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"createdAt", "createdBy", "orgId", "authConfiguration", "appSecret", "appId", "appName"}); err != nil {
 		return err
 	}
 	return nil
