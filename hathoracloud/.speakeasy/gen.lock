@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 2ef227037b168243f15e31021eda61d1
+  docChecksum: 7db52426e49c074168c89fc00f97dcdf
   docVersion: 0.0.1
-  speakeasyVersion: 1.635.1
-  generationVersion: 2.722.2
-  releaseVersion: 0.10.2
-  configChecksum: cffff059c7bc67d5df4e7201ff760d23
+  speakeasyVersion: 1.636.2
+  generationVersion: 2.723.8
+  releaseVersion: 0.10.3
+  configChecksum: 37b11c183d5b2145978b82e7ec436665
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -26,7 +26,7 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.3
     globals: 2.82.2
-    groups: 2.81.2
+    groups: 2.81.3
     intellisenseMarkdownSupport: 0.1.0
     methodSecurity: 2.82.4
     nullables: 0.2.1
@@ -686,7 +686,6 @@ generatedFiles:
   - docs/sdks/discoveryv1/README.md
   - docs/sdks/discoveryv2/README.md
   - docs/sdks/fleetsv1/README.md
-  - docs/sdks/hathoracloud/README.md
   - docs/sdks/lobbiesv1/README.md
   - docs/sdks/lobbiesv2/README.md
   - docs/sdks/lobbiesv3/README.md
