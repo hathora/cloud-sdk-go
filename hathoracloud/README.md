@@ -301,6 +301,11 @@ func main() {
 
 * [~~GetMetricsDeprecated~~](docs/sdks/metricsv1/README.md#getmetricsdeprecated) - GetMetricsDeprecated :warning: **Deprecated**
 
+### [NodesV1](docs/sdks/nodesv1/README.md)
+
+* [GetNode](docs/sdks/nodesv1/README.md#getnode) - GetNode
+* [ListProvisionedNodes](docs/sdks/nodesv1/README.md#listprovisionednodes) - ListProvisionedNodes
+
 ### [OrganizationsV1](docs/sdks/organizationsv1/README.md)
 
 * [GetOrgs](docs/sdks/organizationsv1/README.md#getorgs) - GetOrgs

@@ -1,0 +1,17 @@
+# NodeV1
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `StoppedAt`                                                        | [time.Time](https://pkg.go.dev/time#Time)                          | :heavy_check_mark:                                                 | N/A                                                                |
+| `StartedAt`                                                        | [time.Time](https://pkg.go.dev/time#Time)                          | :heavy_check_mark:                                                 | N/A                                                                |
+| `Gpu`                                                              | *float64*                                                          | :heavy_check_mark:                                                 | N/A                                                                |
+| `MemoryMb`                                                         | *float64*                                                          | :heavy_check_mark:                                                 | N/A                                                                |
+| `CPU`                                                              | *float64*                                                          | :heavy_check_mark:                                                 | N/A                                                                |
+| `Region`                                                           | [components.Region](../../models/components/region.md)             | :heavy_check_mark:                                                 | N/A                                                                |
+| `Status`                                                           | [components.NodeV1Status](../../models/components/nodev1status.md) | :heavy_check_mark:                                                 | N/A                                                                |
+| `Hosting`                                                          | [components.Hosting](../../models/components/hosting.md)           | :heavy_check_mark:                                                 | N/A                                                                |
+| `Host`                                                             | *string*                                                           | :heavy_check_mark:                                                 | N/A                                                                |
+| `NodeID`                                                           | *string*                                                           | :heavy_check_mark:                                                 | N/A                                                                |

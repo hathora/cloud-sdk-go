@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 7db52426e49c074168c89fc00f97dcdf
+  docChecksum: b38d63d34179683a1f35cbab6f086acb
   docVersion: 0.0.1
-  speakeasyVersion: 1.636.2
-  generationVersion: 2.723.8
-  releaseVersion: 0.10.3
-  configChecksum: 37b11c183d5b2145978b82e7ec436665
+  speakeasyVersion: 1.636.3
+  generationVersion: 2.723.11
+  releaseVersion: 0.10.4
+  configChecksum: 15a1aa265b052b3dc43e9f0b0fc61cbb
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -108,6 +108,7 @@ generatedFiles:
   - /models/components/metricvalue.go
   - /models/components/nicknameobject.go
   - /models/components/nodeshape.go
+  - /models/components/nodev1.go
   - /models/components/organization.go
   - /models/components/orgmember.go
   - /models/components/orgmemberspage.go
@@ -225,6 +226,7 @@ generatedFiles:
   - /models/operations/getlobbyinfobyshortcode.go
   - /models/operations/getlogsforprocess.go
   - /models/operations/getmetricsdeprecated.go
+  - /models/operations/getnode.go
   - /models/operations/getorgmembers.go
   - /models/operations/getorgpendinginvites.go
   - /models/operations/getorgtokens.go
@@ -247,6 +249,7 @@ generatedFiles:
   - /models/operations/listactivepubliclobbies.go
   - /models/operations/listactivepubliclobbiesdeprecatedv1.go
   - /models/operations/listactivepubliclobbiesdeprecatedv2.go
+  - /models/operations/listprovisionednodes.go
   - /models/operations/loginanonymous.go
   - /models/operations/logingoogle.go
   - /models/operations/loginnickname.go
@@ -374,6 +377,8 @@ generatedFiles:
   - docs/models/components/metricvalue.md
   - docs/models/components/nicknameobject.md
   - docs/models/components/nodeshape.md
+  - docs/models/components/nodev1.md
+  - docs/models/components/nodev1status.md
   - docs/models/components/organization.md
   - docs/models/components/orgmember.md
   - docs/models/components/orgmemberscopes.md
@@ -584,6 +589,7 @@ generatedFiles:
   - docs/models/operations/getlogsforprocessrequest.md
   - docs/models/operations/getmetricsdeprecatedglobals.md
   - docs/models/operations/getmetricsdeprecatedrequest.md
+  - docs/models/operations/getnoderequest.md
   - docs/models/operations/getorgmembersrequest.md
   - docs/models/operations/getorgpendinginvitesrequest.md
   - docs/models/operations/getorgtokensrequest.md
@@ -627,6 +633,8 @@ generatedFiles:
   - docs/models/operations/listactivepubliclobbiesdeprecatedv2request.md
   - docs/models/operations/listactivepubliclobbiesglobals.md
   - docs/models/operations/listactivepubliclobbiesrequest.md
+  - docs/models/operations/listprovisionednodesglobals.md
+  - docs/models/operations/listprovisionednodesrequest.md
   - docs/models/operations/loginanonymousglobals.md
   - docs/models/operations/loginanonymousrequest.md
   - docs/models/operations/logingoogleglobals.md
@@ -692,6 +700,7 @@ generatedFiles:
   - docs/sdks/logsv1/README.md
   - docs/sdks/managementv1/README.md
   - docs/sdks/metricsv1/README.md
+  - docs/sdks/nodesv1/README.md
   - docs/sdks/organizationsv1/README.md
   - docs/sdks/processesv1/README.md
   - docs/sdks/processesv2/README.md
@@ -724,6 +733,7 @@ generatedFiles:
   - metricsv1.go
   - models/errors/sdkerror.go
   - models/operations/options.go
+  - nodesv1.go
   - optionalnullable/optionalnullable.go
   - optionalnullable/optionalnullable_test.go
   - organizationsv1.go
@@ -2207,5 +2217,31 @@ examples:
           application/json: {"message": "<value>"}
         "500":
           application/json: {"message": "<value>"}
+  GetNode:
+    speakeasy-default-get-node:
+      parameters:
+        path:
+          nodeId: "<id>"
+      responses:
+        "200":
+          application/json: {"stoppedAt": "2023-07-18T08:08:07.171Z", "startedAt": "2024-11-27T01:07:01.517Z", "gpu": 288.15, "memoryMb": 6909.12, "cpu": 965.52, "region": "Dubai", "status": "running", "hosting": "shared", "host": "shadowy-strait.org", "nodeId": "<id>"}
+        "401":
+          application/json: {"message": "<value>"}
+  ListProvisionedNodes:
+    speakeasy-default-list-provisioned-nodes:
+      parameters:
+        path:
+          fleetId: "<id>"
+        query:
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      responses:
+        "200":
+          application/json: [{"stoppedAt": null, "startedAt": "2025-11-18T11:40:48.434Z", "gpu": 7885.75, "memoryMb": 7642.95, "cpu": 5307.53, "region": "Frankfurt", "status": "draining", "hosting": "cloud", "host": "candid-tributary.name", "nodeId": "<id>"}]
+        "401":
+          application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Go SDK Changes Detected:
+  * `HathoraCloud.NodesV1.GetNode()`: **Added**
+  * `HathoraCloud.NodesV1.ListProvisionedNodes()`: **Added**

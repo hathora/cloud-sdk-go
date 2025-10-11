@@ -2,7 +2,7 @@
 
 package hathoracloud
 
-// Generated from OpenAPI doc version 0.0.1 and generator version 2.723.8
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.723.11
 
 import (
 	"context"
@@ -63,6 +63,7 @@ type HathoraCloud struct {
 	// Operations to get data on active and stopped [processes](https://hathora.dev/docs/concepts/hathora-entities#process).
 	ProcessesV3     *ProcessesV3
 	OrganizationsV1 *OrganizationsV1
+	NodesV1         *NodesV1
 	// Deprecated. Use [ProcessesV3#GetProcessMetrics](https://hathora.dev/api#tag/ProcessesV3/operation/GetProcessMetrics) to fetch metrics about a specific process.
 	MetricsV1 *MetricsV1
 	//
@@ -182,9 +183,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *HathoraCloud {
 	sdk := &HathoraCloud{
-		SDKVersion: "0.10.3",
+		SDKVersion: "0.10.4",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.10.3 2.723.8 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
+			UserAgent:  "speakeasy-sdk/go 0.10.4 2.723.11 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
 			Globals:    globals.Globals{},
 			ServerList: ServerList,
 		},
@@ -213,6 +214,7 @@ func New(opts ...SDKOption) *HathoraCloud {
 	sdk.ProcessesV2 = newProcessesV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.ProcessesV3 = newProcessesV3(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.OrganizationsV1 = newOrganizationsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.NodesV1 = newNodesV1(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.MetricsV1 = newMetricsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.ManagementV1 = newManagementV1(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.LogsV1 = newLogsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
