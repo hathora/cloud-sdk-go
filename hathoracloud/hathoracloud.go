@@ -183,9 +183,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *HathoraCloud {
 	sdk := &HathoraCloud{
-		SDKVersion: "0.10.4",
+		SDKVersion: "0.10.5",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.10.4 2.723.11 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
+			UserAgent:  "speakeasy-sdk/go 0.10.5 2.723.11 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
 			Globals:    globals.Globals{},
 			ServerList: ServerList,
 		},

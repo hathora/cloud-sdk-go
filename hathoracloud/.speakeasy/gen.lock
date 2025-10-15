@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: b38d63d34179683a1f35cbab6f086acb
+  docChecksum: 3f2c8cd34be70a4f155c4c3f7040c04c
   docVersion: 0.0.1
   speakeasyVersion: 1.636.3
   generationVersion: 2.723.11
-  releaseVersion: 0.10.4
-  configChecksum: 15a1aa265b052b3dc43e9f0b0fc61cbb
+  releaseVersion: 0.10.5
+  configChecksum: 65518ec99add32acfa831d623a7678e2
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -2241,7 +2241,3 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes Detected:
-  * `HathoraCloud.NodesV1.GetNode()`: **Added**
-  * `HathoraCloud.NodesV1.ListProvisionedNodes()`: **Added**
