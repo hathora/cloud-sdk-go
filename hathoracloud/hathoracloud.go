@@ -2,7 +2,7 @@
 
 package hathoracloud
 
-// Generated from OpenAPI doc version 0.0.1 and generator version 2.723.11
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.728.0
 
 import (
 	"context"
@@ -183,9 +183,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *HathoraCloud {
 	sdk := &HathoraCloud{
-		SDKVersion: "0.10.6",
+		SDKVersion: "0.11.0",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.10.6 2.723.11 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
+			UserAgent:  "speakeasy-sdk/go 0.11.0 2.728.0 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
 			Globals:    globals.Globals{},
 			ServerList: ServerList,
 		},

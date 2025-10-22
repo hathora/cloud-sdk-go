@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 0ebab7fa2e2ae4022a8844a908cfa7d9
+  docChecksum: e9a006d3e3f4162092e111348d4f4c7e
   docVersion: 0.0.1
-  speakeasyVersion: 1.636.3
-  generationVersion: 2.723.11
-  releaseVersion: 0.10.6
-  configChecksum: fba4ab301aebf58565080f6c02c19412
+  speakeasyVersion: 1.638.0
+  generationVersion: 2.728.0
+  releaseVersion: 0.11.0
+  configChecksum: 0a4581629a29223b5397606af3bb8134
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.11.1
+    core: 3.12.0
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -2241,3 +2241,6 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Go SDK Changes Detected:
+  * `HathoraCloud.FleetsV1.GetFleetRegionMetrics()`:  `error.status[408]` **Added**
