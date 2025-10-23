@@ -62,10 +62,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 404, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## GetUserPendingInvites
 
@@ -115,7 +115,7 @@ func main() {
 
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 429         | application/json |
+| errors.APIError  | 401, 408, 429    | application/json |
 | errors.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## GetOrgMembers
@@ -167,7 +167,7 @@ func main() {
 
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 429         | application/json |
+| errors.APIError  | 401, 408, 429    | application/json |
 | errors.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## InviteUser
@@ -221,10 +221,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 422, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 408, 422, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## UpdateUserInvite
 
@@ -280,10 +280,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 422, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 408, 422, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## RescindInvite
 
@@ -333,11 +333,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## GetOrgPendingInvites
 
@@ -388,7 +388,7 @@ func main() {
 
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 429         | application/json |
+| errors.APIError  | 401, 408, 429    | application/json |
 | errors.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## AcceptInvite
@@ -435,10 +435,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 404, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## RejectInvite
 
@@ -484,10 +484,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 404, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## GetUsageLimits
 
@@ -537,8 +537,8 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 404, 429    | application/json |
-| errors.APIError  | 500              | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.APIError    | 500                | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |

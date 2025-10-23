@@ -64,11 +64,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## GetUpcomingInvoiceItems
 
@@ -118,11 +118,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## GetUpcomingInvoiceTotal
 
@@ -172,11 +172,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## GetPaymentMethod
 
@@ -226,11 +226,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## InitStripeCustomerPortalURL
 
@@ -284,11 +284,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## GetInvoices
 
@@ -338,8 +338,8 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |

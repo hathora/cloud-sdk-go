@@ -22,6 +22,7 @@ const (
 	ScopeTokensReadWrite       Scope = "tokens:read-write"
 	ScopeTicketsRead           Scope = "tickets:read"
 	ScopeTicketsReadWrite      Scope = "tickets:read-write"
+	ScopeLoadBalancerAccess    Scope = "load-balancer:access"
 )
 
 func (e Scope) ToPointer() *Scope {

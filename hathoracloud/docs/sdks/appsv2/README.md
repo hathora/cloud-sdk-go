@@ -62,10 +62,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 404, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## CreateApp
 
@@ -120,11 +120,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## GetApp
 
@@ -174,10 +174,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 404, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## UpdateApp
 
@@ -248,11 +248,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## DeleteApp
 
@@ -299,11 +299,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## PatchApp
 
@@ -378,8 +378,8 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |

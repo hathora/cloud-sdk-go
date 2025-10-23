@@ -181,7 +181,7 @@ func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operati
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -221,6 +221,8 @@ func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operati
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -423,7 +425,7 @@ func (s *FleetsV1) CreateFleet(ctx context.Context, createFleet components.Creat
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -463,6 +465,8 @@ func (s *FleetsV1) CreateFleet(ctx context.Context, createFleet components.Creat
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -682,7 +686,7 @@ func (s *FleetsV1) GetFleet(ctx context.Context, fleetID string, orgID *string, 
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -722,6 +726,8 @@ func (s *FleetsV1) GetFleet(ctx context.Context, fleetID string, orgID *string, 
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -949,7 +955,7 @@ func (s *FleetsV1) UpdateFleet(ctx context.Context, fleetID string, updateFleet 
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return err
@@ -969,6 +975,8 @@ func (s *FleetsV1) UpdateFleet(ctx context.Context, fleetID string, updateFleet 
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1188,7 +1196,7 @@ func (s *FleetsV1) GetFleetRegion(ctx context.Context, fleetID string, region co
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -1228,6 +1236,8 @@ func (s *FleetsV1) GetFleetRegion(ctx context.Context, fleetID string, region co
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1435,7 +1445,7 @@ func (s *FleetsV1) UpdateFleetRegion(ctx context.Context, fleetID string, region
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return err
@@ -1455,6 +1465,8 @@ func (s *FleetsV1) UpdateFleetRegion(ctx context.Context, fleetID string, region
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1668,7 +1680,7 @@ func (s *FleetsV1) GetFleetMetrics(ctx context.Context, request operations.GetFl
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -1708,6 +1720,8 @@ func (s *FleetsV1) GetFleetMetrics(ctx context.Context, request operations.GetFl
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough

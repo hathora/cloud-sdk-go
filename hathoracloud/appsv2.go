@@ -181,7 +181,7 @@ func (s *AppsV2) GetApps(ctx context.Context, orgID *string, opts ...operations.
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -221,6 +221,8 @@ func (s *AppsV2) GetApps(ctx context.Context, orgID *string, opts ...operations.
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -424,7 +426,7 @@ func (s *AppsV2) CreateApp(ctx context.Context, createAppConfig components.Creat
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -464,6 +466,8 @@ func (s *AppsV2) CreateApp(ctx context.Context, createAppConfig components.Creat
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -678,7 +682,7 @@ func (s *AppsV2) GetApp(ctx context.Context, appID *string, opts ...operations.O
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -718,6 +722,8 @@ func (s *AppsV2) GetApp(ctx context.Context, appID *string, opts ...operations.O
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -917,7 +923,7 @@ func (s *AppsV2) UpdateApp(ctx context.Context, appConfigWithServiceConfig compo
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -957,6 +963,8 @@ func (s *AppsV2) UpdateApp(ctx context.Context, appConfigWithServiceConfig compo
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1171,7 +1179,7 @@ func (s *AppsV2) DeleteApp(ctx context.Context, appID *string, opts ...operation
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return err
@@ -1191,6 +1199,8 @@ func (s *AppsV2) DeleteApp(ctx context.Context, appID *string, opts ...operation
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1412,7 +1422,7 @@ func (s *AppsV2) PatchApp(ctx context.Context, partialAppConfigWithServiceConfig
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -1452,6 +1462,8 @@ func (s *AppsV2) PatchApp(ctx context.Context, partialAppConfigWithServiceConfig
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough

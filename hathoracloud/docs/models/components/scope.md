@@ -22,3 +22,4 @@
 | `ScopeTokensReadWrite`       | tokens:read-write            |
 | `ScopeTicketsRead`           | tickets:read                 |
 | `ScopeTicketsReadWrite`      | tickets:read-write           |
+| `ScopeLoadBalancerAccess`    | load-balancer:access         |

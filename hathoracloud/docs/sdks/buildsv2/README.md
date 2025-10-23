@@ -63,10 +63,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 404, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## ~~GetBuildInfoV2Deprecated~~
 
@@ -119,10 +119,10 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 401, 404, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
 ## ~~CreateBuildV2Deprecated~~
 
@@ -178,11 +178,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## ~~CreateBuildWithUploadURLV2Deprecated~~
 
@@ -238,11 +238,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## ~~CreateWithMultipartUploadsV2Deprecated~~
 
@@ -300,11 +300,11 @@ func main() {
 
 ### Errors
 
-| Error Type              | Status Code             | Content Type            |
-| ----------------------- | ----------------------- | ----------------------- |
-| errors.APIError         | 400, 401, 404, 422, 429 | application/json        |
-| errors.APIError         | 500                     | application/json        |
-| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
+| Error Type                   | Status Code                  | Content Type                 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| errors.APIError              | 400, 401, 404, 408, 422, 429 | application/json             |
+| errors.APIError              | 500                          | application/json             |
+| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |
 
 ## ~~DeleteBuildV2Deprecated~~
 
@@ -354,11 +354,11 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 422, 429 | application/json   |
-| errors.APIError    | 500                | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## ~~RunBuildV2Deprecated~~
 
@@ -413,8 +413,8 @@ func main() {
 
 ### Errors
 
-| Error Type              | Status Code             | Content Type            |
-| ----------------------- | ----------------------- | ----------------------- |
-| errors.APIError         | 400, 401, 404, 422, 429 | application/json        |
-| errors.APIError         | 500                     | application/json        |
-| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
+| Error Type                   | Status Code                  | Content Type                 |
+| ---------------------------- | ---------------------------- | ---------------------------- |
+| errors.APIError              | 400, 401, 404, 408, 422, 429 | application/json             |
+| errors.APIError              | 500                          | application/json             |
+| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |

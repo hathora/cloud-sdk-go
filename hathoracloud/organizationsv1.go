@@ -168,7 +168,7 @@ func (s *OrganizationsV1) GetOrgs(ctx context.Context, opts ...operations.Option
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -208,6 +208,8 @@ func (s *OrganizationsV1) GetOrgs(ctx context.Context, opts ...operations.Option
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -390,7 +392,7 @@ func (s *OrganizationsV1) GetUserPendingInvites(ctx context.Context, opts ...ope
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -428,6 +430,8 @@ func (s *OrganizationsV1) GetUserPendingInvites(ctx context.Context, opts ...ope
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -614,7 +618,7 @@ func (s *OrganizationsV1) GetOrgMembers(ctx context.Context, orgID string, opts 
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -652,6 +656,8 @@ func (s *OrganizationsV1) GetOrgMembers(ctx context.Context, orgID string, opts 
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -846,7 +852,7 @@ func (s *OrganizationsV1) InviteUser(ctx context.Context, orgID string, createUs
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "408", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -884,6 +890,8 @@ func (s *OrganizationsV1) InviteUser(ctx context.Context, orgID string, createUs
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1080,7 +1088,7 @@ func (s *OrganizationsV1) UpdateUserInvite(ctx context.Context, orgID string, up
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "408", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -1118,6 +1126,8 @@ func (s *OrganizationsV1) UpdateUserInvite(ctx context.Context, orgID string, up
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1314,7 +1324,7 @@ func (s *OrganizationsV1) RescindInvite(ctx context.Context, orgID string, resci
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return err
@@ -1334,6 +1344,8 @@ func (s *OrganizationsV1) RescindInvite(ctx context.Context, orgID string, resci
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1542,7 +1554,7 @@ func (s *OrganizationsV1) GetOrgPendingInvites(ctx context.Context, orgID string
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -1580,6 +1592,8 @@ func (s *OrganizationsV1) GetOrgPendingInvites(ctx context.Context, orgID string
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -1766,7 +1780,7 @@ func (s *OrganizationsV1) AcceptInvite(ctx context.Context, orgID string, opts .
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return err
@@ -1786,6 +1800,8 @@ func (s *OrganizationsV1) AcceptInvite(ctx context.Context, orgID string, opts .
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -1971,7 +1987,7 @@ func (s *OrganizationsV1) RejectInvite(ctx context.Context, orgID string, opts .
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return err
@@ -1991,6 +2007,8 @@ func (s *OrganizationsV1) RejectInvite(ctx context.Context, orgID string, opts .
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -2184,7 +2202,7 @@ func (s *OrganizationsV1) GetUsageLimits(ctx context.Context, orgID *string, opt
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -2224,6 +2242,8 @@ func (s *OrganizationsV1) GetUsageLimits(ctx context.Context, orgID *string, opt
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {

@@ -517,10 +517,10 @@ By Default, an API error will return `errors.SDKError`. When custom error respon
 
 For example, the `GetOrgTokens` function may return the following errors:
 
-| Error Type      | Status Code   | Content Type     |
-| --------------- | ------------- | ---------------- |
-| errors.APIError | 401, 404, 429 | application/json |
-| errors.SDKError | 4XX, 5XX      | \*/\*            |
+| Error Type      | Status Code        | Content Type     |
+| --------------- | ------------------ | ---------------- |
+| errors.APIError | 401, 404, 408, 429 | application/json |
+| errors.SDKError | 4XX, 5XX           | \*/\*            |
 
 ### Example
 

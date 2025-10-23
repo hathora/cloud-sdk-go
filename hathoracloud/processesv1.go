@@ -183,7 +183,7 @@ func (s *ProcessesV1) GetRunningProcesses(ctx context.Context, appID *string, re
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -223,6 +223,8 @@ func (s *ProcessesV1) GetRunningProcesses(ctx context.Context, appID *string, re
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -423,7 +425,7 @@ func (s *ProcessesV1) GetStoppedProcesses(ctx context.Context, appID *string, re
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -463,6 +465,8 @@ func (s *ProcessesV1) GetStoppedProcesses(ctx context.Context, appID *string, re
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -659,7 +663,7 @@ func (s *ProcessesV1) GetProcessInfoDeprecated(ctx context.Context, processID st
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -699,6 +703,8 @@ func (s *ProcessesV1) GetProcessInfoDeprecated(ctx context.Context, processID st
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {

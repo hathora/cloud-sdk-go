@@ -177,7 +177,7 @@ func (s *BuildsV1) GetBuildsDeprecated(ctx context.Context, appID *string, opts 
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -217,6 +217,8 @@ func (s *BuildsV1) GetBuildsDeprecated(ctx context.Context, appID *string, opts 
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -411,7 +413,7 @@ func (s *BuildsV1) GetBuildInfoDeprecated(ctx context.Context, buildID int, appI
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -451,6 +453,8 @@ func (s *BuildsV1) GetBuildInfoDeprecated(ctx context.Context, buildID int, appI
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {
@@ -652,7 +656,7 @@ func (s *BuildsV1) CreateBuildDeprecated(ctx context.Context, createBuildParams 
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -692,6 +696,8 @@ func (s *BuildsV1) CreateBuildDeprecated(ctx context.Context, createBuildParams 
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -909,7 +915,7 @@ func (s *BuildsV1) DeleteBuildDeprecated(ctx context.Context, buildID int, appID
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return err
@@ -929,6 +935,8 @@ func (s *BuildsV1) DeleteBuildDeprecated(ctx context.Context, buildID int, appID
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough
@@ -1153,7 +1161,7 @@ func (s *BuildsV1) RunBuildDeprecated(ctx context.Context, buildID int, requestB
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"400", "401", "404", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"400", "401", "404", "408", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -1191,6 +1199,8 @@ func (s *BuildsV1) RunBuildDeprecated(ctx context.Context, buildID int, requestB
 	case httpRes.StatusCode == 401:
 		fallthrough
 	case httpRes.StatusCode == 404:
+		fallthrough
+	case httpRes.StatusCode == 408:
 		fallthrough
 	case httpRes.StatusCode == 422:
 		fallthrough

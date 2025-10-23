@@ -64,11 +64,11 @@ func main() {
 
 ### Errors
 
-| Error Type                   | Status Code                  | Content Type                 |
-| ---------------------------- | ---------------------------- | ---------------------------- |
-| errors.APIError              | 400, 401, 402, 404, 422, 429 | application/json             |
-| errors.APIError              | 500                          | application/json             |
-| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| errors.APIError                   | 400, 401, 402, 404, 408, 422, 429 | application/json                  |
+| errors.APIError                   | 500                               | application/json                  |
+| errors.SDKError                   | 4XX, 5XX                          | \*/\*                             |
 
 ## ~~CreatePublicLobbyDeprecated~~
 
@@ -125,11 +125,11 @@ func main() {
 
 ### Errors
 
-| Error Type                   | Status Code                  | Content Type                 |
-| ---------------------------- | ---------------------------- | ---------------------------- |
-| errors.APIError              | 400, 401, 402, 404, 422, 429 | application/json             |
-| errors.APIError              | 500                          | application/json             |
-| errors.SDKError              | 4XX, 5XX                     | \*/\*                        |
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| errors.APIError                   | 400, 401, 402, 404, 408, 422, 429 | application/json                  |
+| errors.APIError                   | 500                               | application/json                  |
+| errors.SDKError                   | 4XX, 5XX                          | \*/\*                             |
 
 ## ~~ListActivePublicLobbiesDeprecatedV1~~
 
@@ -182,7 +182,7 @@ func main() {
 
 ### Errors
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.APIError  | 404, 422, 429    | application/json |
-| errors.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type         | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| errors.APIError    | 404, 408, 422, 429 | application/json   |
+| errors.SDKError    | 4XX, 5XX           | \*/\*              |
