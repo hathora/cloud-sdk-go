@@ -29,6 +29,11 @@ const (
 	NodeShapeGpuH10082521440 NodeShape = "gpu-h100-8-252-1440"
 	NodeShapeGpuH10081921800 NodeShape = "gpu-h100-8-192-1800"
 	NodeShapeGpuH1008192960  NodeShape = "gpu-h100-8-192-960"
+	NodeShapeGpuH100116200   NodeShape = "gpu-h100-1-16-200"
+	NodeShapeGpuH10081281600 NodeShape = "gpu-h100-8-128-1600"
+	NodeShapeGpuH200116200   NodeShape = "gpu-h200-1-16-200"
+	NodeShapeGpuH20081281600 NodeShape = "gpu-h200-8-128-1600"
+	NodeShapeGpuB20081601792 NodeShape = "gpu-b200-8-160-1792"
 )
 
 func (e NodeShape) ToPointer() *NodeShape {
