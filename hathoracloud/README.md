@@ -265,6 +265,10 @@ func main() {
 * [GetFleetMetrics](docs/sdks/fleetsv1/README.md#getfleetmetrics) - GetFleetMetrics
 * [GetFleetRegionMetrics](docs/sdks/fleetsv1/README.md#getfleetregionmetrics) - GetFleetRegionMetrics
 
+### [FleetsV2](docs/sdks/fleetsv2/README.md)
+
+* [GetNodeShapes](docs/sdks/fleetsv2/README.md#getnodeshapes) - GetNodeShapes
+
 ### [~~LobbiesV1~~](docs/sdks/lobbiesv1/README.md)
 
 * [~~CreatePrivateLobbyDeprecated~~](docs/sdks/lobbiesv1/README.md#createprivatelobbydeprecated) - CreatePrivateLobbyDeprecated :warning: **Deprecated**

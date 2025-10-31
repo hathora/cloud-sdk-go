@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 595b4fdd899bcb4d0dd373e68d21332f
+  docChecksum: 809165977cf275b3f46c7e21d3b023e8
   docVersion: 0.0.1
-  speakeasyVersion: 1.642.1
-  generationVersion: 2.731.4
-  releaseVersion: 0.12.0
-  configChecksum: 829eb9483264910085a1cce4a387d591
+  speakeasyVersion: 1.643.3
+  generationVersion: 2.731.9
+  releaseVersion: 0.12.1
+  configChecksum: 1cc6047f54dd73d48ad26efa5c28e20a
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.12.0
+    core: 3.12.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -107,7 +107,10 @@ generatedFiles:
   - /models/components/lobbyvisibility.go
   - /models/components/metricvalue.go
   - /models/components/nicknameobject.go
+  - /models/components/nodefamilyid.go
   - /models/components/nodeshape.go
+  - /models/components/nodeshapeid.go
+  - /models/components/nodeshapev2.go
   - /models/components/nodev1.go
   - /models/components/organization.go
   - /models/components/orgmember.go
@@ -227,6 +230,7 @@ generatedFiles:
   - /models/operations/getlogsforprocess.go
   - /models/operations/getmetricsdeprecated.go
   - /models/operations/getnode.go
+  - /models/operations/getnodeshapes.go
   - /models/operations/getorgmembers.go
   - /models/operations/getorgpendinginvites.go
   - /models/operations/getorgtokens.go
@@ -376,7 +380,10 @@ generatedFiles:
   - docs/models/components/metricname.md
   - docs/models/components/metricvalue.md
   - docs/models/components/nicknameobject.md
+  - docs/models/components/nodefamilyid.md
   - docs/models/components/nodeshape.md
+  - docs/models/components/nodeshapeid.md
+  - docs/models/components/nodeshapev2.md
   - docs/models/components/nodev1.md
   - docs/models/components/nodev1status.md
   - docs/models/components/organization.md
@@ -590,6 +597,8 @@ generatedFiles:
   - docs/models/operations/getmetricsdeprecatedglobals.md
   - docs/models/operations/getmetricsdeprecatedrequest.md
   - docs/models/operations/getnoderequest.md
+  - docs/models/operations/getnodeshapesglobals.md
+  - docs/models/operations/getnodeshapesrequest.md
   - docs/models/operations/getorgmembersrequest.md
   - docs/models/operations/getorgpendinginvitesrequest.md
   - docs/models/operations/getorgtokensrequest.md
@@ -694,6 +703,7 @@ generatedFiles:
   - docs/sdks/discoveryv1/README.md
   - docs/sdks/discoveryv2/README.md
   - docs/sdks/fleetsv1/README.md
+  - docs/sdks/fleetsv2/README.md
   - docs/sdks/lobbiesv1/README.md
   - docs/sdks/lobbiesv2/README.md
   - docs/sdks/lobbiesv3/README.md
@@ -709,6 +719,7 @@ generatedFiles:
   - docs/sdks/roomsv2/README.md
   - docs/sdks/tokensv1/README.md
   - fleetsv1.go
+  - fleetsv2.go
   - go.mod
   - hathoracloud.go
   - internal/config/sdkconfiguration.go
@@ -2239,5 +2250,20 @@ examples:
           application/json: [{"stoppedAt": null, "startedAt": "2025-11-18T11:40:48.434Z", "gpu": 7885.75, "memoryMb": 7642.95, "cpu": 5307.53, "region": "Frankfurt", "status": "draining", "hosting": "cloud", "host": "candid-tributary.name", "nodeId": "<id>"}]
         "401":
           application/json: {"message": "<value>"}
+  GetNodeShapes:
+    speakeasy-default-get-node-shapes:
+      parameters:
+        query:
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      responses:
+        "200":
+          application/json: [{"minMemoryMB": 6259.71, "minCPU": 3460.18, "minGPU": 9009.8, "familyName": "<value>", "familyId": "family-h100pcie", "name": "<value>", "nodeShapeId": "shape-l4-1"}]
+        "401":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Go SDK Changes Detected:
+  * `HathoraCloud.FleetsV2.GetNodeShapes()`: **Added**

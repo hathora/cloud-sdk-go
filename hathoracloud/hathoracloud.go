@@ -2,7 +2,7 @@
 
 package hathoracloud
 
-// Generated from OpenAPI doc version 0.0.1 and generator version 2.731.4
+// Generated from OpenAPI doc version 0.0.1 and generator version 2.731.9
 
 import (
 	"context"
@@ -74,6 +74,7 @@ type HathoraCloud struct {
 	LobbiesV3    *LobbiesV3
 	// Operations to manage and view a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
 	FleetsV1 *FleetsV1
+	FleetsV2 *FleetsV2
 	// Deprecated. Does not include latest Regions (missing Dallas region). Use [DiscoveryV2](https://hathora.dev/api#tag/DiscoveryV2).
 	DiscoveryV1 *DiscoveryV1
 	// Service that allows clients to directly ping all Hathora regions to get latency information
@@ -183,9 +184,9 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *HathoraCloud {
 	sdk := &HathoraCloud{
-		SDKVersion: "0.12.0",
+		SDKVersion: "0.12.1",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.12.0 2.731.4 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
+			UserAgent:  "speakeasy-sdk/go 0.12.1 2.731.9 0.0.1 github.com/hathora/cloud-sdk-go/hathoracloud",
 			Globals:    globals.Globals{},
 			ServerList: ServerList,
 		},
@@ -222,6 +223,7 @@ func New(opts ...SDKOption) *HathoraCloud {
 	sdk.LobbiesV2 = newLobbiesV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.LobbiesV3 = newLobbiesV3(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.FleetsV1 = newFleetsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
+	sdk.FleetsV2 = newFleetsV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.DiscoveryV1 = newDiscoveryV1(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.DiscoveryV2 = newDiscoveryV2(sdk, sdk.sdkConfiguration, sdk.hooks)
 	sdk.DeploymentsV1 = newDeploymentsV1(sdk, sdk.sdkConfiguration, sdk.hooks)
