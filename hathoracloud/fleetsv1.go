@@ -32,14 +32,14 @@ func newFleetsV1(rootSDK *HathoraCloud, sdkConfig config.SDKConfiguration, hooks
 	}
 }
 
-// GetFleets
+// GetFleetsDeprecated
 // Returns an array of [fleets](https://hathora.dev/docs/concepts/hathora-entities#fleet).
-func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operations.Option) (*components.FleetsPage, error) {
-	request := operations.GetFleetsRequest{
+func (s *FleetsV1) GetFleetsDeprecated(ctx context.Context, orgID *string, opts ...operations.Option) (*components.FleetsPage, error) {
+	request := operations.GetFleetsDeprecatedRequest{
 		OrgID: orgID,
 	}
 
-	globals := operations.GetFleetsGlobals{
+	globals := operations.GetFleetsDeprecatedGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
 
@@ -71,7 +71,7 @@ func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operati
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "GetFleets",
+		OperationID:      "GetFleetsDeprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -181,7 +181,7 @@ func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operati
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -245,6 +245,27 @@ func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operati
 			}
 			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode == 500:
+		switch {
+		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+
+			var out errors.APIError
+			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
+				return nil, err
+			}
+
+			return nil, &out
+		default:
+			rawBody, err := utils.ConsumeRawBody(httpRes)
+			if err != nil {
+				return nil, err
+			}
+			return nil, errors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", httpRes.Header.Get("Content-Type")), httpRes.StatusCode, string(rawBody), httpRes)
+		}
 	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
 		rawBody, err := utils.ConsumeRawBody(httpRes)
 		if err != nil {
@@ -269,14 +290,14 @@ func (s *FleetsV1) GetFleets(ctx context.Context, orgID *string, opts ...operati
 
 }
 
-// CreateFleet
-func (s *FleetsV1) CreateFleet(ctx context.Context, createFleet components.CreateFleet, orgID *string, opts ...operations.Option) (*components.Fleet, error) {
-	request := operations.CreateFleetRequest{
+// CreateFleetDeprecated
+func (s *FleetsV1) CreateFleetDeprecated(ctx context.Context, createFleet components.CreateFleet, orgID *string, opts ...operations.Option) (*components.Fleet, error) {
+	request := operations.CreateFleetDeprecatedRequest{
 		OrgID:       orgID,
 		CreateFleet: createFleet,
 	}
 
-	globals := operations.CreateFleetGlobals{
+	globals := operations.CreateFleetDeprecatedGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
 
@@ -308,7 +329,7 @@ func (s *FleetsV1) CreateFleet(ctx context.Context, createFleet components.Creat
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "CreateFleet",
+		OperationID:      "CreateFleetDeprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "CreateFleet", "json", `request:"mediaType=application/json"`)
@@ -536,15 +557,15 @@ func (s *FleetsV1) CreateFleet(ctx context.Context, createFleet components.Creat
 
 }
 
-// GetFleet
+// GetFleetDeprecated
 // Returns a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
-func (s *FleetsV1) GetFleet(ctx context.Context, fleetID string, orgID *string, opts ...operations.Option) (*components.Fleet, error) {
-	request := operations.GetFleetRequest{
+func (s *FleetsV1) GetFleetDeprecated(ctx context.Context, fleetID string, orgID *string, opts ...operations.Option) (*components.Fleet, error) {
+	request := operations.GetFleetDeprecatedRequest{
 		FleetID: fleetID,
 		OrgID:   orgID,
 	}
 
-	globals := operations.GetFleetGlobals{
+	globals := operations.GetFleetDeprecatedGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
 
@@ -576,7 +597,7 @@ func (s *FleetsV1) GetFleet(ctx context.Context, fleetID string, orgID *string, 
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "GetFleet",
+		OperationID:      "GetFleetDeprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -797,16 +818,16 @@ func (s *FleetsV1) GetFleet(ctx context.Context, fleetID string, orgID *string, 
 
 }
 
-// UpdateFleet
+// UpdateFleetDeprecated
 // Updates a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet)'s configuration.
-func (s *FleetsV1) UpdateFleet(ctx context.Context, fleetID string, updateFleet components.UpdateFleet, orgID *string, opts ...operations.Option) error {
-	request := operations.UpdateFleetRequest{
+func (s *FleetsV1) UpdateFleetDeprecated(ctx context.Context, fleetID string, updateFleet components.UpdateFleet, orgID *string, opts ...operations.Option) error {
+	request := operations.UpdateFleetDeprecatedRequest{
 		FleetID:     fleetID,
 		OrgID:       orgID,
 		UpdateFleet: updateFleet,
 	}
 
-	globals := operations.UpdateFleetGlobals{
+	globals := operations.UpdateFleetDeprecatedGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
 
@@ -838,7 +859,7 @@ func (s *FleetsV1) UpdateFleet(ctx context.Context, fleetID string, updateFleet 
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "UpdateFleet",
+		OperationID:      "UpdateFleetDeprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "UpdateFleet", "json", `request:"mediaType=application/json"`)

@@ -18,9 +18,9 @@ func (u *UpdateFleetGlobals) GetOrgID() *string {
 }
 
 type UpdateFleetRequest struct {
-	FleetID     string                 `pathParam:"style=simple,explode=false,name=fleetId"`
-	OrgID       *string                `queryParam:"style=form,explode=true,name=orgId"`
-	UpdateFleet components.UpdateFleet `request:"mediaType=application/json"`
+	FleetID       string                   `pathParam:"style=simple,explode=false,name=fleetId"`
+	OrgID         *string                  `queryParam:"style=form,explode=true,name=orgId"`
+	UpdateFleetV2 components.UpdateFleetV2 `request:"mediaType=application/json"`
 }
 
 func (u *UpdateFleetRequest) GetFleetID() string {
@@ -37,9 +37,9 @@ func (u *UpdateFleetRequest) GetOrgID() *string {
 	return u.OrgID
 }
 
-func (u *UpdateFleetRequest) GetUpdateFleet() components.UpdateFleet {
+func (u *UpdateFleetRequest) GetUpdateFleetV2() components.UpdateFleetV2 {
 	if u == nil {
-		return components.UpdateFleet{}
+		return components.UpdateFleetV2{}
 	}
-	return u.UpdateFleet
+	return u.UpdateFleetV2
 }

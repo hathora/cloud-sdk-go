@@ -18,6 +18,7 @@ const (
 	NodeShapeIDShapeL41        NodeShapeID = "shape-l4-1"
 	NodeShapeIDShapeL42        NodeShapeID = "shape-l4-2"
 	NodeShapeIDShapeL44        NodeShapeID = "shape-l4-4"
+	NodeShapeIDShapeL48        NodeShapeID = "shape-l4-8"
 	NodeShapeIDShapeH100pcie1  NodeShapeID = "shape-h100pcie-1"
 	NodeShapeIDShapeH100pcie2  NodeShapeID = "shape-h100pcie-2"
 	NodeShapeIDShapeH100pcie4  NodeShapeID = "shape-h100pcie-4"

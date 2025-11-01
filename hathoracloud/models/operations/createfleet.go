@@ -18,8 +18,8 @@ func (c *CreateFleetGlobals) GetOrgID() *string {
 }
 
 type CreateFleetRequest struct {
-	OrgID       *string                `queryParam:"style=form,explode=true,name=orgId"`
-	CreateFleet components.CreateFleet `request:"mediaType=application/json"`
+	OrgID         *string                  `queryParam:"style=form,explode=true,name=orgId"`
+	CreateFleetV2 components.CreateFleetV2 `request:"mediaType=application/json"`
 }
 
 func (c *CreateFleetRequest) GetOrgID() *string {
@@ -29,9 +29,9 @@ func (c *CreateFleetRequest) GetOrgID() *string {
 	return c.OrgID
 }
 
-func (c *CreateFleetRequest) GetCreateFleet() components.CreateFleet {
+func (c *CreateFleetRequest) GetCreateFleetV2() components.CreateFleetV2 {
 	if c == nil {
-		return components.CreateFleet{}
+		return components.CreateFleetV2{}
 	}
-	return c.CreateFleet
+	return c.CreateFleetV2
 }

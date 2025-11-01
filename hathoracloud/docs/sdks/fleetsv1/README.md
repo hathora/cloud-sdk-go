@@ -7,22 +7,22 @@ Operations to manage and view a [fleet](https://hathora.dev/docs/concepts/hathor
 
 ### Available Operations
 
-* [GetFleets](#getfleets) - GetFleets
-* [CreateFleet](#createfleet) - CreateFleet
-* [GetFleet](#getfleet) - GetFleet
-* [UpdateFleet](#updatefleet) - UpdateFleet
+* [GetFleetsDeprecated](#getfleetsdeprecated) - GetFleetsDeprecated
+* [CreateFleetDeprecated](#createfleetdeprecated) - CreateFleetDeprecated
+* [GetFleetDeprecated](#getfleetdeprecated) - GetFleetDeprecated
+* [UpdateFleetDeprecated](#updatefleetdeprecated) - UpdateFleetDeprecated
 * [GetFleetRegion](#getfleetregion) - GetFleetRegion
 * [UpdateFleetRegion](#updatefleetregion) - UpdateFleetRegion
 * [GetFleetMetrics](#getfleetmetrics) - GetFleetMetrics
 * [GetFleetRegionMetrics](#getfleetregionmetrics) - GetFleetRegionMetrics
 
-## GetFleets
+## GetFleetsDeprecated
 
 Returns an array of [fleets](https://hathora.dev/docs/concepts/hathora-entities#fleet).
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="GetFleets" method="get" path="/fleets/v1/fleets" -->
+<!-- UsageSnippet language="go" operationID="GetFleetsDeprecated" method="get" path="/fleets/v1/fleets" -->
 ```go
 package main
 
@@ -40,7 +40,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.GetFleets(ctx)
+    res, err := s.FleetsV1.GetFleetsDeprecated(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -67,15 +67,16 @@ func main() {
 | Error Type         | Status Code        | Content Type       |
 | ------------------ | ------------------ | ------------------ |
 | errors.APIError    | 401, 404, 408, 429 | application/json   |
+| errors.APIError    | 500                | application/json   |
 | errors.SDKError    | 4XX, 5XX           | \*/\*              |
 
-## CreateFleet
+## CreateFleetDeprecated
 
-CreateFleet
+CreateFleetDeprecated
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="CreateFleet" method="post" path="/fleets/v1/fleets" -->
+<!-- UsageSnippet language="go" operationID="CreateFleetDeprecated" method="post" path="/fleets/v1/fleets" -->
 ```go
 package main
 
@@ -94,10 +95,10 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.CreateFleet(ctx, components.CreateFleet{
-        NodeShape: components.NodeShapeGpuL411248,
+    res, err := s.FleetsV1.CreateFleetDeprecated(ctx, components.CreateFleet{
+        NodeShape: components.NodeShapeCpu1632,
         AutoscalerConfig: components.AutoscalerConfig{
-            ScaleUpThreshold: 400145,
+            ScaleUpThreshold: 557407,
         },
         Name: "production",
     })
@@ -131,13 +132,13 @@ func main() {
 | errors.APIError         | 500                     | application/json        |
 | errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
-## GetFleet
+## GetFleetDeprecated
 
 Returns a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="GetFleet" method="get" path="/fleets/v1/fleets/{fleetId}" -->
+<!-- UsageSnippet language="go" operationID="GetFleetDeprecated" method="get" path="/fleets/v1/fleets/{fleetId}" -->
 ```go
 package main
 
@@ -155,7 +156,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.GetFleet(ctx, "<id>")
+    res, err := s.FleetsV1.GetFleetDeprecated(ctx, "<id>")
     if err != nil {
         log.Fatal(err)
     }
@@ -186,13 +187,13 @@ func main() {
 | errors.APIError         | 500                     | application/json        |
 | errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
-## UpdateFleet
+## UpdateFleetDeprecated
 
 Updates a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet)'s configuration.
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="UpdateFleet" method="post" path="/fleets/v1/fleets/{fleetId}" -->
+<!-- UsageSnippet language="go" operationID="UpdateFleetDeprecated" method="post" path="/fleets/v1/fleets/{fleetId}" -->
 ```go
 package main
 
@@ -211,9 +212,9 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    err := s.FleetsV1.UpdateFleet(ctx, "<id>", components.UpdateFleet{
+    err := s.FleetsV1.UpdateFleetDeprecated(ctx, "<id>", components.UpdateFleet{
         AutoscalerConfig: components.AutoscalerConfig{
-            ScaleUpThreshold: 979840,
+            ScaleUpThreshold: 638855,
         },
         Name: hathoracloud.Pointer("production"),
     })

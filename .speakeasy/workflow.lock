@@ -1,4 +1,4 @@
-speakeasyVersion: 1.643.3
+speakeasyVersion: 1.645.1
 sources:
     HathoraCloud-OAS:
         sourceNamespace: my-source
@@ -9,19 +9,19 @@ sources:
             - 0.0.1
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:0e7dea0e4138431b1580c50b808eb0abaf338b7b009acbb4de7d7d101b418ce4
-        sourceBlobDigest: sha256:3972004e0c2e72be63e15941a92c869b0ed859fee2ba8d21b1e737ca1e0add06
+        sourceRevisionDigest: sha256:b1f651de9b5cd0aebbdfca25a11298da9ea85cddf1b21a12228b232f7419d60f
+        sourceBlobDigest: sha256:43737aa369fec84f86d4f5f71e4b46124250fa67900ec3de1154bfb32bee5b40
         tags:
             - latest
-            - speakeasy-sdk-regen-1761869014
+            - speakeasy-sdk-regen-1761955409
 targets:
     hathora-cloud:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:0e7dea0e4138431b1580c50b808eb0abaf338b7b009acbb4de7d7d101b418ce4
-        sourceBlobDigest: sha256:3972004e0c2e72be63e15941a92c869b0ed859fee2ba8d21b1e737ca1e0add06
+        sourceRevisionDigest: sha256:b1f651de9b5cd0aebbdfca25a11298da9ea85cddf1b21a12228b232f7419d60f
+        sourceBlobDigest: sha256:43737aa369fec84f86d4f5f71e4b46124250fa67900ec3de1154bfb32bee5b40
         codeSamplesNamespace: my-source-go-code-samples
-        codeSamplesRevisionDigest: sha256:475f38b8a60e36d147e5c95986d7744db5fd45dcd27745e25a326eea47d1a1f4
+        codeSamplesRevisionDigest: sha256:900750b210347e0b7a8a58e842eed301864f10a7265b995c3af4d2e4c47ec318
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

@@ -18,6 +18,7 @@
 | `NodeShapeIDShapeL41`        | shape-l4-1                   |
 | `NodeShapeIDShapeL42`        | shape-l4-2                   |
 | `NodeShapeIDShapeL44`        | shape-l4-4                   |
+| `NodeShapeIDShapeL48`        | shape-l4-8                   |
 | `NodeShapeIDShapeH100pcie1`  | shape-h100pcie-1             |
 | `NodeShapeIDShapeH100pcie2`  | shape-h100pcie-2             |
 | `NodeShapeIDShapeH100pcie4`  | shape-h100pcie-4             |

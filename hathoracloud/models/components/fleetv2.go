@@ -2,47 +2,47 @@
 
 package components
 
-// Fleet - A fleet is a collection of nodes across your regions that can scale up and down based on demand.
-type Fleet struct {
-	NodeShape        NodeShape         `json:"nodeShape"`
+// FleetV2 - A fleet is a collection of nodes across your regions that can scale up and down based on demand.
+type FleetV2 struct {
+	NodeShapeID      NodeShapeID       `json:"nodeShapeId"`
 	AutoscalerConfig *AutoscalerConfig `json:"autoscalerConfig,omitempty"`
 	// Readable name for a fleet. Must be unique within an organization.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID string `json:"orgId"`
 	// The id of the fleet.
 	FleetID string `json:"fleetId"`
 }
 
-func (f *Fleet) GetNodeShape() NodeShape {
+func (f *FleetV2) GetNodeShapeID() NodeShapeID {
 	if f == nil {
-		return NodeShape("")
+		return NodeShapeID("")
 	}
-	return f.NodeShape
+	return f.NodeShapeID
 }
 
-func (f *Fleet) GetAutoscalerConfig() *AutoscalerConfig {
+func (f *FleetV2) GetAutoscalerConfig() *AutoscalerConfig {
 	if f == nil {
 		return nil
 	}
 	return f.AutoscalerConfig
 }
 
-func (f *Fleet) GetName() *string {
+func (f *FleetV2) GetName() string {
 	if f == nil {
-		return nil
+		return ""
 	}
 	return f.Name
 }
 
-func (f *Fleet) GetOrgID() string {
+func (f *FleetV2) GetOrgID() string {
 	if f == nil {
 		return ""
 	}
 	return f.OrgID
 }
 
-func (f *Fleet) GetFleetID() string {
+func (f *FleetV2) GetFleetID() string {
 	if f == nil {
 		return ""
 	}

@@ -256,10 +256,10 @@ func main() {
 
 ### [FleetsV1](docs/sdks/fleetsv1/README.md)
 
-* [GetFleets](docs/sdks/fleetsv1/README.md#getfleets) - GetFleets
-* [CreateFleet](docs/sdks/fleetsv1/README.md#createfleet) - CreateFleet
-* [GetFleet](docs/sdks/fleetsv1/README.md#getfleet) - GetFleet
-* [UpdateFleet](docs/sdks/fleetsv1/README.md#updatefleet) - UpdateFleet
+* [GetFleetsDeprecated](docs/sdks/fleetsv1/README.md#getfleetsdeprecated) - GetFleetsDeprecated
+* [CreateFleetDeprecated](docs/sdks/fleetsv1/README.md#createfleetdeprecated) - CreateFleetDeprecated
+* [GetFleetDeprecated](docs/sdks/fleetsv1/README.md#getfleetdeprecated) - GetFleetDeprecated
+* [UpdateFleetDeprecated](docs/sdks/fleetsv1/README.md#updatefleetdeprecated) - UpdateFleetDeprecated
 * [GetFleetRegion](docs/sdks/fleetsv1/README.md#getfleetregion) - GetFleetRegion
 * [UpdateFleetRegion](docs/sdks/fleetsv1/README.md#updatefleetregion) - UpdateFleetRegion
 * [GetFleetMetrics](docs/sdks/fleetsv1/README.md#getfleetmetrics) - GetFleetMetrics
@@ -268,6 +268,10 @@ func main() {
 ### [FleetsV2](docs/sdks/fleetsv2/README.md)
 
 * [GetNodeShapes](docs/sdks/fleetsv2/README.md#getnodeshapes) - GetNodeShapes
+* [GetFleets](docs/sdks/fleetsv2/README.md#getfleets) - GetFleets
+* [CreateFleet](docs/sdks/fleetsv2/README.md#createfleet) - CreateFleet
+* [GetFleet](docs/sdks/fleetsv2/README.md#getfleet) - GetFleet
+* [UpdateFleet](docs/sdks/fleetsv2/README.md#updatefleet) - UpdateFleet
 
 ### [~~LobbiesV1~~](docs/sdks/lobbiesv1/README.md)
 
@@ -593,7 +597,7 @@ func main() {
 	ctx := context.Background()
 
 	s := hathoracloud.New(
-		hathoracloud.WithServerIndex(1),
+		hathoracloud.WithServerIndex(0),
 		hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
 	)
 

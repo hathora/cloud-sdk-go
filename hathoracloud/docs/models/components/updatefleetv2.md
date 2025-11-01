@@ -1,0 +1,10 @@
+# UpdateFleetV2
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `NodeShapeID`                                                              | [*components.NodeShapeID](../../models/components/nodeshapeid.md)          | :heavy_minus_sign:                                                         | N/A                                                                        |                                                                            |
+| `AutoscalerConfig`                                                         | [components.AutoscalerConfig](../../models/components/autoscalerconfig.md) | :heavy_check_mark:                                                         | N/A                                                                        |                                                                            |
+| `Name`                                                                     | **string*                                                                  | :heavy_minus_sign:                                                         | Readable name for a fleet. Must be unique within an organization.          | production                                                                 |
