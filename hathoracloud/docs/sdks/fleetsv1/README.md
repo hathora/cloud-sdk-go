@@ -11,10 +11,10 @@ Operations to manage and view a [fleet](https://hathora.dev/docs/concepts/hathor
 * [CreateFleetDeprecated](#createfleetdeprecated) - CreateFleetDeprecated
 * [GetFleetDeprecated](#getfleetdeprecated) - GetFleetDeprecated
 * [UpdateFleetDeprecated](#updatefleetdeprecated) - UpdateFleetDeprecated
-* [GetFleetRegion](#getfleetregion) - GetFleetRegion
-* [UpdateFleetRegion](#updatefleetregion) - UpdateFleetRegion
-* [GetFleetMetrics](#getfleetmetrics) - GetFleetMetrics
-* [GetFleetRegionMetrics](#getfleetregionmetrics) - GetFleetRegionMetrics
+* [GetFleetRegionDeprecated](#getfleetregiondeprecated) - GetFleetRegionDeprecated
+* [UpdateFleetRegionDeprecated](#updatefleetregiondeprecated) - UpdateFleetRegionDeprecated
+* [GetFleetMetricsDeprecated](#getfleetmetricsdeprecated) - GetFleetMetricsDeprecated
+* [GetFleetRegionMetricsDeprecated](#getfleetregionmetricsdeprecated) - GetFleetRegionMetricsDeprecated
 
 ## GetFleetsDeprecated
 
@@ -246,13 +246,13 @@ func main() {
 | errors.APIError         | 500                     | application/json        |
 | errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
-## GetFleetRegion
+## GetFleetRegionDeprecated
 
 Gets the configuration for a given [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="GetFleetRegion" method="get" path="/fleets/v1/fleets/{fleetId}/regions/{region}" -->
+<!-- UsageSnippet language="go" operationID="GetFleetRegionDeprecated" method="get" path="/fleets/v1/fleets/{fleetId}/regions/{region}" -->
 ```go
 package main
 
@@ -271,7 +271,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.GetFleetRegion(ctx, "<id>", components.RegionSingapore)
+    res, err := s.FleetsV1.GetFleetRegionDeprecated(ctx, "<id>", components.RegionSaoPaulo)
     if err != nil {
         log.Fatal(err)
     }
@@ -302,13 +302,13 @@ func main() {
 | errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
 | errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
-## UpdateFleetRegion
+## UpdateFleetRegionDeprecated
 
 Updates the configuration for a given [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="UpdateFleetRegion" method="put" path="/fleets/v1/fleets/{fleetId}/regions/{region}" -->
+<!-- UsageSnippet language="go" operationID="UpdateFleetRegionDeprecated" method="put" path="/fleets/v1/fleets/{fleetId}/regions/{region}" -->
 ```go
 package main
 
@@ -327,8 +327,8 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    err := s.FleetsV1.UpdateFleetRegion(ctx, "<id>", components.RegionChicago, components.FleetRegionConfig{
-        CloudMinVcpus: 503995,
+    err := s.FleetsV1.UpdateFleetRegionDeprecated(ctx, "<id>", components.RegionJohannesburg, components.FleetRegionConfig{
+        CloudMinVcpus: 122781,
     })
     if err != nil {
         log.Fatal(err)
@@ -359,13 +359,13 @@ func main() {
 | errors.APIError         | 500                     | application/json        |
 | errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
-## GetFleetMetrics
+## GetFleetMetricsDeprecated
 
 Gets aggregate metrics for a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="GetFleetMetrics" method="get" path="/fleets/v1/fleets/{fleetId}/metrics" -->
+<!-- UsageSnippet language="go" operationID="GetFleetMetricsDeprecated" method="get" path="/fleets/v1/fleets/{fleetId}/metrics" -->
 ```go
 package main
 
@@ -384,7 +384,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.GetFleetMetrics(ctx, operations.GetFleetMetricsRequest{
+    res, err := s.FleetsV1.GetFleetMetricsDeprecated(ctx, operations.GetFleetMetricsDeprecatedRequest{
         FleetID: "<id>",
     })
     if err != nil {
@@ -398,11 +398,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `ctx`                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                  | :heavy_check_mark:                                                                     | The context to use for the request.                                                    |
-| `request`                                                                              | [operations.GetFleetMetricsRequest](../../models/operations/getfleetmetricsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `opts`                                                                                 | [][operations.Option](../../models/operations/option.md)                               | :heavy_minus_sign:                                                                     | The options for this request.                                                          |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                      | [context.Context](https://pkg.go.dev/context#Context)                                                      | :heavy_check_mark:                                                                                         | The context to use for the request.                                                                        |
+| `request`                                                                                                  | [operations.GetFleetMetricsDeprecatedRequest](../../models/operations/getfleetmetricsdeprecatedrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `opts`                                                                                                     | [][operations.Option](../../models/operations/option.md)                                                   | :heavy_minus_sign:                                                                                         | The options for this request.                                                                              |
 
 ### Response
 
@@ -416,13 +416,13 @@ func main() {
 | errors.APIError         | 500                     | application/json        |
 | errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
-## GetFleetRegionMetrics
+## GetFleetRegionMetricsDeprecated
 
 Gets metrics for a region in a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
 
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="GetFleetRegionMetrics" method="get" path="/fleets/v1/fleets/{fleetId}/regions/{region}/metrics" -->
+<!-- UsageSnippet language="go" operationID="GetFleetRegionMetricsDeprecated" method="get" path="/fleets/v1/fleets/{fleetId}/regions/{region}/metrics" -->
 ```go
 package main
 
@@ -442,9 +442,9 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.FleetsV1.GetFleetRegionMetrics(ctx, operations.GetFleetRegionMetricsRequest{
+    res, err := s.FleetsV1.GetFleetRegionMetricsDeprecated(ctx, operations.GetFleetRegionMetricsDeprecatedRequest{
         FleetID: "<id>",
-        Region: components.RegionChicago,
+        Region: components.RegionDubai,
     })
     if err != nil {
         log.Fatal(err)
@@ -457,11 +457,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                              | :heavy_check_mark:                                                                                 | The context to use for the request.                                                                |
-| `request`                                                                                          | [operations.GetFleetRegionMetricsRequest](../../models/operations/getfleetregionmetricsrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `opts`                                                                                             | [][operations.Option](../../models/operations/option.md)                                           | :heavy_minus_sign:                                                                                 | The options for this request.                                                                      |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                  | :heavy_check_mark:                                                                                                     | The context to use for the request.                                                                                    |
+| `request`                                                                                                              | [operations.GetFleetRegionMetricsDeprecatedRequest](../../models/operations/getfleetregionmetricsdeprecatedrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `opts`                                                                                                                 | [][operations.Option](../../models/operations/option.md)                                                               | :heavy_minus_sign:                                                                                                     | The options for this request.                                                                                          |
 
 ### Response
 

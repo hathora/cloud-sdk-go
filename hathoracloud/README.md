@@ -260,10 +260,10 @@ func main() {
 * [CreateFleetDeprecated](docs/sdks/fleetsv1/README.md#createfleetdeprecated) - CreateFleetDeprecated
 * [GetFleetDeprecated](docs/sdks/fleetsv1/README.md#getfleetdeprecated) - GetFleetDeprecated
 * [UpdateFleetDeprecated](docs/sdks/fleetsv1/README.md#updatefleetdeprecated) - UpdateFleetDeprecated
-* [GetFleetRegion](docs/sdks/fleetsv1/README.md#getfleetregion) - GetFleetRegion
-* [UpdateFleetRegion](docs/sdks/fleetsv1/README.md#updatefleetregion) - UpdateFleetRegion
-* [GetFleetMetrics](docs/sdks/fleetsv1/README.md#getfleetmetrics) - GetFleetMetrics
-* [GetFleetRegionMetrics](docs/sdks/fleetsv1/README.md#getfleetregionmetrics) - GetFleetRegionMetrics
+* [GetFleetRegionDeprecated](docs/sdks/fleetsv1/README.md#getfleetregiondeprecated) - GetFleetRegionDeprecated
+* [UpdateFleetRegionDeprecated](docs/sdks/fleetsv1/README.md#updatefleetregiondeprecated) - UpdateFleetRegionDeprecated
+* [GetFleetMetricsDeprecated](docs/sdks/fleetsv1/README.md#getfleetmetricsdeprecated) - GetFleetMetricsDeprecated
+* [GetFleetRegionMetricsDeprecated](docs/sdks/fleetsv1/README.md#getfleetregionmetricsdeprecated) - GetFleetRegionMetricsDeprecated
 
 ### [FleetsV2](docs/sdks/fleetsv2/README.md)
 
@@ -272,6 +272,10 @@ func main() {
 * [CreateFleet](docs/sdks/fleetsv2/README.md#createfleet) - CreateFleet
 * [GetFleet](docs/sdks/fleetsv2/README.md#getfleet) - GetFleet
 * [UpdateFleet](docs/sdks/fleetsv2/README.md#updatefleet) - UpdateFleet
+* [GetFleetRegion](docs/sdks/fleetsv2/README.md#getfleetregion) - GetFleetRegion
+* [UpdateFleetRegion](docs/sdks/fleetsv2/README.md#updatefleetregion) - UpdateFleetRegion
+* [GetFleetMetrics](docs/sdks/fleetsv2/README.md#getfleetmetrics) - GetFleetMetrics
+* [GetFleetRegionMetrics](docs/sdks/fleetsv2/README.md#getfleetregionmetrics) - GetFleetRegionMetrics
 
 ### [~~LobbiesV1~~](docs/sdks/lobbiesv1/README.md)
 

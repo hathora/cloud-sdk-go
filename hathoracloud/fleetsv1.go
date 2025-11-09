@@ -1066,16 +1066,16 @@ func (s *FleetsV1) UpdateFleetDeprecated(ctx context.Context, fleetID string, up
 	return nil
 }
 
-// GetFleetRegion
+// GetFleetRegionDeprecated
 // Gets the configuration for a given [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
-func (s *FleetsV1) GetFleetRegion(ctx context.Context, fleetID string, region components.Region, orgID *string, opts ...operations.Option) (*components.FleetRegion, error) {
-	request := operations.GetFleetRegionRequest{
+func (s *FleetsV1) GetFleetRegionDeprecated(ctx context.Context, fleetID string, region components.Region, orgID *string, opts ...operations.Option) (*components.FleetRegion, error) {
+	request := operations.GetFleetRegionDeprecatedRequest{
 		FleetID: fleetID,
 		Region:  region,
 		OrgID:   orgID,
 	}
 
-	globals := operations.GetFleetRegionGlobals{
+	globals := operations.GetFleetRegionDeprecatedGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
 
@@ -1107,7 +1107,7 @@ func (s *FleetsV1) GetFleetRegion(ctx context.Context, fleetID string, region co
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "GetFleetRegion",
+		OperationID:      "GetFleetRegionDeprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1307,17 +1307,17 @@ func (s *FleetsV1) GetFleetRegion(ctx context.Context, fleetID string, region co
 
 }
 
-// UpdateFleetRegion
+// UpdateFleetRegionDeprecated
 // Updates the configuration for a given [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
-func (s *FleetsV1) UpdateFleetRegion(ctx context.Context, fleetID string, region components.Region, fleetRegionConfig components.FleetRegionConfig, orgID *string, opts ...operations.Option) error {
-	request := operations.UpdateFleetRegionRequest{
+func (s *FleetsV1) UpdateFleetRegionDeprecated(ctx context.Context, fleetID string, region components.Region, fleetRegionConfig components.FleetRegionConfig, orgID *string, opts ...operations.Option) error {
+	request := operations.UpdateFleetRegionDeprecatedRequest{
 		FleetID:           fleetID,
 		Region:            region,
 		OrgID:             orgID,
 		FleetRegionConfig: fleetRegionConfig,
 	}
 
-	globals := operations.UpdateFleetRegionGlobals{
+	globals := operations.UpdateFleetRegionDeprecatedGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
 
@@ -1349,7 +1349,7 @@ func (s *FleetsV1) UpdateFleetRegion(ctx context.Context, fleetID string, region
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "UpdateFleetRegion",
+		OperationID:      "UpdateFleetRegionDeprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, false, "FleetRegionConfig", "json", `request:"mediaType=application/json"`)
@@ -1556,10 +1556,10 @@ func (s *FleetsV1) UpdateFleetRegion(ctx context.Context, fleetID string, region
 	return nil
 }
 
-// GetFleetMetrics
+// GetFleetMetricsDeprecated
 // Gets aggregate metrics for a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
-func (s *FleetsV1) GetFleetMetrics(ctx context.Context, request operations.GetFleetMetricsRequest, opts ...operations.Option) (*components.FleetMetricsData, error) {
-	globals := operations.GetFleetMetricsGlobals{
+func (s *FleetsV1) GetFleetMetricsDeprecated(ctx context.Context, request operations.GetFleetMetricsDeprecatedRequest, opts ...operations.Option) (*components.FleetMetricsData, error) {
+	globals := operations.GetFleetMetricsDeprecatedGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
 
@@ -1591,7 +1591,7 @@ func (s *FleetsV1) GetFleetMetrics(ctx context.Context, request operations.GetFl
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "GetFleetMetrics",
+		OperationID:      "GetFleetMetricsDeprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -1812,10 +1812,10 @@ func (s *FleetsV1) GetFleetMetrics(ctx context.Context, request operations.GetFl
 
 }
 
-// GetFleetRegionMetrics
+// GetFleetRegionMetricsDeprecated
 // Gets metrics for a region in a [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet).
-func (s *FleetsV1) GetFleetRegionMetrics(ctx context.Context, request operations.GetFleetRegionMetricsRequest, opts ...operations.Option) (*components.FleetMetricsData, error) {
-	globals := operations.GetFleetRegionMetricsGlobals{
+func (s *FleetsV1) GetFleetRegionMetricsDeprecated(ctx context.Context, request operations.GetFleetRegionMetricsDeprecatedRequest, opts ...operations.Option) (*components.FleetMetricsData, error) {
+	globals := operations.GetFleetRegionMetricsDeprecatedGlobals{
 		OrgID: s.sdkConfiguration.Globals.OrgID,
 	}
 
@@ -1847,7 +1847,7 @@ func (s *FleetsV1) GetFleetRegionMetrics(ctx context.Context, request operations
 		SDKConfiguration: s.sdkConfiguration,
 		BaseURL:          baseURL,
 		Context:          ctx,
-		OperationID:      "GetFleetRegionMetrics",
+		OperationID:      "GetFleetRegionMetricsDeprecated",
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

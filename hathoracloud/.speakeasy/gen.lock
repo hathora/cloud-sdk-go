@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: c5e9d133ad74eeeb5fa69ff0fd4ba4ae
+  docChecksum: 3995ed7c92ddbf2a03406e3011099a93
   docVersion: 0.0.1
-  speakeasyVersion: 1.645.1
-  generationVersion: 2.735.1
-  releaseVersion: 0.13.0
-  configChecksum: 14ac07781cd98071dc2c85fff4ee26ef
+  speakeasyVersion: 1.651.0
+  generationVersion: 2.745.2
+  releaseVersion: 0.13.1
+  configChecksum: 9853e53245a99b6cf35ee368b134ed13
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.13.0
+    core: 3.13.1
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -219,8 +219,11 @@ generatedFiles:
   - /models/operations/getfleet.go
   - /models/operations/getfleetdeprecated.go
   - /models/operations/getfleetmetrics.go
+  - /models/operations/getfleetmetricsdeprecated.go
   - /models/operations/getfleetregion.go
+  - /models/operations/getfleetregiondeprecated.go
   - /models/operations/getfleetregionmetrics.go
+  - /models/operations/getfleetregionmetricsdeprecated.go
   - /models/operations/getfleets.go
   - /models/operations/getfleetsdeprecated.go
   - /models/operations/getinactiveroomsforprocess.go
@@ -283,6 +286,7 @@ generatedFiles:
   - /models/operations/updatefleet.go
   - /models/operations/updatefleetdeprecated.go
   - /models/operations/updatefleetregion.go
+  - /models/operations/updatefleetregiondeprecated.go
   - /models/operations/updateroomconfig.go
   - /models/operations/updateuserinvite.go
   - USAGE.md
@@ -577,9 +581,15 @@ generatedFiles:
   - docs/models/operations/getfleetdeprecatedglobals.md
   - docs/models/operations/getfleetdeprecatedrequest.md
   - docs/models/operations/getfleetglobals.md
+  - docs/models/operations/getfleetmetricsdeprecatedglobals.md
+  - docs/models/operations/getfleetmetricsdeprecatedrequest.md
   - docs/models/operations/getfleetmetricsglobals.md
   - docs/models/operations/getfleetmetricsrequest.md
+  - docs/models/operations/getfleetregiondeprecatedglobals.md
+  - docs/models/operations/getfleetregiondeprecatedrequest.md
   - docs/models/operations/getfleetregionglobals.md
+  - docs/models/operations/getfleetregionmetricsdeprecatedglobals.md
+  - docs/models/operations/getfleetregionmetricsdeprecatedrequest.md
   - docs/models/operations/getfleetregionmetricsglobals.md
   - docs/models/operations/getfleetregionmetricsrequest.md
   - docs/models/operations/getfleetregionrequest.md
@@ -704,6 +714,8 @@ generatedFiles:
   - docs/models/operations/updatefleetdeprecatedglobals.md
   - docs/models/operations/updatefleetdeprecatedrequest.md
   - docs/models/operations/updatefleetglobals.md
+  - docs/models/operations/updatefleetregiondeprecatedglobals.md
+  - docs/models/operations/updatefleetregiondeprecatedrequest.md
   - docs/models/operations/updatefleetregionglobals.md
   - docs/models/operations/updatefleetregionrequest.md
   - docs/models/operations/updatefleetrequest.md
@@ -2338,19 +2350,78 @@ examples:
           application/json: {"message": "<value>"}
         "500":
           application/json: {"message": "<value>"}
+  GetFleetRegionDeprecated:
+    speakeasy-default-get-fleet-region-deprecated:
+      parameters:
+        path:
+          fleetId: "<id>"
+          region: "Sao_Paulo"
+        query:
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      responses:
+        "200":
+          application/json: {"cloudMinVcpusUpdatedAt": "2023-08-15T11:29:36.500Z", "cloudMinVcpus": 467124, "scaleIncrementVcpus": 588775}
+        "401":
+          application/json: {"message": "<value>"}
+  UpdateFleetRegionDeprecated:
+    speakeasy-default-update-fleet-region-deprecated:
+      parameters:
+        path:
+          fleetId: "<id>"
+          region: "Johannesburg"
+        query:
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      requestBody:
+        application/json: {"cloudMinVcpus": 122781}
+      responses:
+        "401":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
+  GetFleetMetricsDeprecated:
+    speakeasy-default-get-fleet-metrics-deprecated:
+      parameters:
+        path:
+          fleetId: "<id>"
+        query:
+          step: 60
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      responses:
+        "200":
+          application/json: {}
+        "401":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
+  GetFleetRegionMetricsDeprecated:
+    speakeasy-default-get-fleet-region-metrics-deprecated:
+      parameters:
+        path:
+          fleetId: "<id>"
+          region: "Dubai"
+        query:
+          step: 60
+          orgId: "org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"
+      responses:
+        "200":
+          application/json: {}
+        "401":
+          application/json: {"message": "<value>"}
+        "500":
+          application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Go SDK Changes Detected:
-  * `HathoraCloud.FleetsV1.GetFleetsDeprecated()`: **Added**
-  * `HathoraCloud.FleetsV1.CreateFleetDeprecated()`: **Added**
-  * `HathoraCloud.FleetsV1.GetFleetDeprecated()`: **Added**
-  * `HathoraCloud.FleetsV1.UpdateFleetDeprecated()`: **Added**
-  * `HathoraCloud.FleetsV2.GetFleets()`: **Added**
-  * `HathoraCloud.FleetsV2.CreateFleet()`: **Added**
-  * `HathoraCloud.FleetsV2.GetFleet()`: **Added**
-  * `HathoraCloud.FleetsV2.UpdateFleet()`: **Added**
-  * `HathoraCloud.FleetsV1.GetFleets()`: **Deleted** **Breaking** :warning:
-  * `HathoraCloud.FleetsV1.CreateFleet()`: **Deleted** **Breaking** :warning:
-  * `HathoraCloud.FleetsV1.GetFleet()`: **Deleted** **Breaking** :warning:
-  * `HathoraCloud.FleetsV1.UpdateFleet()`: **Deleted** **Breaking** :warning:
+  * `HathoraCloud.FleetsV1.GetFleetRegionDeprecated()`: **Added**
+  * `HathoraCloud.FleetsV1.UpdateFleetRegionDeprecated()`: **Added**
+  * `HathoraCloud.FleetsV1.GetFleetMetricsDeprecated()`: **Added**
+  * `HathoraCloud.FleetsV1.GetFleetRegionMetricsDeprecated()`: **Added**
+  * `HathoraCloud.FleetsV2.GetFleetRegion()`: **Added**
+  * `HathoraCloud.FleetsV2.UpdateFleetRegion()`: **Added**
+  * `HathoraCloud.FleetsV2.GetFleetMetrics()`: **Added**
+  * `HathoraCloud.FleetsV2.GetFleetRegionMetrics()`: **Added**
+  * `HathoraCloud.FleetsV1.GetFleetRegion()`: **Deleted** **Breaking** :warning:
+  * `HathoraCloud.FleetsV1.UpdateFleetRegion()`: **Deleted** **Breaking** :warning:
+  * `HathoraCloud.FleetsV1.GetFleetMetrics()`: **Deleted** **Breaking** :warning:
+  * `HathoraCloud.FleetsV1.GetFleetRegionMetrics()`: **Deleted** **Breaking** :warning:
