@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 3995ed7c92ddbf2a03406e3011099a93
+  docChecksum: bf371e0b03982782c122b5ede7fe853b
   docVersion: 0.0.1
-  speakeasyVersion: 1.651.0
-  generationVersion: 2.745.2
-  releaseVersion: 0.13.1
-  configChecksum: 9853e53245a99b6cf35ee368b134ed13
+  speakeasyVersion: 1.657.0
+  generationVersion: 2.755.0
+  releaseVersion: 0.13.2
+  configChecksum: 2fc643052aa72f81d059b25e91708178
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
@@ -14,7 +14,7 @@ features:
   go:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.13.1
+    core: 3.13.2
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
@@ -34,7 +34,7 @@ features:
     responseFormat: 0.1.2
     retries: 2.84.2
     sdkHooks: 0.2.0
-    unions: 2.87.0
+    unions: 2.87.1
     uploadStreams: 0.1.0
 generatedFiles:
   - .devcontainer/README.md
@@ -2411,17 +2411,3 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes Detected:
-  * `HathoraCloud.FleetsV1.GetFleetRegionDeprecated()`: **Added**
-  * `HathoraCloud.FleetsV1.UpdateFleetRegionDeprecated()`: **Added**
-  * `HathoraCloud.FleetsV1.GetFleetMetricsDeprecated()`: **Added**
-  * `HathoraCloud.FleetsV1.GetFleetRegionMetricsDeprecated()`: **Added**
-  * `HathoraCloud.FleetsV2.GetFleetRegion()`: **Added**
-  * `HathoraCloud.FleetsV2.UpdateFleetRegion()`: **Added**
-  * `HathoraCloud.FleetsV2.GetFleetMetrics()`: **Added**
-  * `HathoraCloud.FleetsV2.GetFleetRegionMetrics()`: **Added**
-  * `HathoraCloud.FleetsV1.GetFleetRegion()`: **Deleted** **Breaking** :warning:
-  * `HathoraCloud.FleetsV1.UpdateFleetRegion()`: **Deleted** **Breaking** :warning:
-  * `HathoraCloud.FleetsV1.GetFleetMetrics()`: **Deleted** **Breaking** :warning:
-  * `HathoraCloud.FleetsV1.GetFleetRegionMetrics()`: **Deleted** **Breaking** :warning:
