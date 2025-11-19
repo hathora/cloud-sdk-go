@@ -27,7 +27,6 @@ const (
 	NodeShapeIDShapeH100sxm58  NodeShapeID = "shape-h100sxm5-8"
 	NodeShapeIDShapeH200sxm51  NodeShapeID = "shape-h200sxm5-1"
 	NodeShapeIDShapeH200sxm58  NodeShapeID = "shape-h200sxm5-8"
-	NodeShapeIDShapeB200sxm58  NodeShapeID = "shape-b200sxm5-8"
 )
 
 func (e NodeShapeID) ToPointer() *NodeShapeID {

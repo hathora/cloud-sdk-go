@@ -27,4 +27,3 @@
 | `NodeShapeIDShapeH100sxm58`  | shape-h100sxm5-8             |
 | `NodeShapeIDShapeH200sxm51`  | shape-h200sxm5-1             |
 | `NodeShapeIDShapeH200sxm58`  | shape-h200sxm5-8             |
-| `NodeShapeIDShapeB200sxm58`  | shape-b200sxm5-8             |

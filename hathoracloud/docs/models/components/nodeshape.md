@@ -33,4 +33,3 @@
 | `NodeShapeGpuH10081281600` | gpu-h100-8-128-1600        |
 | `NodeShapeGpuH200116200`   | gpu-h200-1-16-200          |
 | `NodeShapeGpuH20081281600` | gpu-h200-8-128-1600        |
-| `NodeShapeGpuB20081601792` | gpu-b200-8-160-1792        |

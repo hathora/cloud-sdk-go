@@ -12,7 +12,6 @@ const (
 	NodeFamilyIDFamilyH100pcie NodeFamilyID = "family-h100pcie"
 	NodeFamilyIDFamilyH100sxm5 NodeFamilyID = "family-h100sxm5"
 	NodeFamilyIDFamilyH200sxm5 NodeFamilyID = "family-h200sxm5"
-	NodeFamilyIDFamilyB200sxm5 NodeFamilyID = "family-b200sxm5"
 )
 
 func (e NodeFamilyID) ToPointer() *NodeFamilyID {

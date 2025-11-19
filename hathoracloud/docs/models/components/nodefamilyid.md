@@ -12,4 +12,3 @@
 | `NodeFamilyIDFamilyH100pcie` | family-h100pcie              |
 | `NodeFamilyIDFamilyH100sxm5` | family-h100sxm5              |
 | `NodeFamilyIDFamilyH200sxm5` | family-h200sxm5              |
-| `NodeFamilyIDFamilyB200sxm5` | family-b200sxm5              |
