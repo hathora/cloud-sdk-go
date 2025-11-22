@@ -11,6 +11,7 @@
 * [GetFleet](#getfleet) - GetFleet
 * [UpdateFleet](#updatefleet) - UpdateFleet
 * [GetFleetRegion](#getfleetregion) - GetFleetRegion
+* [~~DeprecatedUpdateFleetRegionV2~~](#deprecatedupdatefleetregionv2) - DeprecatedUpdateFleetRegionV2 :warning: **Deprecated**
 * [UpdateFleetRegion](#updatefleetregion) - UpdateFleetRegion
 * [GetFleetMetrics](#getfleetmetrics) - GetFleetMetrics
 * [GetFleetRegionMetrics](#getfleetregionmetrics) - GetFleetRegionMetrics
@@ -355,13 +356,15 @@ func main() {
 | errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
 | errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
-## UpdateFleetRegion
+## ~~DeprecatedUpdateFleetRegionV2~~
 
 Updates the configuration for a given [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
 
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
+
 ### Example Usage
 
-<!-- UsageSnippet language="go" operationID="UpdateFleetRegion" method="put" path="/fleets/v2/fleets/{fleetId}/regions/{region}" -->
+<!-- UsageSnippet language="go" operationID="DeprecatedUpdateFleetRegionV2" method="put" path="/fleets/v2/fleets/{fleetId}/regions/{region}" -->
 ```go
 package main
 
@@ -380,8 +383,8 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    err := s.FleetsV2.UpdateFleetRegion(ctx, "<id>", components.RegionChicago, components.FleetRegionConfig{
-        CloudMinVcpus: 503995,
+    err := s.FleetsV2.DeprecatedUpdateFleetRegionV2(ctx, "<id>", components.RegionSingapore, components.FleetRegionConfig{
+        CloudMinVcpus: 735068,
     })
     if err != nil {
         log.Fatal(err)
@@ -399,6 +402,63 @@ func main() {
 | `fleetRegionConfig`                                                          | [components.FleetRegionConfig](../../models/components/fleetregionconfig.md) | :heavy_check_mark:                                                           | N/A                                                                          |                                                                              |
 | `orgID`                                                                      | **string*                                                                    | :heavy_minus_sign:                                                           | N/A                                                                          | org-6f706e83-0ec1-437a-9a46-7d4281eb2f39                                     |
 | `opts`                                                                       | [][operations.Option](../../models/operations/option.md)                     | :heavy_minus_sign:                                                           | The options for this request.                                                |                                                                              |
+
+### Response
+
+**error**
+
+### Errors
+
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.APIError         | 500                     | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
+
+## UpdateFleetRegion
+
+Updates the configuration for a given [fleet](https://hathora.dev/docs/concepts/hathora-entities#fleet) in a region.
+
+### Example Usage
+
+<!-- UsageSnippet language="go" operationID="UpdateFleetRegion" method="put" path="/fleets/v2/fleets/{fleetId}/regions/{region}/v2" -->
+```go
+package main
+
+import(
+	"context"
+	"github.com/hathora/cloud-sdk-go/hathoracloud"
+	"github.com/hathora/cloud-sdk-go/hathoracloud/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := hathoracloud.New(
+        hathoracloud.WithOrgID("org-6f706e83-0ec1-437a-9a46-7d4281eb2f39"),
+        hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
+    )
+
+    err := s.FleetsV2.UpdateFleetRegion(ctx, "<id>", components.RegionChicago, components.FleetRegionConfigV2{
+        NodeBaseline: 503995,
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `ctx`                                                                            | [context.Context](https://pkg.go.dev/context#Context)                            | :heavy_check_mark:                                                               | The context to use for the request.                                              |                                                                                  |
+| `fleetID`                                                                        | *string*                                                                         | :heavy_check_mark:                                                               | N/A                                                                              |                                                                                  |
+| `region`                                                                         | [components.Region](../../models/components/region.md)                           | :heavy_check_mark:                                                               | N/A                                                                              |                                                                                  |
+| `fleetRegionConfigV2`                                                            | [components.FleetRegionConfigV2](../../models/components/fleetregionconfigv2.md) | :heavy_check_mark:                                                               | N/A                                                                              |                                                                                  |
+| `orgID`                                                                          | **string*                                                                        | :heavy_minus_sign:                                                               | N/A                                                                              | org-6f706e83-0ec1-437a-9a46-7d4281eb2f39                                         |
+| `opts`                                                                           | [][operations.Option](../../models/operations/option.md)                         | :heavy_minus_sign:                                                               | The options for this request.                                                    |                                                                                  |
 
 ### Response
 

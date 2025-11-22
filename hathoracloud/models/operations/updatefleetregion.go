@@ -18,10 +18,10 @@ func (u *UpdateFleetRegionGlobals) GetOrgID() *string {
 }
 
 type UpdateFleetRegionRequest struct {
-	FleetID           string                       `pathParam:"style=simple,explode=false,name=fleetId"`
-	Region            components.Region            `pathParam:"style=simple,explode=false,name=region"`
-	OrgID             *string                      `queryParam:"style=form,explode=true,name=orgId"`
-	FleetRegionConfig components.FleetRegionConfig `request:"mediaType=application/json"`
+	FleetID             string                         `pathParam:"style=simple,explode=false,name=fleetId"`
+	Region              components.Region              `pathParam:"style=simple,explode=false,name=region"`
+	OrgID               *string                        `queryParam:"style=form,explode=true,name=orgId"`
+	FleetRegionConfigV2 components.FleetRegionConfigV2 `request:"mediaType=application/json"`
 }
 
 func (u *UpdateFleetRegionRequest) GetFleetID() string {
@@ -45,9 +45,9 @@ func (u *UpdateFleetRegionRequest) GetOrgID() *string {
 	return u.OrgID
 }
 
-func (u *UpdateFleetRegionRequest) GetFleetRegionConfig() components.FleetRegionConfig {
+func (u *UpdateFleetRegionRequest) GetFleetRegionConfigV2() components.FleetRegionConfigV2 {
 	if u == nil {
-		return components.FleetRegionConfig{}
+		return components.FleetRegionConfigV2{}
 	}
-	return u.FleetRegionConfig
+	return u.FleetRegionConfigV2
 }

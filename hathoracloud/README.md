@@ -273,6 +273,7 @@ func main() {
 * [GetFleet](docs/sdks/fleetsv2/README.md#getfleet) - GetFleet
 * [UpdateFleet](docs/sdks/fleetsv2/README.md#updatefleet) - UpdateFleet
 * [GetFleetRegion](docs/sdks/fleetsv2/README.md#getfleetregion) - GetFleetRegion
+* [~~DeprecatedUpdateFleetRegionV2~~](docs/sdks/fleetsv2/README.md#deprecatedupdatefleetregionv2) - DeprecatedUpdateFleetRegionV2 :warning: **Deprecated**
 * [UpdateFleetRegion](docs/sdks/fleetsv2/README.md#updatefleetregion) - UpdateFleetRegion
 * [GetFleetMetrics](docs/sdks/fleetsv2/README.md#getfleetmetrics) - GetFleetMetrics
 * [GetFleetRegionMetrics](docs/sdks/fleetsv2/README.md#getfleetregionmetrics) - GetFleetRegionMetrics
