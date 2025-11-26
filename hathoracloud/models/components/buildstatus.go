@@ -14,3 +14,14 @@ const (
 func (e BuildStatus) ToPointer() *BuildStatus {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *BuildStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "created", "running", "succeeded", "failed":
+			return true
+		}
+	}
+	return false
+}

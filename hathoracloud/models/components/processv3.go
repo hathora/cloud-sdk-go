@@ -53,10 +53,14 @@ type ProcessV3 struct {
 	SummaryExitReason *string `json:"summaryExitReason,omitempty"`
 	// When the process has been terminated.
 	TerminatedAt *time.Time `json:"terminatedAt"`
-	// When the process is issued to stop. We use this to determine when we should stop billing.
+	// When the process is issued to stop.
 	StoppingAt *time.Time `json:"stoppingAt"`
-	// When the process bound to the specified port. We use this to determine when we should start billing.
+	// When the process bound to the specified port. We use this to determine when to register the process to the load balancer.
 	StartedAt *time.Time `json:"startedAt"`
+	// When the container was fully downloaded and started booting.
+	BootedAt *time.Time `json:"bootedAt"`
+	// When the process was assigned to an available node.
+	ScheduledAt *time.Time `json:"scheduledAt"`
 	// When the process started being provisioned.
 	CreatedAt time.Time `json:"createdAt"`
 	// Governs how many [rooms](https://hathora.dev/docs/concepts/hathora-entities#room) can be scheduled in a process.
@@ -132,6 +136,20 @@ func (p *ProcessV3) GetStartedAt() *time.Time {
 		return nil
 	}
 	return p.StartedAt
+}
+
+func (p *ProcessV3) GetBootedAt() *time.Time {
+	if p == nil {
+		return nil
+	}
+	return p.BootedAt
+}
+
+func (p *ProcessV3) GetScheduledAt() *time.Time {
+	if p == nil {
+		return nil
+	}
+	return p.ScheduledAt
 }
 
 func (p *ProcessV3) GetCreatedAt() time.Time {

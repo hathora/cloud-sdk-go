@@ -20,3 +20,14 @@ const (
 func (e LobbyVisibility) ToPointer() *LobbyVisibility {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *LobbyVisibility) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "private", "public", "local":
+			return true
+		}
+	}
+	return false
+}

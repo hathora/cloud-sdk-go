@@ -15,6 +15,17 @@ func (e MetricName) ToPointer() *MetricName {
 	return &e
 }
 
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *MetricName) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "concurrent-requests":
+			return true
+		}
+	}
+	return false
+}
+
 type AutoscalerTargetMetric struct {
 	MetricValue float64 `json:"metricValue"`
 	// The name of the metric.

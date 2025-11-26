@@ -17,3 +17,14 @@ const (
 func (e NodeFamilyID) ToPointer() *NodeFamilyID {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *NodeFamilyID) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "family-amd64-1-2", "family-amd64-1-4", "family-l4-1-4", "family-l4-1-12", "family-h100pcie", "family-h100sxm5", "family-h200sxm5":
+			return true
+		}
+	}
+	return false
+}

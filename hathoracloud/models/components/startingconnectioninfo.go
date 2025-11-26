@@ -16,6 +16,17 @@ func (e Status) ToPointer() *Status {
 	return &e
 }
 
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Status) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "starting":
+			return true
+		}
+	}
+	return false
+}
+
 type StartingConnectionInfo struct {
 	Status Status `json:"status"`
 	// Unique identifier to a game session or match. Use the default system generated ID or overwrite it with your own.

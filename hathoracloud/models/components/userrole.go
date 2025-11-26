@@ -13,3 +13,14 @@ const (
 func (e UserRole) ToPointer() *UserRole {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *UserRole) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "admin", "member", "viewer":
+			return true
+		}
+	}
+	return false
+}

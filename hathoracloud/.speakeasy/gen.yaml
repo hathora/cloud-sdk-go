@@ -27,7 +27,7 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 0.13.4
+  version: 0.13.5
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: HathoraCloudError
@@ -43,6 +43,7 @@ go:
       shared: models/components
       webhooks: models/webhooks
   includeEmptyObjects: false
+  inferUnionDiscriminators: false
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: require-security-and-request

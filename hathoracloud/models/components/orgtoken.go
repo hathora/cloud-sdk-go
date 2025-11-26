@@ -19,6 +19,17 @@ func (e Two) ToPointer() *Two {
 	return &e
 }
 
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Two) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "admin":
+			return true
+		}
+	}
+	return false
+}
+
 type ScopesType string
 
 const (

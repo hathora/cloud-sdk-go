@@ -12,3 +12,14 @@ const (
 func (e RoomReadyStatus) ToPointer() *RoomReadyStatus {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *RoomReadyStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active", "starting":
+			return true
+		}
+	}
+	return false
+}

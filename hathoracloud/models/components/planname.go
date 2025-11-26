@@ -23,3 +23,14 @@ const (
 func (e PlanName) ToPointer() *PlanName {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *PlanName) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "tiny", "small", "medium", "large":
+			return true
+		}
+	}
+	return false
+}

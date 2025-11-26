@@ -14,3 +14,14 @@ const (
 func (e TransportType) ToPointer() *TransportType {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *TransportType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "tcp", "udp", "tls":
+			return true
+		}
+	}
+	return false
+}

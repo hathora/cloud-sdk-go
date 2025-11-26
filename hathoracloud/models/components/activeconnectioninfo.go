@@ -16,6 +16,17 @@ func (e ActiveConnectionInfoStatus) ToPointer() *ActiveConnectionInfoStatus {
 	return &e
 }
 
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ActiveConnectionInfoStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "active":
+			return true
+		}
+	}
+	return false
+}
+
 type ActiveConnectionInfo struct {
 	Status ActiveConnectionInfoStatus `json:"status"`
 	// Transport type specifies the underlying communication protocol to the exposed port.

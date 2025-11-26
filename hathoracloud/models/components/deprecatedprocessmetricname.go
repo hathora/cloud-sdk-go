@@ -15,3 +15,14 @@ const (
 func (e DeprecatedProcessMetricName) ToPointer() *DeprecatedProcessMetricName {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DeprecatedProcessMetricName) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "cpu", "memory", "rate_egress", "total_egress", "active_connections":
+			return true
+		}
+	}
+	return false
+}

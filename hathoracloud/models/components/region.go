@@ -24,3 +24,14 @@ const (
 func (e Region) ToPointer() *Region {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Region) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "Seattle", "Los_Angeles", "Washington_DC", "Chicago", "London", "Frankfurt", "Mumbai", "Singapore", "Tokyo", "Sydney", "Sao_Paulo", "Dallas", "Johannesburg", "Dubai":
+			return true
+		}
+	}
+	return false
+}

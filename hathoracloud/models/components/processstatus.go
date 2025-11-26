@@ -16,3 +16,14 @@ const (
 func (e ProcessStatus) ToPointer() *ProcessStatus {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ProcessStatus) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "starting", "running", "draining", "stopping", "stopped", "failed":
+			return true
+		}
+	}
+	return false
+}

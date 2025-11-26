@@ -19,6 +19,17 @@ func (e NodeV1Status) ToPointer() *NodeV1Status {
 	return &e
 }
 
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *NodeV1Status) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "running", "draining", "stopped":
+			return true
+		}
+	}
+	return false
+}
+
 type NodeV1 struct {
 	StoppedAt *time.Time   `json:"stoppedAt"`
 	StartedAt time.Time    `json:"startedAt"`

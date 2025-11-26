@@ -28,3 +28,14 @@ const (
 func (e Scope) ToPointer() *Scope {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *Scope) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "billing:read-write", "builds:read", "builds:read-write", "deployments:read", "deployments:read-write", "applications:read", "applications:read-write", "processes:read", "processes:read-write", "fleets:read", "fleets:read-write", "orgs:read", "orgs:read-write", "tokens:read", "tokens:read-write", "tickets:read", "tickets:read-write", "load-balancer:access":
+			return true
+		}
+	}
+	return false
+}

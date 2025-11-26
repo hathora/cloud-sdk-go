@@ -18,6 +18,17 @@ func (e CreateOrgToken2) ToPointer() *CreateOrgToken2 {
 	return &e
 }
 
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *CreateOrgToken2) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "admin":
+			return true
+		}
+	}
+	return false
+}
+
 type CreateOrgTokenScopesType string
 
 const (

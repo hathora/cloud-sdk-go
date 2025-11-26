@@ -41,6 +41,17 @@ func (e DeploymentV1TransportType) ToPointer() *DeploymentV1TransportType {
 	return &e
 }
 
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *DeploymentV1TransportType) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "tcp", "udp", "tls":
+			return true
+		}
+	}
+	return false
+}
+
 // DeploymentV1 - Deployment is a versioned configuration for a build that describes runtime behavior.
 type DeploymentV1 struct {
 	// Option to shut down processes that have had no new connections or rooms

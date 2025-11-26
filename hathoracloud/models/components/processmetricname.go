@@ -18,3 +18,14 @@ const (
 func (e ProcessMetricName) ToPointer() *ProcessMetricName {
 	return &e
 }
+
+// IsExact returns true if the value matches a known enum value, false otherwise.
+func (e *ProcessMetricName) IsExact() bool {
+	if e != nil {
+		switch *e {
+		case "cpu", "memory", "rateEgress", "totalEgress", "activeConnections", "gpuMemory", "gpuUtilization":
+			return true
+		}
+	}
+	return false
+}
