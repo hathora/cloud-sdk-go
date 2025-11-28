@@ -7,7 +7,7 @@ type Fleet struct {
 	NodeShape        NodeShape         `json:"nodeShape"`
 	AutoscalerConfig *AutoscalerConfig `json:"autoscalerConfig,omitempty"`
 	// Readable name for a fleet. Must be unique within an organization.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID string `json:"orgId"`
 	// The id of the fleet.
@@ -28,9 +28,9 @@ func (f *Fleet) GetAutoscalerConfig() *AutoscalerConfig {
 	return f.AutoscalerConfig
 }
 
-func (f *Fleet) GetName() *string {
+func (f *Fleet) GetName() string {
 	if f == nil {
-		return nil
+		return ""
 	}
 	return f.Name
 }
