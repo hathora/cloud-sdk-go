@@ -1,5 +1,4 @@
 # DeploymentsV3
-(*DeploymentsV3*)
 
 ## Overview
 
@@ -36,7 +35,7 @@ func main() {
         hathoracloud.WithSecurity("<YOUR_BEARER_TOKEN_HERE>"),
     )
 
-    res, err := s.DeploymentsV3.GetDeployments(ctx, hathoracloud.Pointer("alpha"), hathoracloud.Pointer("0.1.14-14c793"))
+    res, err := s.DeploymentsV3.GetDeployments(ctx, hathoracloud.Pointer("alpha"), hathoracloud.Pointer("0.1.14-14c793"), nil)
     if err != nil {
         log.Fatal(err)
     }
@@ -54,6 +53,7 @@ func main() {
 | `appID`                                                  | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | app-af469a92-5b45-4565-b3c4-b79878de67d2                 |
 | `deploymentTag`                                          | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | alpha                                                    |
 | `buildTag`                                               | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      | 0.1.14-14c793                                            |
+| `nextPageToken`                                          | **string*                                                | :heavy_minus_sign:                                       | N/A                                                      |                                                          |
 | `opts`                                                   | [][operations.Option](../../models/operations/option.md) | :heavy_minus_sign:                                       | The options for this request.                            |                                                          |
 
 ### Response
@@ -62,10 +62,10 @@ func main() {
 
 ### Errors
 
-| Error Type         | Status Code        | Content Type       |
-| ------------------ | ------------------ | ------------------ |
-| errors.APIError    | 401, 404, 408, 429 | application/json   |
-| errors.SDKError    | 4XX, 5XX           | \*/\*              |
+| Error Type              | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.APIError         | 401, 404, 408, 422, 429 | application/json        |
+| errors.SDKError         | 4XX, 5XX                | \*/\*                   |
 
 ## CreateDeployment
 

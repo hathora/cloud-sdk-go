@@ -91,7 +91,7 @@ func (d Deployment) MarshalJSON() ([]byte, error) {
 }
 
 func (d *Deployment) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &d, "", false, []string{"idleTimeoutEnabled", "env", "roomsPerProcess", "additionalContainerPorts", "defaultContainerPort", "createdAt", "createdBy", "requestedMemoryMB", "requestedCPU", "deploymentId", "buildId", "appId", "build"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &d, "", false, nil); err != nil {
 		return err
 	}
 	return nil
@@ -216,7 +216,7 @@ func (a ApplicationWithLatestDeploymentAndBuildDeprecated) MarshalJSON() ([]byte
 }
 
 func (a *ApplicationWithLatestDeploymentAndBuildDeprecated) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"createdAt", "createdBy", "orgId", "authConfiguration", "appSecret", "appId", "appName"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

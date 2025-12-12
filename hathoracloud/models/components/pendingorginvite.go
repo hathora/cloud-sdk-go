@@ -17,8 +17,8 @@ const (
 )
 
 type PendingOrgInviteScopes struct {
-	UserRole     *UserRole `queryParam:"inline,name=scopes"`
-	ArrayOfScope []Scope   `queryParam:"inline,name=scopes"`
+	UserRole     *UserRole `queryParam:"inline,name=scopes" union:"member"`
+	ArrayOfScope []Scope   `queryParam:"inline,name=scopes" union:"member"`
 
 	Type PendingOrgInviteScopesType
 }
@@ -87,7 +87,7 @@ func (p PendingOrgInvite) MarshalJSON() ([]byte, error) {
 }
 
 func (p *PendingOrgInvite) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &p, "", false, []string{"scopes", "createdAt", "invitedBy", "userEmail", "orgId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &p, "", false, nil); err != nil {
 		return err
 	}
 	return nil

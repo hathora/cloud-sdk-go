@@ -22,7 +22,7 @@ func (r RoomAllocation) MarshalJSON() ([]byte, error) {
 }
 
 func (r *RoomAllocation) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &r, "", false, []string{"scheduledAt", "processId", "roomAllocationId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &r, "", false, nil); err != nil {
 		return err
 	}
 	return nil

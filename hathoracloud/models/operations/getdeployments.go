@@ -17,6 +17,7 @@ type GetDeploymentsRequest struct {
 	AppID         *string `pathParam:"style=simple,explode=false,name=appId"`
 	DeploymentTag *string `queryParam:"style=form,explode=true,name=deploymentTag"`
 	BuildTag      *string `queryParam:"style=form,explode=true,name=buildTag"`
+	NextPageToken *string `queryParam:"style=form,explode=true,name=nextPageToken"`
 }
 
 func (g *GetDeploymentsRequest) GetAppID() *string {
@@ -38,4 +39,11 @@ func (g *GetDeploymentsRequest) GetBuildTag() *string {
 		return nil
 	}
 	return g.BuildTag
+}
+
+func (g *GetDeploymentsRequest) GetNextPageToken() *string {
+	if g == nil {
+		return nil
+	}
+	return g.NextPageToken
 }

@@ -22,7 +22,7 @@ func (i Invoice) MarshalJSON() ([]byte, error) {
 }
 
 func (i *Invoice) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &i, "", false, []string{"status", "amountDue", "pdfUrl", "dueDate", "year", "month", "id"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &i, "", false, nil); err != nil {
 		return err
 	}
 	return nil

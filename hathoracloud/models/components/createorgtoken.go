@@ -38,8 +38,8 @@ const (
 
 // CreateOrgTokenScopes - If not defined, the token has Admin access.
 type CreateOrgTokenScopes struct {
-	ArrayOfScope    []Scope          `queryParam:"inline,name=scopes"`
-	CreateOrgToken2 *CreateOrgToken2 `queryParam:"inline,name=scopes"`
+	ArrayOfScope    []Scope          `queryParam:"inline,name=scopes" union:"member"`
+	CreateOrgToken2 *CreateOrgToken2 `queryParam:"inline,name=scopes" union:"member"`
 
 	Type CreateOrgTokenScopesType
 }

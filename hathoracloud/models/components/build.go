@@ -56,7 +56,7 @@ func (b Build) MarshalJSON() ([]byte, error) {
 }
 
 func (b *Build) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &b, "", false, []string{"regionalContainerTags", "imageSize", "status", "createdAt", "createdBy", "buildId", "appId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &b, "", false, nil); err != nil {
 		return err
 	}
 	return nil

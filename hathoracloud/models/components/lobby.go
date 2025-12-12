@@ -18,8 +18,8 @@ const (
 
 // CreatedBy - UserId or email address for the user that created the lobby.
 type CreatedBy struct {
-	Str    *string  `queryParam:"inline,name=createdBy"`
-	Number *float64 `queryParam:"inline,name=createdBy"`
+	Str    *string  `queryParam:"inline,name=createdBy" union:"member"`
+	Number *float64 `queryParam:"inline,name=createdBy" union:"member"`
 
 	Type CreatedByType
 }
@@ -107,7 +107,7 @@ func (l Lobby) MarshalJSON() ([]byte, error) {
 }
 
 func (l *Lobby) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"initialConfig", "createdAt", "createdBy", "local", "visibility", "region", "roomId", "appId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
 		return err
 	}
 	return nil

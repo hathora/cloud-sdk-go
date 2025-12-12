@@ -17,8 +17,8 @@ const (
 
 // CreateUserInviteScopes - If not defined, the user has Admin access.
 type CreateUserInviteScopes struct {
-	UserRole     *UserRole `queryParam:"inline,name=scopes"`
-	ArrayOfScope []Scope   `queryParam:"inline,name=scopes"`
+	UserRole     *UserRole `queryParam:"inline,name=scopes" union:"member"`
+	ArrayOfScope []Scope   `queryParam:"inline,name=scopes" union:"member"`
 
 	Type CreateUserInviteScopesType
 }

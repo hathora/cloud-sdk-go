@@ -17,8 +17,8 @@ const (
 )
 
 type OrgMemberScopes struct {
-	UserRole     *UserRole `queryParam:"inline,name=scopes"`
-	ArrayOfScope []Scope   `queryParam:"inline,name=scopes"`
+	UserRole     *UserRole `queryParam:"inline,name=scopes" union:"member"`
+	ArrayOfScope []Scope   `queryParam:"inline,name=scopes" union:"member"`
 
 	Type OrgMemberScopesType
 }
@@ -89,7 +89,7 @@ func (o OrgMember) MarshalJSON() ([]byte, error) {
 }
 
 func (o *OrgMember) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &o, "", false, []string{"scopes", "joinedAt", "createdAt", "invitedBy", "userEmail", "orgId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &o, "", false, nil); err != nil {
 		return err
 	}
 	return nil

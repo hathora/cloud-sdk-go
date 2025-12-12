@@ -3,7 +3,15 @@
 package components
 
 type DeploymentsV3Page struct {
-	Deployments []DeploymentV3 `json:"deployments"`
+	NextPageToken *string        `json:"nextPageToken,omitempty"`
+	Deployments   []DeploymentV3 `json:"deployments"`
+}
+
+func (d *DeploymentsV3Page) GetNextPageToken() *string {
+	if d == nil {
+		return nil
+	}
+	return d.NextPageToken
 }
 
 func (d *DeploymentsV3Page) GetDeployments() []DeploymentV3 {

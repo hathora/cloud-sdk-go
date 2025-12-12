@@ -39,8 +39,8 @@ const (
 
 // Scopes - If not defined, the token has Admin access.
 type Scopes struct {
-	ArrayOfScope []Scope `queryParam:"inline,name=scopes"`
-	Two          *Two    `queryParam:"inline,name=scopes"`
+	ArrayOfScope []Scope `queryParam:"inline,name=scopes" union:"member"`
+	Two          *Two    `queryParam:"inline,name=scopes" union:"member"`
 
 	Type ScopesType
 }
@@ -113,7 +113,7 @@ func (o OrgToken) MarshalJSON() ([]byte, error) {
 }
 
 func (o *OrgToken) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &o, "", false, []string{"createdAt", "createdBy", "lastFourCharsOfKey", "status", "name", "orgId", "orgTokenId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &o, "", false, nil); err != nil {
 		return err
 	}
 	return nil

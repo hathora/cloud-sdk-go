@@ -17,8 +17,8 @@ const (
 
 // UpdateUserInviteScopes - Scopes can only be removed or added if a user has those scopes.
 type UpdateUserInviteScopes struct {
-	UserRole     *UserRole `queryParam:"inline,name=scopes"`
-	ArrayOfScope []Scope   `queryParam:"inline,name=scopes"`
+	UserRole     *UserRole `queryParam:"inline,name=scopes" union:"member"`
+	ArrayOfScope []Scope   `queryParam:"inline,name=scopes" union:"member"`
 
 	Type UpdateUserInviteScopesType
 }

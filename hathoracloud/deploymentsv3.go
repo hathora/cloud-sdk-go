@@ -33,11 +33,12 @@ func newDeploymentsV3(rootSDK *HathoraCloud, sdkConfig config.SDKConfiguration, 
 
 // GetDeployments
 // Returns an array of [deployments](https://hathora.dev/docs/concepts/hathora-entities#deployment) for an [application](https://hathora.dev/docs/concepts/hathora-entities#application), optionally filtered by deploymentTag or buildTag.
-func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deploymentTag *string, buildTag *string, opts ...operations.Option) (*components.DeploymentsV3Page, error) {
+func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deploymentTag *string, buildTag *string, nextPageToken *string, opts ...operations.Option) (*components.DeploymentsV3Page, error) {
 	request := operations.GetDeploymentsRequest{
 		AppID:         appID,
 		DeploymentTag: deploymentTag,
 		BuildTag:      buildTag,
+		NextPageToken: nextPageToken,
 	}
 
 	globals := operations.GetDeploymentsGlobals{
@@ -94,7 +95,7 @@ func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deplo
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, globals); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, globals, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -182,7 +183,7 @@ func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deplo
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "429", "4XX", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"401", "404", "408", "422", "429", "4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -224,6 +225,8 @@ func (s *DeploymentsV3) GetDeployments(ctx context.Context, appID *string, deplo
 	case httpRes.StatusCode == 404:
 		fallthrough
 	case httpRes.StatusCode == 408:
+		fallthrough
+	case httpRes.StatusCode == 422:
 		fallthrough
 	case httpRes.StatusCode == 429:
 		switch {

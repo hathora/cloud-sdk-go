@@ -48,7 +48,7 @@ func (n NodeV1) MarshalJSON() ([]byte, error) {
 }
 
 func (n *NodeV1) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &n, "", false, []string{"startedAt", "memoryMb", "cpu", "region", "status", "hosting", "host", "nodeId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &n, "", false, nil); err != nil {
 		return err
 	}
 	return nil

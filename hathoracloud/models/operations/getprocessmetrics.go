@@ -35,7 +35,7 @@ func (g GetProcessMetricsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (g *GetProcessMetricsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"processId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &g, "", false, nil); err != nil {
 		return err
 	}
 	return nil

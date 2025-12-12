@@ -65,7 +65,7 @@ func (a Application) MarshalJSON() ([]byte, error) {
 }
 
 func (a *Application) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &a, "", false, []string{"createdAt", "createdBy", "orgId", "authConfiguration", "appSecret", "appId", "appName"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &a, "", false, nil); err != nil {
 		return err
 	}
 	return nil

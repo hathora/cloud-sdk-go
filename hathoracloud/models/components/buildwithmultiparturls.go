@@ -59,7 +59,7 @@ func (b BuildWithMultipartUrls) MarshalJSON() ([]byte, error) {
 }
 
 func (b *BuildWithMultipartUrls) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &b, "", false, []string{"regionalContainerTags", "imageSize", "status", "createdAt", "createdBy", "buildId", "appId", "completeUploadPostRequestUrl", "maxChunkSize", "uploadParts"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &b, "", false, nil); err != nil {
 		return err
 	}
 	return nil

@@ -35,7 +35,7 @@ func (g GetFleetRegionMetricsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (g *GetFleetRegionMetricsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"fleetId", "region"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &g, "", false, nil); err != nil {
 		return err
 	}
 	return nil

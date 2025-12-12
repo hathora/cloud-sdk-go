@@ -35,7 +35,7 @@ func (g GetMetricsDeprecatedRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (g *GetMetricsDeprecatedRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &g, "", false, []string{"processId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &g, "", false, nil); err != nil {
 		return err
 	}
 	return nil

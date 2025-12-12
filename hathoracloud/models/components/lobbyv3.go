@@ -18,8 +18,8 @@ const (
 
 // LobbyV3CreatedBy - UserId or email address for the user that created the lobby.
 type LobbyV3CreatedBy struct {
-	Str    *string  `queryParam:"inline,name=createdBy"`
-	Number *float64 `queryParam:"inline,name=createdBy"`
+	Str    *string  `queryParam:"inline,name=createdBy" union:"member"`
+	Number *float64 `queryParam:"inline,name=createdBy" union:"member"`
 
 	Type LobbyV3CreatedByType
 }
@@ -103,7 +103,7 @@ func (l LobbyV3) MarshalJSON() ([]byte, error) {
 }
 
 func (l *LobbyV3) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"shortCode", "createdAt", "createdBy", "visibility", "region", "roomId", "appId"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, nil); err != nil {
 		return err
 	}
 	return nil
