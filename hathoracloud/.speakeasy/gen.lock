@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 3cdcb60866cbcb90264fa08249a30459
+  docChecksum: 3e822aa80301c8226b1c77d3de0510e4
   docVersion: 0.0.1
-  speakeasyVersion: 1.675.4
-  generationVersion: 2.779.2
-  releaseVersion: 0.14.0
-  configChecksum: 09234704ad3488c8dd8d972ee68130b2
+  speakeasyVersion: 1.676.1
+  generationVersion: 2.781.2
+  releaseVersion: 0.14.1
+  configChecksum: 69f7b3a1cbd48dcae44b66f83da784f5
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
 persistentEdits:
-  generation_id: 1e298e85-5e0f-4b34-926e-cca528d2d978
-  pristine_commit_hash: df7dde65da02ddf6d60915a028a8db23e47e6029
-  pristine_tree_hash: ea6be5626816f7307a25a3486f6fb4c0447516b4
+  generation_id: 74e6afc5-07c7-48b6-9c45-269831c2343a
+  pristine_commit_hash: d87bb1e58f47506441cae65fce4332d99eac591d
+  pristine_tree_hash: 7f9f6a579024d8f9a5f748a3189a026d7ac285a0
 features:
   go:
     additionalDependencies: 0.1.0
@@ -1927,8 +1927,8 @@ trackedFiles:
     pristine_git_object: 6e9615ac883fd8a36ef75dc94aa9a1e19028ff13
   hathoracloud.go:
     id: 5928a490967b
-    last_write_checksum: sha1:6e6e6e0019c6e8ce454a71de86dee7853dd80b30
-    pristine_git_object: a8f08e16849fadc77a0b11fa27f68126893222c5
+    last_write_checksum: sha1:5d8f17f89c2c9dd7490caf5f2e106bec40059f0a
+    pristine_git_object: 09a66cb1a3df225241662e20831d70666fcc7e05
   internal/config/sdkconfiguration.go:
     id: 33b8bfac5265
     last_write_checksum: sha1:3b0bd69bb6531f8a4c32f3ba95dd69145821c2a4
@@ -4724,7 +4724,6 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Go SDK Changes:\n* `HathoraCloud.DeploymentsV1.GetDeploymentsV1Deprecated()`:  `error.status[500]` **Added**\n* `HathoraCloud.DeploymentsV2.GetDeploymentsV2Deprecated()`:  `error.status[500]` **Added**\n* `HathoraCloud.DeploymentsV3.GetDeployments()`: \n  *  `request.NextPageToken` **Added**\n  *  `response.NextPageToken` **Added**\n  *  `error.status[422]` **Added**\n"
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
