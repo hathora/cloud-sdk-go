@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 3e822aa80301c8226b1c77d3de0510e4
+  docChecksum: 157a3dd7ff0960e73ffc4adcc8f6f659
   docVersion: 0.0.1
   speakeasyVersion: 1.676.1
   generationVersion: 2.781.2
-  releaseVersion: 0.14.1
-  configChecksum: 69f7b3a1cbd48dcae44b66f83da784f5
+  releaseVersion: 0.14.2
+  configChecksum: 3f2ad7bbd2fdaec6cb3f072865d9cb43
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
 persistentEdits:
-  generation_id: 74e6afc5-07c7-48b6-9c45-269831c2343a
-  pristine_commit_hash: d87bb1e58f47506441cae65fce4332d99eac591d
-  pristine_tree_hash: 7f9f6a579024d8f9a5f748a3189a026d7ac285a0
+  generation_id: dee0cd24-228c-4368-add6-8b834ee17cdc
+  pristine_commit_hash: 9aad06076f1af9b55d038cb4cad7bd61a0cb8cfa
+  pristine_tree_hash: b1e65aa75596bab10d573ad58d2d0d41e08f869c
 features:
   go:
     additionalDependencies: 0.1.0
@@ -1927,8 +1927,8 @@ trackedFiles:
     pristine_git_object: 6e9615ac883fd8a36ef75dc94aa9a1e19028ff13
   hathoracloud.go:
     id: 5928a490967b
-    last_write_checksum: sha1:5d8f17f89c2c9dd7490caf5f2e106bec40059f0a
-    pristine_git_object: 09a66cb1a3df225241662e20831d70666fcc7e05
+    last_write_checksum: sha1:c5d5e852d3b89e86359be6ed9504c5f90bfc9150
+    pristine_git_object: 056edb7fdcdc2913e5c2e5b64f39a9897036ee72
   internal/config/sdkconfiguration.go:
     id: 33b8bfac5265
     last_write_checksum: sha1:3b0bd69bb6531f8a4c32f3ba95dd69145821c2a4
