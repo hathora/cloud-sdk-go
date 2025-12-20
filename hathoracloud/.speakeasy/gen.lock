@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 157a3dd7ff0960e73ffc4adcc8f6f659
+  docChecksum: 57e8a469b4371bc54367bd731378150d
   docVersion: 0.0.1
-  speakeasyVersion: 1.676.1
-  generationVersion: 2.781.2
-  releaseVersion: 0.14.2
-  configChecksum: 3f2ad7bbd2fdaec6cb3f072865d9cb43
+  speakeasyVersion: 1.680.3
+  generationVersion: 2.788.5
+  releaseVersion: 0.14.3
+  configChecksum: 089100466f477fd778479f9f6a47bc72
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
 persistentEdits:
-  generation_id: dee0cd24-228c-4368-add6-8b834ee17cdc
-  pristine_commit_hash: 9aad06076f1af9b55d038cb4cad7bd61a0cb8cfa
-  pristine_tree_hash: b1e65aa75596bab10d573ad58d2d0d41e08f869c
+  generation_id: 96aa6b2e-a71c-4cdc-9956-1d563b2a129b
+  pristine_commit_hash: 971016a2f5828b00340cb8af64caf6ba145a4923
+  pristine_tree_hash: 21c313f43c06b241694f18bbf4ebd975a7827d1c
 features:
   go:
     additionalDependencies: 0.1.0
@@ -107,8 +107,8 @@ trackedFiles:
     pristine_git_object: ee12d1177638154684e0fb32aea6fa49ca343808
   discoveryv2.go:
     id: 19facad84bde
-    last_write_checksum: sha1:ad1987b0226cd6b8469119e6fb1a5fd0a09602f9
-    pristine_git_object: 3315b152e9a820e1aa3184202d5ed22d37741196
+    last_write_checksum: sha1:50d8cb27c41939cce117619cda3a8764622f7741
+    pristine_git_object: 3f0613cad4db196e1367a145fec997af51f8ead0
   docs/models/components/achpaymentmethod.md:
     id: 3d2b0521bb2c
     last_write_checksum: sha1:5d7fb0679b9258c1d9fef1cc1a132e960896c84f
@@ -1847,8 +1847,8 @@ trackedFiles:
     pristine_git_object: 4b7cbd6e17480b68eef26eb62a041ca714f1d397
   docs/sdks/discoveryv2/README.md:
     id: 82d743ad4312
-    last_write_checksum: sha1:0429b275adce65ad942d763acf438928262a0b62
-    pristine_git_object: 1ea0c8a3bbef969f9a228a3ac30843795f787eaa
+    last_write_checksum: sha1:e7a2d93997c714159cbc75f7ba7048cfee96ba8c
+    pristine_git_object: 5d897103907a684d8dc5b8ecb59762f4d74c62cf
   docs/sdks/fleetsv1/README.md:
     id: d0c124196699
     last_write_checksum: sha1:2e085b5f8377471a13843a444d7074286985e148
@@ -1927,8 +1927,8 @@ trackedFiles:
     pristine_git_object: 6e9615ac883fd8a36ef75dc94aa9a1e19028ff13
   hathoracloud.go:
     id: 5928a490967b
-    last_write_checksum: sha1:c5d5e852d3b89e86359be6ed9504c5f90bfc9150
-    pristine_git_object: 056edb7fdcdc2913e5c2e5b64f39a9897036ee72
+    last_write_checksum: sha1:4369d2ca0ff2ce81fab4ec08ae71a823183ab354
+    pristine_git_object: 7571ad5a511bee4eadbef1238b794386a7646343
   internal/config/sdkconfiguration.go:
     id: 33b8bfac5265
     last_write_checksum: sha1:3b0bd69bb6531f8a4c32f3ba95dd69145821c2a4

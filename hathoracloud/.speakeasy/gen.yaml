@@ -28,13 +28,14 @@ generation:
     generateNewTests: false
     skipResponseBodyAssertions: false
 go:
-  version: 0.14.2
+  version: 0.14.3
   additionalDependencies: {}
   allowUnknownFieldsInWeakUnions: false
   baseErrorName: HathoraCloudError
   clientServerStatusCodesAsErrors: true
   defaultErrorName: SDKError
   flattenGlobalSecurity: true
+  forwardCompatibleEnumsByDefault: false
   imports:
     option: openapi
     paths:

@@ -33,7 +33,7 @@ func newDiscoveryV2(rootSDK *HathoraCloud, sdkConfig config.SDKConfiguration, ho
 }
 
 // GetPingServiceEndpoints
-// Returns an array of all regions with a host and port that a client can directly ping. Open a websocket connection to `wss://<host>:<port>/ws` and send a packet. To calculate ping, measure the time it takes to get an echo packet back.
+// Returns an array of all regions with a host and port that a client can directly ping. Open a websocket connection to `wss://<host>:<port>` and send a packet. To calculate ping, measure the time it takes to get an echo packet back.
 func (s *DiscoveryV2) GetPingServiceEndpoints(ctx context.Context, opts ...operations.Option) ([]components.PingEndpoints, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
