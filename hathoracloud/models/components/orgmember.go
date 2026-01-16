@@ -17,8 +17,8 @@ const (
 )
 
 type OrgMemberScopes struct {
-	UserRole     *UserRole `queryParam:"inline,name=scopes" union:"member"`
-	ArrayOfScope []Scope   `queryParam:"inline,name=scopes" union:"member"`
+	UserRole     *UserRole `queryParam:"inline" union:"member"`
+	ArrayOfScope []Scope   `queryParam:"inline" union:"member"`
 
 	Type OrgMemberScopesType
 }

@@ -39,8 +39,8 @@ const (
 
 // Scopes - If not defined, the token has Admin access.
 type Scopes struct {
-	ArrayOfScope []Scope `queryParam:"inline,name=scopes" union:"member"`
-	Two          *Two    `queryParam:"inline,name=scopes" union:"member"`
+	ArrayOfScope []Scope `queryParam:"inline" union:"member"`
+	Two          *Two    `queryParam:"inline" union:"member"`
 
 	Type ScopesType
 }

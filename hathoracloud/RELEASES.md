@@ -739,3 +739,13 @@ Based on:
 - [go v0.14.3] hathoracloud
 ### Releases
 - [Go v0.14.3] https://github.com/hathora/cloud-sdk-go/releases/tag/hathoracloud/v0.14.3 - hathoracloud
+
+## 2026-01-16 00:03:54
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.686.0 (2.796.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v0.14.4] hathoracloud
+### Releases
+- [Go v0.14.4] https://github.com/hathora/cloud-sdk-go/releases/tag/hathoracloud/v0.14.4 - hathoracloud
