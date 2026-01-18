@@ -4,14 +4,23 @@ package components
 
 // Fleet - A fleet is a collection of nodes across your regions that can scale up and down based on demand.
 type Fleet struct {
-	NodeShape        NodeShape         `json:"nodeShape"`
-	AutoscalerConfig *AutoscalerConfig `json:"autoscalerConfig,omitempty"`
+	// Make all properties in T optional
+	ErrorState       *PartialRecordRegionFleetErrorState `json:"errorState,omitempty"`
+	NodeShape        NodeShape                           `json:"nodeShape"`
+	AutoscalerConfig *AutoscalerConfig                   `json:"autoscalerConfig,omitempty"`
 	// Readable name for a fleet. Must be unique within an organization.
 	Name string `json:"name"`
 	// System generated unique identifier for an organization. Not guaranteed to have a specific format.
 	OrgID string `json:"orgId"`
 	// The id of the fleet.
 	FleetID string `json:"fleetId"`
+}
+
+func (f *Fleet) GetErrorState() *PartialRecordRegionFleetErrorState {
+	if f == nil {
+		return nil
+	}
+	return f.ErrorState
 }
 
 func (f *Fleet) GetNodeShape() NodeShape {

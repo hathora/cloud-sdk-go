@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: b740da658b8170666ddbdd7f239231df
+  docChecksum: f9d94258b0b6b8de55b8795e77ad4d99
   docVersion: 0.0.1
-  speakeasyVersion: 1.686.0
-  generationVersion: 2.796.1
-  releaseVersion: 0.14.4
-  configChecksum: f649c8d0e9c602c8b8b02f9f61a7f22e
+  speakeasyVersion: 1.688.0
+  generationVersion: 2.796.4
+  releaseVersion: 0.14.5
+  configChecksum: 81a5fb58194377d0a056c0f67476e8f8
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
 persistentEdits:
-  generation_id: 360235f3-6671-4122-acaf-fc26ebeb3174
-  pristine_commit_hash: 2537d196608deb7c23b0b6317c9ee5ed36360ea3
-  pristine_tree_hash: 1409a84d586cb81e65474efb0de180c84f4cf795
+  generation_id: fa41c749-69fd-4f90-8a38-b0b8f3844251
+  pristine_commit_hash: ce3a1761fe4799ee132054221faa06ee377c9cdd
+  pristine_tree_hash: c724925f198769bae421ad960b1374871dd7dee6
 features:
   go:
     additionalDependencies: 0.1.0
@@ -383,8 +383,12 @@ trackedFiles:
     pristine_git_object: 7794e6f5a5b1262860e847990d08222ea214777a
   docs/models/components/fleet.md:
     id: 98517a874273
-    last_write_checksum: sha1:4d0f1bf7887ae72f62cf054f545beb91800b883d
-    pristine_git_object: 0d0965b1fc1e08145f0b77bd543a541e1806ca56
+    last_write_checksum: sha1:776a8df75ff9404b2508dd0e54b1264bad039b36
+    pristine_git_object: c2220cbf1862e6061cd7d9a6e61196eca2c2e83d
+  docs/models/components/fleeterrorstate.md:
+    id: e5fa960c745b
+    last_write_checksum: sha1:2aa90046a009052b2fdba845a5fd1f2c585554cc
+    pristine_git_object: 63e509b4acfe5e2b84d0ea1e5d79c619cd2637d8
   docs/models/components/fleetmetricname.md:
     id: 5b4210107803
     last_write_checksum: sha1:ccdafc9403685973148e87df9cf11cdc369450c9
@@ -541,6 +545,10 @@ trackedFiles:
     id: 93ae1380cdce
     last_write_checksum: sha1:2ad309718f754b1798f70d32a599dd054d142552
     pristine_git_object: 04aa8f700927861f16e8c39229619bc3b108852e
+  docs/models/components/partialrecordregionfleeterrorstate.md:
+    id: 69996302c650
+    last_write_checksum: sha1:0f09191b67fd15dabd624b7cbcfece9ae66b78b8
+    pristine_git_object: 1ec0afd13c0de1b24b98078e6575d37b297c1d47
   docs/models/components/paymentmethod.md:
     id: 722f86eed889
     last_write_checksum: sha1:20ea0c505764822237a1cb6815fbdb08a426dc33
@@ -1927,8 +1935,8 @@ trackedFiles:
     pristine_git_object: 6e9615ac883fd8a36ef75dc94aa9a1e19028ff13
   hathoracloud.go:
     id: 5928a490967b
-    last_write_checksum: sha1:59d33b2f58c1a7881ea4d4ed9d45419dc7926b46
-    pristine_git_object: e4792ccf72194bcc14a1731c035bfde8bcc80c31
+    last_write_checksum: sha1:3ee819a01e41f3da090a98e109e91761eeab1527
+    pristine_git_object: 3024025772911dca7a6266c7ec7a271b9af87ce3
   internal/config/sdkconfiguration.go:
     id: 33b8bfac5265
     last_write_checksum: sha1:3b0bd69bb6531f8a4c32f3ba95dd69145821c2a4
@@ -2207,8 +2215,12 @@ trackedFiles:
     pristine_git_object: 261441426d535b53c7ff97419627062f6e9599e4
   models/components/fleet.go:
     id: edbe9e7ebe9a
-    last_write_checksum: sha1:dc88ea3a7154d65d13a60b2ec307414ea7cd55ca
-    pristine_git_object: fcf33ec203dfd92f772bcabaafe83c7f9c5393bd
+    last_write_checksum: sha1:79b6600a1673cf0ef2ae33ecec0bc72f0b5c46ba
+    pristine_git_object: d1eac902ec4eb318d11b2627d014ed824dbaa604
+  models/components/fleeterrorstate.go:
+    id: acb7bf2afb2c
+    last_write_checksum: sha1:31de82b69ee989bd99566cec643f34d82fb5be28
+    pristine_git_object: 5ab972e450cea530e8457fdf85ef7b3613fe24aa
   models/components/fleetmetricname.go:
     id: f404a89fb963
     last_write_checksum: sha1:e420f28eabd5f3cb38dcc7e5e173567d73452964
@@ -2345,6 +2357,10 @@ trackedFiles:
     id: 0a4cccc6b001
     last_write_checksum: sha1:5591dc5559e6c6bb1dc97deac01132c028670a0e
     pristine_git_object: 364556f325ad838e8bdbcb92e31331a567ca34b8
+  models/components/partialrecordregionfleeterrorstate.go:
+    id: 0c418df78c44
+    last_write_checksum: sha1:966ebd7ad1166b7e6d7c774354a9eb9a90c02fd6
+    pristine_git_object: bcb91752e165c50ba57da30dfa2781ebdf9401a4
   models/components/paymentmethod.go:
     id: ab87d70fce96
     last_write_checksum: sha1:47536a1e6fc5c22906d46d2d2b2e2c7677662bf1
@@ -4724,6 +4740,11 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## Go SDK Changes:
+  * `HathoraCloud.FleetsV1.GetFleetsDeprecated()`:  `response.Fleets.[].ErrorState` **Added**
+  * `HathoraCloud.FleetsV1.CreateFleetDeprecated()`:  `response.ErrorState` **Added**
+  * `HathoraCloud.FleetsV1.GetFleetDeprecated()`:  `response.ErrorState` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
