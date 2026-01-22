@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: f9d94258b0b6b8de55b8795e77ad4d99
+  docChecksum: f872e020a3ee98ddd5a48dc219ef8c57
   docVersion: 0.0.1
-  speakeasyVersion: 1.688.0
-  generationVersion: 2.796.4
-  releaseVersion: 0.14.5
-  configChecksum: 81a5fb58194377d0a056c0f67476e8f8
+  speakeasyVersion: 1.692.0
+  generationVersion: 2.797.1
+  releaseVersion: 0.14.6
+  configChecksum: fee849cd9aff4c5199c98dd4b18467d4
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
 persistentEdits:
-  generation_id: fa41c749-69fd-4f90-8a38-b0b8f3844251
-  pristine_commit_hash: ce3a1761fe4799ee132054221faa06ee377c9cdd
-  pristine_tree_hash: c724925f198769bae421ad960b1374871dd7dee6
+  generation_id: 8d9366de-cad0-48e7-bc76-9838a31fd205
+  pristine_commit_hash: 54fb241ccaf523a2206d6438105ad878a5586d26
+  pristine_tree_hash: 1f6075b771ede025f8e7f5351b8aff21ef0c37be
 features:
   go:
     additionalDependencies: 0.1.0
@@ -1875,8 +1875,8 @@ trackedFiles:
     pristine_git_object: 813807953acf8f22e7ac5a484232c16e6f924aa0
   docs/sdks/lobbiesv3/README.md:
     id: 09d8d4365dcb
-    last_write_checksum: sha1:c70257e0d083262b761b9aeaffeb0f6473c3b29a
-    pristine_git_object: 7129d66eb9c764c0f11c74374c8ac2d7a95bc3bb
+    last_write_checksum: sha1:fe75420fcba6baffdd91def465483a0fbb73ac4a
+    pristine_git_object: d927c3d2bc9880fb179771fdfeccf458c4b97768
   docs/sdks/logsv1/README.md:
     id: 7dbe43c624b6
     last_write_checksum: sha1:6a1047ffc547244c3f3310f9d49507e34f3cd974
@@ -1935,8 +1935,8 @@ trackedFiles:
     pristine_git_object: 6e9615ac883fd8a36ef75dc94aa9a1e19028ff13
   hathoracloud.go:
     id: 5928a490967b
-    last_write_checksum: sha1:3ee819a01e41f3da090a98e109e91761eeab1527
-    pristine_git_object: 3024025772911dca7a6266c7ec7a271b9af87ce3
+    last_write_checksum: sha1:0a8bcbaacfbe8e91c3887cd9ac83ba4e9e274211
+    pristine_git_object: 5a40c0e3d34e0c56aeec5677c20ad3ee459fe3cc
   internal/config/sdkconfiguration.go:
     id: 33b8bfac5265
     last_write_checksum: sha1:3b0bd69bb6531f8a4c32f3ba95dd69145821c2a4
@@ -2011,8 +2011,8 @@ trackedFiles:
     pristine_git_object: d587773254164f2091627ebb2e4c84736ec7562d
   lobbiesv3.go:
     id: 708b2f7e5aa4
-    last_write_checksum: sha1:db7c75a3ae27e543d167db413dbe6aea3c909302
-    pristine_git_object: bf5dc7d28dbf8792e7575725eede53cb20e4ac61
+    last_write_checksum: sha1:9103c9afe28a4bbf4ea3e434bc2f2694ca78e28b
+    pristine_git_object: bef38338319f89329bdfbd919a3932cf0cdd5184
   logsv1.go:
     id: af59a37c6154
     last_write_checksum: sha1:2036c250153e341210cbfa5fede6d62332867a6f
@@ -4742,9 +4742,7 @@ examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Go SDK Changes:
-  * `HathoraCloud.FleetsV1.GetFleetsDeprecated()`:  `response.Fleets.[].ErrorState` **Added**
-  * `HathoraCloud.FleetsV1.CreateFleetDeprecated()`:  `response.ErrorState` **Added**
-  * `HathoraCloud.FleetsV1.GetFleetDeprecated()`:  `response.ErrorState` **Added**
+  * `HathoraCloud.LobbiesV3.GetLobbyInfoByShortCode()`:  `error.status[422]` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
