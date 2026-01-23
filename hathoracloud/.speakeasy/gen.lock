@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: f872e020a3ee98ddd5a48dc219ef8c57
+  docChecksum: 730551dfab8e7dcbbc752f40375f9c9e
   docVersion: 0.0.1
-  speakeasyVersion: 1.692.0
-  generationVersion: 2.797.1
-  releaseVersion: 0.14.6
-  configChecksum: fee849cd9aff4c5199c98dd4b18467d4
+  speakeasyVersion: 1.695.0
+  generationVersion: 2.799.0
+  releaseVersion: 0.14.7
+  configChecksum: 3be77c584c8d717b4b3a15cc6b307b59
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
 persistentEdits:
-  generation_id: 8d9366de-cad0-48e7-bc76-9838a31fd205
-  pristine_commit_hash: 54fb241ccaf523a2206d6438105ad878a5586d26
-  pristine_tree_hash: 1f6075b771ede025f8e7f5351b8aff21ef0c37be
+  generation_id: ad7a6144-9869-4431-bf4f-56a24e5da389
+  pristine_commit_hash: c5480bb1f97e4d0543af2f83e08803ced6e829a8
+  pristine_tree_hash: 9a60e143e57de2019528a7dbaba5614973728728
 features:
   go:
     additionalDependencies: 0.1.0
@@ -163,8 +163,8 @@ trackedFiles:
     pristine_git_object: 8a32da1082de9c26a930d48599e8edad620d69a9
   docs/models/components/authconfiguration.md:
     id: 3faf2a0858c4
-    last_write_checksum: sha1:f78a5e9cf658bc91b85f9b1c9e54a7b72614a29c
-    pristine_git_object: 201249f23a494857a96db198b2c5be3619bd5b59
+    last_write_checksum: sha1:9d17a96cc79461a3f58597007ff0dda2c8d1f400
+    pristine_git_object: cd445c151f3481f2587cad0b883fec09ec48231c
   docs/models/components/autoscalerconfig.md:
     id: 63c83477cae2
     last_write_checksum: sha1:55d4c2acfd8c8e7350912debcdc9a4735a3bd17c
@@ -625,6 +625,10 @@ trackedFiles:
     id: 1ba032eeac56
     last_write_checksum: sha1:abc4d943be097886bd0954134ff9fbcc807d3afc
     pristine_git_object: 3adadd65e5a2258e2e6d5fa007b6885646b16d03
+  docs/models/components/recordstringnever.md:
+    id: da0281e95e9d
+    last_write_checksum: sha1:cc79fcdf3ef79bb50099bc8096b9f82ca11857c7
+    pristine_git_object: 7e4c2e8640be9d5c3a62986eb005375af46443bf
   docs/models/components/region.md:
     id: 4290b6a3b093
     last_write_checksum: sha1:5e93ad3ad9ef200b392a1e7862427061afb16bc0
@@ -1935,8 +1939,8 @@ trackedFiles:
     pristine_git_object: 6e9615ac883fd8a36ef75dc94aa9a1e19028ff13
   hathoracloud.go:
     id: 5928a490967b
-    last_write_checksum: sha1:0a8bcbaacfbe8e91c3887cd9ac83ba4e9e274211
-    pristine_git_object: 5a40c0e3d34e0c56aeec5677c20ad3ee459fe3cc
+    last_write_checksum: sha1:1d9d648f8791206288e902e7a1b90293b0b2dee1
+    pristine_git_object: 24df43678068b57eccf41737dc5de27d5cc60eab
   internal/config/sdkconfiguration.go:
     id: 33b8bfac5265
     last_write_checksum: sha1:3b0bd69bb6531f8a4c32f3ba95dd69145821c2a4
@@ -2055,8 +2059,8 @@ trackedFiles:
     pristine_git_object: afd28fd03ca4aa2cef59ed3c40d919e844fdf0a1
   models/components/authconfiguration.go:
     id: 100eac0f0557
-    last_write_checksum: sha1:e6757f1db35a5e21f6a117eabff7c5c53f507ed2
-    pristine_git_object: 5ab12e03a419c56fba514983b989387e2d234007
+    last_write_checksum: sha1:63cd00b6a5b8c6d19e85ba4f2797aa4fc23b5e31
+    pristine_git_object: ad2d77afd9b4e1cfde86650bff86bfffa74a43e8
   models/components/autoscalerconfig.go:
     id: 7235934a5beb
     last_write_checksum: sha1:697d4b0fd36f669aca2c6b988209cccf28e8b264
@@ -2417,6 +2421,10 @@ trackedFiles:
     id: ad7f1ce52794
     last_write_checksum: sha1:252a46eee56698acf9bf2167645f4766d400ec45
     pristine_git_object: 8270a2cf4e173d296539888a8bcf3d43228a782b
+  models/components/recordstringnever.go:
+    id: cb56702dceb4
+    last_write_checksum: sha1:0dcb3c3f248971df4b0f19a476a0f84ee4b9105e
+    pristine_git_object: 9e6054fa8545b721f86fce3d97d963eff2995d39
   models/components/region.go:
     id: 0c0389bfd469
     last_write_checksum: sha1:30f32a2d93613c07b41b21f6aa0a244a9a84f89a
@@ -4740,9 +4748,6 @@ examples:
           application/json: {"message": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Go SDK Changes:
-  * `HathoraCloud.LobbiesV3.GetLobbyInfoByShortCode()`:  `error.status[422]` **Added**
 generatedFiles:
   - .devcontainer/README.md
   - .devcontainer/devcontainer.json
