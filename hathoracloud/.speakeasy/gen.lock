@@ -1,44 +1,44 @@
 lockVersion: 2.0.0
 id: 56ed41a5-0983-4404-949a-09529ad93f50
 management:
-  docChecksum: 16c5fa5e51efd2d17ce0b70933501f70
+  docChecksum: b0e150713c8512e9910e933b15f41282
   docVersion: 0.0.1
-  speakeasyVersion: 1.697.5
-  generationVersion: 2.799.0
-  releaseVersion: 0.14.8
-  configChecksum: 8c711a341f77fc912d04a21da7f28a52
+  speakeasyVersion: 1.708.2
+  generationVersion: 2.811.4
+  releaseVersion: 0.14.9
+  configChecksum: e092dd013c621c375b0acb799172ab62
   repoURL: https://github.com/hathora/cloud-sdk-go.git
   repoSubDirectory: hathoracloud
   installationURL: https://github.com/hathora/cloud-sdk-go/hathoracloud
 persistentEdits:
-  generation_id: 94d3f5bf-6588-4147-afa3-6b39167fe9bc
-  pristine_commit_hash: 05810f4eb5b59dba668c343db902998a91087c3c
-  pristine_tree_hash: dfdd53d65cbee07336459876903301efa9bc757f
+  generation_id: c71185f4-92e4-4423-84a3-73fde5cc8244
+  pristine_commit_hash: 609acd9fb37c65a9fd283d790764d3128a705ffc
+  pristine_tree_hash: 761e1f7e71644c125f3a20e08501959e8506e153
 features:
   go:
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.12
-    core: 3.13.10
+    constsAndDefaults: 0.1.13
+    core: 3.13.12
     defaultEnabledRetries: 0.2.0
     deprecations: 2.81.3
     devContainers: 2.90.0
     downloadStreams: 0.1.2
     envVarSecurityUsage: 0.3.2
     flattening: 2.81.1
-    globalSecurity: 2.82.12
+    globalSecurity: 2.82.13
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.83.0
     globals: 2.82.2
     groups: 2.81.3
     intellisenseMarkdownSupport: 0.1.0
-    methodSecurity: 2.82.4
+    methodSecurity: 2.82.5
     nullables: 0.2.1
     openEnums: 0.1.0
     responseFormat: 0.1.2
     retries: 2.84.2
     sdkHooks: 0.3.0
-    unions: 2.87.2
+    unions: 2.87.3
     uploadStreams: 0.1.0
 trackedFiles:
   .devcontainer/README.md:
@@ -1939,8 +1939,8 @@ trackedFiles:
     pristine_git_object: 6e9615ac883fd8a36ef75dc94aa9a1e19028ff13
   hathoracloud.go:
     id: 5928a490967b
-    last_write_checksum: sha1:7c85a770ec6c2937272b31b01bccc4d9165731d1
-    pristine_git_object: 9ff4c315337cbdba830894d71387d09e21abd8df
+    last_write_checksum: sha1:9711c0cfacaf4e9183eb50df96f2476caddd62f3
+    pristine_git_object: 88b1dab5737fb79dba3c2a8a7af4df0d1a4cd255
   internal/config/sdkconfiguration.go:
     id: 33b8bfac5265
     last_write_checksum: sha1:3b0bd69bb6531f8a4c32f3ba95dd69145821c2a4
@@ -1991,8 +1991,8 @@ trackedFiles:
     pristine_git_object: 393fac4e618d93ca65896281a0b99d51db98b572
   internal/utils/security.go:
     id: eeb54c55241b
-    last_write_checksum: sha1:bb9cc1870101f6d2a990766f3eb0ea37292f7507
-    pristine_git_object: 19dfa6f4607dea64b1dd61c211e072212e7a3cb2
+    last_write_checksum: sha1:573140faaff017cb3bd31e579c6b3949f3d8365b
+    pristine_git_object: 77566aa2c1127569d9de4a1782b58f852d926d0a
   internal/utils/union.go:
     id: db86c85746b6
     last_write_checksum: sha1:28eb94808dea8161cf53e0809df1c50780192461
